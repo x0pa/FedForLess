@@ -67,6 +67,19 @@ faqs:
     a: "About 4 days in the fridge, covered. Warm a square in the microwave for about a minute and it comes back soft. It also freezes well for up to 2 months, wrapped square by square."
   - q: "Can I make baked oatmeal the night before?"
     a: "Yes. Assemble the whole dish, cover it and put it in the fridge unbaked. In the morning let it sit on the counter while the oven heats, then bake as written, adding about 5 minutes."
+category: "Breakfast"
+cuisine: "Canadian"
+keywords:
+  - "cheap baked oatmeal"
+  - "budget breakfast"
+  - "inexpensive meal prep"
+instructions:
+  - "Heat the oven to 180 C (350 F). Grease a medium baking dish with a little butter."
+  - "In a large bowl, whisk the eggs, milk, peanut butter, sugar and vanilla until smooth. The peanut butter takes a minute of whisking to let go and blend in."
+  - "Fold in the oats, chopped apple, cinnamon, baking powder, salt and the melted butter. Stir until everything is evenly mixed."
+  - "Scrape the mixture into the dish and spread it level."
+  - "Bake for about 35 to 40 minutes, until the centre feels set when pressed and the edges have pulled slightly away from the dish."
+  - "Cool for about 10 minutes, then slice into 8 squares. Serve warm, or cool completely and store covered in the fridge for up to 4 days."
 ---
 
 ## Why This One Works

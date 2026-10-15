@@ -12,7 +12,26 @@
   "recipeYield": {{ printf "%d servings" .Params.servings | jsonify }},
   "recipeIngredient": {{ .Params.ingredients | jsonify }},
   "datePublished": {{ .Date.Format "2006-01-02" | jsonify }},
-  "author": { "@type": "Organization", "name": "Fed For Less" }
+  "author": { "@type": "Organization", "name": "Fed For Less" },
+  "recipeCategory": {{ .Params.category | jsonify }},
+  "recipeCuisine": {{ .Params.cuisine | jsonify }},
+  "keywords": {{ delimit .Params.keywords ", " | jsonify }},
+  "recipeInstructions": [
+    {{ range $i, $s := .Params.instructions }}{{ if $i }},{{ end }}
+    { "@type": "HowToStep", "text": {{ $s | jsonify }} }
+    {{ end }}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": {{ .Site.BaseURL | jsonify }} },
+    { "@type": "ListItem", "position": 2, "name": "Recipes", "item": {{ "/recipes/" | absURL | jsonify }} },
+    { "@type": "ListItem", "position": 3, "name": {{ .Title | jsonify }}, "item": {{ .Permalink | jsonify }} }
+  ]
 }
 </script>
 {{ with .Params.faqs }}

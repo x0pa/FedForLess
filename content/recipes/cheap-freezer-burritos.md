@@ -1,6 +1,6 @@
 ---
 title: "Cheap Freezer Burritos with Beans, Rice and Cheese"
-description: "These cheap freezer burritos cost about $1.70 each and stock the freezer with eight big grab and go meals. Beans, rice, corn and cheese, full cost breakdown inside."
+description: "These cheap freezer burritos cost about $1.70 each and stock the freezer with eight big meals. Beans, rice, corn and cheese, full cost breakdown inside."
 date: 2026-10-15
 draft: false
 tier: "butter"
@@ -65,6 +65,21 @@ faqs:
     a: "About 3 months wrapped well. Cool them completely before wrapping so ice crystals stay low, wrap each one in foil, and store them together in a freezer bag with the air pressed out."
   - q: "What is the best way to reheat a frozen burrito?"
     a: "Unwrap it, wrap it in a damp paper towel, and microwave about 3 minutes, flipping once. For a crisp outside, give it 5 minutes in a hot dry pan or about 12 minutes in a 190 C oven after microwaving."
+category: "Dinner"
+cuisine: "Mexican"
+keywords:
+  - "cheap freezer burritos"
+  - "budget meal prep"
+  - "inexpensive burritos"
+instructions:
+  - "Cook the rice in about 800 ml of salted water until tender, about 15 minutes. Fluff it and let it stand covered for 5 minutes."
+  - "While the rice cooks, heat the oil in a large pan over medium heat and cook the onion for about 4 minutes, until soft."
+  - "Add the beans, cumin, chili powder and garlic powder with a few spoonfuls of water. Warm through for about 3 minutes, then mash roughly a third of the beans with a potato masher so the mix turns creamy in spots."
+  - "Stir the corn into the beans and warm for 2 minutes more. Take the pan off the heat and stir in the cooked rice. Salt to taste."
+  - "Warm the tortillas briefly so they bend without cracking. Divide the filling among them, about a cup each, and top each with a share of the grated cheese."
+  - "Fold in the sides and roll each burrito up tight. Place them seam side down in a hot dry pan for about 1 minute a side, until the seam seals and the outside takes a little colour."
+  - "Cool the burritos completely on a rack. Wrap each one in foil, pack them into a freezer bag, and freeze for up to 3 months."
+  - "To eat from frozen, unwrap, wrap in a damp paper towel, and microwave about 3 minutes, flipping once. A few minutes in a hot pan afterwards brings back the crisp outside."
 ---
 
 ## Why This One Works

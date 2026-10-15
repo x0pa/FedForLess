@@ -64,6 +64,19 @@ faqs:
     a: "Yes, and it tastes better. Melt butter, stir in flour for a minute, then whisk in milk a little at a time and simmer until it thickens like a sauce. It takes about 5 minutes and costs pennies compared with a can of soup."
   - q: "Does tuna noodle casserole freeze well?"
     a: "It does. Assemble it, cool it, wrap the dish well and freeze for up to 2 months. Bake from frozen at 180 C for about 45 minutes, or thaw it in the fridge overnight and bake as written."
+category: "Dinner"
+cuisine: "Canadian"
+keywords:
+  - "budget tuna noodle casserole"
+  - "cheap casserole"
+  - "inexpensive dinner"
+instructions:
+  - "Heat the oven to 180 C (350 F). Cook the pasta in well salted water for about 2 minutes less than the package says. Drain it and set it aside."
+  - "Melt the butter in a large pot over medium heat. Cook the onion for about 3 minutes, until soft."
+  - "Stir in the flour and cook for 1 minute. Pour in the milk a little at a time, whisking as you go, then simmer for about 3 minutes until the sauce thickens enough to coat a spoon. Salt and pepper it well."
+  - "Take the pot off the heat. Fold in the drained pasta, the tuna broken into chunks, and the frozen peas."
+  - "Scrape everything into a greased baking dish and scatter the grated cheese over the top."
+  - "Bake for about 20 minutes, until the sauce bubbles at the edges and the cheese has melted into golden patches. Rest 5 minutes before serving."
 ---
 
 ## Why This One Works

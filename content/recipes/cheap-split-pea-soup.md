@@ -66,6 +66,18 @@ faqs:
     a: "No. Split peas are one of the few dried legumes that cook tender with no soaking at all, which is half the reason this soup is so cheap in effort as well as money. Rinse them, pick out any bits of grit, and they go straight into the pot."
   - q: "Does this soup freeze well?"
     a: "It might be the best freezing soup on the whole site. It keeps about 3 months in the freezer, portioned into containers, and reheats on the stove with a splash of water. It thickens as it sits, in the fridge or the freezer, so that splash of water is not optional."
+category: "Soup"
+cuisine: "Canadian"
+keywords:
+  - "cheap split pea soup"
+  - "budget ham soup"
+  - "inexpensive dinner"
+instructions:
+  - "Heat the oil in a large pot over medium heat. Add the onion and cook for about 4 minutes, until softened."
+  - "Add the split peas, the ham, the bay leaves, the thyme and about 2 litres of water. Bring to a boil, then lower the heat and simmer gently for about 45 minutes, skimming off any foam that rises."
+  - "Stir in the potatoes, carrots and celery. Simmer for about 20 minutes more, until the vegetables are tender and the peas have mostly broken down and thickened the pot."
+  - "Lift the ham out onto a board. Pull off and discard any bone and excess fat, chop the meat, and stir it back into the soup."
+  - "Fish out the bay leaves. Add salt and pepper with a light hand, since the ham brings plenty of salt of its own. Serve in deep bowls."
 ---
 
 ## Why This One Works

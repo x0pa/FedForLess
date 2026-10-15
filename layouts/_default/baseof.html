@@ -6,13 +6,18 @@
 <title>{{ if .IsHome }}Fed For Less — Cheap, Filling Recipes With the Price Worked Out{{ else }}{{ .Title }} · Fed For Less{{ end }}</title>
 <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
 {{ if .IsHome }}<meta name="follow.it-verification-code" content="ySRAbcMUzeRrlMlykEfA">{{ end }}
+<link rel="alternate" type="application/rss+xml" title="Fed For Less" href="{{ "index.xml" | absURL }}">
 <link rel="canonical" href="{{ .Permalink }}">
 <meta property="og:type" content="{{ if eq .Section "recipes" }}article{{ else }}website{{ end }}">
 <meta property="og:title" content="{{ .Title }}">
 <meta property="og:description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
 <meta property="og:url" content="{{ .Permalink }}">
-{{ with .Params.image }}<meta property="og:image" content="{{ . | absURL }}">{{ end }}
+{{ $ogimg := "/images/cheap-lentil-soup.webp" | absURL }}{{ with .Params.image }}{{ $ogimg = . | absURL }}{{ end }}
+<meta property="og:image" content="{{ $ogimg }}">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ .Title }}">
+<meta name="twitter:description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+<meta name="twitter:image" content="{{ $ogimg }}">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Public+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/css/main.css?v={{ .Site.Params.css_version }}">

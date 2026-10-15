@@ -1,6 +1,6 @@
 ---
 title: "How We Price Every Recipe"
-description: "The Fed For Less pricing method: Statistics Canada average retail prices, chain cross checks, ingredient cost, batch cost, cost per serving, and basket cost, explained."
+description: "The Fed For Less pricing method: Statistics Canada average prices, chain cross checks, and how ingredient, batch, serving, and basket costs are worked out."
 layout: "prose"
 ---
 

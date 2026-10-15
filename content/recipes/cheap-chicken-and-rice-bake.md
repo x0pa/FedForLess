@@ -1,6 +1,6 @@
 ---
 title: "Cheap Chicken Leg and Rice Bake"
-description: "This cheap chicken leg and rice bake makes six filling servings for about $2.44 a serving. Drumsticks baked right on top of the rice, full cost breakdown inside."
+description: "This cheap chicken leg and rice bake makes six filling servings for about $2.44 a serving. Drumsticks baked on the rice, full cost breakdown inside."
 date: 2026-10-15
 draft: false
 tier: "butter"
@@ -59,6 +59,19 @@ faqs:
     a: "Yes. Bone in, skin on thighs sit on the rice the same way and cook in the same time. Price them by the kilogram the way this recipe prices drumsticks. In most months the two cuts sit close enough in price that the cost per serving barely moves. Keep the total weight near 1.2 kg so the rice ratio stays right."
   - q: "Will the rice actually cook under the chicken?"
     a: "Yes, as long as the pan is covered tightly. The rice steams in the water and the juices running off the chicken, and the 10 minute rest at the end is part of the cooking, not a suggestion. If your lid fits loosely, lay a sheet of foil over the pan before the lid goes on."
+category: "Dinner"
+cuisine: "Canadian"
+keywords:
+  - "cheap chicken and rice bake"
+  - "budget chicken dinner"
+  - "inexpensive dinner"
+instructions:
+  - "Heat the oven to 190 C (375 F). Pat the drumsticks dry, then rub them all over with salt, pepper, the paprika and the thyme."
+  - "Heat the oil in a large oven safe pan or Dutch oven over medium high heat. Sear the drumsticks for about 4 minutes a side, until the skin is well browned. Lift them out onto a plate."
+  - "Spoon off all but about a tablespoon of the drippings. Add the onion and cook for about 3 minutes, then stir in the garlic and the rice and cook for 1 minute more, coating every grain in the drippings."
+  - "Pour in about 800 ml of water and stir in the frozen vegetables. Settle everything into an even layer."
+  - "Nestle the drumsticks back on top, skin side up. Cover with a lid or foil and bake for about 40 minutes, until the rice is tender and the chicken is cooked through."
+  - "Rest, covered, for 10 minutes so the rice finishes steaming. Serve straight from the pan."
 ---
 
 ## Why This One Works

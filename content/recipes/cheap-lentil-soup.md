@@ -64,6 +64,18 @@ faqs:
     a: "This one is built to be. Each bowl carries about 75 g of dry lentils plus a generous portion of potato, which works out to roughly 490 calories, 23 g of protein and 13 g of fibre per bowl as an estimate. It is a main course soup, not a starter."
   - q: "Does this soup freeze well?"
     a: "Very well. It keeps about 3 months in the freezer and reheats from frozen on the stove with a splash of water. The potatoes soften a little more each time, which most people count as a feature."
+category: "Soup"
+cuisine: "Canadian"
+keywords:
+  - "cheap lentil soup"
+  - "budget soup recipe"
+  - "inexpensive dinner"
+instructions:
+  - "Heat the oil in a large pot over medium heat. Add the onion and carrot and cook for about 5 minutes, until the onion softens."
+  - "Add the garlic, cumin and paprika and stir for 1 minute, until they smell like dinner."
+  - "Add the lentils, potatoes, canned tomatoes, bouillon cubes and about 1.5 litres of water. Bring to a boil."
+  - "Lower the heat and simmer, partially covered, for about 25 minutes, stirring now and then, until the lentils have broken down and the potatoes are tender. Add a little more water if it gets thicker than you like."
+  - "Salt and pepper at the end. Rest 5 minutes and serve in the biggest bowls you own."
 ---
 
 ## Why This One Works

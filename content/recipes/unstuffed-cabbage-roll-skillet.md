@@ -1,6 +1,6 @@
 ---
 title: "Cheap Unstuffed Cabbage Roll Skillet"
-description: "This cheap unstuffed cabbage roll skillet makes six filling servings for about $2.31 a serving. Ground pork, cabbage, rice and tomato in one pan, full cost breakdown inside."
+description: "This cheap unstuffed cabbage roll skillet makes six servings for about $2.31 each. Pork, cabbage, rice and tomato in one pan, full cost breakdown inside."
 date: 2026-10-15
 draft: false
 tier: "butter"
@@ -64,6 +64,19 @@ faqs:
     a: "It is built to be. Each serving is about two cups of skillet, built on 700 g of pork, a full kilogram of cabbage and 300 g of rice across the pan. As an estimate, a serving lands around 590 calories with about 21 g of protein, before any sour cream. Nobody leaves the table looking for a snack an hour later."
   - q: "Does it freeze and reheat well?"
     a: "Yes. Cool it down, pack it into containers and freeze for up to 3 months. The cabbage softens a little more on reheating, which suits this dish fine. Reheat it gently on the stove with a splash of water, because the rice keeps drinking up the sauce as it sits."
+category: "Dinner"
+cuisine: "Eastern European"
+keywords:
+  - "cheap cabbage roll skillet"
+  - "budget skillet dinner"
+  - "inexpensive dinner"
+instructions:
+  - "Heat the oil in a large deep skillet or Dutch oven over medium high heat. Add the ground pork and cook, breaking it up with a spoon, until browned all over, about 7 minutes. Spoon off most of the fat if there is a lot of it."
+  - "Add the onion and cook for about 3 minutes, until softened. Stir in the garlic, paprika and cumin and cook for 1 minute, until the spices smell warm."
+  - "Add the cabbage a few handfuls at a time, stirring each batch until it wilts down before adding more. It looks like a mountain at first and cooks down to fit the pan."
+  - "Stir in the rice, the canned tomatoes with their juice and about 750 ml of water. Bring it up to a simmer."
+  - "Cover, lower the heat and simmer gently for about 25 minutes, stirring now and then, until the rice is tender and has soaked up most of the liquid."
+  - "Take the pan off the heat and rest it, covered, for 10 minutes. Salt and pepper to taste, then serve with a spoon of sour cream on top if you like."
 ---
 
 ## Why This One Works

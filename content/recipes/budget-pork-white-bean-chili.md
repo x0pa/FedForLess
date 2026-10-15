@@ -64,6 +64,20 @@ faqs:
     a: "Pork shoulder is one of the cheapest cuts per kilogram and it turns tender and rich during the simmer, where lean cuts would go dry. Cubed shoulder also gives the chili real texture, more like a stew than a sauce."
   - q: "Does this chili freeze well?"
     a: "Very well, for about 3 months. Cool it fully, pack it flat in freezer bags or in portions, and reheat from frozen on the stove with a splash of water. The beans soften a little more and the flavour deepens."
+category: "Dinner"
+cuisine: "American"
+keywords:
+  - "budget pork chili"
+  - "cheap chili recipe"
+  - "inexpensive dinner"
+instructions:
+  - "Pat the pork cubes dry and season them with salt and pepper. Heat the oil in a large pot over medium heat and brown the pork well in two batches, about 5 minutes a batch. Set the pork aside."
+  - "In the same pot, cook the onion for about 4 minutes, scraping up the browned bits from the bottom as it softens."
+  - "Add the garlic, chili powder, cumin and paprika and stir for 1 minute, until the spices coat the onion and smell warm."
+  - "Pour in the canned tomatoes and about 250 ml of water. Return the pork and any juices to the pot and bring it to a gentle simmer."
+  - "Cover and simmer on low for about 25 minutes, stirring now and then."
+  - "Stir in the beans and corn and simmer for about 10 minutes more, until the pork is tender and the chili has thickened. Salt to taste."
+  - "Rest 5 minutes and serve in deep bowls. Leftovers keep about 3 months in the freezer."
 ---
 
 ## Why This One Works

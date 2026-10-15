@@ -1,3 +1,16 @@
+{{ define "head" }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Fed For Less",
+  "url": {{ .Site.BaseURL | jsonify }},
+  "description": {{ .Site.Params.description | jsonify }},
+  "publisher": { "@type": "Organization", "name": "Fed For Less", "url": {{ .Site.BaseURL | jsonify }} }
+}
+</script>
+{{ end }}
+
 {{ define "main" }}
 {{ $recipes := where .Site.RegularPages "Section" "recipes" }}
 {{ $feat := index $recipes 0 }}
