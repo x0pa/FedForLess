@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en-ca">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Recipe Cost Calculator · Fed For Less</title>
+<meta name="description" content="Turn package prices into ingredient costs: enter a package price, its size, and how much the recipe uses, line by line, and get the batch total.">
+<link rel="canonical" href="https://fedforless.ca/tools/recipe-cost-calculator/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Recipe Cost Calculator">
+<meta property="og:description" content="Turn package prices into ingredient costs: enter a package price, its size, and how much the recipe uses, line by line, and get the batch total.">
+<meta property="og:url" content="https://fedforless.ca/tools/recipe-cost-calculator/">
+
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Public+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/main.css?v=1">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' font-family='Arial Black' fill='%231D4E9E'>F</text></svg>">
+
+
+</head>
+<body>
+<div class="wrap"><div class="rule-top"></div></div>
+<header class="site">
+  <a class="logo" href="/">Fed For <span class="thin">Less</span></a>
+  <nav class="main">
+    <a href="/recipes/">Recipes</a><a href="/how-we-price/">How We Price</a><a href="/tools/">Tools</a><a href="/about/">About</a>
+  </nav>
+</header>
+
+<div class="wrap">
+  <div class="page-head"><h1>Recipe Cost Calculator</h1></div>
+  <div style="max-width:46rem;">
+    <article class="prose">
+      <p>This is the exact arithmetic behind every Fed For Less breakdown. For each ingredient, enter the package price, the package size, and the amount your recipe uses, in the same unit (grams with grams, millilitres with millilitres). Add lines as needed.</p>
+<div class="toolbox nums">
+  <div id="rc-lines"></div>
+  <button id="rc-add" style="background:var(--denim);color:#fff;border:none;font-weight:800;padding:.7rem 1.2rem;border-radius:6px;cursor:pointer;font:inherit;margin-top:.8rem;">Add an ingredient line</button>
+  <label for="rc-servings">Servings the recipe makes</label>
+  <input id="rc-servings" type="number" min="1" step="1" value="4">
+  <div class="out" id="rc-out">Batch total: $0.00 · Per serving: —</div>
+</div>
+<script>
+(function(){
+  var wrap=document.getElementById('rc-lines'), out=document.getElementById('rc-out'),
+      serv=document.getElementById('rc-servings');
+  function line(){
+    var d=document.createElement('div');
+    d.style.display='grid'; d.style.gridTemplateColumns='1fr 1fr 1fr 1fr'; d.style.gap='.6rem'; d.style.marginTop='.6rem';
+    d.innerHTML='<input type="number" min="0" step="0.01" placeholder="Pkg price $" class="rc-p">'+
+      '<input type="number" min="0" step="any" placeholder="Pkg size" class="rc-s">'+
+      '<input type="number" min="0" step="any" placeholder="Amount used" class="rc-u">'+
+      '<input type="text" readonly class="rc-r" placeholder="$0.00" style="background:#F2F5F9;">';
+    wrap.appendChild(d);
+    d.querySelectorAll('input').forEach(function(i){ i.addEventListener('input',go); });
+  }
+  function go(){
+    var total=0;
+    wrap.querySelectorAll('div').forEach(function(d){
+      var p=parseFloat(d.querySelector('.rc-p').value), s=parseFloat(d.querySelector('.rc-s').value),
+          u=parseFloat(d.querySelector('.rc-u').value), r=d.querySelector('.rc-r');
+      if(p>=0 && s>0 && u>=0){ var v=p*u/s; r.value='$'+v.toFixed(2); total+=v; }
+      else r.value='';
+    });
+    var sv=parseFloat(serv.value);
+    out.textContent='Batch total: $'+total.toFixed(2)+' · Per serving: '+(sv>0 ? '$'+(total/sv).toFixed(2) : '—');
+  }
+  document.getElementById('rc-add').addEventListener('click',function(){ line(); });
+  serv.addEventListener('input',go);
+  line(); line(); line();
+})();
+</script>
+<h2 id="the-basket-cost-too">The basket cost, too</h2>
+<p>The calculator gives you the cost of what you used. The basket cost is simpler and ruder: add up the full price of every package on the shopping list. A recipe can be gentle per serving and still need a forty dollar basket the first time. Both numbers matter, which is why every recipe here shows both.</p>
+
+    </article>
+  </div>
+</div>
+
+<footer class="site">
+  Simple meals. Real budget. New recipes weekly · Fed For Less · Canadian average prices, checked monthly<br>
+  A <a href="https://darkhaus.studio">Dark Haus Studio</a> site · <a href="/about/">About</a> · <a href="/privacy/">Privacy</a> · <a href="/contact/">Contact</a>
+</footer>
+</body>
+</html>

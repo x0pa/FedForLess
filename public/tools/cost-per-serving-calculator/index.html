@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en-ca">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cost Per Serving Calculator · Fed For Less</title>
+<meta name="description" content="Add up a recipe&#39;s ingredient costs and divide by real servings. The simplest honest number in budget cooking, calculated for you.">
+<link rel="canonical" href="https://fedforless.ca/tools/cost-per-serving-calculator/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Cost Per Serving Calculator">
+<meta property="og:description" content="Add up a recipe&#39;s ingredient costs and divide by real servings. The simplest honest number in budget cooking, calculated for you.">
+<meta property="og:url" content="https://fedforless.ca/tools/cost-per-serving-calculator/">
+
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Public+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/main.css?v=1">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' font-family='Arial Black' fill='%231D4E9E'>F</text></svg>">
+
+
+</head>
+<body>
+<div class="wrap"><div class="rule-top"></div></div>
+<header class="site">
+  <a class="logo" href="/">Fed For <span class="thin">Less</span></a>
+  <nav class="main">
+    <a href="/recipes/">Recipes</a><a href="/how-we-price/">How We Price</a><a href="/tools/">Tools</a><a href="/about/">About</a>
+  </nav>
+</header>
+
+<div class="wrap">
+  <div class="page-head"><h1>Cost Per Serving Calculator</h1></div>
+  <div style="max-width:46rem;">
+    <article class="prose">
+      <p>Enter what the ingredients you used cost, in total, and how many real servings the recipe made. Real means the portion a hungry adult eats, not the portion that makes the number pretty.</p>
+<div class="toolbox nums">
+  <label for="cps-total">Total ingredient cost of the batch ($)</label>
+  <input id="cps-total" type="number" min="0" step="0.01" placeholder="8.02">
+  <label for="cps-servings">Servings the batch actually made</label>
+  <input id="cps-servings" type="number" min="1" step="1" placeholder="6">
+  <div class="out" id="cps-out">Cost per serving: —</div>
+  <p id="cps-tier" style="font-weight:700;color:#2C3138;"></p>
+</div>
+<script>
+(function(){
+  var t=document.getElementById('cps-total'), s=document.getElementById('cps-servings'),
+      o=document.getElementById('cps-out'), tier=document.getElementById('cps-tier');
+  function go(){
+    var tv=parseFloat(t.value), sv=parseFloat(s.value);
+    if(tv>=0 && sv>0){
+      var per=tv/sv;
+      o.textContent='Cost per serving: $'+per.toFixed(2);
+      tier.textContent = per<=1.50 ? 'Fed For Less tier: Green (up to $1.50).' :
+        per<=2.50 ? 'Fed For Less tier: Butter ($1.51 to $2.50).' :
+        per<=3.25 ? 'Fed For Less tier: Tomato ($2.51 to $3.25), a filling splurge.' :
+        'Above the Fed For Less tomato tier. Worth a cheaper protein or a bigger batch.';
+    } else { o.textContent='Cost per serving: —'; tier.textContent=''; }
+  }
+  t.addEventListener('input',go); s.addEventListener('input',go);
+})();
+</script>
+<h2 id="how-to-get-the-batch-cost">How to get the batch cost</h2>
+<p>Price each ingredient by the amount used: the package price divided by the package size, times the amount the recipe takes. Half a bag is half the price. Add a small allowance for spices, oil, salt, and garlic rather than pretending they are free. That total is the batch cost, and the calculator above does the rest.</p>
+
+    </article>
+  </div>
+</div>
+
+<footer class="site">
+  Simple meals. Real budget. New recipes weekly · Fed For Less · Canadian average prices, checked monthly<br>
+  A <a href="https://darkhaus.studio">Dark Haus Studio</a> site · <a href="/about/">About</a> · <a href="/privacy/">Privacy</a> · <a href="/contact/">Contact</a>
+</footer>
+</body>
+</html>

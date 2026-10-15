@@ -1,0 +1,11 @@
+{{ define "main" }}
+<div class="wrap">
+  <div class="page-head"><h1>{{ .Title }}</h1></div>
+  <div style="max-width:46rem;margin-top:.8rem;">{{ .Content }}</div>
+  <div class="collections" style="margin-top:1.4rem;">
+    {{ range .Pages }}
+    <div class="col-card"><div class="cname"><a href="{{ .RelPermalink }}">{{ .Title }}</a></div><p>{{ .Description }}</p></div>
+    {{ end }}
+  </div>
+</div>
+{{ end }}

@@ -1,0 +1,80 @@
+{{ define "head" }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Recipe",
+  "name": {{ .Title | jsonify }},
+  "description": {{ .Description | jsonify }},
+  "image": {{ .Params.image | absURL | jsonify }},
+  "prepTime": {{ .Params.prep_iso | jsonify }},
+  "cookTime": {{ .Params.cook_iso | jsonify }},
+  "totalTime": {{ .Params.total_iso | jsonify }},
+  "recipeYield": {{ printf "%d servings" .Params.servings | jsonify }},
+  "recipeIngredient": {{ .Params.ingredients | jsonify }},
+  "datePublished": {{ .Date.Format "2006-01-02" | jsonify }},
+  "author": { "@type": "Organization", "name": "Fed For Less" }
+}
+</script>
+{{ with .Params.faqs }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {{ range $i, $f := . }}{{ if $i }},{{ end }}
+    { "@type": "Question", "name": {{ $f.q | jsonify }}, "acceptedAnswer": { "@type": "Answer", "text": {{ $f.a | jsonify }} } }
+    {{ end }}
+  ]
+}
+</script>
+{{ end }}
+{{ end }}
+
+{{ define "main" }}
+<div class="wrap">
+  <div class="crumbs"><a href="/">Home</a> · <a href="/recipes/">Recipes</a> · {{ .Title }}</div>
+  <h1 class="dish">{{ .Title }}</h1>
+  <div class="meta-line">{{ .Params.meta_line }}</div>
+  <p class="standfirst">{{ .Params.standfirst }}</p>
+
+  <div class="layout">
+    <div>
+      <figure class="hero-photo">
+        <img src="{{ .Params.image }}" alt="{{ .Title }}">
+        <figcaption>{{ .Params.image_caption }}</figcaption>
+      </figure>
+      <div class="article-body">
+        {{ .Content }}
+      </div>
+      {{ with .Params.faqs }}
+      <div class="faq">
+        <h2 style="font-family:Oswald;font-weight:700;text-transform:uppercase;font-size:1.5rem;border-top:2px solid var(--ink);padding-top:1.1rem;margin-top:1.9rem;">Questions</h2>
+        {{ range . }}
+        <h3>{{ .q }}</h3>
+        <p style="color:#2C3138;">{{ .a }}</p>
+        {{ end }}
+      </div>
+      {{ end }}
+    </div>
+
+    <aside class="pricecard nums">
+      <div class="bhead">Cost Breakdown · Checked {{ .Params.prices_checked }}</div>
+      <div class="bbox">
+        {{ range $i, $b := .Params.breakdown }}
+        <div class="brow{{ if eq $i 0 }} first{{ end }}"><span class="item">{{ $b.item }}{{ with $b.note }}<small>{{ . }}</small>{{ end }}</span><span class="amt">${{ $b.amount }}</span></div>
+        {{ end }}
+        <div class="brow total"><span class="lbl">Batch Total</span><span class="amt">${{ .Params.batch_cost }}</span></div>
+        <div class="brow basket"><span class="item">Basket cost, every package</span><span class="amt">${{ .Params.basket_cost }}</span></div>
+      </div>
+      <div class="perline">Cost Per Serving · ${{ .Params.price_per_serving }} · Serves {{ .Params.servings }}</div>
+      <p class="rangenote"><strong>Typical range:</strong> ${{ .Params.price_range }} a serving depending on region and store.</p>
+      <p class="srcnote">Prices: Statistics Canada average retail prices (Table 18-10-0245, {{ .Params.prices_checked }}){{ with .Params.chain_note }} plus {{ . }}{{ end }}, CAD before tax. The basket cost is what you pay at the till if you need every package. Full method: <a href="/how-we-price/">How We Price</a>.</p>
+      <div class="tierline">
+        <span class="t{{ if eq .Params.tier "green" }} on{{ end }}">Green<small>to $1.50</small></span>
+        <span class="t{{ if eq .Params.tier "butter" }} on{{ end }}">Butter<small>to $2.50</small></span>
+        <span class="t{{ if eq .Params.tier "tomato" }} on{{ end }}">Tomato<small>to $3.25</small></span>
+      </div>
+    </aside>
+  </div>
+</div>
+{{ end }}

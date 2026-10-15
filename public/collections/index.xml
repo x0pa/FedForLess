@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Collections on Fed For Less</title>
+    <link>https://fedforless.ca/collections/</link>
+    <description>Recent content in Collections on Fed For Less</description>
+    <generator>Hugo</generator>
+    <language>en-ca</language>
+    <lastBuildDate>Thu, 15 Oct 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://fedforless.ca/collections/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Breakfasts Under $1</title>
+      <link>https://fedforless.ca/collections/breakfasts-under-1/</link>
+      <pubDate>Thu, 15 Oct 2026 00:00:00 +0000</pubDate>
+      <guid>https://fedforless.ca/collections/breakfasts-under-1/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Dinners Under $1.50</title>
+      <link>https://fedforless.ca/collections/dinners-under-1.50/</link>
+      <pubDate>Thu, 15 Oct 2026 00:00:00 +0000</pubDate>
+      <guid>https://fedforless.ca/collections/dinners-under-1.50/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Feed Six for Under $12</title>
+      <link>https://fedforless.ca/collections/feed-six-for-under-12/</link>
+      <pubDate>Thu, 15 Oct 2026 00:00:00 +0000</pubDate>
+      <guid>https://fedforless.ca/collections/feed-six-for-under-12/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Freezer Fillers</title>
+      <link>https://fedforless.ca/collections/freezer-fillers/</link>
+      <pubDate>Thu, 15 Oct 2026 00:00:00 +0000</pubDate>
+      <guid>https://fedforless.ca/collections/freezer-fillers/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Soups That Eat Like a Meal</title>
+      <link>https://fedforless.ca/collections/soups-that-eat-like-a-meal/</link>
+      <pubDate>Thu, 15 Oct 2026 00:00:00 +0000</pubDate>
+      <guid>https://fedforless.ca/collections/soups-that-eat-like-a-meal/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

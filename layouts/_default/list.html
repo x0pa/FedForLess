@@ -1,0 +1,20 @@
+{{ define "main" }}
+<div class="wrap">
+  <div class="page-head"><h1>{{ .Title }}</h1></div>
+  {{ with .Content }}<div style="max-width:46rem;margin-top:.8rem;">{{ . }}</div>{{ end }}
+  <section class="index-sec" style="margin-top:1.6rem;">
+    <ol class="index">
+      {{ range .Pages.ByDate }}
+      <li>
+        <a href="{{ .RelPermalink }}"><img src="{{ .Params.image }}" alt="{{ .Title }}"></a>
+        <div>
+          <div class="rname"><a href="{{ .RelPermalink }}">{{ .Title }}</a></div>
+          <div class="rsub">{{ .Params.tier_label }} · Serves {{ .Params.servings }} · {{ .Params.total_time }}</div>
+        </div>
+        <div class="rprice nums"><div class="per">${{ .Params.price_per_serving }}</div><div class="of">per serving</div></div>
+      </li>
+      {{ end }}
+    </ol>
+  </section>
+</div>
+{{ end }}

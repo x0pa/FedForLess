@@ -1,0 +1,65 @@
+{{ define "main" }}
+{{ $recipes := where .Site.RegularPages "Section" "recipes" }}
+{{ $feat := index $recipes 0 }}
+<div class="wrap">
+  <section class="hero">
+    <h1>Fed For Less<span class="price-line">Priced Before You Shop</span></h1>
+    <p class="lede">Cheap recipes that are actually filling, each one costed on Canadian national average prices with the full breakdown on the page. No tiny servings hiding behind a small number.</p>
+    <form class="signup" action="#" method="post" onsubmit="return false;">
+      <input type="email" placeholder="Email for the weekly cheap recipe" aria-label="Email address">
+      <button type="submit">Join Free</button>
+    </form>
+  </section>
+
+  <section class="feature">
+    <figure>
+      <a href="{{ $feat.RelPermalink }}"><img src="{{ $feat.Params.image }}" alt="{{ $feat.Title }}"></a>
+      <figcaption>This week's feature recipe.</figcaption>
+    </figure>
+    <div>
+      <div class="f-label">Featured Recipe · {{ $feat.Params.tier_label }}</div>
+      <div class="f-title"><a href="{{ $feat.RelPermalink }}">{{ $feat.Title }}</a></div>
+      <p>{{ $feat.Params.standfirst }}</p>
+      <div class="breakdown nums">
+        <div class="bhead">Cost Breakdown</div>
+        <div class="bbox">
+          {{ range first 3 $feat.Params.breakdown }}
+          <div class="brow"><span class="item">{{ .item }}{{ with .note }}<small>{{ . }}</small>{{ end }}</span><span class="amt">${{ .amount }}</span></div>
+          {{ end }}
+          <div class="brow total"><span class="lbl">Batch Total</span><span class="amt">${{ $feat.Params.batch_cost }}</span></div>
+        </div>
+        <div class="perline">Cost Per Serving · ${{ $feat.Params.price_per_serving }}</div>
+      </div>
+      <a class="readon" href="{{ $feat.RelPermalink }}">Get the Recipe</a>
+    </div>
+  </section>
+
+  <section class="index-sec">
+    <div class="sec-head"><h2>The Recipe Index</h2><span>Every price checked · {{ len $recipes }} recipes</span></div>
+    <ol class="index">
+      {{ range $recipes }}
+      <li>
+        <a href="{{ .RelPermalink }}"><img src="{{ .Params.image }}" alt="{{ .Title }}"></a>
+        <div>
+          <div class="rname"><a href="{{ .RelPermalink }}">{{ .Title }}</a></div>
+          <div class="rsub">{{ .Params.tier_label }} · Serves {{ .Params.servings }} · {{ .Params.total_time }}</div>
+        </div>
+        <div class="rprice nums"><div class="per">${{ .Params.price_per_serving }}</div><div class="of">per serving</div></div>
+      </li>
+      {{ end }}
+    </ol>
+  </section>
+
+  <section class="index-sec">
+    <div class="sec-head"><h2>Shop By Price</h2><span>Collections</span></div>
+    <div class="collections">
+      <div class="col-card"><div class="cname"><a href="/collections/dinners-under-1-50/">Dinners Under $1.50</a></div><p>The green tier. Full dinners that cost less than a coffee.</p></div>
+      <div class="col-card"><div class="cname"><a href="/collections/feed-six-for-under-12/">Feed Six For Under $12</a></div><p>Whole batches, honestly counted, that land under twelve dollars.</p></div>
+      <div class="col-card"><div class="cname"><a href="/collections/freezer-fillers/">Freezer Fillers</a></div><p>Big batches built to freeze in portions for the nights nobody wants to cook.</p></div>
+      <div class="col-card"><div class="cname"><a href="/collections/soups-that-eat-like-a-meal/">Soups That Eat Like a Meal</a></div><p>Bowls with enough in them to be dinner, not a warm up act.</p></div>
+      <div class="col-card"><div class="cname"><a href="/collections/breakfasts-under-1/">Breakfasts Under $1</a></div><p>Morning food at green tier prices, most of it make ahead.</p></div>
+      <div class="col-card"><div class="cname"><a href="/how-we-price/">How We Price</a></div><p>The method, the sources, and the rules every number on this site follows.</p></div>
+    </div>
+  </section>
+</div>
+{{ end }}
