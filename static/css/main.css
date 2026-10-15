@@ -113,3 +113,5 @@ footer.site a{color:var(--muted)}
   .hero-photo img,.feature figure img{height:300px}
 }
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
+.powered{font-size:.8rem;opacity:.6;margin-top:.55rem}
+.powered a{color:inherit}
