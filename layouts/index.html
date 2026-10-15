@@ -4,9 +4,9 @@
   "@context": "https://schema.org",
   "@type": "WebSite",
   "name": "Fed For Less",
-  "url": {{ .Site.BaseURL | jsonify }},
-  "description": {{ .Site.Params.description | jsonify }},
-  "publisher": { "@type": "Organization", "name": "Fed For Less", "url": {{ .Site.BaseURL | jsonify }} }
+  "url": {{ .Site.BaseURL | jsonify | safeJS }},
+  "description": {{ .Site.Params.description | jsonify | safeJS }},
+  "publisher": { "@type": "Organization", "name": "Fed For Less", "url": {{ .Site.BaseURL | jsonify | safeJS }} }
 }
 </script>
 {{ end }}

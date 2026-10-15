@@ -3,22 +3,22 @@
 {
   "@context": "https://schema.org",
   "@type": "Recipe",
-  "name": {{ .Title | jsonify }},
-  "description": {{ .Description | jsonify }},
-  "image": {{ .Params.image | absURL | jsonify }},
-  "prepTime": {{ .Params.prep_iso | jsonify }},
-  "cookTime": {{ .Params.cook_iso | jsonify }},
-  "totalTime": {{ .Params.total_iso | jsonify }},
-  "recipeYield": {{ printf "%d servings" .Params.servings | jsonify }},
-  "recipeIngredient": {{ .Params.ingredients | jsonify }},
-  "datePublished": {{ .Date.Format "2006-01-02" | jsonify }},
+  "name": {{ .Title | jsonify | safeJS }},
+  "description": {{ .Description | jsonify | safeJS }},
+  "image": {{ .Params.image | absURL | jsonify | safeJS }},
+  "prepTime": {{ .Params.prep_iso | jsonify | safeJS }},
+  "cookTime": {{ .Params.cook_iso | jsonify | safeJS }},
+  "totalTime": {{ .Params.total_iso | jsonify | safeJS }},
+  "recipeYield": {{ printf "%d servings" .Params.servings | jsonify | safeJS }},
+  "recipeIngredient": {{ .Params.ingredients | jsonify | safeJS }},
+  "datePublished": {{ .Date.Format "2006-01-02" | jsonify | safeJS }},
   "author": { "@type": "Organization", "name": "Fed For Less" },
-  "recipeCategory": {{ .Params.category | jsonify }},
-  "recipeCuisine": {{ .Params.cuisine | jsonify }},
-  "keywords": {{ delimit .Params.keywords ", " | jsonify }},
+  "recipeCategory": {{ .Params.category | jsonify | safeJS }},
+  "recipeCuisine": {{ .Params.cuisine | jsonify | safeJS }},
+  "keywords": {{ delimit .Params.keywords ", " | jsonify | safeJS }},
   "recipeInstructions": [
     {{ range $i, $s := .Params.instructions }}{{ if $i }},{{ end }}
-    { "@type": "HowToStep", "text": {{ $s | jsonify }} }
+    { "@type": "HowToStep", "text": {{ $s | jsonify | safeJS }} }
     {{ end }}
   ]
 }
@@ -28,9 +28,9 @@
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Home", "item": {{ .Site.BaseURL | jsonify }} },
-    { "@type": "ListItem", "position": 2, "name": "Recipes", "item": {{ "/recipes/" | absURL | jsonify }} },
-    { "@type": "ListItem", "position": 3, "name": {{ .Title | jsonify }}, "item": {{ .Permalink | jsonify }} }
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": {{ .Site.BaseURL | jsonify | safeJS }} },
+    { "@type": "ListItem", "position": 2, "name": "Recipes", "item": {{ "/recipes/" | absURL | jsonify | safeJS }} },
+    { "@type": "ListItem", "position": 3, "name": {{ .Title | jsonify | safeJS }}, "item": {{ .Permalink | jsonify | safeJS }} }
   ]
 }
 </script>
@@ -41,7 +41,7 @@
   "@type": "FAQPage",
   "mainEntity": [
     {{ range $i, $f := . }}{{ if $i }},{{ end }}
-    { "@type": "Question", "name": {{ $f.q | jsonify }}, "acceptedAnswer": { "@type": "Answer", "text": {{ $f.a | jsonify }} } }
+    { "@type": "Question", "name": {{ $f.q | jsonify | safeJS }}, "acceptedAnswer": { "@type": "Answer", "text": {{ $f.a | jsonify | safeJS }} } }
     {{ end }}
   ]
 }
