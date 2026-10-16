@@ -11,7 +11,7 @@ basket_cost: "31.30"
 price_range: "2.15 to 2.85"
 servings: 6
 meta_line: "One Pot · Freezer Friendly · Butter Tier · Serves 6"
-standfirst: "A budget pork and white bean chili built on pork shoulder, the cut that stays cheap and turns tender, costed on Canadian average prices and made to fill six deep bowls."
+standfirst: "A budget pork and white bean chili built on pork shoulder, the cut that stays cheap and turns tender, costed on Canadian average prices and made to fill six deep bowls at about $2.45 a serving."
 prep_time: "15 min"
 cook_time: "40 min"
 total_time: "55 min"

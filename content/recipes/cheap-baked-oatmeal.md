@@ -11,7 +11,7 @@ basket_cost: "35.32"
 price_range: "0.85 to 1.20"
 servings: 8
 meta_line: "Make Ahead · 50 Min · Green Tier · Serves 8"
-standfirst: "Cheap baked oatmeal that turns one baking dish into eight warm breakfasts, costed on Canadian average prices with the oats confirmed against a chain catalogue check."
+standfirst: "Cheap baked oatmeal that turns one baking dish into eight warm breakfasts at about $0.94 a serving, costed on Canadian average prices with the oats confirmed against a chain catalogue check."
 prep_time: "10 min"
 cook_time: "40 min"
 total_time: "50 min"

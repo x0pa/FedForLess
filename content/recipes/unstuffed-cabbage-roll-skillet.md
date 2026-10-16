@@ -11,7 +11,7 @@ basket_cost: "39.26"
 price_range: "2.05 to 2.75"
 servings: 6
 meta_line: "One Pan · 45 Min · Butter Tier · Serves 6"
-standfirst: "All the comfort of cabbage rolls with none of the rolling: ground pork, cabbage, rice and tomato in one pan, costed on Canadian average prices and built to actually fill the plate."
+standfirst: "All the comfort of cabbage rolls with none of the rolling: ground pork, cabbage, rice and tomato in one pan, costed on Canadian average prices and built to actually fill the plate at about $2.31 a serving."
 prep_time: "15 min"
 cook_time: "30 min"
 total_time: "45 min"

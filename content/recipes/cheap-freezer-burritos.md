@@ -11,7 +11,7 @@ basket_cost: "32.32"
 price_range: "1.50 to 2.05"
 servings: 8
 meta_line: "Freezer Friendly · 50 Min · Butter Tier · Makes 8"
-standfirst: "Cheap freezer burritos built for real life: eight large bean, rice and cheese burritos for the freezer, costed on Canadian average prices so a filling meal is always ten minutes away."
+standfirst: "Cheap freezer burritos built for real life: eight large bean, rice and cheese burritos for the freezer at about $1.70 each, costed on Canadian average prices so a filling meal is always ten minutes away."
 prep_time: "20 min"
 cook_time: "30 min"
 total_time: "50 min"

@@ -1,0 +1,25 @@
+{{ $recipes := where .Site.RegularPages "Section" "recipes" }}# Fed For Less
+
+> Fed For Less (fedforless.ca) publishes cheap, filling recipes for Canadians with the price worked out first. Every recipe is costed on Statistics Canada national average retail prices (Table 18-10-0245) and shows the ingredient cost used, the batch cost, the cost per serving from a measured yield, and the basket cost (the till price if you need to buy every package). All prices are CAD before tax and include a typical low to high range. Price tiers: Green up to $1.50 a serving, Butter $1.51 to $2.50 a serving, Tomato $2.51 to $3.25 a serving.
+
+## Key pages
+
+- [How We Price]({{ "/how-we-price/" | absURL }}): the pricing method, the sources, and how the four cost figures on every recipe are worked out.
+- [About Fed For Less]({{ "/about/" | absURL }}): what the site is and who it is for.
+- [All Recipes]({{ "/recipes/" | absURL }}): the full recipe index.
+- [Collections]({{ "/collections/" | absURL }}): recipes grouped by budget job, including dinners under $1.50 a serving and batches that feed six for under $12.
+
+## Recipes
+
+Prices checked {{ (index $recipes 0).Params.prices_checked }} against Statistics Canada average retail prices, Canada.
+{{ range $recipes }}
+- [{{ .Title }}]({{ .Permalink }}): ${{ .Params.price_per_serving }} per serving, {{ .Params.tier_label }}, serves {{ .Params.servings }}, {{ .Params.total_time }} total. {{ .Description }}
+{{ end }}
+## Free tools
+
+- [Cost Per Serving Calculator]({{ "/tools/cost-per-serving-calculator/" | absURL }}): add up a recipe's ingredient costs and divide by real servings.
+- [Recipe Cost Calculator]({{ "/tools/recipe-cost-calculator/" | absURL }}): turn package prices into the cost of the amount a recipe actually uses.
+
+## Contact
+
+Email hello@fedforless.ca. The newsletter is free: subscribe on the homepage and new recipes arrive by email automatically.

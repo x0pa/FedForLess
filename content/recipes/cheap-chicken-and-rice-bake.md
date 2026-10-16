@@ -11,7 +11,7 @@ basket_cost: "38.56"
 price_range: "2.15 to 2.95"
 servings: 6
 meta_line: "One Dish · 1 Hr 5 Min · Butter Tier · Serves 6"
-standfirst: "Chicken drumsticks roasted right on top of the rice, so the rice cooks in the drippings and every grain earns its keep, costed on Canadian average prices."
+standfirst: "Chicken drumsticks roasted right on top of the rice, so the rice cooks in the drippings and every grain earns its keep, costed on Canadian average prices at about $2.44 a serving."
 prep_time: "15 min"
 cook_time: "50 min"
 total_time: "1 hr 5 min"

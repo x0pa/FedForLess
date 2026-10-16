@@ -11,7 +11,7 @@ basket_cost: "35.13"
 price_range: "1.05 to 1.45"
 servings: 8
 meta_line: "One Pot · Freezer Friendly · Green Tier · Serves 8"
-standfirst: "A cheap split pea soup with real ham in it, thick enough to stand a spoon in, costed on Canadian average prices and made for the freezer."
+standfirst: "A cheap split pea soup with real ham in it, thick enough to stand a spoon in, costed on Canadian average prices and made for the freezer at about $1.21 a serving."
 prep_time: "15 min"
 cook_time: "1 hr 5 min"
 total_time: "1 hr 20 min"

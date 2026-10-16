@@ -36,5 +36,13 @@ enableGitInfo = false
   weight = 4
 
 [outputs]
-  home = ["HTML", "RSS"]
+  home = ["HTML", "RSS", "LLMS"]
   section = ["HTML", "RSS"]
+
+[outputFormats]
+  [outputFormats.llms]
+    name = "LLMS"
+    mediaType = "text/plain"
+    baseName = "llms"
+    isPlainText = true
+    notAlternative = true
