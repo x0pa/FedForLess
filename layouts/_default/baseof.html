@@ -37,17 +37,18 @@
 {{ block "head" . }}{{ end }}
 </head>
 <body>
+{{ $langTarget := "" }}{{ $langLabel := "" }}{{ range .Translations }}{{ $langTarget = .RelPermalink }}{{ $langLabel = .Language.LanguageName }}{{ end }}{{ if not $langTarget }}{{ range .Site.Sites }}{{ if ne .Language.Lang $.Lang }}{{ $langTarget = .Home.RelPermalink }}{{ $langLabel = .Language.LanguageName }}{{ end }}{{ end }}{{ end }}
 <div class="wrap"><div class="rule-top"></div></div>
 <header class="site">
   <a class="logo" href="{{ "/" | relLangURL }}">Fed For <span class="thin">Less</span></a>
   <nav class="main">
-    {{ range .Site.Menus.main }}<a href="{{ .URL }}">{{ .Name }}</a>{{ end }}
+    {{ range .Site.Menus.main }}<a href="{{ .URL }}">{{ .Name }}</a>{{ end }}{{ if $langTarget }}<a href="{{ $langTarget }}">{{ $langLabel }}</a>{{ end }}
   </nav>
 </header>
 {{ block "main" . }}{{ end }}
 <footer class="site">
   {{ i18n "footer_line" }}<br>
-  {{ i18n "footer_a" }} <a href="https://darkhaus.studio">Dark Haus Studio</a> · <a href="{{ "/about/" | relLangURL }}">{{ i18n "footer_about" }}</a> · <a href="{{ "/privacy/" | relLangURL }}">{{ i18n "footer_privacy" }}</a> · <a href="{{ "/contact/" | relLangURL }}">{{ i18n "footer_contact" }}</a>{{ $langTarget := "" }}{{ $langLabel := "" }}{{ range .Translations }}{{ $langTarget = .RelPermalink }}{{ $langLabel = .Language.LanguageName }}{{ end }}{{ if not $langTarget }}{{ range .Site.Sites }}{{ if ne .Language.Lang $.Lang }}{{ $langTarget = .Home.RelPermalink }}{{ $langLabel = .Language.LanguageName }}{{ end }}{{ end }}{{ end }}{{ if $langTarget }} · <a href="{{ $langTarget }}">{{ $langLabel }}</a>{{ end }}
+  {{ i18n "footer_a" }} <a href="https://darkhaus.studio">Dark Haus Studio</a> · <a href="{{ "/about/" | relLangURL }}">{{ i18n "footer_about" }}</a> · <a href="{{ "/privacy/" | relLangURL }}">{{ i18n "footer_privacy" }}</a> · <a href="{{ "/contact/" | relLangURL }}">{{ i18n "footer_contact" }}</a>{{ if $langTarget }} · <a href="{{ $langTarget }}">{{ $langLabel }}</a>{{ end }}
 </footer>
 </body>
 </html>
