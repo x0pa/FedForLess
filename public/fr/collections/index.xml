@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Collections on Fed For Less</title>
+    <link>https://fedforless.ca/fr/collections/</link>
+    <description>Recent content in Collections on Fed For Less</description>
+    <generator>Hugo</generator>
+    <language>fr-CA</language>
+    <lastBuildDate>Thu, 15 Oct 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://fedforless.ca/fr/collections/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>À remplir le congélateur</title>
+      <link>https://fedforless.ca/fr/collections/freezer-fillers/</link>
+      <pubDate>Thu, 15 Oct 2026 00:00:00 +0000</pubDate>
+      <guid>https://fedforless.ca/fr/collections/freezer-fillers/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Breakfasts Under $1</title>
+      <link>https://fedforless.ca/fr/collections/breakfasts-under-1/</link>
+      <pubDate>Thu, 15 Oct 2026 00:00:00 +0000</pubDate>
+      <guid>https://fedforless.ca/fr/collections/breakfasts-under-1/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Des soupes qui font un repas</title>
+      <link>https://fedforless.ca/fr/collections/soups-that-eat-like-a-meal/</link>
+      <pubDate>Thu, 15 Oct 2026 00:00:00 +0000</pubDate>
+      <guid>https://fedforless.ca/fr/collections/soups-that-eat-like-a-meal/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Dinners Under $1.50</title>
+      <link>https://fedforless.ca/fr/collections/dinners-under-1.50/</link>
+      <pubDate>Thu, 15 Oct 2026 00:00:00 +0000</pubDate>
+      <guid>https://fedforless.ca/fr/collections/dinners-under-1.50/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Feed Six for Under $12</title>
+      <link>https://fedforless.ca/fr/collections/feed-six-for-under-12/</link>
+      <pubDate>Thu, 15 Oct 2026 00:00:00 +0000</pubDate>
+      <guid>https://fedforless.ca/fr/collections/feed-six-for-under-12/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Déjeuners à moins de 1 $</title>
+      <link>https://fedforless.ca/fr/collections/breakfasts-under-1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://fedforless.ca/fr/collections/breakfasts-under-1/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Nourrir six personnes pour moins de 12 $</title>
+      <link>https://fedforless.ca/fr/collections/feed-six-for-under-12/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://fedforless.ca/fr/collections/feed-six-for-under-12/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Soupers à 1,50 $ ou moins</title>
+      <link>https://fedforless.ca/fr/collections/dinners-under-1.50/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://fedforless.ca/fr/collections/dinners-under-1.50/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

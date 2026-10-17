@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="fr-CA">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculateur de coût de recette · Fed For Less</title>
+<meta name="description" content="Transformez le prix des emballages en coût des ingrédients : prix, taille et quantité utilisée, ligne par ligne, et obtenez le total de la recette.">
+
+<link rel="alternate" type="application/rss+xml" title="Fed For Less" href="https://fedforless.ca/index.xml">
+<link rel="canonical" href="https://fedforless.ca/fr/tools/recipe-cost-calculator/">
+<link rel="alternate" hreflang="en-CA" href="https://fedforless.ca/tools/recipe-cost-calculator/">
+<link rel="alternate" hreflang="fr-CA" href="https://fedforless.ca/fr/tools/recipe-cost-calculator/">
+<link rel="alternate" hreflang="x-default" href="https://fedforless.ca/tools/recipe-cost-calculator/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Calculateur de coût de recette">
+<meta property="og:description" content="Transformez le prix des emballages en coût des ingrédients : prix, taille et quantité utilisée, ligne par ligne, et obtenez le total de la recette.">
+<meta property="og:url" content="https://fedforless.ca/fr/tools/recipe-cost-calculator/">
+
+<meta property="og:image" content="https://fedforless.ca/images/cheap-lentil-soup.webp">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Calculateur de coût de recette">
+<meta name="twitter:description" content="Transformez le prix des emballages en coût des ingrédients : prix, taille et quantité utilisée, ligne par ligne, et obtenez le total de la recette.">
+<meta name="twitter:image" content="https://fedforless.ca/images/cheap-lentil-soup.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Public+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/main.css?v=1">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#1D4E9E">
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DQV6T7NHDD"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-DQV6T7NHDD');</script>
+
+
+</head>
+<body>
+<div class="wrap"><div class="rule-top"></div></div>
+<header class="site">
+  <a class="logo" href="/fr/">Fed For <span class="thin">Less</span></a>
+  <nav class="main">
+    <a href="/fr/recipes/">Recettes</a><a href="/fr/how-we-price/">Notre méthode</a><a href="/fr/tools/">Outils</a><a href="/fr/about/">À propos</a>
+  </nav>
+</header>
+
+<div class="wrap">
+  <div class="page-head"><h1>Calculateur de coût de recette</h1></div>
+  <div style="max-width:46rem;">
+    <article class="prose">
+      <p>Voici les calculs exacts derrière chaque détail de coûts de Fed For Less. Pour chaque ingrédient, entrez le prix de l&rsquo;emballage, la taille de l&rsquo;emballage et la quantité que votre recette utilise, dans la même unité (grammes avec grammes, millilitres avec millilitres). Ajoutez des lignes au besoin.</p>
+<div class="toolbox nums">
+  <div id="rc-lines"></div>
+  <button id="rc-add" style="background:var(--denim);color:#fff;border:none;font-weight:800;padding:.7rem 1.2rem;border-radius:6px;cursor:pointer;font:inherit;margin-top:.8rem;">Ajouter une ligne d'ingrédient</button>
+  <label for="rc-servings">Portions que la recette donne</label>
+  <input id="rc-servings" type="number" min="1" step="1" value="4">
+  <div class="out" id="rc-out">Total de la recette : 0,00 $ · Par portion : —</div>
+</div>
+<script>
+(function(){
+  var wrap=document.getElementById('rc-lines'), out=document.getElementById('rc-out'),
+      serv=document.getElementById('rc-servings');
+  function fmt(v){ return v.toFixed(2).replace('.',',')+' $'; }
+  function line(){
+    var d=document.createElement('div');
+    d.style.display='grid'; d.style.gridTemplateColumns='1fr 1fr 1fr 1fr'; d.style.gap='.6rem'; d.style.marginTop='.6rem';
+    d.innerHTML='<input type="number" min="0" step="0.01" placeholder="Prix emballage $" class="rc-p">'+
+      '<input type="number" min="0" step="any" placeholder="Taille emballage" class="rc-s">'+
+      '<input type="number" min="0" step="any" placeholder="Quantité utilisée" class="rc-u">'+
+      '<input type="text" readonly class="rc-r" placeholder="0,00 $" style="background:#F2F5F9;">';
+    wrap.appendChild(d);
+    d.querySelectorAll('input').forEach(function(i){ i.addEventListener('input',go); });
+  }
+  function go(){
+    var total=0;
+    wrap.querySelectorAll('div').forEach(function(d){
+      var p=parseFloat(d.querySelector('.rc-p').value), s=parseFloat(d.querySelector('.rc-s').value),
+          u=parseFloat(d.querySelector('.rc-u').value), r=d.querySelector('.rc-r');
+      if(p>=0 && s>0 && u>=0){ var v=p*u/s; r.value=fmt(v); total+=v; }
+      else r.value='';
+    });
+    var sv=parseFloat(serv.value);
+    out.textContent='Total de la recette : '+fmt(total)+' · Par portion : '+(sv>0 ? fmt(total/sv) : '—');
+  }
+  document.getElementById('rc-add').addEventListener('click',function(){ line(); });
+  serv.addEventListener('input',go);
+  line(); line(); line();
+})();
+</script>
+<h2 id="le-coût-du-panier-aussi">Le coût du panier, aussi</h2>
+<p>Le calculateur vous donne le coût de ce que vous avez utilisé. Le coût du panier est plus simple et plus brutal : additionnez le prix complet de chaque emballage de la liste d&rsquo;achats. Une recette peut être douce par portion et exiger quand même un panier de quarante dollars la première fois. Les deux chiffres comptent, et c&rsquo;est pourquoi chaque recette ici affiche les deux.</p>
+
+    </article>
+  </div>
+</div>
+
+<footer class="site">
+  Des repas simples. Un vrai budget. De nouvelles recettes chaque semaine · Fed For Less · Prix moyens canadiens, vérifiés chaque mois<br>
+  Un site de <a href="https://darkhaus.studio">Dark Haus Studio</a> · <a href="/fr/about/">À propos</a> · <a href="/fr/privacy/">Confidentialité</a> · <a href="/fr/contact/">Contact</a> · <a href="/tools/recipe-cost-calculator/">English</a>
+</footer>
+</body>
+</html>

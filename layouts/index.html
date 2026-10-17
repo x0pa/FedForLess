@@ -6,6 +6,7 @@
   "name": "Fed For Less",
   "url": {{ .Site.BaseURL | jsonify | safeJS }},
   "description": {{ .Site.Params.description | jsonify | safeJS }},
+  "inLanguage": {{ .Language.LanguageCode | jsonify | safeJS }},
   "publisher": { "@type": "Organization", "name": "Fed For Less", "url": {{ .Site.BaseURL | jsonify | safeJS }} }
 }
 </script>
@@ -16,63 +17,63 @@
 {{ $feat := index $recipes 0 }}
 <div class="wrap">
   <section class="hero">
-    <h1>Fed For Less<span class="price-line">Priced Before You Shop</span></h1>
-    <p class="lede">Cheap recipes that are actually filling, each one costed on Canadian national average prices with the full breakdown on the page. No tiny servings hiding behind a small number.</p>
+    <h1>Fed For Less<span class="price-line">{{ i18n "hero_h1_span" }}</span></h1>
+    <p class="lede">{{ i18n "hero_lede" }}</p>
     <form class="signup" action="https://api.follow.it/subscription-form/a3BGdWRaMWVIc0hNSENkeGZJMEhWYlBXeG50U2JHUmdCclFVSTM5clRLdENGM3VZNW9ZUVJyUThRazFBZ3dqNFhqRE4rdEt5OWs3dStWV3NBZVpFdUdoZ0pLOVhFbHQrem5ydTlJSDBxOXl4WFlOZyttejdQNDk3bVV3QTY3akN8NDFjejkxSVVna1c1MmNIMVJVcHptRnkwVUZ4L3c2VzFpKzNKeG12TTQwZz0=/8" method="post">
-      <input type="email" name="email" required placeholder="Email for the weekly cheap recipe" aria-label="Email address">
-      <button type="submit">Join Free</button>
+      <input type="email" name="email" required placeholder="{{ i18n "signup_placeholder" }}" aria-label="{{ i18n "email_aria" }}">
+      <button type="submit">{{ i18n "signup_button" }}</button>
     </form>
-    <p class="powered">One email when a new recipe lands. No spam, unsubscribe anytime. Powered by <a href="https://follow.it" rel="noopener">follow.it</a></p>
+    <p class="powered">{{ i18n "powered_text" }} <a href="https://follow.it" rel="noopener">follow.it</a></p>
   </section>
 
   <section class="feature">
     <figure>
       <a href="{{ $feat.RelPermalink }}"><img src="{{ $feat.Params.image }}" alt="{{ $feat.Title }}"></a>
-      <figcaption>This week's feature recipe.</figcaption>
+      <figcaption>{{ i18n "feature_caption" }}</figcaption>
     </figure>
     <div>
-      <div class="f-label">Featured Recipe · {{ $feat.Params.tier_label }}</div>
+      <div class="f-label">{{ i18n "featured_recipe" }} · {{ $feat.Params.tier_label }}</div>
       <div class="f-title"><a href="{{ $feat.RelPermalink }}">{{ $feat.Title }}</a></div>
       <p>{{ $feat.Params.standfirst }}</p>
       <div class="breakdown nums">
-        <div class="bhead">Cost Breakdown</div>
+        <div class="bhead">{{ i18n "cost_breakdown" }}</div>
         <div class="bbox">
           {{ range first 3 $feat.Params.breakdown }}
-          <div class="brow"><span class="item">{{ .item }}{{ with .note }}<small>{{ . }}</small>{{ end }}</span><span class="amt">${{ .amount }}</span></div>
+          <div class="brow"><span class="item">{{ .item }}{{ with .note }}<small>{{ . }}</small>{{ end }}</span><span class="amt">{{ partial "price.html" (dict "amt" .amount "lang" $.Lang) }}</span></div>
           {{ end }}
-          <div class="brow total"><span class="lbl">Batch Total</span><span class="amt">${{ $feat.Params.batch_cost }}</span></div>
+          <div class="brow total"><span class="lbl">{{ i18n "batch_total" }}</span><span class="amt">{{ partial "price.html" (dict "amt" $feat.Params.batch_cost "lang" $.Lang) }}</span></div>
         </div>
-        <div class="perline">Cost Per Serving · ${{ $feat.Params.price_per_serving }}</div>
+        <div class="perline">{{ i18n "cost_per_serving" }} · {{ partial "price.html" (dict "amt" $feat.Params.price_per_serving "lang" $.Lang) }}</div>
       </div>
-      <a class="readon" href="{{ $feat.RelPermalink }}">Get the Recipe</a>
+      <a class="readon" href="{{ $feat.RelPermalink }}">{{ i18n "get_recipe" }}</a>
     </div>
   </section>
 
   <section class="index-sec">
-    <div class="sec-head"><h2>The Recipe Index</h2><span>Every price checked · {{ len $recipes }} recipes</span></div>
+    <div class="sec-head"><h2>{{ i18n "index_h2" }}</h2><span>{{ i18n "index_checked" }} · {{ len $recipes }} {{ i18n "recipes_word" }}</span></div>
     <ol class="index">
       {{ range $recipes }}
       <li>
         <a href="{{ .RelPermalink }}"><img src="{{ .Params.image }}" alt="{{ .Title }}"></a>
         <div>
           <div class="rname"><a href="{{ .RelPermalink }}">{{ .Title }}</a></div>
-          <div class="rsub">{{ .Params.tier_label }} · Serves {{ .Params.servings }} · {{ .Params.total_time }}</div>
+          <div class="rsub">{{ .Params.tier_label }} · {{ partial "serves.html" (dict "n" .Params.servings "lang" $.Lang) }} · {{ .Params.total_time }}</div>
         </div>
-        <div class="rprice nums"><div class="per">${{ .Params.price_per_serving }}</div><div class="of">per serving</div></div>
+        <div class="rprice nums"><div class="per">{{ partial "price.html" (dict "amt" .Params.price_per_serving "lang" $.Lang) }}</div><div class="of">{{ i18n "per_serving" }}</div></div>
       </li>
       {{ end }}
     </ol>
   </section>
 
   <section class="index-sec">
-    <div class="sec-head"><h2>Shop By Price</h2><span>Collections</span></div>
+    <div class="sec-head"><h2>{{ i18n "shop_h2" }}</h2><span>{{ i18n "collections_word" }}</span></div>
     <div class="collections">
-      <div class="col-card"><div class="cname"><a href="/collections/dinners-under-1-50/">Dinners Under $1.50</a></div><p>The green tier. Full dinners that cost less than a coffee.</p></div>
-      <div class="col-card"><div class="cname"><a href="/collections/feed-six-for-under-12/">Feed Six For Under $12</a></div><p>Whole batches, honestly counted, that land under twelve dollars.</p></div>
-      <div class="col-card"><div class="cname"><a href="/collections/freezer-fillers/">Freezer Fillers</a></div><p>Big batches built to freeze in portions for the nights nobody wants to cook.</p></div>
-      <div class="col-card"><div class="cname"><a href="/collections/soups-that-eat-like-a-meal/">Soups That Eat Like a Meal</a></div><p>Bowls with enough in them to be dinner, not a warm up act.</p></div>
-      <div class="col-card"><div class="cname"><a href="/collections/breakfasts-under-1/">Breakfasts Under $1</a></div><p>Morning food at green tier prices, most of it make ahead.</p></div>
-      <div class="col-card"><div class="cname"><a href="/how-we-price/">How We Price</a></div><p>The method, the sources, and the rules every number on this site follows.</p></div>
+      <div class="col-card"><div class="cname"><a href="{{ "/collections/dinners-under-1-50/" | relLangURL }}">{{ i18n "card1_name" }}</a></div><p>{{ i18n "card1_desc" }}</p></div>
+      <div class="col-card"><div class="cname"><a href="{{ "/collections/feed-six-for-under-12/" | relLangURL }}">{{ i18n "card2_name" }}</a></div><p>{{ i18n "card2_desc" }}</p></div>
+      <div class="col-card"><div class="cname"><a href="{{ "/collections/freezer-fillers/" | relLangURL }}">{{ i18n "card3_name" }}</a></div><p>{{ i18n "card3_desc" }}</p></div>
+      <div class="col-card"><div class="cname"><a href="{{ "/collections/soups-that-eat-like-a-meal/" | relLangURL }}">{{ i18n "card4_name" }}</a></div><p>{{ i18n "card4_desc" }}</p></div>
+      <div class="col-card"><div class="cname"><a href="{{ "/collections/breakfasts-under-1/" | relLangURL }}">{{ i18n "card5_name" }}</a></div><p>{{ i18n "card5_desc" }}</p></div>
+      <div class="col-card"><div class="cname"><a href="{{ "/how-we-price/" | relLangURL }}">{{ i18n "card6_name" }}</a></div><p>{{ i18n "card6_desc" }}</p></div>
     </div>
   </section>
 </div>

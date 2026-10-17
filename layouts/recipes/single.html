@@ -5,11 +5,12 @@
   "@type": "Recipe",
   "name": {{ .Title | jsonify | safeJS }},
   "description": {{ .Description | jsonify | safeJS }},
+  "inLanguage": {{ .Language.LanguageCode | jsonify | safeJS }},
   "image": {{ .Params.image | absURL | jsonify | safeJS }},
   "prepTime": {{ .Params.prep_iso | jsonify | safeJS }},
   "cookTime": {{ .Params.cook_iso | jsonify | safeJS }},
   "totalTime": {{ .Params.total_iso | jsonify | safeJS }},
-  "recipeYield": {{ printf "%d servings" .Params.servings | jsonify | safeJS }},
+  "recipeYield": {{ printf "%d %s" .Params.servings (i18n "yield_servings") | jsonify | safeJS }},
   "recipeIngredient": {{ .Params.ingredients | jsonify | safeJS }},
   "datePublished": {{ .Date.Format "2006-01-02" | jsonify | safeJS }},
   "author": { "@type": "Organization", "name": "Fed For Less" },
@@ -28,8 +29,8 @@
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Home", "item": {{ .Site.BaseURL | jsonify | safeJS }} },
-    { "@type": "ListItem", "position": 2, "name": "Recipes", "item": {{ "/recipes/" | absURL | jsonify | safeJS }} },
+    { "@type": "ListItem", "position": 1, "name": {{ i18n "crumb_home" | jsonify | safeJS }}, "item": {{ .Site.BaseURL | jsonify | safeJS }} },
+    { "@type": "ListItem", "position": 2, "name": {{ i18n "crumb_recipes" | jsonify | safeJS }}, "item": {{ ("/recipes/" | relLangURL) | absURL | jsonify | safeJS }} },
     { "@type": "ListItem", "position": 3, "name": {{ .Title | jsonify | safeJS }}, "item": {{ .Permalink | jsonify | safeJS }} }
   ]
 }
@@ -51,7 +52,7 @@
 
 {{ define "main" }}
 <div class="wrap">
-  <div class="crumbs"><a href="/">Home</a> · <a href="/recipes/">Recipes</a> · {{ .Title }}</div>
+  <div class="crumbs"><a href="{{ "/" | relLangURL }}">{{ i18n "crumb_home" }}</a> · <a href="{{ "/recipes/" | relLangURL }}">{{ i18n "crumb_recipes" }}</a> · {{ .Title }}</div>
   <h1 class="dish">{{ .Title }}</h1>
   <div class="meta-line">{{ .Params.meta_line }}</div>
   <p class="standfirst">{{ .Params.standfirst }}</p>
@@ -67,7 +68,7 @@
       </div>
       {{ with .Params.faqs }}
       <div class="faq">
-        <h2 style="font-family:Oswald;font-weight:700;text-transform:uppercase;font-size:1.5rem;border-top:2px solid var(--ink);padding-top:1.1rem;margin-top:1.9rem;">Questions</h2>
+        <h2 style="font-family:Oswald;font-weight:700;text-transform:uppercase;font-size:1.5rem;border-top:2px solid var(--ink);padding-top:1.1rem;margin-top:1.9rem;">{{ i18n "questions_h" }}</h2>
         {{ range . }}
         <h3>{{ .q }}</h3>
         <p style="color:#2C3138;">{{ .a }}</p>
@@ -77,21 +78,21 @@
     </div>
 
     <aside class="pricecard nums">
-      <div class="bhead">Cost Breakdown · Checked {{ .Params.prices_checked }}</div>
+      <div class="bhead">{{ i18n "cost_breakdown" }} · {{ i18n "checked_word" }} {{ .Params.prices_checked }}</div>
       <div class="bbox">
         {{ range $i, $b := .Params.breakdown }}
-        <div class="brow{{ if eq $i 0 }} first{{ end }}"><span class="item">{{ $b.item }}{{ with $b.note }}<small>{{ . }}</small>{{ end }}</span><span class="amt">${{ $b.amount }}</span></div>
+        <div class="brow{{ if eq $i 0 }} first{{ end }}"><span class="item">{{ $b.item }}{{ with $b.note }}<small>{{ . }}</small>{{ end }}</span><span class="amt">{{ partial "price.html" (dict "amt" $b.amount "lang" $.Lang) }}</span></div>
         {{ end }}
-        <div class="brow total"><span class="lbl">Batch Total</span><span class="amt">${{ .Params.batch_cost }}</span></div>
-        <div class="brow basket"><span class="item">Basket cost, every package</span><span class="amt">${{ .Params.basket_cost }}</span></div>
+        <div class="brow total"><span class="lbl">{{ i18n "batch_total" }}</span><span class="amt">{{ partial "price.html" (dict "amt" .Params.batch_cost "lang" $.Lang) }}</span></div>
+        <div class="brow basket"><span class="item">{{ i18n "basket_label" }}</span><span class="amt">{{ partial "price.html" (dict "amt" .Params.basket_cost "lang" $.Lang) }}</span></div>
       </div>
-      <div class="perline">Cost Per Serving · ${{ .Params.price_per_serving }} · Serves {{ .Params.servings }}</div>
-      <p class="rangenote"><strong>Typical range:</strong> ${{ .Params.price_range }} a serving depending on region and store.</p>
-      <p class="srcnote">Prices: Statistics Canada average retail prices (Table 18-10-0245, {{ .Params.prices_checked }}){{ with .Params.chain_note }} plus {{ . }}{{ end }}, CAD before tax. The basket cost is what you pay at the till if you need every package. Full method: <a href="/how-we-price/">How We Price</a>.</p>
+      <div class="perline">{{ i18n "cost_per_serving" }} · {{ partial "price.html" (dict "amt" .Params.price_per_serving "lang" $.Lang) }} · {{ partial "serves.html" (dict "n" .Params.servings "lang" $.Lang) }}</div>
+      <p class="rangenote"><strong>{{ i18n "range_label" }}</strong> {{ if eq .Lang "fr" }}{{ .Params.price_range }} $ {{ else }}${{ .Params.price_range }} {{ end }}{{ i18n "range_suffix" }}</p>
+      <p class="srcnote">{{ i18n "srcnote_a" }} {{ .Params.prices_checked }}){{ with .Params.chain_note }} {{ i18n "srcnote_plus" }} {{ . }}{{ end }}{{ i18n "srcnote_b" }} <a href="{{ "/how-we-price/" | relLangURL }}">{{ i18n "howweprice_link" }}</a>.</p>
       <div class="tierline">
-        <span class="t{{ if eq .Params.tier "green" }} on{{ end }}">Green<small>to $1.50</small></span>
-        <span class="t{{ if eq .Params.tier "butter" }} on{{ end }}">Butter<small>to $2.50</small></span>
-        <span class="t{{ if eq .Params.tier "tomato" }} on{{ end }}">Tomato<small>to $3.25</small></span>
+        <span class="t{{ if eq .Params.tier "green" }} on{{ end }}">{{ i18n "tier_green" }}<small>{{ i18n "tier_to" }} {{ partial "price.html" (dict "amt" "1.50" "lang" .Lang) }}</small></span>
+        <span class="t{{ if eq .Params.tier "butter" }} on{{ end }}">{{ i18n "tier_butter" }}<small>{{ i18n "tier_to" }} {{ partial "price.html" (dict "amt" "2.50" "lang" .Lang) }}</small></span>
+        <span class="t{{ if eq .Params.tier "tomato" }} on{{ end }}">{{ i18n "tier_tomato" }}<small>{{ i18n "tier_to" }} {{ partial "price.html" (dict "amt" "3.25" "lang" .Lang) }}</small></span>
       </div>
     </aside>
   </div>

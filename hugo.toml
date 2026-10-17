@@ -1,8 +1,54 @@
 baseURL = "https://fedforless.ca/"
-languageCode = "en-ca"
 title = "Fed For Less"
 enableRobotsTXT = true
 enableGitInfo = false
+defaultContentLanguage = "en"
+defaultContentLanguageInSubdir = false
+
+[languages]
+  [languages.en]
+    languageName = "English"
+    languageCode = "en-CA"
+    weight = 1
+    [[languages.en.menus.main]]
+      name = "Recipes"
+      url = "/recipes/"
+      weight = 1
+    [[languages.en.menus.main]]
+      name = "How We Price"
+      url = "/how-we-price/"
+      weight = 2
+    [[languages.en.menus.main]]
+      name = "Tools"
+      url = "/tools/"
+      weight = 3
+    [[languages.en.menus.main]]
+      name = "About"
+      url = "/about/"
+      weight = 4
+  [languages.fr]
+    languageName = "Français"
+    languageCode = "fr-CA"
+    weight = 2
+    [languages.fr.params]
+      description = "Des recettes pas chères et rassasiantes avec le prix calculé d'avance. Chaque recette est chiffrée selon les prix moyens canadiens, avec le détail complet des coûts."
+      tagline = "De vraies portions. De vrais prix."
+    [[languages.fr.menus.main]]
+      name = "Recettes"
+      url = "/fr/recipes/"
+      weight = 1
+    [[languages.fr.menus.main]]
+      name = "Notre méthode"
+      url = "/fr/how-we-price/"
+      weight = 2
+    [[languages.fr.menus.main]]
+      name = "Outils"
+      url = "/fr/tools/"
+      weight = 3
+    [[languages.fr.menus.main]]
+      name = "À propos"
+      url = "/fr/about/"
+      weight = 4
 
 [params]
   description = "Cheap, filling recipes with the price worked out first. Every recipe is costed on Canadian national average prices, with the full breakdown shown."
@@ -17,23 +63,6 @@ enableGitInfo = false
 
 [taxonomies]
   collection = "collections"
-
-[[menus.main]]
-  name = "Recipes"
-  url = "/recipes/"
-  weight = 1
-[[menus.main]]
-  name = "How We Price"
-  url = "/how-we-price/"
-  weight = 2
-[[menus.main]]
-  name = "Tools"
-  url = "/tools/"
-  weight = 3
-[[menus.main]]
-  name = "About"
-  url = "/about/"
-  weight = 4
 
 [outputs]
   home = ["HTML", "RSS", "LLMS"]

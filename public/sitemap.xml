@@ -1,73 +1,18 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-  xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  <url>
-    <loc>https://fedforless.ca/collections/breakfasts-under-1/</loc>
-    <lastmod>2026-10-15T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://fedforless.ca/recipes/budget-pork-white-bean-chili/</loc>
-    <lastmod>2026-10-15T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://fedforless.ca/recipes/budget-tuna-noodle-casserole/</loc>
-    <lastmod>2026-10-15T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://fedforless.ca/recipes/cheap-baked-oatmeal/</loc>
-    <lastmod>2026-10-15T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://fedforless.ca/recipes/cheap-chicken-and-rice-bake/</loc>
-    <lastmod>2026-10-15T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://fedforless.ca/recipes/cheap-freezer-burritos/</loc>
-    <lastmod>2026-10-15T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://fedforless.ca/recipes/cheap-lentil-soup/</loc>
-    <lastmod>2026-10-15T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://fedforless.ca/recipes/cheap-split-pea-soup/</loc>
-    <lastmod>2026-10-15T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://fedforless.ca/recipes/unstuffed-cabbage-roll-skillet/</loc>
-    <lastmod>2026-10-15T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://fedforless.ca/collections/</loc>
-    <lastmod>2026-10-15T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://fedforless.ca/collections/dinners-under-1.50/</loc>
-    <lastmod>2026-10-15T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://fedforless.ca/</loc>
-    <lastmod>2026-10-15T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://fedforless.ca/collections/feed-six-for-under-12/</loc>
-    <lastmod>2026-10-15T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://fedforless.ca/collections/freezer-fillers/</loc>
-    <lastmod>2026-10-15T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://fedforless.ca/recipes/</loc>
-    <lastmod>2026-10-15T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://fedforless.ca/collections/soups-that-eat-like-a-meal/</loc>
-    <lastmod>2026-10-15T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://fedforless.ca/about/</loc>
-  </url><url>
-    <loc>https://fedforless.ca/collections/breakfasts-under-1/</loc>
-  </url><url>
-    <loc>https://fedforless.ca/contact/</loc>
-  </url><url>
-    <loc>https://fedforless.ca/tools/cost-per-serving-calculator/</loc>
-  </url><url>
-    <loc>https://fedforless.ca/collections/dinners-under-1.50/</loc>
-  </url><url>
-    <loc>https://fedforless.ca/collections/feed-six-for-under-12/</loc>
-  </url><url>
-    <loc>https://fedforless.ca/how-we-price/</loc>
-  </url><url>
-    <loc>https://fedforless.ca/privacy/</loc>
-  </url><url>
-    <loc>https://fedforless.ca/tools/recipe-cost-calculator/</loc>
-  </url><url>
-    <loc>https://fedforless.ca/tools/</loc>
-  </url>
-</urlset>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <sitemap>
+    <loc>https://fedforless.ca/en/sitemap.xml</loc>
+    
+      <lastmod>2026-10-15T00:00:00+00:00</lastmod>
+    
+  </sitemap>
+  
+  <sitemap>
+    <loc>https://fedforless.ca/fr/sitemap.xml</loc>
+    
+      <lastmod>2026-10-15T00:00:00+00:00</lastmod>
+    
+  </sitemap>
+  
+</sitemapindex>
