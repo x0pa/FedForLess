@@ -78,3 +78,5 @@ llms_rc_d: "turn package prices into the cost of the amount a recipe actually us
 llms_contact_h: "Contact"
 llms_contact: "Email hello@fedforless.ca. The newsletter is free: subscribe on the homepage and new recipes arrive by email automatically."
 email_aria: "Email address"
+footer_made: "Made with ❤️ in Winnipeg"
+footer_designed: "Designed by"

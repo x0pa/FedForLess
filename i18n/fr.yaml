@@ -78,3 +78,5 @@ llms_rc_d: "transformez le prix des emballages en coût de la quantité qu'une r
 llms_contact_h: "Contact"
 llms_contact: "Courriel : hello@fedforless.ca. L'infolettre est gratuite : abonnez vous sur la page d'accueil et les nouvelles recettes arrivent par courriel automatiquement."
 email_aria: "Adresse courriel"
+footer_made: "Fait avec ❤️ à Winnipeg"
+footer_designed: "Conçu par"
