@@ -1,6 +1,7 @@
 {{ define "main" }}
 <div class="wrap">
   <div class="page-head"><h1>{{ .Title }}</h1></div>
+  {{ if eq .Section "recipes" }}{{ partial "searchbox.html" . }}{{ end }}
   {{ with .Content }}<div style="max-width:46rem;margin-top:.8rem;">{{ . }}</div>{{ end }}
   <section class="index-sec" style="margin-top:1.6rem;">
     <ol class="index">

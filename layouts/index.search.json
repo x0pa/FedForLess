@@ -1,0 +1,12 @@
+{{- $items := slice -}}
+{{- range where .Site.RegularPages "Section" "recipes" -}}
+  {{- $blob := slice .Title .Description .Params.category .Params.meta_line .Params.tier_label -}}
+  {{- range .Params.keywords }}{{ $blob = $blob | append . }}{{ end -}}
+  {{- range .Params.ingredients }}{{ $blob = $blob | append . }}{{ end -}}
+  {{- range .Params.breakdown }}{{ $blob = $blob | append .item }}{{ end -}}
+  {{- $items = $items | append (dict "title" .Title "url" .RelPermalink "kind" "recipe" "cost" .Params.price_per_serving "tier" .Params.tier_label "servings" .Params.servings "time" .Params.total_time "image" .Params.image "summary" .Description "text" (lower (delimit $blob " "))) -}}
+{{- end -}}
+{{- range where .Site.RegularPages "Section" "tools" -}}
+  {{- $items = $items | append (dict "title" .Title "url" .RelPermalink "kind" "tool" "summary" .Description "text" (lower (printf "%s %s" .Title .Description))) -}}
+{{- end -}}
+{{ dict "items" $items | jsonify }}

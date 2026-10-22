@@ -19,6 +19,7 @@
   <section class="hero">
     <h1>Fed For Less<span class="price-line">{{ i18n "hero_h1_span" }}</span></h1>
     <p class="lede">{{ i18n "hero_lede" }}</p>
+    {{ partial "searchbox.html" . }}
     <form class="signup" action="https://api.follow.it/subscription-form/a3BGdWRaMWVIc0hNSENkeGZJMEhWYlBXeG50U2JHUmdCclFVSTM5clRLdENGM3VZNW9ZUVJyUThRazFBZ3dqNFhqRE4rdEt5OWs3dStWV3NBZVpFdUdoZ0pLOVhFbHQrem5ydTlJSDBxOXl4WFlOZyttejdQNDk3bVV3QTY3akN8NDFjejkxSVVna1c1MmNIMVJVcHptRnkwVUZ4L3c2VzFpKzNKeG12TTQwZz0=/8" method="post">
       <input type="email" name="email" required placeholder="{{ i18n "signup_placeholder" }}" aria-label="{{ i18n "email_aria" }}">
       <button type="submit">{{ i18n "signup_button" }}</button>

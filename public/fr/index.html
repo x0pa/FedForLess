@@ -24,7 +24,7 @@
 <meta name="twitter:image" content="https://fedforless.ca/images/cheap-lentil-soup.webp">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Public+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/css/main.css?v=3">
+<link rel="stylesheet" href="/css/main.css?v=4">
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -65,6 +65,14 @@
   <section class="hero">
     <h1>Fed For Less<span class="price-line">Le prix calculé avant vos achats</span></h1>
     <p class="lede">Des recettes pas chères et vraiment rassasiantes, chacune chiffrée selon les prix moyens nationaux du Canada avec le détail complet sur la page. Aucune mini portion cachée derrière un petit prix.</p>
+    <div class="searchbox" data-index="/fr/search-index.json" data-noresults="Aucun résultat pour le moment. Essayez un mot plus court, un ingrédient ou un prix comme moins de 2 $." data-tool="Outil" data-one="&#34;{n} résultat&#34;" data-many="{n} résultats" data-perserving="la portion">
+  <label class="sr-only" for="site-search-input">Rechercher des recettes et des outils</label>
+  <input type="search" id="site-search-input" placeholder="Rechercher une recette, un ingrédient, un prix… essayez lentilles ou moins de 2 $" autocomplete="off">
+  <p class="sr-only" id="site-search-status" role="status"></p>
+  <div id="site-search-results" class="search-results"></div>
+</div>
+<script src="/js/search.js" defer></script>
+
     <form class="signup" action="https://api.follow.it/subscription-form/a3BGdWRaMWVIc0hNSENkeGZJMEhWYlBXeG50U2JHUmdCclFVSTM5clRLdENGM3VZNW9ZUVJyUThRazFBZ3dqNFhqRE4rdEt5OWs3dStWV3NBZVpFdUdoZ0pLOVhFbHQrem5ydTlJSDBxOXl4WFlOZyttejdQNDk3bVV3QTY3akN8NDFjejkxSVVna1c1MmNIMVJVcHptRnkwVUZ4L3c2VzFpKzNKeG12TTQwZz0=/8" method="post">
       <input type="email" name="email" required placeholder="Votre courriel pour la recette pas chère de la semaine" aria-label="Adresse courriel">
       <button type="submit">Je m&#39;abonne</button>

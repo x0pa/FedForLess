@@ -62,7 +62,7 @@ defaultContentLanguageInSubdir = false
   description = "Cheap, filling recipes with the price worked out first. Every recipe is costed on Canadian national average prices, with the full breakdown shown."
   tagline = "Real portions. Real prices."
   ga_id = "G-DQV6T7NHDD"
-  css_version = "3"
+  css_version = "4"
 
 [markup]
   [markup.goldmark]
@@ -73,10 +73,16 @@ defaultContentLanguageInSubdir = false
   collection = "collections"
 
 [outputs]
-  home = ["HTML", "RSS", "LLMS"]
+  home = ["HTML", "RSS", "LLMS", "SEARCH"]
   section = ["HTML", "RSS"]
 
 [outputFormats]
+  [outputFormats.search]
+    name = "SEARCH"
+    mediaType = "application/json"
+    baseName = "search-index"
+    isPlainText = true
+    notAlternative = true
   [outputFormats.llms]
     name = "LLMS"
     mediaType = "text/plain"

@@ -1,0 +1,7 @@
+<div class="searchbox" data-index="{{ "/search-index.json" | relLangURL }}" data-noresults="{{ i18n "search_noresults" }}" data-tool="{{ i18n "search_tool" }}" data-one="{{ i18n "search_results_one" }}" data-many="{{ i18n "search_results_many" }}" data-perserving="{{ i18n "per_serving" }}">
+  <label class="sr-only" for="site-search-input">{{ i18n "search_aria" }}</label>
+  <input type="search" id="site-search-input" placeholder="{{ i18n "search_placeholder" }}" autocomplete="off">
+  <p class="sr-only" id="site-search-status" role="status"></p>
+  <div id="site-search-results" class="search-results"></div>
+</div>
+<script src="{{ "/js/search.js" | relURL }}" defer></script>
