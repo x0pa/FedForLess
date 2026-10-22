@@ -22,6 +22,14 @@ image: "/images/cheap-split-pea-soup.webp"
 image_caption: "Un bol profond de la soupe terminée avec le jambon haché partout dedans."
 prices_checked: "août 2026"
 collections: ["Dinners under $1.50", "Soups that eat like a meal", "Feed six for under $12", "Freezer fillers"]
+basket_pairs:
+  - slug: "cheap-lentil-soup"
+    combined: "41.20"
+    separate: "65.20"
+  - slug: "cheap-beef-barley-soup"
+    combined: "48.44"
+    separate: "75.12"
+basket_week: "one-basket-three-soups"
 breakdown:
   - item: "Pois cassés secs"
     note: "450 g d'un sac de 900 g de légumineuses sèches à 3,58 $"

@@ -2,6 +2,19 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://fedforless.ca/basket-weeks/</loc>
+    <lastmod>2026-10-21T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr-CA"
+                href="https://fedforless.ca/fr/basket-weeks/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-CA"
+                href="https://fedforless.ca/basket-weeks/"
+                />
+  </url><url>
     <loc>https://fedforless.ca/recipes/cheap-beef-barley-soup/</loc>
     <lastmod>2026-10-21T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -13,6 +26,19 @@
                 rel="alternate"
                 hreflang="en-CA"
                 href="https://fedforless.ca/recipes/cheap-beef-barley-soup/"
+                />
+  </url><url>
+    <loc>https://fedforless.ca/basket-weeks/one-basket-three-soups/</loc>
+    <lastmod>2026-10-21T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr-CA"
+                href="https://fedforless.ca/fr/basket-weeks/one-basket-three-soups/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-CA"
+                href="https://fedforless.ca/basket-weeks/one-basket-three-soups/"
                 />
   </url><url>
     <loc>https://fedforless.ca/collections/</loc>

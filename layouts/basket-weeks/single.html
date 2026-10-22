@@ -1,0 +1,18 @@
+{{ define "main" }}
+<div class="wrap">
+  <div class="crumbs"><a href="{{ "/" | relLangURL }}">{{ i18n "crumb_home" }}</a> · <a href="{{ "/basket-weeks/" | relLangURL }}">{{ i18n "crumb_basketweeks" }}</a> · {{ .Title }}</div>
+  <h1 class="dish">{{ .Title }}</h1>
+  <p class="standfirst">{{ .Params.standfirst }}</p>
+  <div style="max-width:46rem;">
+    <div class="bbox nums">
+      <div class="brow first"><span class="item">{{ i18n "bw_combined" }}</span><span class="amt">{{ partial "price.html" (dict "amt" .Params.combined_basket "lang" $.Lang) }}</span></div>
+      <div class="brow"><span class="item">{{ i18n "bw_separate" }}</span><span class="amt">{{ partial "price.html" (dict "amt" .Params.separate_baskets "lang" $.Lang) }}</span></div>
+      <div class="brow total"><span class="lbl">{{ i18n "bw_yousave" }}</span><span class="amt">{{ partial "price.html" (dict "amt" .Params.you_save "lang" $.Lang) }}</span></div>
+    </div>
+    <div class="perline" style="text-align:left;">{{ partial "serves.html" (dict "n" .Params.total_servings "lang" $.Lang) }} · {{ partial "price.html" (dict "amt" .Params.till_per_serving "lang" $.Lang) }} {{ i18n "bw_till_suffix" }}</div>
+    <article class="prose" style="margin-top:1.2rem;">
+      {{ .Content }}
+    </article>
+  </div>
+</div>
+{{ end }}

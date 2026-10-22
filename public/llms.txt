@@ -7,6 +7,7 @@
 - [How We Price](https://fedforless.ca/how-we-price/): the pricing method, the sources, and how the four cost figures on every recipe are worked out.
 - [About Fed For Less](https://fedforless.ca/about/): what the site is and who it is for.
 - [All Recipes](https://fedforless.ca/recipes/): the full recipe index.
+- [Basket Weeks](https://fedforless.ca/basket-weeks/): Meal plans that cook several recipes from one shared basket, with the combined basket price.
 - [Collections](https://fedforless.ca/collections/): recipes grouped by budget job, including dinners under $1.50 a serving and batches that feed six for under $12.
 
 ## Recipes
@@ -31,6 +32,10 @@ Prices checked August 2026 against Statistics Canada average retail prices, Cana
 
 - [Cheap Unstuffed Cabbage Roll Skillet](https://fedforless.ca/recipes/unstuffed-cabbage-roll-skillet/): $2.31 per serving, Butter Tier, Serves 6, 45 min total. This cheap unstuffed cabbage roll skillet makes six servings for about $2.31 each. Pork, cabbage, rice and tomato in one pan, full cost breakdown inside.
 
+## Basket Weeks
+
+
+- [Cheap Weekly Meal Plan: One Basket, Three Soups](https://fedforless.ca/basket-weeks/one-basket-three-soups/): one basket at $54.66, Serves 22 servings in all. A cheap weekly meal plan from one basket: three big soups, 22 servings, one shop at $54.66 instead of $105.19 bought separately.
 ## Free tools
 
 - [Cost Per Serving Calculator](https://fedforless.ca/tools/cost-per-serving-calculator/): add up a recipe's ingredient costs and divide by real servings.

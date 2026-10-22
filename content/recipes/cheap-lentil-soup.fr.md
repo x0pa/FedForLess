@@ -22,6 +22,14 @@ image: "/images/cheap-lentil-soup.webp"
 image_caption: "Un gros bol de la soupe terminée, telle qu'elle est servie."
 prices_checked: "août 2026"
 collections: ["Dinners under $1.50", "Soups that eat like a meal", "Feed six for under $12"]
+basket_pairs:
+  - slug: "cheap-beef-barley-soup"
+    combined: "46.21"
+    separate: "70.06"
+  - slug: "cheap-split-pea-soup"
+    combined: "41.20"
+    separate: "65.20"
+basket_week: "one-basket-three-soups"
 breakdown:
   - item: "Lentilles rouges séchées"
     note: "450 g d'un sac de 900 g à 3,63 $"

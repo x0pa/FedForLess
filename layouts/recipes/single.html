@@ -94,6 +94,18 @@
         <span class="t{{ if eq .Params.tier "butter" }} on{{ end }}">{{ i18n "tier_butter" }}<small>{{ i18n "tier_to" }} {{ partial "price.html" (dict "amt" "2.50" "lang" .Lang) }}</small></span>
         <span class="t{{ if eq .Params.tier "tomato" }} on{{ end }}">{{ i18n "tier_tomato" }}<small>{{ i18n "tier_to" }} {{ partial "price.html" (dict "amt" "3.25" "lang" .Lang) }}</small></span>
       </div>
+      {{ with .Params.basket_pairs }}
+      <div class="pairbox">
+        <div class="bhead" style="margin-top:1.4rem;">{{ i18n "pair_heading" }}</div>
+        <div class="bbox">
+          {{ range . }}{{ $p := $.Site.GetPage (printf "/recipes/%s" .slug) }}
+          <p class="pairline">{{ i18n "pair_with" }} <a href="{{ $p.RelPermalink }}">{{ $p.Title }}</a> : {{ i18n "pair_mid" }} {{ partial "price.html" (dict "amt" .combined "lang" $.Lang) }} {{ i18n "pair_instead" }} {{ partial "price.html" (dict "amt" .separate "lang" $.Lang) }}.</p>
+          {{ end }}{{ with $.Params.basket_week }}{{ $w := $.Site.GetPage (printf "/basket-weeks/%s" .) }}
+          <p class="pairline">{{ i18n "pair_week" }} <a href="{{ $w.RelPermalink }}">{{ $w.Title }}</a>.</p>
+          {{ end }}
+        </div>
+      </div>
+      {{ end }}
     </aside>
   </div>
 </div>

@@ -7,6 +7,7 @@
 - [{{ i18n "llms_how" }}]({{ "/how-we-price/" | relLangURL | absURL }}): {{ i18n "llms_how_d" }}
 - [{{ i18n "llms_about" }}]({{ "/about/" | relLangURL | absURL }}): {{ i18n "llms_about_d" }}
 - [{{ i18n "llms_all" }}]({{ "/recipes/" | relLangURL | absURL }}): {{ i18n "llms_all_d" }}
+- [{{ i18n "llms_basketweeks" }}]({{ "/basket-weeks/" | relLangURL | absURL }}): {{ i18n "llms_basketweeks_d" }}
 - [{{ i18n "llms_collections" }}]({{ "/collections/" | relLangURL | absURL }}): {{ i18n "llms_collections_d" }}
 
 ## {{ i18n "llms_recipes_h" }}
@@ -15,7 +16,11 @@
 {{ range $recipes }}
 - [{{ .Title }}]({{ .Permalink }}): {{ partial "price.html" (dict "amt" .Params.price_per_serving "lang" $.Lang) }} {{ i18n "llms_per_serving" }}, {{ .Params.tier_label }}, {{ partial "serves.html" (dict "n" .Params.servings "lang" $.Lang) }}, {{ .Params.total_time }} {{ i18n "llms_total" }}. {{ .Description }}
 {{ end }}
-## {{ i18n "llms_tools_h" }}
+{{ $weeks := where .Site.RegularPages "Section" "basket-weeks" }}{{ if $weeks }}## {{ i18n "llms_basket_h" }}
+
+{{ range $weeks }}
+- [{{ .Title }}]({{ .Permalink }}): {{ i18n "llms_basket_line_a" }} {{ partial "price.html" (dict "amt" .Params.combined_basket "lang" $.Lang) }}, {{ partial "serves.html" (dict "n" .Params.total_servings "lang" $.Lang) }} {{ i18n "llms_basket_line_b" }}. {{ .Description }}
+{{ end }}{{ end }}## {{ i18n "llms_tools_h" }}
 
 - [{{ i18n "llms_cps" }}]({{ "/tools/cost-per-serving-calculator/" | relLangURL | absURL }}): {{ i18n "llms_cps_d" }}
 - [{{ i18n "llms_rc" }}]({{ "/tools/recipe-cost-calculator/" | relLangURL | absURL }}): {{ i18n "llms_rc_d" }}

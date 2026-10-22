@@ -101,6 +101,7 @@ ol.steps li::before{content:counter(step,decimal-leading-zero);position:absolute
 .toolbox .out{font-family:"Oswald";font-weight:700;font-size:1.6rem;color:var(--denim);margin-top:1rem}
 footer.site{border-top:2px solid var(--ink);padding:1.1rem 0 2.2rem;text-align:center;font-weight:600;color:var(--muted);font-size:.9rem;margin-top:2.6rem}
 footer.site a{color:var(--muted);text-decoration:none}
+.pairline{margin:.45rem 0;font-weight:600;color:#2C3138}
 .page-head{padding:2rem 0 0}
 .page-head h1{font-family:"Oswald";font-weight:700;text-transform:uppercase;font-size:clamp(2.2rem,5vw,3.6rem);line-height:1}
 @media (max-width:920px){

@@ -23,6 +23,14 @@ image_caption: "A big bowl of the finished soup with the barley, beef and vegeta
 prices_checked: "August 2026"
 chain_note: "a Real Canadian Superstore catalogue check for the pearl barley (October 2026)"
 collections: ["Soups that eat like a meal", "Freezer fillers"]
+basket_pairs:
+  - slug: "cheap-lentil-soup"
+    combined: "46.21"
+    separate: "70.06"
+  - slug: "cheap-split-pea-soup"
+    combined: "48.44"
+    separate: "75.12"
+basket_week: "one-basket-three-soups"
 breakdown:
   - item: "Ground beef"
     note: "500 g at $16.75 per kilogram"

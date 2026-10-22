@@ -22,6 +22,14 @@ image: "/images/cheap-lentil-soup.webp"
 image_caption: "A big bowl of the finished soup, the way it is served."
 prices_checked: "August 2026"
 collections: ["Dinners under $1.50", "Soups that eat like a meal", "Feed six for under $12"]
+basket_pairs:
+  - slug: "cheap-beef-barley-soup"
+    combined: "46.21"
+    separate: "70.06"
+  - slug: "cheap-split-pea-soup"
+    combined: "41.20"
+    separate: "65.20"
+basket_week: "one-basket-three-soups"
 breakdown:
   - item: "Dried red lentils"
     note: "450 g of a 900 g bag at $3.63"

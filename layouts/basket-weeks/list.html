@@ -1,0 +1,20 @@
+{{ define "main" }}
+<div class="wrap">
+  <div class="page-head"><h1>{{ .Title }}</h1></div>
+  {{ with .Content }}<div style="max-width:46rem;margin-top:.8rem;"><article class="prose">{{ . }}</article></div>{{ end }}
+  <section class="index-sec" style="margin-top:1.6rem;">
+    <ol class="index">
+      {{ range .Pages.ByDate }}
+      <li>
+        <a href="{{ .RelPermalink }}"><img src="{{ .Params.image }}" alt="{{ .Title }}"></a>
+        <div>
+          <div class="rname"><a href="{{ .RelPermalink }}">{{ .Title }}</a></div>
+          <div class="rsub">{{ .Description }}</div>
+        </div>
+        <div class="rprice nums"><div class="per">{{ partial "price.html" (dict "amt" .Params.combined_basket "lang" $.Lang) }}</div><div class="of">{{ i18n "one_basket" }}</div></div>
+      </li>
+      {{ end }}
+    </ol>
+  </section>
+</div>
+{{ end }}

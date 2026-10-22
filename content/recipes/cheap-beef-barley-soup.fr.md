@@ -23,6 +23,14 @@ image_caption: "Un gros bol de la soupe terminée, avec l'orge, le bœuf et les 
 prices_checked: "août 2026"
 chain_note: "une vérification du catalogue Real Canadian Superstore pour l'orge perlé (octobre 2026)"
 collections: ["Soups that eat like a meal", "Freezer fillers"]
+basket_pairs:
+  - slug: "cheap-lentil-soup"
+    combined: "46.21"
+    separate: "70.06"
+  - slug: "cheap-split-pea-soup"
+    combined: "48.44"
+    separate: "75.12"
+basket_week: "one-basket-three-soups"
 breakdown:
   - item: "Bœuf haché"
     note: "500 g à 16,75 $ le kilogramme"
