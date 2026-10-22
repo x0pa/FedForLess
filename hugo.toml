@@ -15,17 +15,21 @@ defaultContentLanguageInSubdir = false
       url = "/recipes/"
       weight = 1
     [[languages.en.menus.main]]
+      name = "Basket Weeks"
+      url = "/basket-weeks/"
+      weight = 2
+    [[languages.en.menus.main]]
       name = "How We Price"
       url = "/how-we-price/"
-      weight = 2
+      weight = 3
     [[languages.en.menus.main]]
       name = "Tools"
       url = "/tools/"
-      weight = 3
+      weight = 4
     [[languages.en.menus.main]]
       name = "About"
       url = "/about/"
-      weight = 4
+      weight = 5
   [languages.fr]
     languageName = "Français"
     languageCode = "fr-CA"
@@ -38,17 +42,21 @@ defaultContentLanguageInSubdir = false
       url = "/fr/recipes/"
       weight = 1
     [[languages.fr.menus.main]]
+      name = "Semaines à un panier"
+      url = "/fr/basket-weeks/"
+      weight = 2
+    [[languages.fr.menus.main]]
       name = "Notre méthode"
       url = "/fr/how-we-price/"
-      weight = 2
+      weight = 3
     [[languages.fr.menus.main]]
       name = "Outils"
       url = "/fr/tools/"
-      weight = 3
+      weight = 4
     [[languages.fr.menus.main]]
       name = "À propos"
       url = "/fr/about/"
-      weight = 4
+      weight = 5
 
 [params]
   description = "Cheap, filling recipes with the price worked out first. Every recipe is costed on Canadian national average prices, with the full breakdown shown."
