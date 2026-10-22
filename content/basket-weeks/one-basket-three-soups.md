@@ -1,15 +1,15 @@
 ---
 title: "Cheap Weekly Meal Plan: One Basket, Three Soups"
-description: "A cheap weekly meal plan from one basket: three big soups, 22 servings, one shop at $54.66 instead of $105.19 bought separately."
+description: "A cheap weekly meal plan from one basket: three big soups, 22 servings, one shop at $58.35 instead of $108.88 bought separately."
 date: 2026-10-21
 draft: false
-standfirst: "Three of the cheapest soups on this site were quietly built on the same bags. Buy the basket once and the week mostly cooks itself: 22 servings from one $54.66 shop."
+standfirst: "Three of the cheapest soups on this site were quietly built on the same bags. Buy the basket once and the week mostly cooks itself: 22 servings from one $58.35 shop."
 image: "/images/cheap-beef-barley-soup.webp"
-combined_basket: "54.66"
-separate_baskets: "105.19"
+combined_basket: "58.35"
+separate_baskets: "108.88"
 you_save: "50.53"
 total_servings: 22
-till_per_serving: "2.48"
+till_per_serving: "2.65"
 food_per_serving: "1.54"
 prices_checked: "August 2026"
 ---
@@ -21,7 +21,7 @@ Every recipe on Fed For Less prints two prices: what the food in the pot costs, 
 One pass through the store buys everything below. Prices are the same Canadian average prices the three recipes were costed on, checked in August 2026.
 
 - **Ground beef, 500 g:** $8.38, bought by weight at $16.75 a kilogram
-- **Ham from pork shoulder, 500 g:** $4.61, bought by weight
+- **Ham from pork shoulder, one piece of about 900 g:** $8.30 at $9.22 a kilogram; 500 g goes in the pot and the rest keeps for another meal
 - **Pearl barley, one 450 g bag:** $2.49
 - **Dried red lentils, one 900 g bag:** $3.63
 - **Dry split peas, one 900 g bag:** $3.58
@@ -33,7 +33,7 @@ One pass through the store buys everything below. Prices are the same Canadian a
 - **Canola oil, one 3 litre bottle:** $10.51
 - **Pantry allowance for garlic, herbs, bouillon, salt and pepper across all three pots:** $1.08
 
-The whole shop comes to $54.66. Bought as three separate baskets, the same food costs $105.19.
+The whole shop comes to $58.35. Bought as three separate baskets, the same food costs $108.88.
 
 ## The three pots
 
@@ -61,14 +61,15 @@ For two adults, 22 servings is a week of dinners with bowls left over for lunche
 - 450 g of the lentil bag and 450 g of the split pea bag, plus 150 g of barley
 - About 560 g of onions and a little of the carrot bag
 - Half the celery and nearly the whole bottle of oil
+- About 400 g of the ham piece
 
 None of it is waste. The dry goods keep for months, the oil keeps longer, and next week starts with a head start that is already paid for.
 
 ## The math, honestly
 
-The three baskets on the recipe pages add up to $105.19: $39.99 plus $30.07 plus $35.13. One shared shop is $54.66. The saving is $50.53, close to half, and it comes from a boring place: bags and bottles you only buy once.
+The three baskets on the recipe pages add up to $108.88: $39.99 plus $30.07 plus $38.82. One shared shop is $58.35. The saving is $50.53, close to half, and it comes from a boring place: bags and bottles you only buy once.
 
-Two numbers describe this week. At the till, the week costs $2.48 a serving, because the till is where the basket lands. On the plate, the food costs $1.54 a serving, because much of the basket is still in the cupboard waiting for next week. Both numbers are printed because both are true.
+Two numbers describe this week. At the till, the week costs $2.65 a serving, because the till is where the basket lands. On the plate, the food costs $1.54 a serving, because much of the basket is still in the cupboard waiting for next week. Both numbers are printed because both are true.
 
 If your store charges more or less than the national averages, the shape of the saving holds: overlap is overlap. The [Recipe Cost Calculator](/tools/recipe-cost-calculator/) will rerun any of the three pots at your own prices.
 

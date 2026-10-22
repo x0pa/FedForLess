@@ -1,15 +1,15 @@
 ---
 title: "Plan de repas hebdomadaire pas cher : un panier, trois soupes"
-description: "Un plan de repas hebdomadaire pas cher avec un seul panier : trois grandes soupes, 22 portions, un passage à 54,66 $ au lieu de 105,19 $."
+description: "Un plan de repas hebdomadaire pas cher avec un seul panier : trois grandes soupes, 22 portions, un passage à 58,35 $ au lieu de 108,88 $."
 date: 2026-10-21
 draft: false
-standfirst: "Trois des soupes les moins chères du site partagent les mêmes sacs. Achetez le panier une seule fois et la semaine se cuisine presque toute seule : 22 portions pour un seul passage de 54,66 $."
+standfirst: "Trois des soupes les moins chères du site partagent les mêmes sacs. Achetez le panier une seule fois et la semaine se cuisine presque toute seule : 22 portions pour un seul passage de 58,35 $."
 image: "/images/cheap-beef-barley-soup.webp"
-combined_basket: "54.66"
-separate_baskets: "105.19"
+combined_basket: "58.35"
+separate_baskets: "108.88"
 you_save: "50.53"
 total_servings: 22
-till_per_serving: "2.48"
+till_per_serving: "2.65"
 food_per_serving: "1.54"
 prices_checked: "août 2026"
 ---
@@ -21,7 +21,7 @@ Chaque recette de Fed For Less affiche deux prix : ce que coûte la nourriture d
 Un seul passage au magasin achète tout ce qui suit. Les prix sont les mêmes prix moyens canadiens qui ont servi à calculer les trois recettes, vérifiés en août 2026.
 
 - **Bœuf haché, 500 g :** 8,38 $, acheté au poids à 16,75 $ le kilogramme
-- **Jambon tiré de l'épaule de porc, 500 g :** 4,61 $, acheté au poids
+- **Jambon (épaule de porc), une pièce d'environ 900 g :** 8,30 $ à 9,22 $ le kilogramme; 500 g vont dans la soupe et le reste se garde pour un autre repas
 - **Orge perlé, un sac de 450 g :** 2,49 $
 - **Lentilles rouges sèches, un sac de 900 g :** 3,63 $
 - **Pois cassés secs, un sac de 900 g :** 3,58 $
@@ -33,7 +33,7 @@ Un seul passage au magasin achète tout ce qui suit. Les prix sont les mêmes pr
 - **Huile de canola, une bouteille de 3 litres :** 10,51 $
 - **Allocation garde manger pour l'ail, les herbes, le bouillon, le sel et le poivre des trois soupes :** 1,08 $
 
-Le passage complet revient à 54,66 $. Achetée en trois paniers séparés, la même nourriture coûte 105,19 $.
+Le passage complet revient à 58,35 $. Achetée en trois paniers séparés, la même nourriture coûte 108,88 $.
 
 ## Les trois soupes
 
@@ -61,14 +61,15 @@ Pour deux adultes, 22 portions font une semaine de soupers avec des bols en rés
 - 450 g du sac de lentilles et 450 g du sac de pois cassés, plus 150 g d'orge
 - Environ 560 g d'oignons et un peu du sac de carottes
 - La moitié du céleri et presque toute la bouteille d'huile
+- Environ 400 g de la pièce de jambon
 
 Rien de tout cela n'est perdu. Les produits secs se gardent des mois, l'huile se garde plus longtemps encore, et la semaine suivante commence avec une avance déjà payée.
 
 ## Les chiffres, en toute honnêteté
 
-Les trois paniers des pages de recettes totalisent 105,19 $ : 39,99 $ plus 30,07 $ plus 35,13 $. Un seul panier partagé revient à 54,66 $. L'économie est de 50,53 $, près de la moitié, et elle vient d'un endroit ennuyeux : des sacs et des bouteilles que vous achetez une seule fois.
+Les trois paniers des pages de recettes totalisent 108,88 $ : 39,99 $ plus 30,07 $ plus 38,82 $. Un seul panier partagé revient à 58,35 $. L'économie est de 50,53 $, près de la moitié, et elle vient d'un endroit ennuyeux : des sacs et des bouteilles que vous achetez une seule fois.
 
-Deux chiffres décrivent cette semaine. Au passage en caisse, la semaine coûte 2,48 $ la portion, parce que c'est là que le panier se paie. Dans l'assiette, la nourriture coûte 1,54 $ la portion, parce qu'une bonne partie du panier est encore dans l'armoire pour la semaine suivante. Les deux chiffres sont affichés parce que les deux sont vrais.
+Deux chiffres décrivent cette semaine. Au passage en caisse, la semaine coûte 2,65 $ la portion, parce que c'est là que le panier se paie. Dans l'assiette, la nourriture coûte 1,54 $ la portion, parce qu'une bonne partie du panier est encore dans l'armoire pour la semaine suivante. Les deux chiffres sont affichés parce que les deux sont vrais.
 
 Si votre magasin charge plus ou moins que les moyennes nationales, la forme de l'économie tient toujours : ce qui se partage se partage. Le [calculateur de coût de recette](/fr/tools/recipe-cost-calculator/) peut recalculer chacune des trois soupes avec vos propres prix.
 

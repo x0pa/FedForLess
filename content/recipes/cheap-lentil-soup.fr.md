@@ -27,8 +27,8 @@ basket_pairs:
     combined: "46.21"
     separate: "70.06"
   - slug: "cheap-split-pea-soup"
-    combined: "41.20"
-    separate: "65.20"
+    combined: "44.89"
+    separate: "68.89"
 basket_week: "one-basket-three-soups"
 breakdown:
   - item: "Lentilles rouges séchées"

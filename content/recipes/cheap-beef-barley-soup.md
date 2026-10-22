@@ -28,8 +28,8 @@ basket_pairs:
     combined: "46.21"
     separate: "70.06"
   - slug: "cheap-split-pea-soup"
-    combined: "48.44"
-    separate: "75.12"
+    combined: "52.13"
+    separate: "78.81"
 basket_week: "one-basket-three-soups"
 breakdown:
   - item: "Ground beef"
