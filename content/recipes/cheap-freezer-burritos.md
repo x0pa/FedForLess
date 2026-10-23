@@ -4,13 +4,13 @@ description: "These cheap freezer burritos cost about $1.70 each and stock the f
 date: 2026-10-15
 draft: false
 tier: "butter"
-tier_label: "Butter Tier"
+tier_label: "Tier 2"
 price_per_serving: "1.70"
 batch_cost: "13.57"
 basket_cost: "32.32"
 price_range: "1.50 to 2.05"
 servings: 8
-meta_line: "Freezer Friendly · 50 Min · Butter Tier · Makes 8"
+meta_line: "Freezer Friendly · 50 Min · Tier 2 · Makes 8"
 standfirst: "Cheap freezer burritos built for real life: eight large bean, rice and cheese burritos for the freezer at about $1.70 each, costed on Canadian average prices so a filling meal is always ten minutes away."
 prep_time: "20 min"
 cook_time: "30 min"

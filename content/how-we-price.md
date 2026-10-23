@@ -29,9 +29,9 @@ Where the table does not list an item, we price it from the current regular pric
 
 ## The price tiers
 
-- **Green:** up to $1.50 a serving. The core bargain tier, and where breakfasts and most soups live.
-- **Butter:** $1.51 to $2.50 a serving. The normal dinner tier.
-- **Tomato:** $2.51 to $3.25 a serving. A filling splurge, used rarely and labelled honestly.
+- **Tier 1:** up to $1.50 a serving. The core bargain tier, and where breakfasts and most soups live.
+- **Tier 2:** $1.51 to $2.50 a serving. The normal dinner tier.
+- **Tier 3:** $2.51 to $3.25 a serving. A filling splurge, used rarely and labelled honestly.
 
 ## What the numbers are not
 

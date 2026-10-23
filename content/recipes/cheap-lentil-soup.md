@@ -4,13 +4,13 @@ description: "This cheap lentil soup makes six filling bowls for about $1.34 a s
 date: 2026-10-15
 draft: false
 tier: "green"
-tier_label: "Green Tier"
+tier_label: "Tier 1"
 price_per_serving: "1.34"
 batch_cost: "8.02"
 basket_cost: "30.07"
 price_range: "1.30 to 2.15"
 servings: 6
-meta_line: "One Pot · 45 Min · Green Tier · Serves 6"
+meta_line: "One Pot · 45 Min · Tier 1 · Serves 6"
 standfirst: "A cheap lentil soup that eats like a meal: red lentils, potato and carrot in one pot, costed on Canadian average prices and built to actually fill the bowl at about $1.34 a serving."
 prep_time: "15 min"
 cook_time: "30 min"

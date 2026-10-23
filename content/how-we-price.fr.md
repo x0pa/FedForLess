@@ -29,9 +29,9 @@ Quand le tableau ne liste pas un produit, nous le chiffrons au prix régulier co
 
 ## Les paliers de prix
 
-- **Vert :** jusqu'à 1,50 $ la portion. Le palier des vraies aubaines, là où vivent les déjeuners et la plupart des soupes.
-- **Beurre :** de 1,51 $ à 2,50 $ la portion. Le palier normal du souper.
-- **Tomate :** de 2,51 $ à 3,25 $ la portion. Une petite folie rassasiante, utilisée rarement et étiquetée honnêtement.
+- **Palier 1 :** jusqu'à 1,50 $ la portion. Le palier des vraies aubaines, là où vivent les déjeuners et la plupart des soupes.
+- **Palier 2 :** de 1,51 $ à 2,50 $ la portion. Le palier normal du souper.
+- **Palier 3 :** de 2,51 $ à 3,25 $ la portion. Une petite folie rassasiante, utilisée rarement et étiquetée honnêtement.
 
 ## Ce que ces chiffres ne sont pas
 

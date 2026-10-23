@@ -127,3 +127,16 @@ footer.site a{color:var(--muted);text-decoration:none}
 .sres .sp{margin-left:auto;font-family:"Oswald";font-weight:600;color:var(--denim);font-size:1.15rem;white-space:nowrap;text-align:right}
 .sres .sp small{display:block;font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
 .snone{border:1.5px solid var(--hair);padding:.8rem 1rem;margin-top:.5rem;color:#2C3138;font-weight:600}
+.tierband{margin-top:2.6rem}
+.tiers-sub{max-width:46rem;color:#2C3138;margin-top:.6rem}
+.tiergrid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1.1rem}
+.tierblock{border:1.5px solid var(--hair);padding:1.1rem 1.2rem;text-decoration:none;color:var(--ink);display:block;background:#fff}
+.tierblock:hover{border-color:var(--denim)}
+.tierblock .tb-name{font-family:"Oswald";font-weight:700;text-transform:uppercase;font-size:1.5rem;color:var(--denim);letter-spacing:.05em}
+.tierblock .tb-range{font-family:"Oswald";font-weight:600;text-transform:uppercase;letter-spacing:.08em;margin-top:.3rem}
+.tierblock p{color:#2C3138;margin-top:.55rem;font-size:.95rem}
+@media (max-width:720px){.tiergrid{grid-template-columns:1fr}}
+.tierfilter{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1rem;max-width:46rem}
+.tierfilter button{font-family:"Oswald";font-weight:600;text-transform:uppercase;letter-spacing:.07em;font-size:.85rem;background:#fff;border:1.5px solid var(--hair);padding:.5rem .9rem;cursor:pointer;color:var(--ink)}
+.tierfilter button.on{background:var(--denim);border-color:var(--denim);color:#fff}
+.tierfilter .sortbtn{margin-left:auto}

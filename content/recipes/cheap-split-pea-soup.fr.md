@@ -4,13 +4,13 @@ description: "Cette soupe aux pois cassés et jambon pas chère donne huit bols 
 date: 2026-10-15
 draft: false
 tier: "green"
-tier_label: "Palier vert"
+tier_label: "Palier 1"
 price_per_serving: "1.21"
 batch_cost: "9.67"
 basket_cost: "38.82"
 price_range: "1,05 à 1,45"
 servings: 8
-meta_line: "Un seul pot · Se congèle bien · Palier vert · 8 portions"
+meta_line: "Un seul pot · Se congèle bien · Palier 1 · 8 portions"
 standfirst: "Une soupe aux pois cassés pas chère avec du vrai jambon dedans, assez épaisse pour tenir une cuillère debout, chiffrée selon les prix moyens canadiens et pensée pour le congélateur, à environ 1,21 $ la portion."
 prep_time: "15 min"
 cook_time: "1 h 5 min"
@@ -69,7 +69,7 @@ ingredients:
   - "Sel et poivre noir au goût"
 faqs:
   - q: "Combien coûte cette soupe aux pois cassés par portion?"
-    a: "Environ 1,21 $ la portion selon les prix de détail moyens de Statistique Canada pour août 2026, pour un pot de huit bols qui coûte 9,67 $ en ingrédients. Le coût du panier, en achetant chaque emballage d'un garde manger vide, est de 38,82 $. Selon votre province et votre magasin, une portion se situe typiquement entre 1,05 $ et 1,45 $, ce qui la garde au palier vert partout au pays."
+    a: "Environ 1,21 $ la portion selon les prix de détail moyens de Statistique Canada pour août 2026, pour un pot de huit bols qui coûte 9,67 $ en ingrédients. Le coût du panier, en achetant chaque emballage d'un garde manger vide, est de 38,82 $. Selon votre province et votre magasin, une portion se situe typiquement entre 1,05 $ et 1,45 $, ce qui la garde au palier 1 partout au pays."
   - q: "Dois-je faire tremper les pois cassés d'avance?"
     a: "Non. Les pois cassés sont parmi les rares légumineuses sèches qui deviennent tendres sans aucun trempage, ce qui fait la moitié de la raison pour laquelle cette soupe coûte si peu en effort comme en argent. Rincez-les, retirez les éventuels petits graviers, et ils vont directement dans le pot."
   - q: "Cette soupe se congèle-t-elle bien?"

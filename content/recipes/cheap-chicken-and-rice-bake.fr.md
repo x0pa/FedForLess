@@ -4,13 +4,13 @@ description: "Ce plat de pilons de poulet et riz au four pas cher donne six port
 date: 2026-10-15
 draft: false
 tier: "butter"
-tier_label: "Palier beurre"
+tier_label: "Palier 2"
 price_per_serving: "2.44"
 batch_cost: "14.62"
 basket_cost: "38.56"
 price_range: "2,15 à 2,95"
 servings: 6
-meta_line: "Un seul plat · 1 h 5 min · Palier beurre · 6 portions"
+meta_line: "Un seul plat · 1 h 5 min · Palier 2 · 6 portions"
 standfirst: "Des pilons de poulet rôtis directement sur le riz, pour que le riz cuise dans le jus de cuisson et que chaque grain gagne sa place, chiffrés selon les prix moyens canadiens à environ 2,44 $ la portion."
 prep_time: "15 min"
 cook_time: "50 min"

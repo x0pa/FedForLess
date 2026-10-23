@@ -4,13 +4,13 @@ description: "This cheap unstuffed cabbage roll skillet makes six servings for a
 date: 2026-10-15
 draft: false
 tier: "butter"
-tier_label: "Butter Tier"
+tier_label: "Tier 2"
 price_per_serving: "2.31"
 batch_cost: "13.86"
 basket_cost: "39.26"
 price_range: "2.05 to 2.75"
 servings: 6
-meta_line: "One Pan · 45 Min · Butter Tier · Serves 6"
+meta_line: "One Pan · 45 Min · Tier 2 · Serves 6"
 standfirst: "All the comfort of cabbage rolls with none of the rolling: ground pork, cabbage, rice and tomato in one pan, costed on Canadian average prices and built to actually fill the plate at about $2.31 a serving."
 prep_time: "15 min"
 cook_time: "30 min"

@@ -4,13 +4,13 @@ description: "Cette soupe au bœuf et à l'orge pas chère donne huit gros bols 
 date: 2026-10-21
 draft: false
 tier: "butter"
-tier_label: "Palier beurre"
+tier_label: "Palier 2"
 price_per_serving: "2.03"
 batch_cost: "16.26"
 basket_cost: "39.99"
 price_range: "1,85 à 2,30"
 servings: 8
-meta_line: "Un seul pot · 1 h 10 min · Palier beurre · 8 portions"
+meta_line: "Un seul pot · 1 h 10 min · Palier 2 · 8 portions"
 standfirst: "Une soupe au bœuf et à l'orge pas chère construite sur le bœuf haché et l'orge perlé, chiffrée selon les prix moyens canadiens et pensée pour remplir huit gros bols, à environ 2,03 $ la portion."
 prep_time: "20 min"
 cook_time: "50 min"
@@ -76,7 +76,7 @@ ingredients:
   - "Sel et poivre noir au goût"
 faqs:
   - q: "Combien coûte cette soupe au bœuf et à l'orge par portion?"
-    a: "Environ 2,03 $ la portion selon les prix de détail moyens de Statistique Canada pour août 2026, pour une recette de huit gros bols qui coûte 16,26 $ en ingrédients. Le coût du panier, en achetant chaque emballage à partir d'un garde manger vide, est de 39,99 $. Selon la province et le magasin, une portion se situe habituellement entre 1,85 $ et 2,30 $, ce qui la garde dans le palier beurre."
+    a: "Environ 2,03 $ la portion selon les prix de détail moyens de Statistique Canada pour août 2026, pour une recette de huit gros bols qui coûte 16,26 $ en ingrédients. Le coût du panier, en achetant chaque emballage à partir d'un garde manger vide, est de 39,99 $. Selon la province et le magasin, une portion se situe habituellement entre 1,85 $ et 2,30 $, ce qui la garde dans le palier 2."
   - q: "Pourquoi du bœuf haché plutôt que du bœuf à ragoût?"
     a: "Le bœuf haché est le bœuf le moins cher du tableau de Statistique Canada, à 16,75 $ le kilogramme selon les moyennes d'août 2026, bien moins que les coupes à ragoût, et bien le faire brunir donne à la soupe le goût de bœuf profond qu'un long mijotage construit habituellement. Il n'y a aussi aucune coupe à préparer et aucun morceau dur à attendre."
   - q: "Cette soupe se congèle-t-elle bien?"

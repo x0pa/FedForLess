@@ -23,10 +23,10 @@ Enter what the ingredients you used cost, in total, and how many real servings t
     if(tv>=0 && sv>0){
       var per=tv/sv;
       o.textContent='Cost per serving: $'+per.toFixed(2);
-      tier.textContent = per<=1.50 ? 'Fed For Less tier: Green (up to $1.50).' :
-        per<=2.50 ? 'Fed For Less tier: Butter ($1.51 to $2.50).' :
-        per<=3.25 ? 'Fed For Less tier: Tomato ($2.51 to $3.25), a filling splurge.' :
-        'Above the Fed For Less tomato tier. Worth a cheaper protein or a bigger batch.';
+      tier.textContent = per<=1.50 ? 'Fed For Less tier: Tier 1 (up to $1.50).' :
+        per<=2.50 ? 'Fed For Less tier: Tier 2 ($1.51 to $2.50).' :
+        per<=3.25 ? 'Fed For Less tier: Tier 3 ($2.51 to $3.25), a filling splurge.' :
+        'Above the Fed For Less Tier 3. Worth a cheaper protein or a bigger batch.';
     } else { o.textContent='Cost per serving: —'; tier.textContent=''; }
   }
   t.addEventListener('input',go); s.addEventListener('input',go);

@@ -4,13 +4,13 @@ description: "Ce chili au porc et haricots blancs économique nourrit six person
 date: 2026-10-15
 draft: false
 tier: "butter"
-tier_label: "Palier beurre"
+tier_label: "Palier 2"
 price_per_serving: "2.45"
 batch_cost: "14.67"
 basket_cost: "31.30"
 price_range: "2,15 à 2,85"
 servings: 6
-meta_line: "Un seul pot · Se congèle bien · Palier beurre · 6 portions"
+meta_line: "Un seul pot · Se congèle bien · Palier 2 · 6 portions"
 standfirst: "Un chili au porc et haricots blancs économique construit sur l'épaule de porc, la coupe qui reste bon marché et devient tendre, chiffré selon les prix moyens canadiens et pensé pour remplir six bols profonds, à environ 2,45 $ la portion."
 prep_time: "15 min"
 cook_time: "40 min"

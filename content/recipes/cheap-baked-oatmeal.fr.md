@@ -4,13 +4,13 @@ description: "Ce gruau cuit au four pas cher coûte environ 94 cents la portion 
 date: 2026-10-15
 draft: false
 tier: "green"
-tier_label: "Palier vert"
+tier_label: "Palier 1"
 price_per_serving: "0.94"
 batch_cost: "7.55"
 basket_cost: "35.32"
 price_range: "0,85 à 1,20"
 servings: 8
-meta_line: "À préparer d'avance · 50 min · Palier vert · 8 portions"
+meta_line: "À préparer d'avance · 50 min · Palier 1 · 8 portions"
 standfirst: "Un gruau cuit au four pas cher qui transforme un plat en huit déjeuners chauds à environ 0,94 $ la portion, chiffré selon les prix moyens canadiens avec l'avoine confirmée par une vérification du catalogue d'une chaîne."
 prep_time: "10 min"
 cook_time: "40 min"

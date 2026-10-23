@@ -4,13 +4,13 @@ description: "This cheap chicken leg and rice bake makes six filling servings fo
 date: 2026-10-15
 draft: false
 tier: "butter"
-tier_label: "Butter Tier"
+tier_label: "Tier 2"
 price_per_serving: "2.44"
 batch_cost: "14.62"
 basket_cost: "38.56"
 price_range: "2.15 to 2.95"
 servings: 6
-meta_line: "One Dish · 1 Hr 5 Min · Butter Tier · Serves 6"
+meta_line: "One Dish · 1 Hr 5 Min · Tier 2 · Serves 6"
 standfirst: "Chicken drumsticks roasted right on top of the rice, so the rice cooks in the drippings and every grain earns its keep, costed on Canadian average prices at about $2.44 a serving."
 prep_time: "15 min"
 cook_time: "50 min"

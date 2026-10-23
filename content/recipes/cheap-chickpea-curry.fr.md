@@ -4,13 +4,13 @@ description: "Ce cari de pois chiches pas cher donne six portions rassasiantes �
 date: 2026-10-23
 draft: false
 tier: "butter"
-tier_label: "Palier beurre"
+tier_label: "Palier 2"
 price_per_serving: "1.95"
 batch_cost: "11.68"
 basket_cost: "37.93"
 price_range: "1,70 à 2,25"
 servings: 6
-meta_line: "Un seul pot · 50 min · Palier beurre · 6 portions"
+meta_line: "Un seul pot · 50 min · Palier 2 · 6 portions"
 standfirst: "Un cari de pois chiches pas cher construit sur les pois chiches en conserve, les pommes de terre et les épinards congelés dans une sauce tomate épicée, servi sur du riz et chiffré selon les prix moyens canadiens, à environ 1,95 $ la portion."
 prep_time: "15 min"
 cook_time: "35 min"
@@ -63,7 +63,7 @@ ingredients:
   - "Sel et poivre noir au goût"
 faqs:
   - q: "Combien coûte ce cari de pois chiches par portion?"
-    a: "Environ 1,95 $ la portion selon les prix de détail moyens de Statistique Canada pour août 2026, pour une recette de six portions qui coûte 11,68 $ en ingrédients. Le coût du panier, en achetant chaque emballage à partir d'un garde manger vide, est de 37,93 $. Selon la province et le magasin, une portion se situe habituellement entre 1,70 $ et 2,25 $, ce qui la garde dans le palier beurre."
+    a: "Environ 1,95 $ la portion selon les prix de détail moyens de Statistique Canada pour août 2026, pour une recette de six portions qui coûte 11,68 $ en ingrédients. Le coût du panier, en achetant chaque emballage à partir d'un garde manger vide, est de 37,93 $. Selon la province et le magasin, une portion se situe habituellement entre 1,70 $ et 2,25 $, ce qui la garde dans le palier 2."
   - q: "Peut-on utiliser des pois chiches secs plutôt qu'en conserve?"
     a: "Oui. Les haricots et légumineuses secs sont à 3,58 $ le sac de 900 g selon les moyennes d'août 2026, alors environ 250 g secs, trempés une nuit et mijotés jusqu'à tendreté, reviennent à près de 1,00 $ et baissent le coût d'environ 40 cents la portion. La version en conserve est chiffrée ici parce qu'elle garde le plat entier à 50 minutes, sans rien à prévoir la veille."
   - q: "Ce cari se congèle-t-il bien?"

@@ -4,13 +4,13 @@ description: "This cheap chickpea curry makes six filling servings for about $1.
 date: 2026-10-23
 draft: false
 tier: "butter"
-tier_label: "Butter Tier"
+tier_label: "Tier 2"
 price_per_serving: "1.95"
 batch_cost: "11.68"
 basket_cost: "37.93"
 price_range: "1.70 to 2.25"
 servings: 6
-meta_line: "One Pot · 50 Min · Butter Tier · Serves 6"
+meta_line: "One Pot · 50 Min · Tier 2 · Serves 6"
 standfirst: "A cheap chickpea curry built on canned chickpeas, potato and frozen spinach in a spiced tomato sauce, spooned over rice and costed on Canadian average prices at about $1.95 a serving."
 prep_time: "15 min"
 cook_time: "35 min"
@@ -63,7 +63,7 @@ ingredients:
   - "Salt and black pepper to taste"
 faqs:
   - q: "How much does this chickpea curry cost per serving?"
-    a: "About $1.95 a serving on Statistics Canada average retail prices for August 2026, for a pot of six servings costing $11.68 in ingredients. The basket cost, buying every package from an empty pantry, is $37.93. Depending on your province and store, a serving typically lands between $1.70 and $2.25, which keeps it in the butter tier."
+    a: "About $1.95 a serving on Statistics Canada average retail prices for August 2026, for a pot of six servings costing $11.68 in ingredients. The basket cost, buying every package from an empty pantry, is $37.93. Depending on your province and store, a serving typically lands between $1.70 and $2.25, which keeps it in the Tier 2."
   - q: "Can I use dried chickpeas instead of canned?"
     a: "Yes. Dry beans and legumes sit at $3.58 for a 900 g bag on August 2026 averages, so about 250 g dry, soaked overnight and simmered until tender, lands near $1.00 and drops the cost by about 40 cents a serving. The canned version is priced here because it keeps the whole dish at 50 minutes with nothing to plan the night before."
   - q: "Does this curry freeze well?"

@@ -4,13 +4,13 @@ description: "Cette casserole de nouilles au thon économique nourrit six person
 date: 2026-10-15
 draft: false
 tier: "butter"
-tier_label: "Palier beurre"
+tier_label: "Palier 2"
 price_per_serving: "1.89"
 batch_cost: "11.34"
 basket_cost: "40.22"
 price_range: "1,70 à 2,25"
 servings: 6
-meta_line: "Un seul plat · 45 min · Palier beurre · 6 portions"
+meta_line: "Un seul plat · 45 min · Palier 2 · 6 portions"
 standfirst: "Une casserole de nouilles au thon économique avec une vraie sauce faite de beurre, de farine et de lait, aucune soupe en conserve nulle part, chiffrée selon les prix moyens canadiens et construite pour nourrir six personnes convenablement, à environ 1,89 $ la portion."
 prep_time: "15 min"
 cook_time: "30 min"

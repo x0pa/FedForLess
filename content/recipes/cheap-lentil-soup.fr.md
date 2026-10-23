@@ -4,13 +4,13 @@ description: "Cette soupe aux lentilles pas chère donne six gros bols à enviro
 date: 2026-10-15
 draft: false
 tier: "green"
-tier_label: "Palier vert"
+tier_label: "Palier 1"
 price_per_serving: "1.34"
 batch_cost: "8.02"
 basket_cost: "30.07"
 price_range: "1,30 à 2,15"
 servings: 6
-meta_line: "Un seul pot · 45 min · Palier vert · 6 portions"
+meta_line: "Un seul pot · 45 min · Palier 1 · 6 portions"
 standfirst: "Une soupe aux lentilles pas chère qui mange comme un repas : lentilles rouges, pomme de terre et carotte dans un seul pot, chiffrée selon les prix moyens canadiens et pensée pour vraiment remplir le bol, à environ 1,34 $ la portion."
 prep_time: "15 min"
 cook_time: "30 min"

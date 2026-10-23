@@ -4,13 +4,13 @@ description: "Ces burritos à congeler pas chers coûtent environ 1,70 $ chacun 
 date: 2026-10-15
 draft: false
 tier: "butter"
-tier_label: "Palier beurre"
+tier_label: "Palier 2"
 price_per_serving: "1.70"
 batch_cost: "13.57"
 basket_cost: "32.32"
 price_range: "1,50 à 2,05"
 servings: 8
-meta_line: "Se congèle bien · 50 min · Palier beurre · Donne 8"
+meta_line: "Se congèle bien · 50 min · Palier 2 · Donne 8"
 standfirst: "Des burritos à congeler pas chers pensés pour la vraie vie : huit gros burritos aux haricots, riz et fromage pour le congélateur à environ 1,70 $ chacun, chiffrés selon les prix moyens canadiens pour qu'un repas rassasiant soit toujours à dix minutes."
 prep_time: "20 min"
 cook_time: "30 min"

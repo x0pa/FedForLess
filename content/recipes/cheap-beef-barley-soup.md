@@ -4,13 +4,13 @@ description: "This cheap beef and barley soup makes eight filling bowls for abou
 date: 2026-10-21
 draft: false
 tier: "butter"
-tier_label: "Butter Tier"
+tier_label: "Tier 2"
 price_per_serving: "2.03"
 batch_cost: "16.26"
 basket_cost: "39.99"
 price_range: "1.85 to 2.30"
 servings: 8
-meta_line: "One Pot · Freezer Friendly · Butter Tier · Serves 8"
+meta_line: "One Pot · Freezer Friendly · Tier 2 · Serves 8"
 standfirst: "A cheap beef and barley soup built on ground beef and pearl barley, costed on Canadian average prices and made to fill eight deep bowls at about $2.03 a serving."
 prep_time: "20 min"
 cook_time: "50 min"
@@ -76,7 +76,7 @@ ingredients:
   - "Salt and black pepper to taste"
 faqs:
   - q: "How much does this beef and barley soup cost per serving?"
-    a: "About $2.03 a serving on Statistics Canada average retail prices for August 2026, for a pot of eight bowls costing $16.26 in ingredients. The basket cost, buying every package from an empty pantry, is $39.99. Depending on your province and store, a serving typically lands between $1.85 and $2.30, which keeps it in the butter tier."
+    a: "About $2.03 a serving on Statistics Canada average retail prices for August 2026, for a pot of eight bowls costing $16.26 in ingredients. The basket cost, buying every package from an empty pantry, is $39.99. Depending on your province and store, a serving typically lands between $1.85 and $2.30, which keeps it in the Tier 2."
   - q: "Why ground beef instead of stewing beef?"
     a: "Ground beef is the cheapest beef in the Statistics Canada table at $16.75 a kilogram on August 2026 averages, well under the stewing cuts, and browning it well gives the soup the deep beef flavour that a long simmer usually builds. There is also no trimming to do and no tough pieces to wait on."
   - q: "Does this soup freeze well?"

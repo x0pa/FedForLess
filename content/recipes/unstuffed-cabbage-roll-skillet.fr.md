@@ -4,13 +4,13 @@ description: "Cette poêlée façon cigares au chou pas chère donne six portion
 date: 2026-10-15
 draft: false
 tier: "butter"
-tier_label: "Palier beurre"
+tier_label: "Palier 2"
 price_per_serving: "2.31"
 batch_cost: "13.86"
 basket_cost: "39.26"
 price_range: "2,05 à 2,75"
 servings: 6
-meta_line: "Une seule poêle · 45 min · Palier beurre · 6 portions"
+meta_line: "Une seule poêle · 45 min · Palier 2 · 6 portions"
 standfirst: "Tout le réconfort des cigares au chou sans le roulage : porc haché, chou, riz et tomate dans une seule poêle, chiffrée selon les prix moyens canadiens et construite pour vraiment remplir l'assiette, à environ 2,31 $ la portion."
 prep_time: "15 min"
 cook_time: "30 min"

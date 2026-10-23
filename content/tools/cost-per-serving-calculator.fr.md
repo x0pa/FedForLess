@@ -24,10 +24,10 @@ Entrez ce qu'ont coûté les ingrédients que vous avez utilisés, au total, et 
     if(tv>=0 && sv>0){
       var per=tv/sv;
       o.textContent='Coût par portion : '+fmt(per);
-      tier.textContent = per<=1.50 ? "Palier Fed For Less : Vert (jusqu'à 1,50 $)." :
-        per<=2.50 ? "Palier Fed For Less : Beurre (de 1,51 $ à 2,50 $)." :
-        per<=3.25 ? "Palier Fed For Less : Tomate (de 2,51 $ à 3,25 $), une petite folie rassasiante." :
-        "Au dessus du palier tomate de Fed For Less. Pensez à une protéine moins chère ou à une plus grosse recette.";
+      tier.textContent = per<=1.50 ? "Palier Fed For Less : Palier 1 (jusqu'à 1,50 $)." :
+        per<=2.50 ? "Palier Fed For Less : Palier 2 (de 1,51 $ à 2,50 $)." :
+        per<=3.25 ? "Palier Fed For Less : Palier 3 (de 2,51 $ à 3,25 $), une petite folie rassasiante." :
+        "Au dessus du palier 3 de Fed For Less. Pensez à une protéine moins chère ou à une plus grosse recette.";
     } else { o.textContent='Coût par portion : —'; tier.textContent=''; }
   }
   t.addEventListener('input',go); s.addEventListener('input',go);

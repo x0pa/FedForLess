@@ -4,13 +4,13 @@ description: "This budget tuna noodle casserole feeds six for about $1.89 a serv
 date: 2026-10-15
 draft: false
 tier: "butter"
-tier_label: "Butter Tier"
+tier_label: "Tier 2"
 price_per_serving: "1.89"
 batch_cost: "11.34"
 basket_cost: "40.22"
 price_range: "1.70 to 2.25"
 servings: 6
-meta_line: "One Dish · 45 Min · Butter Tier · Serves 6"
+meta_line: "One Dish · 45 Min · Tier 2 · Serves 6"
 standfirst: "A budget tuna noodle casserole with a proper sauce made from butter, flour and milk, no canned soup anywhere, costed on Canadian average prices and built to feed six properly at about $1.89 a serving."
 prep_time: "15 min"
 cook_time: "30 min"

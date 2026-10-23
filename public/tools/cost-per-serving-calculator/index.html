@@ -23,7 +23,7 @@
 <meta name="twitter:image" content="https://fedforless.ca/images/cheap-lentil-soup.webp">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Public+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/css/main.css?v=4">
+<link rel="stylesheet" href="/css/main.css?v=5">
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -68,10 +68,10 @@
     if(tv>=0 && sv>0){
       var per=tv/sv;
       o.textContent='Cost per serving: $'+per.toFixed(2);
-      tier.textContent = per<=1.50 ? 'Fed For Less tier: Green (up to $1.50).' :
-        per<=2.50 ? 'Fed For Less tier: Butter ($1.51 to $2.50).' :
-        per<=3.25 ? 'Fed For Less tier: Tomato ($2.51 to $3.25), a filling splurge.' :
-        'Above the Fed For Less tomato tier. Worth a cheaper protein or a bigger batch.';
+      tier.textContent = per<=1.50 ? 'Fed For Less tier: Tier 1 (up to $1.50).' :
+        per<=2.50 ? 'Fed For Less tier: Tier 2 ($1.51 to $2.50).' :
+        per<=3.25 ? 'Fed For Less tier: Tier 3 ($2.51 to $3.25), a filling splurge.' :
+        'Above the Fed For Less Tier 3. Worth a cheaper protein or a bigger batch.';
     } else { o.textContent='Cost per serving: —'; tier.textContent=''; }
   }
   t.addEventListener('input',go); s.addEventListener('input',go);

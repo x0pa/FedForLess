@@ -4,13 +4,13 @@ description: "This cheap split pea and ham soup makes eight filling bowls for ab
 date: 2026-10-15
 draft: false
 tier: "green"
-tier_label: "Green Tier"
+tier_label: "Tier 1"
 price_per_serving: "1.21"
 batch_cost: "9.67"
 basket_cost: "38.82"
 price_range: "1.05 to 1.45"
 servings: 8
-meta_line: "One Pot · Freezer Friendly · Green Tier · Serves 8"
+meta_line: "One Pot · Freezer Friendly · Tier 1 · Serves 8"
 standfirst: "A cheap split pea soup with real ham in it, thick enough to stand a spoon in, costed on Canadian average prices and made for the freezer at about $1.21 a serving."
 prep_time: "15 min"
 cook_time: "1 hr 5 min"
@@ -69,7 +69,7 @@ ingredients:
   - "Salt and black pepper to taste"
 faqs:
   - q: "How much does this split pea soup cost per serving?"
-    a: "About $1.21 a serving on Statistics Canada average retail prices for August 2026, for a pot of eight bowls costing $9.67 in ingredients. The basket cost, buying every package from an empty pantry, is $38.82. Depending on your province and store, a serving typically lands between $1.05 and $1.45, which keeps it in the green tier everywhere in the country."
+    a: "About $1.21 a serving on Statistics Canada average retail prices for August 2026, for a pot of eight bowls costing $9.67 in ingredients. The basket cost, buying every package from an empty pantry, is $38.82. Depending on your province and store, a serving typically lands between $1.05 and $1.45, which keeps it in the Tier 1 everywhere in the country."
   - q: "Do I have to soak the split peas first?"
     a: "No. Split peas are one of the few dried legumes that cook tender with no soaking at all, which is half the reason this soup is so cheap in effort as well as money. Rinse them, pick out any bits of grit, and they go straight into the pot."
   - q: "Does this soup freeze well?"
