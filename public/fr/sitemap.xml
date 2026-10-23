@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://fedforless.ca/fr/collections/freezer-fillers/</loc>
-    <lastmod>2026-10-21T00:00:00+00:00</lastmod>
+    <lastmod>2026-10-23T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-CA"
@@ -15,8 +15,21 @@
                 href="https://fedforless.ca/fr/collections/freezer-fillers/"
                 />
   </url><url>
+    <loc>https://fedforless.ca/fr/recipes/cheap-chickpea-curry/</loc>
+    <lastmod>2026-10-23T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-CA"
+                href="https://fedforless.ca/recipes/cheap-chickpea-curry/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr-CA"
+                href="https://fedforless.ca/fr/recipes/cheap-chickpea-curry/"
+                />
+  </url><url>
     <loc>https://fedforless.ca/fr/collections/</loc>
-    <lastmod>2026-10-21T00:00:00+00:00</lastmod>
+    <lastmod>2026-10-23T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-CA"
@@ -26,6 +39,45 @@
                 rel="alternate"
                 hreflang="fr-CA"
                 href="https://fedforless.ca/fr/collections/"
+                />
+  </url><url>
+    <loc>https://fedforless.ca/fr/</loc>
+    <lastmod>2026-10-23T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-CA"
+                href="https://fedforless.ca/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr-CA"
+                href="https://fedforless.ca/fr/"
+                />
+  </url><url>
+    <loc>https://fedforless.ca/fr/collections/feed-six-for-under-12/</loc>
+    <lastmod>2026-10-23T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-CA"
+                href="https://fedforless.ca/collections/feed-six-for-under-12/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr-CA"
+                href="https://fedforless.ca/fr/collections/feed-six-for-under-12/"
+                />
+  </url><url>
+    <loc>https://fedforless.ca/fr/recipes/</loc>
+    <lastmod>2026-10-23T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-CA"
+                href="https://fedforless.ca/recipes/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr-CA"
+                href="https://fedforless.ca/fr/recipes/"
                 />
   </url><url>
     <loc>https://fedforless.ca/fr/collections/soups-that-eat-like-a-meal/</loc>
@@ -41,19 +93,6 @@
                 href="https://fedforless.ca/fr/collections/soups-that-eat-like-a-meal/"
                 />
   </url><url>
-    <loc>https://fedforless.ca/fr/</loc>
-    <lastmod>2026-10-21T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en-CA"
-                href="https://fedforless.ca/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="fr-CA"
-                href="https://fedforless.ca/fr/"
-                />
-  </url><url>
     <loc>https://fedforless.ca/fr/basket-weeks/one-basket-three-soups/</loc>
     <lastmod>2026-10-21T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -65,19 +104,6 @@
                 rel="alternate"
                 hreflang="fr-CA"
                 href="https://fedforless.ca/fr/basket-weeks/one-basket-three-soups/"
-                />
-  </url><url>
-    <loc>https://fedforless.ca/fr/recipes/</loc>
-    <lastmod>2026-10-21T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en-CA"
-                href="https://fedforless.ca/recipes/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="fr-CA"
-                href="https://fedforless.ca/fr/recipes/"
                 />
   </url><url>
     <loc>https://fedforless.ca/fr/basket-weeks/</loc>
@@ -169,19 +195,6 @@
                 rel="alternate"
                 hreflang="fr-CA"
                 href="https://fedforless.ca/fr/collections/dinners-under-1.50/"
-                />
-  </url><url>
-    <loc>https://fedforless.ca/fr/collections/feed-six-for-under-12/</loc>
-    <lastmod>2026-10-15T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en-CA"
-                href="https://fedforless.ca/collections/feed-six-for-under-12/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="fr-CA"
-                href="https://fedforless.ca/fr/collections/feed-six-for-under-12/"
                 />
   </url><url>
     <loc>https://fedforless.ca/fr/recipes/cheap-baked-oatmeal/</loc>
