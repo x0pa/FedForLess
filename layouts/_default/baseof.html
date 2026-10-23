@@ -54,6 +54,7 @@
 {{ block "main" . }}{{ end }}
 <footer class="site">
   {{ i18n "footer_line" }}<br>
+  {{ i18n "footer_prices" }}<br>
   <a href="{{ "/about/" | relLangURL }}">{{ i18n "footer_about" }}</a> · <a href="{{ "/privacy/" | relLangURL }}">{{ i18n "footer_privacy" }}</a> · <a href="{{ "/contact/" | relLangURL }}">{{ i18n "footer_contact" }}</a>{{ if $langTarget }} · <a href="{{ $langTarget }}">{{ $langLabel }}</a>{{ end }}<br>
   {{ i18n "footer_made" }}<br>
   {{ i18n "footer_designed" }} <a href="https://www.darkhaus.studio/">Dark Haus Studio</a>
