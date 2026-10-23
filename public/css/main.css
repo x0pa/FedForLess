@@ -140,3 +140,13 @@ footer.site a{color:var(--muted);text-decoration:none}
 .tierfilter button{font-family:"Oswald";font-weight:600;text-transform:uppercase;letter-spacing:.07em;font-size:.85rem;background:#fff;border:1.5px solid var(--hair);padding:.5rem .9rem;cursor:pointer;color:var(--ink)}
 .tierfilter button.on{background:var(--denim);border-color:var(--denim);color:#fff}
 .tierfilter .sortbtn{margin-left:auto}
+.mmenu{position:relative}
+.hamb{display:none;list-style:none;cursor:pointer;color:var(--denim);font-size:1.7rem;line-height:1;padding:.2rem .4rem}
+.hamb::-webkit-details-marker{display:none}
+.mmenu .panel{display:none}
+@media (max-width:860px){
+  nav.main.bar{display:none}
+  .hamb{display:block}
+  .mmenu[open] .panel{display:flex;flex-direction:column;gap:0;position:absolute;right:0;top:calc(100% + .7rem);background:#fff;border:1.5px solid var(--hair);min-width:230px;padding:.5rem 0;z-index:60}
+  .mmenu .panel a{padding:.65rem 1.1rem}
+}
