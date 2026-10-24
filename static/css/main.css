@@ -150,3 +150,4 @@ footer.site a{color:var(--muted);text-decoration:none}
   .mmenu[open] .panel{display:flex;flex-direction:column;gap:0;position:absolute;right:0;top:calc(100% + .7rem);background:#fff;border:1.5px solid var(--hair);min-width:230px;padding:.5rem 0;z-index:60}
   .mmenu .panel a{padding:.65rem 1.1rem}
 }
+.nobr{white-space:nowrap}

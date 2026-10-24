@@ -62,7 +62,7 @@ defaultContentLanguageInSubdir = false
   description = "Cheap, filling recipes with the price worked out first. Every recipe is costed on Canadian national average prices, with the full breakdown shown."
   tagline = "Real portions. Real prices."
   ga_id = "G-DQV6T7NHDD"
-  css_version = "7"
+  css_version = "8"
 
 [markup]
   [markup.goldmark]
