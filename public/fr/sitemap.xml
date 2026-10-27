@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://fedforless.ca/fr/collections/freezer-fillers/</loc>
-    <lastmod>2026-10-23T00:00:00+00:00</lastmod>
+    <lastmod>2026-10-27T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-CA"
@@ -13,6 +13,58 @@
                 rel="alternate"
                 hreflang="fr-CA"
                 href="https://fedforless.ca/fr/collections/freezer-fillers/"
+                />
+  </url><url>
+    <loc>https://fedforless.ca/fr/collections/</loc>
+    <lastmod>2026-10-27T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-CA"
+                href="https://fedforless.ca/collections/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr-CA"
+                href="https://fedforless.ca/fr/collections/"
+                />
+  </url><url>
+    <loc>https://fedforless.ca/fr/</loc>
+    <lastmod>2026-10-27T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-CA"
+                href="https://fedforless.ca/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr-CA"
+                href="https://fedforless.ca/fr/"
+                />
+  </url><url>
+    <loc>https://fedforless.ca/fr/recipes/cheap-beef-macaroni-skillet/</loc>
+    <lastmod>2026-10-27T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-CA"
+                href="https://fedforless.ca/recipes/cheap-beef-macaroni-skillet/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr-CA"
+                href="https://fedforless.ca/fr/recipes/cheap-beef-macaroni-skillet/"
+                />
+  </url><url>
+    <loc>https://fedforless.ca/fr/recipes/</loc>
+    <lastmod>2026-10-27T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-CA"
+                href="https://fedforless.ca/recipes/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr-CA"
+                href="https://fedforless.ca/fr/recipes/"
                 />
   </url><url>
     <loc>https://fedforless.ca/fr/recipes/cheap-chickpea-curry/</loc>
@@ -28,32 +80,6 @@
                 href="https://fedforless.ca/fr/recipes/cheap-chickpea-curry/"
                 />
   </url><url>
-    <loc>https://fedforless.ca/fr/collections/</loc>
-    <lastmod>2026-10-23T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en-CA"
-                href="https://fedforless.ca/collections/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="fr-CA"
-                href="https://fedforless.ca/fr/collections/"
-                />
-  </url><url>
-    <loc>https://fedforless.ca/fr/</loc>
-    <lastmod>2026-10-23T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en-CA"
-                href="https://fedforless.ca/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="fr-CA"
-                href="https://fedforless.ca/fr/"
-                />
-  </url><url>
     <loc>https://fedforless.ca/fr/collections/feed-six-for-under-12/</loc>
     <lastmod>2026-10-23T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -65,19 +91,6 @@
                 rel="alternate"
                 hreflang="fr-CA"
                 href="https://fedforless.ca/fr/collections/feed-six-for-under-12/"
-                />
-  </url><url>
-    <loc>https://fedforless.ca/fr/recipes/</loc>
-    <lastmod>2026-10-23T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en-CA"
-                href="https://fedforless.ca/recipes/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="fr-CA"
-                href="https://fedforless.ca/fr/recipes/"
                 />
   </url><url>
     <loc>https://fedforless.ca/fr/collections/soups-that-eat-like-a-meal/</loc>
