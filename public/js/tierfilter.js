@@ -5,17 +5,26 @@
   if (!list) return;
   var rows = Array.prototype.slice.call(list.querySelectorAll("li"));
   var original = rows.slice();
-  function apply(f) {
+  var state = { tier: "all", meal: "all" };
+  function apply() {
     rows.forEach(function (li) {
-      li.style.display = (f === "all" || li.dataset.tier === f) ? "" : "none";
+      var tierOk = state.tier === "all" || li.dataset.tier === state.tier;
+      var meals = (li.dataset.meals || "").split(" ");
+      var mealOk = state.meal === "all" || meals.indexOf(state.meal) >= 0;
+      li.style.display = tierOk && mealOk ? "" : "none";
     });
     bar.querySelectorAll("[data-filter]").forEach(function (b) {
-      b.classList.toggle("on", b.dataset.filter === f);
+      b.classList.toggle("on", b.dataset.filter === state.tier);
+    });
+    bar.querySelectorAll("[data-meal]").forEach(function (b) {
+      b.classList.toggle("on", b.dataset.meal === state.meal);
     });
   }
   bar.addEventListener("click", function (e) {
     var b = e.target.closest("[data-filter]");
-    if (b) { apply(b.dataset.filter); return; }
+    if (b) { state.tier = b.dataset.filter; apply(); return; }
+    var m = e.target.closest("[data-meal]");
+    if (m) { state.meal = m.dataset.meal; apply(); return; }
     var s = e.target.closest("#sort-cheapest");
     if (s) {
       var sorted = s.classList.toggle("on");
@@ -25,6 +34,10 @@
       order.forEach(function (li) { list.appendChild(li); });
     }
   });
-  var wanted = new URLSearchParams(location.search).get("tier");
-  if (wanted && ["green", "butter", "tomato"].indexOf(wanted) >= 0) apply(wanted);
+  var params = new URLSearchParams(location.search);
+  var wantedTier = params.get("tier");
+  if (wantedTier && ["green", "butter", "tomato"].indexOf(wantedTier) >= 0) state.tier = wantedTier;
+  var wantedMeal = params.get("meal");
+  if (wantedMeal && ["breakfast", "lunch", "dinner"].indexOf(wantedMeal) >= 0) state.meal = wantedMeal;
+  if (state.tier !== "all" || state.meal !== "all") apply();
 })();

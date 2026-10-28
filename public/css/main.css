@@ -137,6 +137,7 @@ footer.site a{color:var(--muted);text-decoration:none}
 .tierblock p{color:#2C3138;margin-top:.55rem;font-size:.95rem}
 @media (max-width:720px){.tiergrid{grid-template-columns:1fr}}
 .tierfilter{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1rem;max-width:46rem}
+.tierfilter + .tierfilter{margin-top:.5rem}
 .tierfilter button{font-family:"Oswald";font-weight:600;text-transform:uppercase;letter-spacing:.07em;font-size:.85rem;background:#fff;border:1.5px solid var(--hair);padding:.5rem .9rem;cursor:pointer;color:var(--ink)}
 .tierfilter button.on{background:var(--denim);border-color:var(--denim);color:#fff}
 .tierfilter .sortbtn{margin-left:auto}

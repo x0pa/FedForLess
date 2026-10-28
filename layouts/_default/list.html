@@ -2,19 +2,27 @@
 <div class="wrap">
   <div class="page-head"><h1>{{ .Title }}</h1></div>
   {{ if eq .Section "recipes" }}{{ partial "searchbox.html" . }}
-  <div class="tierfilter" id="tierfilter">
-    <button type="button" data-filter="all" class="on">{{ i18n "filter_all" }}</button>
-    <button type="button" data-filter="green">{{ i18n "tier_green" }}</button>
-    <button type="button" data-filter="butter">{{ i18n "tier_butter" }}</button>
-    <button type="button" data-filter="tomato">{{ i18n "tier_tomato" }}</button>
-    <button type="button" id="sort-cheapest" class="sortbtn">{{ i18n "sort_cheapest" }}</button>
+  <div id="tierfilter">
+    <div class="tierfilter">
+      <button type="button" data-meal="all" class="on">{{ i18n "meal_all" }}</button>
+      <button type="button" data-meal="breakfast">{{ i18n "meal_breakfast" }}</button>
+      <button type="button" data-meal="lunch">{{ i18n "meal_lunch" }}</button>
+      <button type="button" data-meal="dinner">{{ i18n "meal_dinner" }}</button>
+    </div>
+    <div class="tierfilter">
+      <button type="button" data-filter="all" class="on">{{ i18n "filter_all" }}</button>
+      <button type="button" data-filter="green">{{ i18n "tier_green" }}</button>
+      <button type="button" data-filter="butter">{{ i18n "tier_butter" }}</button>
+      <button type="button" data-filter="tomato">{{ i18n "tier_tomato" }}</button>
+      <button type="button" id="sort-cheapest" class="sortbtn">{{ i18n "sort_cheapest" }}</button>
+    </div>
   </div>
   <script src="{{ "/js/tierfilter.js" | relURL }}" defer></script>{{ end }}
   {{ with .Content }}<div style="max-width:46rem;margin-top:.8rem;">{{ . }}</div>{{ end }}
   <section class="index-sec" style="margin-top:1.6rem;">
     <ol class="index">
       {{ range .Pages.ByDate }}
-      <li data-tier="{{ .Params.tier }}" data-cost="{{ .Params.price_per_serving }}">
+      <li data-tier="{{ .Params.tier }}" data-cost="{{ .Params.price_per_serving }}" data-meals="{{ with .Params.meals }}{{ delimit . " " }}{{ end }}">
         <a href="{{ .RelPermalink }}"><img src="{{ .Params.image }}" alt="{{ .Title }}"></a>
         <div>
           <div class="rname"><a href="{{ .RelPermalink }}">{{ .Title }}</a></div>

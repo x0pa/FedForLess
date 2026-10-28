@@ -5,6 +5,7 @@ date: 2026-10-15
 draft: false
 tier: "green"
 tier_label: "Palier 1"
+meals: ["lunch", "dinner"]
 price_per_serving: "1.34"
 batch_cost: "8.02"
 basket_cost: "30.07"

@@ -5,6 +5,7 @@ date: 2026-10-27
 draft: false
 tier: "tomato"
 tier_label: "Palier 3"
+meals: ["dinner"]
 price_per_serving: "2.70"
 batch_cost: "16.17"
 basket_cost: "36.48"

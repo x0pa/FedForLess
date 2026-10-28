@@ -5,6 +5,7 @@ date: 2026-10-15
 draft: false
 tier: "butter"
 tier_label: "Tier 2"
+meals: ["dinner"]
 price_per_serving: "2.44"
 batch_cost: "14.62"
 basket_cost: "38.56"
