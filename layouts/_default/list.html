@@ -17,7 +17,7 @@
       <button type="button" id="sort-cheapest" class="sortbtn">{{ i18n "sort_cheapest" }}</button>
     </div>
   </div>
-  <script src="{{ "/js/tierfilter.js" | relURL }}" defer></script>{{ end }}
+  <script src="{{ "/js/tierfilter.js" | relURL }}?v={{ .Site.Params.css_version }}" defer></script>{{ end }}
   {{ with .Content }}<div style="max-width:46rem;margin-top:.8rem;">{{ . }}</div>{{ end }}
   <section class="index-sec" style="margin-top:1.6rem;">
     <ol class="index">
