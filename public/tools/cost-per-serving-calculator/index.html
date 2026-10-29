@@ -23,7 +23,7 @@
 <meta name="twitter:image" content="https://fedforless.ca/images/cheap-lentil-soup.webp">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Public+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/css/main.css?v=25">
+<link rel="stylesheet" href="/css/main.css?v=26">
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -68,43 +68,157 @@
 })();
 </script>
 
+
+
+
+
+
 <div class="wrap">
-  <div class="page-head"><h1>Cost Per Serving Calculator</h1></div>
-  <div style="max-width:46rem;">
-    <article class="prose">
-      <p>Enter what the ingredients you used cost, in total, and how many real servings the recipe made. Real means the portion a hungry adult eats, not the portion that makes the number pretty.</p>
-<div class="toolbox nums">
-  <label for="cps-total">Total ingredient cost of the batch ($)</label>
-  <input id="cps-total" type="number" min="0" step="0.01" placeholder="8.02">
-  <label for="cps-servings">Servings the batch actually made</label>
-  <input id="cps-servings" type="number" min="1" step="1" placeholder="6">
-  <div class="out" id="cps-out">Cost per serving: —</div>
-  <p id="cps-tier" style="font-weight:700;color:#2C3138;"></p>
+<div class="cpspage">
+  <nav class="cps-crumb" aria-label="breadcrumb">
+    <a href="/">Home</a> <span aria-hidden="true">›</span> <a href="/tools/">Tools</a> <span aria-hidden="true">›</span> <span aria-current="page">Cost Per Serving Calculator</span>
+  </nav>
+
+  <header class="cps-hero">
+    <p class="cps-eyebrow">Tool 01 · The Kitchen Toolkit</p>
+    <h1 class="cps-h1">Cost Per Serving<br><span>Calculator.</span></h1>
+    <p class="cps-intro">Enter what your recipe costs and how many servings it makes. We&#39;ll calculate exactly what each portion costs.</p>
+    <p class="cps-support">Real servings. Real numbers. No tiny portions hiding behind a low price.</p>
+  </header>
+
+  
+  <section class="cps-calc" id="cpscalc" data-lang="en" data-ex-total="11.52" data-ex-servings="6"
+    data-t-prompt="Enter both numbers to see your cost per serving." data-t-es="Servings must be greater than zero." data-t-ec="The total cost cannot be negative." data-t-en="Use numbers only, for example 11.52 and 6."
+    data-t-above-note="Above the Fed For Less Tier 3. Worth a cheaper protein or a bigger batch." data-t-copied="Copied to clipboard."
+    data-t-copy="Recipe batch cost: {b}. Servings: {s}. Cost per serving: {p}."
+    data-copy="Recipe batch cost: $11.52. Servings: 6. Cost per serving: $1.92.">
+    <div class="cps-inputs">
+      <h2 class="cps-panel-h">Your Recipe Numbers</h2>
+      <p class="cps-panel-sub">Just two numbers. That&#39;s all you need.</p>
+      <div class="cps-field">
+        <label for="cps-total">Total ingredient cost ($)</label>
+        <p class="cps-help">The combined cost of the ingredients actually used.</p>
+        <span class="cps-money"><input id="cps-total" type="number" min="0" step="0.01" inputmode="decimal" value="11.52" placeholder="11.52" autocomplete="off"></span>
+      </div>
+      <div class="cps-field">
+        <label for="cps-servings">Number of servings</label>
+        <p class="cps-help">How many actual portions does the finished recipe make?</p>
+        <input id="cps-servings" type="number" min="1" step="1" inputmode="numeric" value="6" placeholder="6" autocomplete="off">
+      </div>
+      <p class="cps-exnote">Prefilled with Cheap Perogies with Cabbage, Onion and Sour Cream so you can see it working. Type your own numbers to replace it.</p>
+    </div>
+    <div class="cps-results">
+      <h2 class="cps-panel-h">Your Cost Per Serving</h2>
+      <div aria-live="polite" aria-atomic="true">
+        <div class="cps-big nums" id="cps-big">$1.92</div>
+        <div class="cps-per">Per Serving</div>
+        <div class="cps-break">
+          <div class="cps-brow"><span>Batch Total</span><span class="nums" id="cps-bt">$11.52</span></div>
+          <div class="cps-brow"><span>Servings</span><span class="nums" id="cps-sv">6</span></div>
+        </div>
+        <div class="cps-formula nums" id="cps-formula">$11.52 ÷ 6 = $1.92</div>
+      </div>
+      <p class="cps-msg" id="cps-msg" role="status"></p>
+      <div class="cps-tiers" id="cps-tiers">
+        <span class="cps-tier-seg"><strong>Tier 1</strong> Under $1.50</span>
+        <span class="cps-tier-seg on"><strong>Tier 2</strong> $1.51 to $2.50</span>
+        <span class="cps-tier-seg"><strong>Tier 3</strong> $2.51 to $3.25</span>
+        <span class="cps-tier-seg above" id="cps-above" hidden><strong>Above Tier 3</strong></span>
+      </div>
+      <p class="cps-tier-note" id="cps-tier-note"></p>
+    </div>
+    <div class="cps-actions">
+      <button type="button" class="cps-btn ghost" id="cps-reset">Reset Calculator</button>
+      <button type="button" class="cps-btn" id="cps-copy">Copy Result</button>
+      <span class="cps-copied" id="cps-copied" aria-live="polite"></span>
+    </div>
+  </section>
+  
+
+  <section class="cps-math">
+    <h2 class="cps-h2">The Math Is Simple.</h2>
+    <p class="cps-bigformula">Batch Cost <span aria-hidden="true">÷</span> Servings <span aria-hidden="true">=</span> <strong>Cost Per Serving</strong></p>
+    
+    
+    <p class="cps-mathex">$11.52 divided by 6 real servings equals $1.92 per serving.</p>
+    
+    <p class="cps-mathp">Price each ingredient by the amount used: the package price divided by the package size, times the amount the recipe takes. If you use half a package, count half of its price, not the full package purchase cost. Add a small allowance for spices, oil, salt, and garlic rather than pretending they are free. That total is the batch cost, and the calculator above does the rest.</p>
+  </section>
+
+  
+  <section class="cps-call">
+    <h2 class="cps-call-h">Don&#39;t Know Your Batch Cost?</h2>
+    <p>Our Recipe Cost Calculator works out ingredient costs from grocery package prices and quantities used.</p>
+    <p><a class="cps-btn" href="/tools/recipe-cost-calculator/">Open Recipe Cost Calculator <span aria-hidden="true">→</span></a></p>
+  </section>
+  
+
+  
+  <section class="cps-real">
+    <h2 class="cps-h2">See It in a Real Recipe</h2>
+    <a class="cps-realcard" href="/recipes/cheap-perogies-with-cabbage-onion/">
+      <span class="cps-real-img"><img src="/images/cheap-perogies-with-cabbage-onion.webp" alt="" loading="lazy"></span>
+      <span class="cps-real-body">
+        <span class="cps-real-title">Cheap Perogies with Cabbage, Onion and Sour Cream</span>
+        <span class="cps-real-meta nums">Batch Total $11.52 · Serves 6 · $1.92 per serving</span>
+      </span>
+      <span class="cps-real-arrow" aria-hidden="true">→</span>
+    </a>
+  </section>
+  
+</div>
 </div>
 <script>
-(function(){
-  var t=document.getElementById('cps-total'), s=document.getElementById('cps-servings'),
-      o=document.getElementById('cps-out'), tier=document.getElementById('cps-tier');
-  function go(){
-    var tv=parseFloat(t.value), sv=parseFloat(s.value);
-    if(tv>=0 && sv>0){
-      var per=tv/sv;
-      o.textContent='Cost per serving: $'+per.toFixed(2);
-      tier.textContent = per<=1.50 ? 'Fed For Less tier: Tier 1 (up to $1.50).' :
-        per<=2.50 ? 'Fed For Less tier: Tier 2 ($1.51 to $2.50).' :
-        per<=3.25 ? 'Fed For Less tier: Tier 3 ($2.51 to $3.25), a filling splurge.' :
-        'Above the Fed For Less Tier 3. Worth a cheaper protein or a bigger batch.';
-    } else { o.textContent='Cost per serving: —'; tier.textContent=''; }
+(function () {
+  var root = document.getElementById('cpscalc');
+  if (!root) return;
+  var fr = root.getAttribute('data-lang') === 'fr';
+  var t = document.getElementById('cps-total'), s = document.getElementById('cps-servings'),
+      big = document.getElementById('cps-big'), bt = document.getElementById('cps-bt'),
+      sv = document.getElementById('cps-sv'), fx = document.getElementById('cps-formula'),
+      msg = document.getElementById('cps-msg'), note = document.getElementById('cps-tier-note'),
+      copyBtn = document.getElementById('cps-copy'), copied = document.getElementById('cps-copied'),
+      above = document.getElementById('cps-above'),
+      segs = root.querySelectorAll('.cps-tier-seg:not(.above)');
+  var EX_T = root.getAttribute('data-ex-total'), EX_S = root.getAttribute('data-ex-servings');
+  function fmt(v) { return fr ? v.toFixed(2).replace('.', ',') + ' $' : '$' + v.toFixed(2); }
+  function fmtServ(n) { return (n % 1 === 0) ? String(Math.round(n)) : String(n); }
+  function parse(el) { var v = el.value.trim().replace(',', '.'); if (v === '') return null; var n = Number(v); return isNaN(n) ? NaN : n; }
+  function clearResult(m) {
+    big.textContent = '—'; bt.textContent = '—'; sv.textContent = '—'; fx.textContent = '';
+    msg.textContent = m; copyBtn.disabled = true;
+    segs.forEach(function (g) { g.classList.remove('on'); });
+    above.hidden = true; note.textContent = '';
   }
-  t.addEventListener('input',go); s.addEventListener('input',go);
+  function go() {
+    var tv = parse(t), svv = parse(s);
+    if (tv === null || svv === null) { clearResult(root.getAttribute('data-t-prompt')); return; }
+    if (isNaN(tv) || isNaN(svv)) { clearResult(root.getAttribute('data-t-en')); return; }
+    if (tv < 0) { clearResult(root.getAttribute('data-t-ec')); return; }
+    if (svv <= 0) { clearResult(root.getAttribute('data-t-es')); return; }
+    var per = tv / svv, disp = Math.round(tv * 100 / svv) / 100;
+    big.textContent = fmt(disp);
+    bt.textContent = fmt(tv); sv.textContent = fmtServ(svv);
+    fx.textContent = fmt(tv) + ' ÷ ' + fmtServ(svv) + ' = ' + fmt(disp);
+    var tier = per <= 1.50 ? 1 : per <= 2.50 ? 2 : per <= 3.25 ? 3 : 0;
+    segs.forEach(function (g) { g.classList.remove('on'); });
+    if (tier > 0) { segs[tier - 1].classList.add('on'); above.hidden = true; note.textContent = ''; }
+    else { above.hidden = false; note.textContent = root.getAttribute('data-t-above-note'); }
+    msg.textContent = '';
+    copyBtn.disabled = false;
+    root.setAttribute('data-copy', root.getAttribute('data-t-copy').split('{b}').join(fmt(tv)).split('{s}').join(fmtServ(svv)).split('{p}').join(fmt(disp)));
+  }
+  t.addEventListener('input', go); s.addEventListener('input', go);
+  document.getElementById('cps-reset').addEventListener('click', function () { t.value = EX_T; s.value = EX_S; go(); t.focus(); });
+  copyBtn.addEventListener('click', function () {
+    var txt = root.getAttribute('data-copy'); if (!txt || copyBtn.disabled) return;
+    function done() { copied.textContent = root.getAttribute('data-t-copied'); setTimeout(function () { copied.textContent = ''; }, 2500); }
+    if (navigator.clipboard && navigator.clipboard.writeText) { navigator.clipboard.writeText(txt).then(done, done); }
+    else { var ta = document.createElement('textarea'); ta.value = txt; document.body.appendChild(ta); ta.select(); try { document.execCommand('copy'); } catch (e) {} document.body.removeChild(ta); done(); }
+  });
+  go();
 })();
 </script>
-<h2 id="how-to-get-the-batch-cost">How to get the batch cost</h2>
-<p>Price each ingredient by the amount used: the package price divided by the package size, times the amount the recipe takes. Half a bag is half the price. Add a small allowance for spices, oil, salt, and garlic rather than pretending they are free. That total is the batch cost, and the calculator above does the rest.</p>
-
-    </article>
-  </div>
-</div>
 
 <footer class="site">
   <div class="foot-in">

@@ -1,0 +1,153 @@
+{{ define "main" }}
+{{ $r := .Site.GetPage "/recipes/cheap-perogies-with-cabbage-onion" }}
+{{ $rc := .Site.GetPage "/tools/recipe-cost-calculator" }}
+{{ $tools := .Site.GetPage "/tools" }}
+{{ $per := 0.0 }}{{ $tier := 0 }}
+{{ with $r }}{{ $per = div (float .Params.batch_cost) (float .Params.servings) }}{{ $tier = cond (le $per 1.50) 1 (cond (le $per 2.50) 2 (cond (le $per 3.25) 3 0)) }}{{ end }}
+<div class="wrap">
+<div class="cpspage">
+  <nav class="cps-crumb" aria-label="breadcrumb">
+    <a href="{{ "/" | relLangURL }}">{{ i18n "cps_home" }}</a> <span aria-hidden="true">{{ i18n "cps_crumb_sep" }}</span> <a href="{{ $tools.RelPermalink }}">{{ $tools.Title }}</a> <span aria-hidden="true">{{ i18n "cps_crumb_sep" }}</span> <span aria-current="page">{{ .Title }}</span>
+  </nav>
+
+  <header class="cps-hero">
+    <p class="cps-eyebrow">{{ i18n "cps_eyebrow" }}</p>
+    <h1 class="cps-h1">{{ i18n "cps_h1_l1" }}<br><span>{{ i18n "cps_h1_l2" }}</span></h1>
+    <p class="cps-intro">{{ i18n "cps_intro" }}</p>
+    <p class="cps-support">{{ i18n "cps_support" }}</p>
+  </header>
+
+  {{ with $r }}
+  <section class="cps-calc" id="cpscalc" data-lang="{{ $.Lang }}" data-ex-total="{{ .Params.batch_cost }}" data-ex-servings="{{ .Params.servings }}"
+    data-t-prompt="{{ i18n "cps_prompt" }}" data-t-es="{{ i18n "cps_err_serv" }}" data-t-ec="{{ i18n "cps_err_cost" }}" data-t-en="{{ i18n "cps_err_nan" }}"
+    data-t-above-note="{{ i18n "cps_above_note" }}" data-t-copied="{{ i18n "cps_copied" }}"
+    data-t-copy="{{ i18n "cps_copy_tpl" }}"
+    data-copy="{{ $tpl := i18n "cps_copy_tpl" }}{{ $tpl = replace $tpl "{b}" (partial "price.html" (dict "amt" .Params.batch_cost "lang" $.Lang)) }}{{ $tpl = replace $tpl "{s}" (printf "%v" .Params.servings) }}{{ $tpl = replace $tpl "{p}" (partial "price.html" (dict "amt" .Params.price_per_serving "lang" $.Lang)) }}{{ $tpl }}">
+    <div class="cps-inputs">
+      <h2 class="cps-panel-h">{{ i18n "cps_inputs_h" }}</h2>
+      <p class="cps-panel-sub">{{ i18n "cps_inputs_sub" }}</p>
+      <div class="cps-field">
+        <label for="cps-total">{{ i18n "cps_total_label" }}</label>
+        <p class="cps-help">{{ i18n "cps_total_help" }}</p>
+        <span class="cps-money"><input id="cps-total" type="number" min="0" step="0.01" inputmode="decimal" value="{{ .Params.batch_cost }}" placeholder="{{ .Params.batch_cost }}" autocomplete="off"></span>
+      </div>
+      <div class="cps-field">
+        <label for="cps-servings">{{ i18n "cps_serv_label" }}</label>
+        <p class="cps-help">{{ i18n "cps_serv_help" }}</p>
+        <input id="cps-servings" type="number" min="1" step="1" inputmode="numeric" value="{{ .Params.servings }}" placeholder="{{ .Params.servings }}" autocomplete="off">
+      </div>
+      <p class="cps-exnote">{{ delimit (split (i18n "cps_example_note") "{x}") .Title }}</p>
+    </div>
+    <div class="cps-results">
+      <h2 class="cps-panel-h">{{ i18n "cps_result_h" }}</h2>
+      <div aria-live="polite" aria-atomic="true">
+        <div class="cps-big nums" id="cps-big">{{ partial "price.html" (dict "amt" .Params.price_per_serving "lang" $.Lang) }}</div>
+        <div class="cps-per">{{ i18n "cps_per" }}</div>
+        <div class="cps-break">
+          <div class="cps-brow"><span>{{ i18n "batch_total" }}</span><span class="nums" id="cps-bt">{{ partial "price.html" (dict "amt" .Params.batch_cost "lang" $.Lang) }}</span></div>
+          <div class="cps-brow"><span>{{ i18n "meta_servings" }}</span><span class="nums" id="cps-sv">{{ .Params.servings }}</span></div>
+        </div>
+        <div class="cps-formula nums" id="cps-formula">{{ partial "price.html" (dict "amt" .Params.batch_cost "lang" $.Lang) }} ÷ {{ .Params.servings }} = {{ partial "price.html" (dict "amt" .Params.price_per_serving "lang" $.Lang) }}</div>
+      </div>
+      <p class="cps-msg" id="cps-msg" role="status"></p>
+      <div class="cps-tiers" id="cps-tiers">
+        <span class="cps-tier-seg{{ if eq $tier 1 }} on{{ end }}"><strong>{{ i18n "tier_green" }}</strong> {{ i18n "t1_big" }}</span>
+        <span class="cps-tier-seg{{ if eq $tier 2 }} on{{ end }}"><strong>{{ i18n "tier_butter" }}</strong> {{ i18n "t2_big" }}</span>
+        <span class="cps-tier-seg{{ if eq $tier 3 }} on{{ end }}"><strong>{{ i18n "tier_tomato" }}</strong> {{ i18n "t3_big" }}</span>
+        <span class="cps-tier-seg above" id="cps-above"{{ if ne $tier 0 }} hidden{{ end }}><strong>{{ i18n "cps_above" }}</strong></span>
+      </div>
+      <p class="cps-tier-note" id="cps-tier-note"></p>
+    </div>
+    <div class="cps-actions">
+      <button type="button" class="cps-btn ghost" id="cps-reset">{{ i18n "cps_reset" }}</button>
+      <button type="button" class="cps-btn" id="cps-copy">{{ i18n "cps_copy" }}</button>
+      <span class="cps-copied" id="cps-copied" aria-live="polite"></span>
+    </div>
+  </section>
+  {{ end }}
+
+  <section class="cps-math">
+    <h2 class="cps-h2">{{ i18n "cps_math_h" }}</h2>
+    <p class="cps-bigformula">{{ i18n "cps_math_formula_a" }} <span aria-hidden="true">÷</span> {{ i18n "cps_math_formula_b" }} <span aria-hidden="true">=</span> <strong>{{ i18n "cps_math_formula_c" }}</strong></p>
+    {{ with $r }}
+    {{ $ex := i18n "cps_math_ex" }}{{ $ex = replace $ex "{b}" (partial "price.html" (dict "amt" .Params.batch_cost "lang" $.Lang)) }}{{ $ex = replace $ex "{s}" (printf "%v" .Params.servings) }}{{ $ex = replace $ex "{p}" (partial "price.html" (dict "amt" .Params.price_per_serving "lang" $.Lang)) }}
+    <p class="cps-mathex">{{ $ex }}</p>
+    {{ end }}
+    <p class="cps-mathp">{{ i18n "cps_math_p" }}</p>
+  </section>
+
+  {{ with $rc }}
+  <section class="cps-call">
+    <h2 class="cps-call-h">{{ i18n "cps_call_h" }}</h2>
+    <p>{{ i18n "cps_call_p" }}</p>
+    <p><a class="cps-btn" href="{{ .RelPermalink }}">{{ i18n "tl_open" }} {{ .Title }} <span aria-hidden="true">→</span></a></p>
+  </section>
+  {{ end }}
+
+  {{ with $r }}
+  <section class="cps-real">
+    <h2 class="cps-h2">{{ i18n "cps_real_h" }}</h2>
+    <a class="cps-realcard" href="{{ .RelPermalink }}">
+      <span class="cps-real-img"><img src="{{ .Params.image }}" alt="" loading="lazy"></span>
+      <span class="cps-real-body">
+        <span class="cps-real-title">{{ .Title }}</span>
+        <span class="cps-real-meta nums">{{ i18n "batch_total" }} {{ partial "price.html" (dict "amt" .Params.batch_cost "lang" $.Lang) }} · {{ partial "serves.html" (dict "n" .Params.servings "lang" $.Lang) }} · {{ partial "price.html" (dict "amt" .Params.price_per_serving "lang" $.Lang) }} {{ i18n "per_serving" }}</span>
+      </span>
+      <span class="cps-real-arrow" aria-hidden="true">→</span>
+    </a>
+  </section>
+  {{ end }}
+</div>
+</div>
+<script>
+(function () {
+  var root = document.getElementById('cpscalc');
+  if (!root) return;
+  var fr = root.getAttribute('data-lang') === 'fr';
+  var t = document.getElementById('cps-total'), s = document.getElementById('cps-servings'),
+      big = document.getElementById('cps-big'), bt = document.getElementById('cps-bt'),
+      sv = document.getElementById('cps-sv'), fx = document.getElementById('cps-formula'),
+      msg = document.getElementById('cps-msg'), note = document.getElementById('cps-tier-note'),
+      copyBtn = document.getElementById('cps-copy'), copied = document.getElementById('cps-copied'),
+      above = document.getElementById('cps-above'),
+      segs = root.querySelectorAll('.cps-tier-seg:not(.above)');
+  var EX_T = root.getAttribute('data-ex-total'), EX_S = root.getAttribute('data-ex-servings');
+  function fmt(v) { return fr ? v.toFixed(2).replace('.', ',') + ' $' : '$' + v.toFixed(2); }
+  function fmtServ(n) { return (n % 1 === 0) ? String(Math.round(n)) : String(n); }
+  function parse(el) { var v = el.value.trim().replace(',', '.'); if (v === '') return null; var n = Number(v); return isNaN(n) ? NaN : n; }
+  function clearResult(m) {
+    big.textContent = '—'; bt.textContent = '—'; sv.textContent = '—'; fx.textContent = '';
+    msg.textContent = m; copyBtn.disabled = true;
+    segs.forEach(function (g) { g.classList.remove('on'); });
+    above.hidden = true; note.textContent = '';
+  }
+  function go() {
+    var tv = parse(t), svv = parse(s);
+    if (tv === null || svv === null) { clearResult(root.getAttribute('data-t-prompt')); return; }
+    if (isNaN(tv) || isNaN(svv)) { clearResult(root.getAttribute('data-t-en')); return; }
+    if (tv < 0) { clearResult(root.getAttribute('data-t-ec')); return; }
+    if (svv <= 0) { clearResult(root.getAttribute('data-t-es')); return; }
+    var per = tv / svv, disp = Math.round(tv * 100 / svv) / 100;
+    big.textContent = fmt(disp);
+    bt.textContent = fmt(tv); sv.textContent = fmtServ(svv);
+    fx.textContent = fmt(tv) + ' ÷ ' + fmtServ(svv) + ' = ' + fmt(disp);
+    var tier = per <= 1.50 ? 1 : per <= 2.50 ? 2 : per <= 3.25 ? 3 : 0;
+    segs.forEach(function (g) { g.classList.remove('on'); });
+    if (tier > 0) { segs[tier - 1].classList.add('on'); above.hidden = true; note.textContent = ''; }
+    else { above.hidden = false; note.textContent = root.getAttribute('data-t-above-note'); }
+    msg.textContent = '';
+    copyBtn.disabled = false;
+    root.setAttribute('data-copy', root.getAttribute('data-t-copy').split('{b}').join(fmt(tv)).split('{s}').join(fmtServ(svv)).split('{p}').join(fmt(disp)));
+  }
+  t.addEventListener('input', go); s.addEventListener('input', go);
+  document.getElementById('cps-reset').addEventListener('click', function () { t.value = EX_T; s.value = EX_S; go(); t.focus(); });
+  copyBtn.addEventListener('click', function () {
+    var txt = root.getAttribute('data-copy'); if (!txt || copyBtn.disabled) return;
+    function done() { copied.textContent = root.getAttribute('data-t-copied'); setTimeout(function () { copied.textContent = ''; }, 2500); }
+    if (navigator.clipboard && navigator.clipboard.writeText) { navigator.clipboard.writeText(txt).then(done, done); }
+    else { var ta = document.createElement('textarea'); ta.value = txt; document.body.appendChild(ta); ta.select(); try { document.execCommand('copy'); } catch (e) {} document.body.removeChild(ta); done(); }
+  });
+  go();
+})();
+</script>
+{{ end }}
