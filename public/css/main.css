@@ -782,3 +782,63 @@ ol.homeindex .rowlink:hover .rarr{transform:translateX(3px)}
   .hwprice .hw-receipt{max-width:460px}
   .hwprice .hw-dates-grid > div + div{border-left:none;padding-left:0}
 }
+
+/* ============ tools index (Budget Kitchen Toolkit) — scoped to .toolspage ============ */
+.toolspage{padding-top:2.1rem}
+.toolspage .tl-hero{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:2.6rem;align-items:start}
+.toolspage .tl-eyebrow{font-family:"Oswald";font-weight:700;text-transform:uppercase;letter-spacing:.15em;font-size:.85rem;color:var(--denim);margin:0 0 .7rem}
+.toolspage .tl-h1{font-family:"Oswald";font-weight:700;text-transform:uppercase;font-size:clamp(2.9rem,6vw,4.6rem);line-height:1.02;margin:0;color:var(--ink)}
+.toolspage .tl-h1 span{color:var(--denim)}
+.toolspage .tl-intro{font-size:1.08rem;line-height:1.65;color:#2C3138;margin:0;max-width:32rem}
+.toolspage .tl-hls{margin-top:1.5rem;display:grid;gap:1rem}
+.toolspage .tl-hl{display:flex;gap:.8rem;align-items:flex-start}
+.toolspage .tl-hl-ic{flex:none;width:42px;height:42px;border-radius:50%;background:#EAF1F8;color:var(--denim);display:flex;align-items:center;justify-content:center}
+.toolspage .tl-hl-ic svg{width:20px;height:20px}
+.toolspage .tl-hl-h{font-family:"Oswald";font-weight:700;text-transform:uppercase;font-size:.96rem;margin:0;color:var(--ink)}
+.toolspage .tl-hl p{font-size:.9rem;line-height:1.45;color:var(--muted);margin:.15rem 0 0}
+.toolspage .tl-sec{margin-top:2.6rem;border-top:2px solid var(--ink);padding-top:1.2rem}
+.toolspage .tl-h2{font-family:"Oswald";font-weight:700;text-transform:uppercase;font-size:clamp(1.7rem,3.4vw,2.3rem);margin:0;color:var(--ink)}
+.toolspage .tl-sub{color:var(--muted);font-size:1rem;margin:.5rem 0 0}
+.toolspage .tl-card{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);grid-template-areas:"info preview" "cta preview";column-gap:2.4rem;row-gap:1.1rem;border:1px solid var(--hair);border-radius:10px;padding:1.7rem 1.8rem;margin-top:1.5rem;background:#fff;align-items:start;transition:border-color .15s ease}
+.toolspage .tl-card:hover{border-color:var(--denim)}
+.toolspage .tl-card.flip{grid-template-areas:"preview info" "preview cta"}
+.toolspage .tl-info{grid-area:info}
+.toolspage .tl-label{font-family:"Oswald";font-weight:700;text-transform:uppercase;letter-spacing:.13em;font-size:.82rem;color:var(--denim);margin:0}
+.toolspage .tl-card-h{font-family:"Oswald";font-weight:700;text-transform:uppercase;font-size:clamp(1.45rem,2.6vw,1.9rem);line-height:1.12;margin:.5rem 0 0;color:var(--ink)}
+.toolspage .tl-desc{color:#2C3138;line-height:1.62;margin:.7rem 0 0;font-size:1.01rem}
+.toolspage .tl-calc{font-family:"Oswald";font-weight:600;font-size:1.3rem;color:var(--ink);background:#EAF1F8;border-radius:8px;padding:.7rem .9rem;margin:1.1rem 0 0}
+.toolspage .tl-calc strong{color:var(--denim);font-size:1.55rem}
+.toolspage .tl-preview{grid-area:preview;position:relative;background:#EAF1F8;border:1px solid #C9D6E8;border-radius:10px;padding:1.4rem 1.4rem 1.3rem}
+.toolspage .tl-exchip{position:absolute;top:-.65rem;right:1rem;background:var(--denim);color:#fff;font-family:"Oswald";font-weight:600;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;padding:.28rem .6rem;border-radius:999px}
+.toolspage .tl-field{margin-top:.9rem}
+.toolspage .tl-field:first-of-type{margin-top:.2rem}
+.toolspage .tl-flabel{display:block;font-weight:700;font-size:.86rem;color:#2C3138;margin-bottom:.35rem}
+.toolspage .tl-fbox{display:block;background:#fff;border:1px solid var(--hair);border-radius:6px;padding:.65rem .8rem;font-weight:600;color:var(--ink)}
+.toolspage .tl-result{margin-top:1.15rem;border-top:1px solid #C9D6E8;padding-top:.9rem;display:flex;align-items:baseline;justify-content:space-between;gap:1rem;font-family:"Oswald";font-weight:600;text-transform:uppercase;letter-spacing:.04em;color:var(--ink)}
+.toolspage .tl-result-amt{font-size:2rem;color:var(--denim)}
+.toolspage .tl-rtable{display:grid;gap:.45rem;margin-top:.3rem}
+.toolspage .tl-rrow{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.8fr) minmax(0,.7fr) minmax(0,.8fr) minmax(0,.7fr);gap:.5rem;align-items:center;background:#fff;border:1px solid var(--hair);border-radius:6px;padding:.55rem .7rem;font-size:.9rem;color:var(--ink)}
+.toolspage .tl-rhead{background:none;border:none;padding:.1rem .7rem;font-weight:700;font-size:.74rem;text-transform:uppercase;letter-spacing:.05em;color:var(--muted)}
+.toolspage .tl-rcost{font-weight:700;color:var(--denim);text-align:right}
+.toolspage .tl-rtotal{background:#D6E6F8;border-color:#B9CFEC;font-weight:700}
+.toolspage .tl-cta{grid-area:cta;margin:0}
+.toolspage .tl-btn{display:inline-block;background:var(--denim);color:#fff;font-family:"Oswald";font-weight:600;font-size:1rem;letter-spacing:.03em;padding:.85rem 1.5rem;border-radius:6px;text-decoration:none}
+.toolspage .tl-btn:hover{background:var(--denim-deep)}
+.toolspage .tl-which{margin-top:.6rem}
+.toolspage .tl-wrow{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:1.6rem;align-items:center;padding:1.25rem 0;border-bottom:1px solid var(--hair)}
+.toolspage .tl-w-h{font-family:"Oswald";font-weight:700;text-transform:uppercase;font-size:1.08rem;margin:0;color:var(--ink)}
+.toolspage .tl-wrow p{color:#2C3138;line-height:1.58;margin:.35rem 0 0}
+.toolspage .tl-w-link{font-size:1rem;margin:0}
+.toolspage .tl-link{font-family:"Oswald";font-weight:600;color:var(--denim);text-decoration:none}
+.toolspage .tl-link:hover{text-decoration:underline}
+.toolspage .tl-call{margin-top:2.6rem;background:#EAF1F8;border:1px solid #C9D6E8;border-radius:10px;padding:1.5rem 1.7rem}
+.toolspage .tl-call-h{font-family:"Oswald";font-weight:700;text-transform:uppercase;font-size:1.35rem;margin:0;color:var(--ink)}
+.toolspage .tl-call p{color:#2C3138;line-height:1.65;margin:.6rem 0 0;max-width:52rem}
+@media (max-width:920px){
+  .toolspage .tl-hero{grid-template-columns:minmax(0,1fr);gap:1.4rem}
+  .toolspage .tl-card,.toolspage .tl-card.flip{grid-template-columns:minmax(0,1fr);grid-template-areas:"info" "preview" "cta";padding:1.3rem 1.25rem}
+  .toolspage .tl-wrow{grid-template-columns:minmax(0,1fr);gap:.5rem}
+  .toolspage .tl-btn{display:block;text-align:center}
+  .toolspage .tl-call .tl-btn{display:inline-block}
+  .toolspage .tl-rrow{font-size:.8rem;padding:.5rem .55rem;gap:.35rem}
+}

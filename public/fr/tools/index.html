@@ -23,7 +23,7 @@
 <meta name="twitter:image" content="https://fedforless.ca/images/cheap-lentil-soup.webp">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Public+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/css/main.css?v=24">
+<link rel="stylesheet" href="/css/main.css?v=25">
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -53,17 +53,92 @@
   </nav>
 </header>
 
+
+
+
 <div class="wrap">
-  <div class="page-head"><h1>Outils</h1></div>
-  <div style="max-width:46rem;margin-top:.8rem;"><p>Deux petits outils qui font les calculs sur lesquels ce site repose. Utilisez les sur vos propres recettes : un plat qui ne peut pas annoncer son coût par portion ne peut pas se prétendre économique.</p>
+<div class="toolspage">
+  <header class="tl-hero">
+    <div class="tl-hero-l">
+      <p class="tl-eyebrow">Mieux cuisiner commence ici</p>
+      <h1 class="tl-h1">Des outils pour<br><span>des factures plus petites.</span></h1>
+    </div>
+    <div class="tl-hero-r">
+      <p class="tl-intro">Sachez ce que le souper coûte vraiment. Nos calculateurs de cuisine gratuits vous aident à chiffrer les ingrédients, à calculer les totaux de recettes et à trouver le vrai coût par portion avant de magasiner.</p>
+      <div class="tl-hls">
+        <div class="tl-hl">
+          <span class="tl-hl-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.59 13.41 11 3H4v7l9.59 9.59a2 2 0 0 0 2.82 0l4.18-4.18a2 2 0 0 0 0-2.82z"/><circle cx="7.5" cy="7.5" r=".5"/></svg></span>
+          <div><h2 class="tl-hl-h">Gratuits</h2><p>Aucun abonnement requis.</p></div>
+        </div>
+        <div class="tl-hl">
+          <span class="tl-hl-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18"/><path d="M8 17v-5"/><path d="M13 17V8"/><path d="M18 17v-8"/></svg></span>
+          <div><h2 class="tl-hl-h">De vrais chiffres</h2><p>Calculez les coûts à partir des prix que vous entrez.</p></div>
+        </div>
+        <div class="tl-hl">
+          <span class="tl-hl-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg></span>
+          <div><h2 class="tl-hl-h">Pensés pour la cuisine maison</h2><p>Des outils simples pour planifier les repas de tous les jours.</p></div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="tl-sec">
+    <h2 class="tl-h2">La trousse de cuisine</h2>
+    <p class="tl-sub">Deux calculateurs simples. Aucun tableur compliqué.</p>
+
+    
+    <article class="tl-card">
+      <div class="tl-info">
+        <p class="tl-label">Outil 01</p>
+        <h3 class="tl-card-h">Calculateur de coût par portion</h3>
+        <p class="tl-desc">Vous connaissez déjà le coût de vos ingrédients ? Entrez le total de votre recette et le nombre de portions pour savoir exactement ce que chaque portion coûte.</p>
+        <p class="tl-calc nums">11,52 $ <span aria-hidden="true">÷</span> 6 Portions <span aria-hidden="true">=</span> <strong>1,92 $</strong></p>
+      </div>
+      <div class="tl-preview" aria-hidden="true">
+        <span class="tl-exchip">Exemple</span>
+        <div class="tl-field"><span class="tl-flabel">Coût total des ingrédients ($)</span><span class="tl-fbox nums">11,52 $</span></div>
+        <div class="tl-field"><span class="tl-flabel">Portions</span><span class="tl-fbox nums">6</span></div>
+        <div class="tl-result"><span>Coût par portion</span><span class="tl-result-amt nums">1,92 $</span></div>
+      </div>
+      <p class="tl-cta"><a class="tl-btn" href="/fr/tools/cost-per-serving-calculator/">Ouvrir Calculateur de coût par portion <span aria-hidden="true">→</span></a></p>
+    </article>
+    
+
+    
+    <article class="tl-card flip">
+      <div class="tl-info">
+        <p class="tl-label">Outil 02</p>
+        <h3 class="tl-card-h">Calculateur de coût de recette</h3>
+        <p class="tl-desc">Transformez les prix des emballages en coûts réels de recette. Entrez ce qu&#39;un emballage coûte, ce qu&#39;il contient et ce que votre recette utilise. Nous calculerons les coûts des ingrédients et le total complet de votre recette.</p>
+      </div>
+      <div class="tl-preview" aria-hidden="true">
+        <span class="tl-exchip">Exemple</span>
+        <div class="tl-rtable nums">
+          <div class="tl-rrow tl-rhead"><span>Ingrédient</span><span>Prix de l&#39;emballage</span><span>Taille</span><span>Quantité utilisée</span><span>Coût</span></div>
+          <div class="tl-rrow"><span>Farine</span><span>$4.00</span><span>900 g</span><span>450 g</span><span class="tl-rcost">$2.00</span></div>
+          <div class="tl-rrow"><span>Riz</span><span>$3.50</span><span>2 kg</span><span>500 g</span><span class="tl-rcost">$0.88</span></div>
+          <div class="tl-rrow tl-rtotal"><span>Total de la recette</span><span></span><span></span><span></span><span class="tl-rcost">$2.88</span></div>
+        </div>
+      </div>
+      <p class="tl-cta"><a class="tl-btn" href="/fr/tools/recipe-cost-calculator/">Ouvrir Calculateur de coût de recette <span aria-hidden="true">→</span></a></p>
+    </article>
+    
+  </section>
+
+  <section class="tl-sec">
+    <h2 class="tl-h2">Quel calculateur utiliser ?</h2>
+    <div class="tl-which">
+      <div class="tl-wrow"><div><h3 class="tl-w-h">Je connais déjà le total de ma recette</h3><p>Vous avez déjà le total de la recette. Entrez le avec les portions et obtenez le coût exact de chaque portion.</p></div><p class="tl-w-link">Utilisez le <a class="tl-link" href="/fr/tools/cost-per-serving-calculator/">Calculateur de coût par portion <span aria-hidden="true">→</span></a></p></div>
+      <div class="tl-wrow"><div><h3 class="tl-w-h">Je dois chiffrer mes ingrédients</h3><p>Partez des prix des emballages et des quantités que votre recette utilise, et construisez le total ingrédient par ingrédient.</p></div><p class="tl-w-link">Utilisez le <a class="tl-link" href="/fr/tools/recipe-cost-calculator/">Calculateur de coût de recette <span aria-hidden="true">→</span></a></p></div>
+    </div>
+  </section>
+
+  <section class="tl-call">
+    <h2 class="tl-call-h">Vous voulez voir comment nous chiffrons nos recettes ?</h2>
+    <p>Nous utilisons une méthode de prix constante pour montrer les coûts des ingrédients, les totaux de recette, le coût par portion et les coûts du panier.</p>
+    <p><a class="tl-btn" href="/fr/how-we-price/">Découvrir Comment nous fixons les prix <span aria-hidden="true">→</span></a></p>
+  </section>
 </div>
-  <div class="collections" style="margin-top:1.4rem;">
-    
-    <div class="col-card"><div class="cname"><a href="/fr/tools/recipe-cost-calculator/">Calculateur de coût de recette</a></div><p>Transformez le prix des emballages en coût des ingrédients : prix, taille et quantité utilisée, ligne par ligne, et obtenez le total de la recette.</p></div>
-    
-    <div class="col-card"><div class="cname"><a href="/fr/tools/cost-per-serving-calculator/">Calculateur de coût par portion</a></div><p>Additionnez le coût des ingrédients d&#39;une recette et divisez par le nombre réel de portions. Le chiffre le plus honnête de la cuisine économique.</p></div>
-    
-  </div>
 </div>
 
 <footer class="site">
