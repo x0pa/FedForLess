@@ -102,12 +102,12 @@ Red lentils are the cheapest reliable way to turn a pot of water into dinner. Th
 ## Ingredients
 
 <ul class="ingredients nums">
-  <li><span>Red lentils, 450 g (half a 900 g bag)</span><span>about $1.81</span></li>
-  <li><span>Potatoes, 1 kg, from the big bag</span><span>about $1.07</span></li>
-  <li><span>Carrots, 500 g</span><span>about $1.43</span></li>
-  <li><span>Onions, 300 g</span><span>about $1.01</span></li>
-  <li><span>Canned tomatoes, 796 ml</span><span>about $2.18</span></li>
-  <li><span>Canola oil, garlic, spices, bouillon</span><span>about $0.52</span></li>
+  <li><span>Red lentils, 450 g (half a 900 g bag)</span></li>
+  <li><span>Potatoes, 1 kg, from the big bag</span></li>
+  <li><span>Carrots, 500 g</span></li>
+  <li><span>Onions, 300 g</span></li>
+  <li><span>Canned tomatoes, 796 ml</span></li>
+  <li><span>Canola oil, garlic, spices, bouillon</span></li>
 </ul>
 
 ## Method

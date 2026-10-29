@@ -90,11 +90,11 @@ Les pilons de poulet sont la coupe la moins chère du comptoir qui donne quand m
 ## Ingrédients
 
 <ul class="ingredients nums">
-  <li><span>Pilons de poulet, 1,2 kg</span><span>environ 9,00 $</span></li>
-  <li><span>Riz à grains longs, 400 g</span><span>environ 1,95 $</span></li>
-  <li><span>Légumes mélangés congelés, 450 g</span><span>environ 2,60 $</span></li>
-  <li><span>Oignon, 200 g</span><span>environ 0,67 $</span></li>
-  <li><span>Huile de canola, ail, épices et sel</span><span>environ 0,40 $</span></li>
+  <li><span>Pilons de poulet, 1,2 kg</span></li>
+  <li><span>Riz à grains longs, 400 g</span></li>
+  <li><span>Légumes mélangés congelés, 450 g</span></li>
+  <li><span>Oignon, 200 g</span></li>
+  <li><span>Huile de canola, ail, épices et sel</span></li>
 </ul>
 
 ## Préparation

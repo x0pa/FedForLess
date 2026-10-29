@@ -111,14 +111,14 @@ Beef and barley soup usually means stewing beef, and stewing beef is where the b
 ## Ingredients
 
 <ul class="ingredients nums">
-  <li><span>Ground beef, 500 g</span><span>about $8.38</span></li>
-  <li><span>Pearl barley, 300 g</span><span>about $1.66</span></li>
-  <li><span>Potatoes, 500 g, from the big bag</span><span>about $0.54</span></li>
-  <li><span>Carrots, 400 g</span><span>about $1.14</span></li>
-  <li><span>Onions, 300 g</span><span>about $1.01</span></li>
-  <li><span>Celery, 2 stalks</span><span>about $0.89</span></li>
-  <li><span>Canned tomatoes, 796 ml</span><span>about $2.18</span></li>
-  <li><span>Canola oil, garlic, thyme, bay and bouillon</span><span>about $0.46</span></li>
+  <li><span>Ground beef, 500 g</span></li>
+  <li><span>Pearl barley, 300 g</span></li>
+  <li><span>Potatoes, 500 g, from the big bag</span></li>
+  <li><span>Carrots, 400 g</span></li>
+  <li><span>Onions, 300 g</span></li>
+  <li><span>Celery, 2 stalks</span></li>
+  <li><span>Canned tomatoes, 796 ml</span></li>
+  <li><span>Canola oil, garlic, thyme, bay and bouillon</span></li>
 </ul>
 
 ## Method

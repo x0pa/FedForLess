@@ -98,14 +98,14 @@ Breakfast is where tight budgets quietly leak money, one rushed purchase at a ti
 ## Ingredients
 
 <ul class="ingredients nums">
-  <li><span>Rolled oats, 270 g</span><span>about $0.78</span></li>
-  <li><span>Peanut butter, 250 g</span><span>about $1.49</span></li>
-  <li><span>Apples, 400 g, chopped</span><span>about $2.59</span></li>
-  <li><span>Eggs, 3</span><span>about $1.21</span></li>
-  <li><span>Milk, 375 ml</span><span>about $0.66</span></li>
-  <li><span>Sugar, 100 g</span><span>about $0.14</span></li>
-  <li><span>Butter, 30 g</span><span>about $0.38</span></li>
-  <li><span>Cinnamon, vanilla, baking powder</span><span>about $0.30</span></li>
+  <li><span>Rolled oats, 270 g</span></li>
+  <li><span>Peanut butter, 250 g</span></li>
+  <li><span>Apples, 400 g, chopped</span></li>
+  <li><span>Eggs, 3</span></li>
+  <li><span>Milk, 375 ml</span></li>
+  <li><span>Sugar, 100 g</span></li>
+  <li><span>Butter, 30 g</span></li>
+  <li><span>Cinnamon, vanilla, baking powder</span></li>
 </ul>
 
 ## Method

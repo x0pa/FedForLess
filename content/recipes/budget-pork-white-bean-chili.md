@@ -96,13 +96,13 @@ Chili is usually a ground meat game, and ground meat prices show it. Pork should
 ## Ingredients
 
 <ul class="ingredients nums">
-  <li><span>Pork shoulder, 700 g, cubed</span><span>about $6.45</span></li>
-  <li><span>Canned white beans, two 540 ml cans</span><span>about $3.40</span></li>
-  <li><span>Canned tomatoes, 796 ml</span><span>about $2.18</span></li>
-  <li><span>Frozen corn, 300 g</span><span>about $1.51</span></li>
-  <li><span>Onion, 200 g</span><span>about $0.67</span></li>
-  <li><span>Canola oil, 15 ml</span><span>about $0.05</span></li>
-  <li><span>Chili spices and garlic</span><span>about $0.41</span></li>
+  <li><span>Pork shoulder, 700 g, cubed</span></li>
+  <li><span>Canned white beans, two 540 ml cans</span></li>
+  <li><span>Canned tomatoes, 796 ml</span></li>
+  <li><span>Frozen corn, 300 g</span></li>
+  <li><span>Onion, 200 g</span></li>
+  <li><span>Canola oil, 15 ml</span></li>
+  <li><span>Chili spices and garlic</span></li>
 </ul>
 
 ## Method

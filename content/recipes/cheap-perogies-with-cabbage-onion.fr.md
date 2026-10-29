@@ -86,12 +86,12 @@ Les perogies surgelés font partie des grands aliments de base économiques parc
 ## Ingrédients
 
 <ul class="ingredients nums">
-  <li><span>Perogies surgelés, deux emballages de 907 g</span><span>environ 5,98 $</span></li>
-  <li><span>Chou vert, 800 g, tranché mince</span><span>environ 2,10 $</span></li>
-  <li><span>Oignons, 300 g, tranchés mince</span><span>environ 1,01 $</span></li>
-  <li><span>Crème sure, 250 ml</span><span>environ 1,75 $</span></li>
-  <li><span>Beurre, 30 g</span><span>environ 0,38 $</span></li>
-  <li><span>Sel et poivre</span><span>environ 0,30 $</span></li>
+  <li><span>Perogies surgelés, deux emballages de 907 g</span></li>
+  <li><span>Chou vert, 800 g, tranché mince</span></li>
+  <li><span>Oignons, 300 g, tranchés mince</span></li>
+  <li><span>Crème sure, 250 ml</span></li>
+  <li><span>Beurre, 30 g</span></li>
+  <li><span>Sel et poivre</span></li>
 </ul>
 
 ## Préparation

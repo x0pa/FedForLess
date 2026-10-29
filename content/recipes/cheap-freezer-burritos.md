@@ -98,13 +98,13 @@ A freezer burrito is only a bargain if it is big enough to be the whole meal, so
 ## Ingredients
 
 <ul class="ingredients nums">
-  <li><span>Large flour tortillas, one 650 g pack</span><span>about $3.79</span></li>
-  <li><span>Long grain rice, 400 g</span><span>about $1.95</span></li>
-  <li><span>Canned beans, two 540 ml cans</span><span>about $3.40</span></li>
-  <li><span>Block cheese, 200 g, grated</span><span>about $2.82</span></li>
-  <li><span>Frozen corn, 150 g</span><span>about $0.75</span></li>
-  <li><span>Onion, 150 g</span><span>about $0.51</span></li>
-  <li><span>Spices and oil</span><span>about $0.35</span></li>
+  <li><span>Large flour tortillas, one 650 g pack</span></li>
+  <li><span>Long grain rice, 400 g</span></li>
+  <li><span>Canned beans, two 540 ml cans</span></li>
+  <li><span>Block cheese, 200 g, grated</span></li>
+  <li><span>Frozen corn, 150 g</span></li>
+  <li><span>Onion, 150 g</span></li>
+  <li><span>Spices and oil</span></li>
 </ul>
 
 ## Method

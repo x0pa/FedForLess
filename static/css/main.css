@@ -450,7 +450,7 @@ ol.homeindex .rowlink:hover .rarr{transform:translateX(3px)}
 }
 
 /* ============ recipe refinement pass ============ */
-.rcp .bhead{color:var(--ink);font-size:1.12rem}
+.rcp .bhead{color:var(--ink);font-size:1.12rem;font-family:"Oswald";font-weight:700;text-transform:uppercase;letter-spacing:.05em}
 .rcp .bhead::after{content:"";display:block;width:44px;height:3px;background:var(--denim);margin-top:.4rem}
 .rcp .brow.total.ps{background:rgba(29,78,158,.09);border-radius:6px;padding:.5rem .55rem;margin:.4rem -.55rem 0;border-bottom:none}
 .rcp .brow.total.ps .amt{font-size:2.4rem}
@@ -501,3 +501,4 @@ ol.homeindex .rowlink:hover .rarr{transform:translateX(3px)}
   .pricedisc summary{display:none}
   .pricedisc .rangenote,.pricedisc .srcnote{display:block}
 }
+.rcp .govline{font-size:.85rem;color:var(--muted);font-weight:600;margin:.45rem 0 .15rem;letter-spacing:.01em}

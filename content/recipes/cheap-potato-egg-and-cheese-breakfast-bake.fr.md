@@ -93,13 +93,13 @@ Le déjeuner pour un groupe signifie habituellement rester au fourneau à cuire 
 ## Ingrédients
 
 <ul class="ingredients nums">
-  <li><span>Pommes de terre, 900 g</span><span>environ 0,97 $</span></li>
-  <li><span>Œufs, 8</span><span>environ 3,22 $</span></li>
-  <li><span>Fromage cheddar, 150 g, râpé</span><span>environ 2,12 $</span></li>
-  <li><span>Lait, 250 ml</span><span>environ 0,44 $</span></li>
-  <li><span>Oignon, 150 g, haché</span><span>environ 0,51 $</span></li>
-  <li><span>Huile de canola, 1 cuillère à soupe</span><span>environ 0,05 $</span></li>
-  <li><span>Paprika, sel et poivre</span><span>environ 0,30 $</span></li>
+  <li><span>Pommes de terre, 900 g</span></li>
+  <li><span>Œufs, 8</span></li>
+  <li><span>Fromage cheddar, 150 g, râpé</span></li>
+  <li><span>Lait, 250 ml</span></li>
+  <li><span>Oignon, 150 g, haché</span></li>
+  <li><span>Huile de canola, 1 cuillère à soupe</span></li>
+  <li><span>Paprika, sel et poivre</span></li>
 </ul>
 
 ## Préparation

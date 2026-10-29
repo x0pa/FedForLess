@@ -90,11 +90,11 @@ Chicken legs are the cheapest cut in the case that still feels like a roast dinn
 ## Ingredients
 
 <ul class="ingredients nums">
-  <li><span>Chicken drumsticks, 1.2 kg</span><span>about $9.00</span></li>
-  <li><span>Long grain rice, 400 g</span><span>about $1.95</span></li>
-  <li><span>Frozen mixed vegetables, 450 g</span><span>about $2.60</span></li>
-  <li><span>Onion, 200 g</span><span>about $0.67</span></li>
-  <li><span>Canola oil, garlic, spices and salt</span><span>about $0.40</span></li>
+  <li><span>Chicken drumsticks, 1.2 kg</span></li>
+  <li><span>Long grain rice, 400 g</span></li>
+  <li><span>Frozen mixed vegetables, 450 g</span></li>
+  <li><span>Onion, 200 g</span></li>
+  <li><span>Canola oil, garlic, spices and salt</span></li>
 </ul>
 
 ## Method

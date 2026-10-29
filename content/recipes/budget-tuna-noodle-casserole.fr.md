@@ -95,14 +95,14 @@ La plupart des versions de cette casserole s'appuient sur une boîte de soupe po
 ## Ingrédients
 
 <ul class="ingredients nums">
-  <li><span>Pâtes courtes, 500 g</span><span>environ 3,37 $</span></li>
-  <li><span>Thon en conserve, deux boîtes de 170 g</span><span>environ 3,40 $</span></li>
-  <li><span>Pois congelés, 300 g</span><span>environ 1,51 $</span></li>
-  <li><span>Lait, 500 ml</span><span>environ 0,87 $</span></li>
-  <li><span>Fromage en bloc, 100 g, râpé</span><span>environ 1,41 $</span></li>
-  <li><span>Beurre, 30 g</span><span>environ 0,38 $</span></li>
-  <li><span>Farine, 30 g</span><span>environ 0,06 $</span></li>
-  <li><span>Oignon, 100 g</span><span>environ 0,34 $</span></li>
+  <li><span>Pâtes courtes, 500 g</span></li>
+  <li><span>Thon en conserve, deux boîtes de 170 g</span></li>
+  <li><span>Pois congelés, 300 g</span></li>
+  <li><span>Lait, 500 ml</span></li>
+  <li><span>Fromage en bloc, 100 g, râpé</span></li>
+  <li><span>Beurre, 30 g</span></li>
+  <li><span>Farine, 30 g</span></li>
+  <li><span>Oignon, 100 g</span></li>
 </ul>
 
 ## Préparation

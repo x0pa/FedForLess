@@ -100,13 +100,13 @@ Curry at home often stalls at the coconut milk, because one can of it can cost a
 ## Ingredients
 
 <ul class="ingredients nums">
-  <li><span>Canned chickpeas, two 540 ml cans</span><span>about $3.40</span></li>
-  <li><span>Potatoes, 800 g, from the big bag</span><span>about $0.86</span></li>
-  <li><span>Frozen spinach, 300 g pack</span><span>about $2.25</span></li>
-  <li><span>Onions, 300 g</span><span>about $1.01</span></li>
-  <li><span>Canned tomatoes, 796 ml</span><span>about $2.18</span></li>
-  <li><span>White rice, 300 g</span><span>about $1.46</span></li>
-  <li><span>Canola oil, curry spices and garlic</span><span>about $0.52</span></li>
+  <li><span>Canned chickpeas, two 540 ml cans</span></li>
+  <li><span>Potatoes, 800 g, from the big bag</span></li>
+  <li><span>Frozen spinach, 300 g pack</span></li>
+  <li><span>Onions, 300 g</span></li>
+  <li><span>Canned tomatoes, 796 ml</span></li>
+  <li><span>White rice, 300 g</span></li>
+  <li><span>Canola oil, curry spices and garlic</span></li>
 </ul>
 
 ## Method

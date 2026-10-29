@@ -86,12 +86,12 @@ Frozen perogies are one of the great budget staples because the filling, the dou
 ## Ingredients
 
 <ul class="ingredients nums">
-  <li><span>Frozen perogies, two 907 g packs</span><span>about $5.98</span></li>
-  <li><span>Green cabbage, 800 g, thinly sliced</span><span>about $2.10</span></li>
-  <li><span>Onions, 300 g, thinly sliced</span><span>about $1.01</span></li>
-  <li><span>Sour cream, 250 ml</span><span>about $1.75</span></li>
-  <li><span>Butter, 30 g</span><span>about $0.38</span></li>
-  <li><span>Salt and pepper</span><span>about $0.30</span></li>
+  <li><span>Frozen perogies, two 907 g packs</span></li>
+  <li><span>Green cabbage, 800 g, thinly sliced</span></li>
+  <li><span>Onions, 300 g, thinly sliced</span></li>
+  <li><span>Sour cream, 250 ml</span></li>
+  <li><span>Butter, 30 g</span></li>
+  <li><span>Salt and pepper</span></li>
 </ul>
 
 ## Method

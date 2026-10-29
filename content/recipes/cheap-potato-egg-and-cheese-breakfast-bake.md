@@ -93,13 +93,13 @@ Breakfast for a crowd usually means standing at the stove cooking eggs in rounds
 ## Ingredients
 
 <ul class="ingredients nums">
-  <li><span>Potatoes, 900 g</span><span>about $0.97</span></li>
-  <li><span>Eggs, 8</span><span>about $3.22</span></li>
-  <li><span>Cheddar cheese, 150 g, grated</span><span>about $2.12</span></li>
-  <li><span>Milk, 250 ml</span><span>about $0.44</span></li>
-  <li><span>Onion, 150 g, chopped</span><span>about $0.51</span></li>
-  <li><span>Canola oil, 1 tablespoon</span><span>about $0.05</span></li>
-  <li><span>Paprika, salt and pepper</span><span>about $0.30</span></li>
+  <li><span>Potatoes, 900 g</span></li>
+  <li><span>Eggs, 8</span></li>
+  <li><span>Cheddar cheese, 150 g, grated</span></li>
+  <li><span>Milk, 250 ml</span></li>
+  <li><span>Onion, 150 g, chopped</span></li>
+  <li><span>Canola oil, 1 tablespoon</span></li>
+  <li><span>Paprika, salt and pepper</span></li>
 </ul>
 
 ## Method

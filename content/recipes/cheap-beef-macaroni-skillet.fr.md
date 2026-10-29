@@ -94,12 +94,12 @@ Les soupers en boîte vendus pour la poêle promettent exactement cette assiette
 ## Ingrédients
 
 <ul class="ingredients nums">
-  <li><span>Bœuf haché, 500 g</span><span>environ 8,38 $</span></li>
-  <li><span>Macaronis, 300 g</span><span>environ 2,02 $</span></li>
-  <li><span>Tomates en conserve, 796 ml</span><span>environ 2,18 $</span></li>
-  <li><span>Oignons, 300 g</span><span>environ 1,01 $</span></li>
-  <li><span>Fromage cheddar, 150 g, râpé</span><span>environ 2,12 $</span></li>
-  <li><span>Huile de canola, ail, paprika et origan</span><span>environ 0,46 $</span></li>
+  <li><span>Bœuf haché, 500 g</span></li>
+  <li><span>Macaronis, 300 g</span></li>
+  <li><span>Tomates en conserve, 796 ml</span></li>
+  <li><span>Oignons, 300 g</span></li>
+  <li><span>Fromage cheddar, 150 g, râpé</span></li>
+  <li><span>Huile de canola, ail, paprika et origan</span></li>
 </ul>
 
 ## Préparation

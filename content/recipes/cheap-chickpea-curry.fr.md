@@ -100,13 +100,13 @@ Le cari à la maison bloque souvent au lait de coco, parce qu'une seule boîte p
 ## Ingrédients
 
 <ul class="ingredients nums">
-  <li><span>Pois chiches en conserve, deux boîtes de 540 ml</span><span>environ 3,40 $</span></li>
-  <li><span>Pommes de terre, 800 g, du gros sac</span><span>environ 0,86 $</span></li>
-  <li><span>Épinards congelés, paquet de 300 g</span><span>environ 2,25 $</span></li>
-  <li><span>Oignons, 300 g</span><span>environ 1,01 $</span></li>
-  <li><span>Tomates en conserve, 796 ml</span><span>environ 2,18 $</span></li>
-  <li><span>Riz blanc, 300 g</span><span>environ 1,46 $</span></li>
-  <li><span>Huile de canola, épices à cari et ail</span><span>environ 0,52 $</span></li>
+  <li><span>Pois chiches en conserve, deux boîtes de 540 ml</span></li>
+  <li><span>Pommes de terre, 800 g, du gros sac</span></li>
+  <li><span>Épinards congelés, paquet de 300 g</span></li>
+  <li><span>Oignons, 300 g</span></li>
+  <li><span>Tomates en conserve, 796 ml</span></li>
+  <li><span>Riz blanc, 300 g</span></li>
+  <li><span>Huile de canola, épices à cari et ail</span></li>
 </ul>
 
 ## Préparation

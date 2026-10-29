@@ -98,14 +98,14 @@ Le déjeuner est là où les budgets serrés perdent de l'argent en silence, un 
 ## Ingrédients
 
 <ul class="ingredients nums">
-  <li><span>Flocons d'avoine, 270 g</span><span>environ 0,78 $</span></li>
-  <li><span>Beurre d'arachide, 250 g</span><span>environ 1,49 $</span></li>
-  <li><span>Pommes, 400 g, hachées</span><span>environ 2,59 $</span></li>
-  <li><span>Œufs, 3</span><span>environ 1,21 $</span></li>
-  <li><span>Lait, 375 ml</span><span>environ 0,66 $</span></li>
-  <li><span>Sucre, 100 g</span><span>environ 0,14 $</span></li>
-  <li><span>Beurre, 30 g</span><span>environ 0,38 $</span></li>
-  <li><span>Cannelle, vanille, poudre à pâte</span><span>environ 0,30 $</span></li>
+  <li><span>Flocons d'avoine, 270 g</span></li>
+  <li><span>Beurre d'arachide, 250 g</span></li>
+  <li><span>Pommes, 400 g, hachées</span></li>
+  <li><span>Œufs, 3</span></li>
+  <li><span>Lait, 375 ml</span></li>
+  <li><span>Sucre, 100 g</span></li>
+  <li><span>Beurre, 30 g</span></li>
+  <li><span>Cannelle, vanille, poudre à pâte</span></li>
 </ul>
 
 ## Préparation

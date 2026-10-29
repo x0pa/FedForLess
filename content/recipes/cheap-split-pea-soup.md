@@ -104,13 +104,13 @@ Split pea soup is the oldest budget trick in the book because it works every sin
 ## Ingredients
 
 <ul class="ingredients nums">
-  <li><span>Dry split peas, 450 g</span><span>about $1.79</span></li>
-  <li><span>Ham, 500 g</span><span>about $4.61</span></li>
-  <li><span>Potatoes, 500 g</span><span>about $0.54</span></li>
-  <li><span>Carrots, 300 g</span><span>about $0.86</span></li>
-  <li><span>Onion, 200 g</span><span>about $0.67</span></li>
-  <li><span>Celery, 2 stalks</span><span>about $0.89</span></li>
-  <li><span>Canola oil, bay, thyme, pepper and salt</span><span>about $0.30</span></li>
+  <li><span>Dry split peas, 450 g</span></li>
+  <li><span>Ham, 500 g</span></li>
+  <li><span>Potatoes, 500 g</span></li>
+  <li><span>Carrots, 300 g</span></li>
+  <li><span>Onion, 200 g</span></li>
+  <li><span>Celery, 2 stalks</span></li>
+  <li><span>Canola oil, bay, thyme, pepper and salt</span></li>
 </ul>
 
 ## Method

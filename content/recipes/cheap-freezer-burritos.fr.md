@@ -98,13 +98,13 @@ Un burrito à congeler n'est une aubaine que s'il est assez gros pour être le r
 ## Ingrédients
 
 <ul class="ingredients nums">
-  <li><span>Grandes tortillas de farine, un paquet de 650 g</span><span>environ 3,79 $</span></li>
-  <li><span>Riz à grains longs, 400 g</span><span>environ 1,95 $</span></li>
-  <li><span>Haricots en conserve, deux boîtes de 540 ml</span><span>environ 3,40 $</span></li>
-  <li><span>Fromage en bloc, 200 g, râpé</span><span>environ 2,82 $</span></li>
-  <li><span>Maïs congelé, 150 g</span><span>environ 0,75 $</span></li>
-  <li><span>Oignon, 150 g</span><span>environ 0,51 $</span></li>
-  <li><span>Épices et huile</span><span>environ 0,35 $</span></li>
+  <li><span>Grandes tortillas de farine, un paquet de 650 g</span></li>
+  <li><span>Riz à grains longs, 400 g</span></li>
+  <li><span>Haricots en conserve, deux boîtes de 540 ml</span></li>
+  <li><span>Fromage en bloc, 200 g, râpé</span></li>
+  <li><span>Maïs congelé, 150 g</span></li>
+  <li><span>Oignon, 150 g</span></li>
+  <li><span>Épices et huile</span></li>
 </ul>
 
 ## Préparation

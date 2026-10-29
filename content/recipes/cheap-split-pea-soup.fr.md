@@ -104,13 +104,13 @@ La soupe aux pois cassés est le plus vieux truc économique du livre parce qu'e
 ## Ingrédients
 
 <ul class="ingredients nums">
-  <li><span>Pois cassés secs, 450 g</span><span>environ 1,79 $</span></li>
-  <li><span>Jambon, 500 g</span><span>environ 4,61 $</span></li>
-  <li><span>Pommes de terre, 500 g</span><span>environ 0,54 $</span></li>
-  <li><span>Carottes, 300 g</span><span>environ 0,86 $</span></li>
-  <li><span>Oignon, 200 g</span><span>environ 0,67 $</span></li>
-  <li><span>Céleri, 2 branches</span><span>environ 0,89 $</span></li>
-  <li><span>Huile de canola, laurier, thym, poivre et sel</span><span>environ 0,30 $</span></li>
+  <li><span>Pois cassés secs, 450 g</span></li>
+  <li><span>Jambon, 500 g</span></li>
+  <li><span>Pommes de terre, 500 g</span></li>
+  <li><span>Carottes, 300 g</span></li>
+  <li><span>Oignon, 200 g</span></li>
+  <li><span>Céleri, 2 branches</span></li>
+  <li><span>Huile de canola, laurier, thym, poivre et sel</span></li>
 </ul>
 
 ## Préparation

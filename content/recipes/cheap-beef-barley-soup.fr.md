@@ -111,14 +111,14 @@ La soupe au bœuf et à l'orge veut habituellement dire du bœuf à ragoût, et 
 ## Ingrédients
 
 <ul class="ingredients nums">
-  <li><span>Bœuf haché, 500 g</span><span>environ 8,38 $</span></li>
-  <li><span>Orge perlé, 300 g</span><span>environ 1,66 $</span></li>
-  <li><span>Pommes de terre, 500 g, du gros sac</span><span>environ 0,54 $</span></li>
-  <li><span>Carottes, 400 g</span><span>environ 1,14 $</span></li>
-  <li><span>Oignons, 300 g</span><span>environ 1,01 $</span></li>
-  <li><span>Céleri, 2 branches</span><span>environ 0,89 $</span></li>
-  <li><span>Tomates en conserve, 796 ml</span><span>environ 2,18 $</span></li>
-  <li><span>Huile de canola, ail, thym, laurier et bouillon</span><span>environ 0,46 $</span></li>
+  <li><span>Bœuf haché, 500 g</span></li>
+  <li><span>Orge perlé, 300 g</span></li>
+  <li><span>Pommes de terre, 500 g, du gros sac</span></li>
+  <li><span>Carottes, 400 g</span></li>
+  <li><span>Oignons, 300 g</span></li>
+  <li><span>Céleri, 2 branches</span></li>
+  <li><span>Tomates en conserve, 796 ml</span></li>
+  <li><span>Huile de canola, ail, thym, laurier et bouillon</span></li>
 </ul>
 
 ## Préparation

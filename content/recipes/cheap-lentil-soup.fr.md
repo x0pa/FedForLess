@@ -102,12 +102,12 @@ Les lentilles rouges sont la façon la moins chère et la plus fiable de transfo
 ## Ingrédients
 
 <ul class="ingredients nums">
-  <li><span>Lentilles rouges, 450 g (la moitié d'un sac de 900 g)</span><span>environ 1,81 $</span></li>
-  <li><span>Pommes de terre, 1 kg, du gros sac</span><span>environ 1,07 $</span></li>
-  <li><span>Carottes, 500 g</span><span>environ 1,43 $</span></li>
-  <li><span>Oignons, 300 g</span><span>environ 1,01 $</span></li>
-  <li><span>Tomates en conserve, 796 ml</span><span>environ 2,18 $</span></li>
-  <li><span>Huile de canola, ail, épices, bouillon</span><span>environ 0,52 $</span></li>
+  <li><span>Lentilles rouges, 450 g (la moitié d'un sac de 900 g)</span></li>
+  <li><span>Pommes de terre, 1 kg, du gros sac</span></li>
+  <li><span>Carottes, 500 g</span></li>
+  <li><span>Oignons, 300 g</span></li>
+  <li><span>Tomates en conserve, 796 ml</span></li>
+  <li><span>Huile de canola, ail, épices, bouillon</span></li>
 </ul>
 
 ## Préparation

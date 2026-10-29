@@ -97,7 +97,8 @@
       <div class="costunit nums" id="cost-breakdown">
         <div class="receipt">
           <div class="rcp">
-            <div class="bhead">{{ i18n "cost_breakdown" }} · {{ i18n "checked_word" }} {{ .Params.prices_checked }}</div>
+            <div class="bhead">{{ i18n "cost_breakdown" }}</div>
+            <p class="govline">{{ i18n "gov_data" }}: {{ .Params.prices_checked }}</p>
             {{ range $i, $b := .Params.breakdown }}
             <div class="brow{{ if eq $i 0 }} first{{ end }}"><span class="item">{{ $b.item }}{{ with $b.note }}<small>{{ . }}</small>{{ end }}</span><span class="amt">{{ partial "price.html" (dict "amt" $b.amount "lang" $.Lang) }}</span></div>
             {{ end }}

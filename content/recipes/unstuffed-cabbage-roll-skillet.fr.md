@@ -95,12 +95,12 @@ Les cigares au chou sont merveilleux et les rouler est un projet. Cette poêlée
 ## Ingrédients
 
 <ul class="ingredients nums">
-  <li><span>Porc haché, 700 g</span><span>environ 6,45 $</span></li>
-  <li><span>Chou vert, 1 kg, émincé</span><span>environ 2,63 $</span></li>
-  <li><span>Riz à grains longs, 300 g</span><span>environ 1,46 $</span></li>
-  <li><span>Tomates en conserve, 796 ml</span><span>environ 2,18 $</span></li>
-  <li><span>Oignon, 200 g</span><span>environ 0,67 $</span></li>
-  <li><span>Huile de canola, ail, épices et sel</span><span>environ 0,46 $</span></li>
+  <li><span>Porc haché, 700 g</span></li>
+  <li><span>Chou vert, 1 kg, émincé</span></li>
+  <li><span>Riz à grains longs, 300 g</span></li>
+  <li><span>Tomates en conserve, 796 ml</span></li>
+  <li><span>Oignon, 200 g</span></li>
+  <li><span>Huile de canola, ail, épices et sel</span></li>
 </ul>
 
 ## Préparation

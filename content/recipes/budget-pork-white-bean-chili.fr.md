@@ -96,13 +96,13 @@ Le chili est d'habitude un jeu de viande hachée, et les prix de la viande hach�
 ## Ingrédients
 
 <ul class="ingredients nums">
-  <li><span>Épaule de porc, 700 g, en cubes</span><span>environ 6,45 $</span></li>
-  <li><span>Haricots blancs en conserve, deux boîtes de 540 ml</span><span>environ 3,40 $</span></li>
-  <li><span>Tomates en conserve, 796 ml</span><span>environ 2,18 $</span></li>
-  <li><span>Maïs congelé, 300 g</span><span>environ 1,51 $</span></li>
-  <li><span>Oignon, 200 g</span><span>environ 0,67 $</span></li>
-  <li><span>Huile de canola, 15 ml</span><span>environ 0,05 $</span></li>
-  <li><span>Épices à chili et ail</span><span>environ 0,41 $</span></li>
+  <li><span>Épaule de porc, 700 g, en cubes</span></li>
+  <li><span>Haricots blancs en conserve, deux boîtes de 540 ml</span></li>
+  <li><span>Tomates en conserve, 796 ml</span></li>
+  <li><span>Maïs congelé, 300 g</span></li>
+  <li><span>Oignon, 200 g</span></li>
+  <li><span>Huile de canola, 15 ml</span></li>
+  <li><span>Épices à chili et ail</span></li>
 </ul>
 
 ## Préparation

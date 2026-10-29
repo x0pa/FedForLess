@@ -95,12 +95,12 @@ Cabbage rolls are wonderful and rolling them is a project. This skillet keeps ev
 ## Ingredients
 
 <ul class="ingredients nums">
-  <li><span>Ground pork, 700 g</span><span>about $6.45</span></li>
-  <li><span>Green cabbage, 1 kg, shredded</span><span>about $2.63</span></li>
-  <li><span>Long grain rice, 300 g</span><span>about $1.46</span></li>
-  <li><span>Canned tomatoes, 796 ml</span><span>about $2.18</span></li>
-  <li><span>Onion, 200 g</span><span>about $0.67</span></li>
-  <li><span>Canola oil, garlic, spices and salt</span><span>about $0.46</span></li>
+  <li><span>Ground pork, 700 g</span></li>
+  <li><span>Green cabbage, 1 kg, shredded</span></li>
+  <li><span>Long grain rice, 300 g</span></li>
+  <li><span>Canned tomatoes, 796 ml</span></li>
+  <li><span>Onion, 200 g</span></li>
+  <li><span>Canola oil, garlic, spices and salt</span></li>
 </ul>
 
 ## Method

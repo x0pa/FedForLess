@@ -94,12 +94,12 @@ The boxed skillet dinners promise this exact plate and charge for the box, the s
 ## Ingredients
 
 <ul class="ingredients nums">
-  <li><span>Ground beef, 500 g</span><span>about $8.38</span></li>
-  <li><span>Elbow macaroni, 300 g</span><span>about $2.02</span></li>
-  <li><span>Canned tomatoes, 796 ml</span><span>about $2.18</span></li>
-  <li><span>Onions, 300 g</span><span>about $1.01</span></li>
-  <li><span>Cheddar cheese, 150 g, grated</span><span>about $2.12</span></li>
-  <li><span>Canola oil, garlic, paprika and oregano</span><span>about $0.46</span></li>
+  <li><span>Ground beef, 500 g</span></li>
+  <li><span>Elbow macaroni, 300 g</span></li>
+  <li><span>Canned tomatoes, 796 ml</span></li>
+  <li><span>Onions, 300 g</span></li>
+  <li><span>Cheddar cheese, 150 g, grated</span></li>
+  <li><span>Canola oil, garlic, paprika and oregano</span></li>
 </ul>
 
 ## Method

@@ -95,14 +95,14 @@ Most versions of this casserole lean on a can of soup for the sauce, which costs
 ## Ingredients
 
 <ul class="ingredients nums">
-  <li><span>Short pasta, 500 g</span><span>about $3.37</span></li>
-  <li><span>Canned tuna, two 170 g cans</span><span>about $3.40</span></li>
-  <li><span>Frozen peas, 300 g</span><span>about $1.51</span></li>
-  <li><span>Milk, 500 ml</span><span>about $0.87</span></li>
-  <li><span>Block cheese, 100 g, grated</span><span>about $1.41</span></li>
-  <li><span>Butter, 30 g</span><span>about $0.38</span></li>
-  <li><span>Flour, 30 g</span><span>about $0.06</span></li>
-  <li><span>Onion, 100 g</span><span>about $0.34</span></li>
+  <li><span>Short pasta, 500 g</span></li>
+  <li><span>Canned tuna, two 170 g cans</span></li>
+  <li><span>Frozen peas, 300 g</span></li>
+  <li><span>Milk, 500 ml</span></li>
+  <li><span>Block cheese, 100 g, grated</span></li>
+  <li><span>Butter, 30 g</span></li>
+  <li><span>Flour, 30 g</span></li>
+  <li><span>Onion, 100 g</span></li>
 </ul>
 
 ## Method
