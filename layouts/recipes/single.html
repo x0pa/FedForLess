@@ -52,6 +52,7 @@
 
 {{ define "main" }}
 <div class="wrap">
+  <p class="srcline">Fed For Less · {{ .Permalink }}</p>
   <div class="rgrid">
     <nav class="crumbs" aria-label="breadcrumb"><a href="{{ "/" | relLangURL }}">{{ i18n "crumb_home" }}</a><span class="csep" aria-hidden="true">›</span><a href="{{ "/recipes/" | relLangURL }}">{{ i18n "crumb_recipes" }}</a><span class="csep" aria-hidden="true">›</span><span class="ccur">{{ .Title }}</span></nav>
 
@@ -64,7 +65,10 @@
         <div class="rstat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><div><strong>{{ .Params.total_time }}</strong><span>{{ i18n "stat_total_time" }}</span></div></div>
         <div class="rstat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12.5 2H2v10.5L12.5 23a2 2 0 0 0 2.8 0l7.2-7.2a2 2 0 0 0 0-2.8z"/><circle cx="7.5" cy="7.5" r="1.4"/></svg><div><strong>{{ partial "price.html" (dict "amt" .Params.price_per_serving "lang" .Lang) }}</strong><span>{{ i18n "cost_per_serving" }}</span></div></div>
       </div>
-      <a class="jumpbtn" href="#{{ i18n "jump_anchor" }}">{{ i18n "jump_recipe" }} <span aria-hidden="true">↓</span></a>
+      <div class="ractions">
+        <a class="jumpbtn" href="#{{ i18n "jump_anchor" }}">{{ i18n "jump_recipe" }} <span aria-hidden="true">↓</span></a>
+        <button type="button" class="jumpbtn printbtn" id="print-recipe">{{ i18n "print_recipe" }}</button>
+      </div>
     </div>
 
     <figure class="rfig">
@@ -102,8 +106,12 @@
             <div class="brow basket"><span class="item">{{ i18n "basket_label" }}</span><span class="amt">{{ partial "price.html" (dict "amt" .Params.basket_cost "lang" $.Lang) }}</span></div>
           </div>
         </div>
-        <p class="rangenote"><strong>{{ i18n "range_label" }}</strong> {{ if eq .Lang "fr" }}{{ .Params.price_range }} $ {{ else }}${{ .Params.price_range }} {{ end }}{{ i18n "range_suffix" }}</p>
-        <p class="srcnote">{{ i18n "srcnote_a" }} {{ .Params.prices_checked }}){{ with .Params.chain_note }} {{ i18n "srcnote_plus" }} {{ . }}{{ end }}{{ i18n "srcnote_b" }} <a href="{{ "/how-we-price/" | relLangURL }}">{{ i18n "howweprice_link" }}</a>.</p>
+        <p class="pricesline">{{ i18n "prices_line" }} · {{ i18n "checked_word" }} {{ .Params.prices_checked }}</p>
+        <details class="pricedisc">
+          <summary>{{ i18n "how_price_recipe" }}</summary>
+          <p class="rangenote"><strong>{{ i18n "range_label" }}</strong> {{ if eq .Lang "fr" }}{{ .Params.price_range }} $ {{ else }}${{ .Params.price_range }} {{ end }}{{ i18n "range_suffix" }}</p>
+          <p class="srcnote">{{ i18n "srcnote_a" }} {{ .Params.prices_checked }}){{ with .Params.chain_note }} {{ i18n "srcnote_plus" }} {{ . }}{{ end }}{{ i18n "srcnote_b" }} <a href="{{ "/how-we-price/" | relLangURL }}">{{ i18n "howweprice_link" }}</a>.</p>
+        </details>
         <div class="tierline">
           <span class="t{{ if eq .Params.tier "green" }} on{{ end }}">{{ i18n "tier_green" }}<small>{{ i18n "tier_to" }} {{ partial "price.html" (dict "amt" "1.50" "lang" .Lang) }}</small></span>
           <span class="t{{ if eq .Params.tier "butter" }} on{{ end }}">{{ i18n "tier_butter" }}<small>{{ i18n "tier_to" }} {{ partial "price.html" (dict "amt" "2.50" "lang" .Lang) }}</small></span>
@@ -193,5 +201,6 @@
 </div>
 <script>
 (function(){if(window.innerWidth>1020)return;var n=document.querySelector('.nutriblock');if(!n)return;var h=document.querySelector('.article-body .hungry');if(h&&h.parentNode){h.parentNode.insertBefore(n,h);n.style.marginBottom='1.4rem';}else{var f=document.querySelector('.faq');if(f){f.parentNode.insertBefore(n,f);}}})();
+(function(){var b=document.getElementById('print-recipe');if(b){b.addEventListener('click',function(){window.print();});}})();
 </script>
 {{ end }}
