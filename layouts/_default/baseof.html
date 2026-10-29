@@ -52,6 +52,21 @@
     {{ range .Site.Menus.main }}<a href="{{ .URL }}">{{ .Name }}</a>{{ end }}{{ if $langTarget }}<a href="{{ $langTarget }}">{{ $langLabel }}</a>{{ end }}
   </nav>
 </header>
+<script>
+(function () {
+  var menu = document.querySelector("details.mmenu");
+  if (!menu) return;
+  document.addEventListener("click", function (e) {
+    if (menu.open && !menu.contains(e.target)) menu.open = false;
+  });
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && menu.open) menu.open = false;
+  });
+  menu.addEventListener("click", function (e) {
+    if (e.target.closest("a")) menu.open = false;
+  });
+})();
+</script>
 {{ block "main" . }}{{ end }}
 <footer class="site">
   <div class="foot-in">

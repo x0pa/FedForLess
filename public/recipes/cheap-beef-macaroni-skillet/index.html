@@ -116,6 +116,21 @@
     <a href="/recipes/">Recipes</a><a href="/basket-weeks/">Basket Weeks</a><a href="/how-we-price/">How We Price</a><a href="/tools/">Tools</a><a href="/about/">About</a><a href="/fr/recipes/cheap-beef-macaroni-skillet/">Français</a>
   </nav>
 </header>
+<script>
+(function () {
+  var menu = document.querySelector("details.mmenu");
+  if (!menu) return;
+  document.addEventListener("click", function (e) {
+    if (menu.open && !menu.contains(e.target)) menu.open = false;
+  });
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && menu.open) menu.open = false;
+  });
+  menu.addEventListener("click", function (e) {
+    if (e.target.closest("a")) menu.open = false;
+  });
+})();
+</script>
 
 <div class="wrap">
   <p class="srcline">Fed For Less · https://fedforless.ca/recipes/cheap-beef-macaroni-skillet/</p>

@@ -116,6 +116,21 @@
     <a href="/fr/recipes/">Recettes</a><a href="/fr/basket-weeks/">Semaines à un panier</a><a href="/fr/how-we-price/">Notre méthode</a><a href="/fr/tools/">Outils</a><a href="/fr/about/">À propos</a><a href="/recipes/cheap-chicken-and-rice-bake/">English</a>
   </nav>
 </header>
+<script>
+(function () {
+  var menu = document.querySelector("details.mmenu");
+  if (!menu) return;
+  document.addEventListener("click", function (e) {
+    if (menu.open && !menu.contains(e.target)) menu.open = false;
+  });
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && menu.open) menu.open = false;
+  });
+  menu.addEventListener("click", function (e) {
+    if (e.target.closest("a")) menu.open = false;
+  });
+})();
+</script>
 
 <div class="wrap">
   <p class="srcline">Fed For Less · https://fedforless.ca/fr/recipes/cheap-chicken-and-rice-bake/</p>
