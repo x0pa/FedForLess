@@ -1157,3 +1157,17 @@ ol.homeindex .rowlink:hover .rarr{transform:translateX(3px)}
   .contactpage .ct-checklist{grid-template-columns:minmax(0,1fr)}
   .contactpage .ct-email{font-size:1.25rem}
 }
+
+/* ============ tools page: Tool 02 preview receipt on mobile — scoped ============ */
+.toolspage .tl-rreceipt{display:none}
+@media (max-width:700px){
+  .toolspage .tl-rtable{display:none}
+  .toolspage .tl-rreceipt{display:block}
+  .toolspage .tl-rritem{display:flex;justify-content:space-between;align-items:flex-start;gap:1rem;padding:.65rem 0;border-bottom:1px solid var(--hair)}
+  .toolspage .tl-rrname{font-family:"Oswald";font-weight:600;text-transform:uppercase;font-size:.85rem;margin:0;color:var(--ink)}
+  .toolspage .tl-rrdet{font-size:.78rem;color:var(--tc-muted,#5C6470);margin:.15rem 0 0}
+  .toolspage .tl-rrcost{font-weight:700;font-size:1rem;color:var(--ink);margin:0;white-space:nowrap}
+  .toolspage .tl-rrtotal{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;padding:.7rem 0 .1rem}
+  .toolspage .tl-rrtotal span:first-child{font-family:"Oswald";font-weight:700;text-transform:uppercase;font-size:.9rem;color:var(--ink)}
+  .toolspage .tl-rrsum{font-family:"Oswald";font-weight:700;font-size:1.55rem;color:var(--denim)}
+}

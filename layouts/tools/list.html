@@ -65,6 +65,17 @@
           <div class="tl-rrow"><span>{{ i18n "tl_rc_rice" }}</span><span>$3.50</span><span>2 kg</span><span>500 g</span><span class="tl-rcost">$0.88</span></div>
           <div class="tl-rrow tl-rtotal"><span>{{ i18n "batch_total" }}</span><span></span><span></span><span></span><span class="tl-rcost">$2.88</span></div>
         </div>
+        <div class="tl-rreceipt nums">
+          <div class="tl-rritem">
+            <div><p class="tl-rrname">{{ i18n "tl_rc_flour" }}</p><p class="tl-rrdet">{{ replace (replace (i18n "tl_rc_detail_fmt") "{u}" "450 g") "{s}" "900 g" }}</p></div>
+            <p class="tl-rrcost">$2.00</p>
+          </div>
+          <div class="tl-rritem">
+            <div><p class="tl-rrname">{{ i18n "tl_rc_rice" }}</p><p class="tl-rrdet">{{ replace (replace (i18n "tl_rc_detail_fmt") "{u}" "500 g") "{s}" "2 kg" }}</p></div>
+            <p class="tl-rrcost">$0.88</p>
+          </div>
+          <div class="tl-rrtotal"><span>{{ i18n "batch_total" }}</span><span class="tl-rrsum">$2.88</span></div>
+        </div>
       </div>
       <p class="tl-cta"><a class="tl-btn" href="{{ .RelPermalink }}">{{ i18n "tl_open" }} {{ .Title }} <span aria-hidden="true">→</span></a></p>
     </article>
