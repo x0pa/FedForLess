@@ -3,6 +3,7 @@ title: "Déjeuner au four pas cher aux pommes de terre, aux œufs et au fromage"
 description: "Ce déjeuner au four pas cher aux pommes de terre, aux œufs et au fromage donne six portions rassasiantes à environ 1,27 $ chacune. Détail inclus."
 date: 2026-10-28
 draft: false
+featured: true
 tier: "green"
 tier_label: "Palier 1"
 meals: ["breakfast"]

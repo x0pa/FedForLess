@@ -3,6 +3,7 @@ title: "Cheap Perogies with Cabbage, Onion and Sour Cream"
 description: "This cheap perogies dinner makes six filling servings for about $1.92 each. Cabbage, onion and sour cream, full cost breakdown inside."
 date: 2026-10-29
 draft: false
+featured: true
 tier: "butter"
 tier_label: "Tier 2"
 meals: ["lunch", "dinner"]

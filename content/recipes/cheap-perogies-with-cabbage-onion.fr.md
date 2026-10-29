@@ -3,6 +3,7 @@ title: "Perogies pas chers au chou, à l'oignon et à la crème sure"
 description: "Ces perogies pas chers au chou et à l'oignon donnent six portions rassasiantes à environ 1,92 $ chacune. Détail complet des coûts inclus."
 date: 2026-10-29
 draft: false
+featured: true
 tier: "butter"
 tier_label: "Palier 2"
 meals: ["lunch", "dinner"]

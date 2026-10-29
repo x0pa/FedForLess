@@ -1,23 +1,123 @@
 {{ define "main" }}
+{{ if eq .Section "recipes" }}
+{{ $recipes := .Pages }}
+{{ $featured := where $recipes "Params.featured" true }}
+{{ $dirCount := sub (len $recipes) (len $featured) }}
 <div class="wrap">
-  <div class="page-head"><h1>{{ .Title }}</h1></div>
-  {{ if eq .Section "recipes" }}{{ partial "searchbox.html" . }}
-  <div id="tierfilter">
-    <div class="tierfilter">
-      <button type="button" data-meal="all" class="on">{{ i18n "meal_all" }}</button>
-      <button type="button" data-meal="breakfast">{{ i18n "meal_breakfast" }}</button>
-      <button type="button" data-meal="lunch">{{ i18n "meal_lunch" }}</button>
-      <button type="button" data-meal="dinner">{{ i18n "meal_dinner" }}</button>
+<div class="rindex">
+  <header class="ri-hero">
+    <div class="ri-hero-main">
+      <p class="ri-eyebrow">{{ i18n "collection_eyebrow" }}</p>
+      <h1 class="ri-h1">{{ i18n "hero_l1" }}<br><span class="ri-blue">{{ i18n "hero_l2" }}</span></h1>
     </div>
-    <div class="tierfilter">
-      <button type="button" data-filter="all" class="on">{{ i18n "filter_all" }}</button>
-      <button type="button" data-filter="green">{{ i18n "tier_green" }}</button>
-      <button type="button" data-filter="butter">{{ i18n "tier_butter" }}</button>
-      <button type="button" data-filter="tomato">{{ i18n "tier_tomato" }}</button>
-      <button type="button" id="sort-cheapest" class="sortbtn">{{ i18n "sort_cheapest" }}</button>
+    <div class="ri-hero-side">
+      <p class="ri-desc">{{ i18n "hero_desc" }}</p>
+      <ul class="ri-stats">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg><span><strong>{{ len $recipes }}</strong> {{ i18n "stats_recipes" }}</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12.586 2.586A2 2 0 0 0 11.172 2H4a2 2 0 0 0-2 2v7.172a2 2 0 0 0 .586 1.414l8.704 8.704a2.426 2.426 0 0 0 3.42 0l6.58-6.58a2.426 2.426 0 0 0 0-3.42z"/><circle cx="7.5" cy="7.5" r="1" fill="currentColor"/></svg><span>{{ i18n "stats_tiers" }}</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22v-7"/><path d="M12 15l-2.5-2.6L7 13l1.2-3.4L5 9l3.2-1.6L7.6 4l3 2L12 3l1.4 3 3-2-.6 3.4L19 9l-3.2.6L17 13l-2.5-.6z"/></svg><span>{{ i18n "stats_canadian" }}</span></li>
+      </ul>
+    </div>
+  </header>
+
+  <div class="searchbox ri-search">
+    <label class="sr-only" for="site-search-input">{{ i18n "search_aria" }}</label>
+    <div class="srow">
+      <svg class="sicon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.5-4.5"/></svg>
+      <input type="search" id="site-search-input" placeholder="{{ i18n "search_ph_long" }}" autocomplete="off">
+      <button type="button" class="sbtn" id="site-search-btn">{{ i18n "search_button" }}</button>
     </div>
   </div>
-  <script src="{{ "/js/tierfilter.js" | relURL }}?v={{ .Site.Params.css_version }}" defer></script>{{ end }}
+
+  <div id="tierfilter" class="ri-tools">
+    <div class="ri-group">
+      <span class="ri-glabel" id="meal-group-label">{{ i18n "meal_type_h" }}</span>
+      <div class="tierfilter" role="group" aria-labelledby="meal-group-label">
+        <button type="button" data-meal="all" class="on" aria-pressed="true">{{ i18n "meal_all" }}</button>
+        <button type="button" data-meal="breakfast" aria-pressed="false">{{ i18n "meal_breakfast" }}</button>
+        <button type="button" data-meal="lunch" aria-pressed="false">{{ i18n "meal_lunch" }}</button>
+        <button type="button" data-meal="dinner" aria-pressed="false">{{ i18n "meal_dinner" }}</button>
+      </div>
+    </div>
+    <div class="ri-group">
+      <span class="ri-glabel" id="tier-group-label">{{ i18n "price_tier_h" }}</span>
+      <div class="tierfilter" role="group" aria-labelledby="tier-group-label">
+        <button type="button" data-filter="all" class="on" aria-pressed="true">{{ i18n "filter_all" }}</button>
+        <button type="button" data-filter="green" aria-pressed="false">{{ i18n "t1_big" }}</button>
+        <button type="button" data-filter="butter" aria-pressed="false">{{ i18n "t2_big" }}</button>
+        <button type="button" data-filter="tomato" aria-pressed="false">{{ i18n "t3_big" }}</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="ri-util">
+    <p class="ri-count" id="ri-count" role="status" data-tpl="{{ i18n "showing_tpl" }}">{{ i18n "showing_tpl" | replaceRE "\\{x\\}" (string $dirCount) | replaceRE "\\{y\\}" (string $dirCount) }}</p>
+    <label class="ri-sortwrap"><span class="sr-only">{{ i18n "sort_label" }}</span>
+      <select id="sortsel" class="ri-sort">
+        <option value="low">{{ i18n "sort_low" }}</option>
+        <option value="high">{{ i18n "sort_high" }}</option>
+        <option value="newest" selected>{{ i18n "sort_new" }}</option>
+        <option value="oldest">{{ i18n "sort_old" }}</option>
+        <option value="az">{{ i18n "sort_az" }}</option>
+      </select>
+    </label>
+  </div>
+
+  {{ with $featured }}
+  <section class="ri-feat" id="ri-feat">
+    <div class="ri-sec-head">
+      <h2 class="ri-h2">{{ i18n "featured_h" }}</h2>
+      <p class="ri-sec-sub">{{ i18n "featured_sub" }}</p>
+      <a class="ri-viewall" href="#all-recipes">{{ i18n "view_all" }} <span aria-hidden="true">→</span></a>
+    </div>
+    <div class="ri-fgrid">
+      {{ range . }}
+      <a class="fcard" href="{{ .RelPermalink }}">
+        <span class="fcard-img"><img src="{{ .Params.image }}" alt="{{ .Title }}"></span>
+        <span class="fcard-body">
+          <span class="fcard-kicker">{{ .Params.tier_label }} · {{ with .Params.meals }}{{ $km := index . 0 }}{{ if in . "dinner" }}{{ $km = "dinner" }}{{ end }}{{ i18n (printf "meal_%s" $km) }}{{ end }}</span>
+          <span class="fcard-title">{{ .Title }}</span>
+          <span class="fcard-meta">{{ partial "serves.html" (dict "n" .Params.servings "lang" $.Lang) }} · {{ .Params.total_time }}</span>
+          <span class="fcard-price">{{ partial "price.html" (dict "amt" .Params.price_per_serving "lang" $.Lang) }}<small>{{ i18n "per_serving" }}</small></span>
+        </span>
+        <span class="fcard-arrow" aria-hidden="true">→</span>
+      </a>
+      {{ end }}
+    </div>
+  </section>
+  {{ end }}
+
+  <section class="index-sec ri-dir" id="all-recipes">
+    <h2 class="ri-h2">{{ i18n "all_recipes_h" }}</h2>
+    <ol class="index">
+      {{ range $recipes.ByDate.Reverse }}
+      {{ $blob := slice (lower .Title) (lower .Params.category) }}
+      {{ range .Params.breakdown }}{{ $blob = $blob | append (lower .item) }}{{ end }}
+      {{ with .Params.keywords }}{{ $blob = $blob | append (lower (delimit . " ")) }}{{ end }}
+      <li data-tier="{{ .Params.tier }}" data-cost="{{ .Params.price_per_serving }}" data-meals="{{ with .Params.meals }}{{ delimit . " " }}{{ end }}" data-date="{{ .Date.Unix }}" data-title="{{ .Title | lower }}" data-search="{{ delimit $blob " " }}"{{ if .Params.featured }} data-featured="1"{{ end }}>
+        <a href="{{ .RelPermalink }}"><img src="{{ .Params.image }}" alt="{{ .Title }}"></a>
+        <div>
+          <div class="rname"><a href="{{ .RelPermalink }}">{{ .Title }}</a></div>
+          <div class="rsub">{{ .Params.tier_label }} · {{ partial "serves.html" (dict "n" .Params.servings "lang" $.Lang) }} · {{ .Params.total_time }}</div>
+        </div>
+        <div class="rprice nums"><div class="per">{{ partial "price.html" (dict "amt" .Params.price_per_serving "lang" $.Lang) }}</div><div class="of">{{ i18n "per_serving" }}</div></div>
+        <span class="rarr2" aria-hidden="true">→</span>
+      </li>
+      {{ end }}
+    </ol>
+    <div class="ri-empty" id="ri-empty" hidden>
+      <h3>{{ i18n "empty_h" }}</h3>
+      <p>{{ i18n "empty_p" }}</p>
+      <button type="button" class="ri-clear" id="ri-clear">{{ i18n "clear_filters" }}</button>
+    </div>
+    <button type="button" class="ri-more" id="ri-more" hidden>{{ i18n "load_more" }} <span aria-hidden="true">↓</span></button>
+  </section>
+  <script src="{{ "/js/tierfilter.js" | relURL }}?v={{ .Site.Params.css_version }}" defer></script>
+</div>
+</div>
+{{ else }}
+<div class="wrap">
+  <div class="page-head"><h1>{{ .Title }}</h1></div>
   {{ with .Content }}<div style="max-width:46rem;margin-top:.8rem;">{{ . }}</div>{{ end }}
   <section class="index-sec" style="margin-top:1.6rem;">
     <ol class="index">
@@ -34,4 +134,5 @@
     </ol>
   </section>
 </div>
+{{ end }}
 {{ end }}

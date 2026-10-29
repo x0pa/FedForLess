@@ -3,6 +3,7 @@ title: "Cheap Potato, Egg and Cheese Breakfast Bake"
 description: "This cheap potato, egg and cheese breakfast bake makes six hearty servings for about $1.27 each. One dish, full cost breakdown inside."
 date: 2026-10-28
 draft: false
+featured: true
 tier: "green"
 tier_label: "Tier 1"
 meals: ["breakfast"]
