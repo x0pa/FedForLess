@@ -1,0 +1,91 @@
+{{ define "main" }}
+{{ $pero := .Site.GetPage "/recipes/cheap-perogies-with-cabbage-onion" }}
+{{ $soup := .Site.GetPage "/recipes/cheap-beef-barley-soup" }}
+{{ $recipes := .Site.GetPage "/recipes" }}
+{{ $hwp := .Site.GetPage "/how-we-price" }}
+{{ $contact := .Site.GetPage "/contact" }}
+<div class="wrap">
+<div class="aboutpage">
+
+  <header class="ab-hero">
+    <div class="ab-hero-l">
+      <p class="ab-eyebrow">{{ i18n "ab_eyebrow" }}</p>
+      <h1 class="ab-h1">{{ i18n "ab_h1_l1" }}<br>{{ i18n "ab_h1_l2" }}<br><span>{{ i18n "ab_h1_l3" }}</span></h1>
+    </div>
+    <div class="ab-hero-r">
+      <p class="ab-lede">{{ i18n "ab_intro_1" }}</p>
+      <p class="ab-intro">{{ i18n "ab_intro_2" }}</p>
+    </div>
+  </header>
+
+  {{ with $soup }}
+  <section class="ab-feat">
+    <figure class="ab-feat-img"><img src="{{ .Params.image }}" alt="{{ .Params.image_caption }}" loading="lazy"></figure>
+    <div class="ab-feat-copy">
+      <h2 class="ab-h2">{{ i18n "ab_feat_h1" }}<br><span>{{ i18n "ab_feat_h2" }}</span></h2>
+      <p>{{ i18n "ab_feat_p" }}</p>
+      <p><a class="ab-link" href="{{ $recipes.RelPermalink }}">{{ i18n "ab_feat_link" }} <span aria-hidden="true">→</span></a></p>
+    </div>
+  </section>
+  {{ end }}
+
+  <section class="ab-prom">
+    <h2 class="ab-h2">{{ i18n "ab_prom_h" }}</h2>
+    <div class="ab-promgrid">
+      <div class="ab-promitem"><div class="ab-num">01</div><h3 class="ab-prom-h">{{ i18n "ab_p1_h" }}</h3><p>{{ i18n "ab_p1_p" }}</p></div>
+      <div class="ab-promitem"><div class="ab-num">02</div><h3 class="ab-prom-h">{{ i18n "ab_p2_h" }}</h3><p>{{ i18n "ab_p2_p" }}</p></div>
+      <div class="ab-promitem"><div class="ab-num">03</div><h3 class="ab-prom-h">{{ i18n "ab_p3_h" }}</h3><p>{{ i18n "ab_p3_p" }}</p></div>
+      <div class="ab-promitem"><div class="ab-num">04</div><h3 class="ab-prom-h">{{ i18n "ab_p4_h" }}</h3><p>{{ i18n "ab_p4_p" }}</p></div>
+    </div>
+  </section>
+
+  {{ with $pero }}
+  <section class="ab-ex">
+    <h2 class="ab-h2">{{ i18n "ab_ex_h" }}</h2>
+    <div class="ab-exgrid">
+      <figure class="ab-ex-img"><img src="{{ .Params.image }}" alt="{{ .Params.image_caption }}" loading="lazy"></figure>
+      <div class="ab-ex-receipt">
+        <div class="receipt"><div class="rcp">
+          <p class="bhead">{{ .Title }}</p>
+          <div class="brow"><span>{{ i18n "meta_servings" }}</span><span class="amt nums">{{ .Params.servings }}</span></div>
+          <div class="brow"><span>{{ i18n "batch_total" }}</span><span class="amt nums">{{ partial "price.html" (dict "amt" .Params.batch_cost "lang" $.Lang) }}</span></div>
+          <div class="brow total ps"><span>{{ i18n "cost_per_serving" }}</span><span class="amt nums">{{ partial "price.html" (dict "amt" .Params.price_per_serving "lang" $.Lang) }}</span></div>
+          <div class="brow basket"><span>{{ i18n "basket_label" }}</span><span class="amt nums">{{ partial "price.html" (dict "amt" .Params.basket_cost "lang" $.Lang) }}</span></div>
+        </div></div>
+        <p class="ab-ex-cta"><a class="ab-link" href="{{ .RelPermalink }}">{{ i18n "ab_ex_cta" }} <span aria-hidden="true">→</span></a></p>
+      </div>
+    </div>
+  </section>
+  {{ end }}
+
+  <section class="ab-ca">
+    <p class="ab-eyebrow">{{ i18n "ab_ca_eyebrow" }}</p>
+    <h2 class="ab-h2">{{ i18n "ab_ca_h1" }}<br><span>{{ i18n "ab_ca_h2" }}</span></h2>
+    <div class="ab-ca-cols">
+      <p>{{ i18n "ab_ca_p1" }}</p>
+      <p>{{ i18n "ab_ca_p2" }}</p>
+      <p>{{ i18n "ab_ca_p3" }}</p>
+    </div>
+    <p><a class="ab-link" href="{{ $hwp.RelPermalink }}">{{ i18n "ab_ca_cta" }} <span aria-hidden="true">→</span></a></p>
+  </section>
+
+  <section class="ab-stmt">
+    <h2 class="ab-stmt-h">{{ i18n "ab_stmt_h1" }}<br><span>{{ i18n "ab_stmt_h2" }}</span></h2>
+    <p>{{ i18n "ab_stmt_p" }}</p>
+  </section>
+
+  <section class="ab-corr">
+    <h2 class="ab-h2 sm">{{ i18n "ab_corr_h" }}</h2>
+    <p>{{ i18n "ab_corr_p" }}</p>
+    <p><a class="ab-link" href="{{ $contact.RelPermalink }}">{{ i18n "ab_corr_cta" }} <span aria-hidden="true">→</span></a></p>
+  </section>
+
+  <section class="ab-fin">
+    <h2 class="ab-h2">{{ i18n "ab_fin_h" }}</h2>
+    <p>{{ i18n "ab_fin_p" }}</p>
+    <p><a class="ab-btn" href="{{ $recipes.RelPermalink }}">{{ i18n "ab_fin_cta" }} <span aria-hidden="true">→</span></a></p>
+  </section>
+
+</div>
+</div>
+{{ end }}

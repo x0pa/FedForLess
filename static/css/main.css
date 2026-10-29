@@ -1015,3 +1015,56 @@ ol.homeindex .rowlink:hover .rarr{transform:translateX(3px)}
   .rcpage .rc-calc{border:1px solid #999}
   .rcpage .rc-results{background:#fff;border-left:1px solid #999}
 }
+
+/* ============ about page — scoped to .aboutpage ============ */
+.aboutpage{padding-top:1.6rem}
+.aboutpage .ab-eyebrow{font-family:"Oswald";font-weight:700;text-transform:uppercase;letter-spacing:.15em;font-size:.85rem;color:var(--denim);margin:0 0 .7rem}
+.aboutpage .ab-hero{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:2.6rem;align-items:start}
+.aboutpage .ab-h1{font-family:"Oswald";font-weight:700;text-transform:uppercase;font-size:clamp(2.7rem,5.6vw,4.3rem);line-height:1.02;margin:0;color:var(--ink)}
+.aboutpage .ab-h1 span{color:var(--denim)}
+.aboutpage .ab-hero-r{padding-top:.6rem}
+.aboutpage .ab-lede{font-size:1.22rem;font-weight:600;line-height:1.55;color:var(--ink);margin:0}
+.aboutpage .ab-intro{font-size:1.05rem;line-height:1.65;color:#2C3138;margin:.9rem 0 0}
+.aboutpage .ab-h2{font-family:"Oswald";font-weight:700;text-transform:uppercase;font-size:clamp(1.8rem,3.6vw,2.5rem);line-height:1.08;margin:0;color:var(--ink)}
+.aboutpage .ab-h2 span{color:var(--denim)}
+.aboutpage .ab-h2.sm{font-size:clamp(1.5rem,3vw,2rem)}
+.aboutpage .ab-link{color:var(--denim);font-weight:700;text-decoration:none}
+.aboutpage .ab-link:hover{text-decoration:underline}
+.aboutpage .ab-feat{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:2.4rem;align-items:center;margin-top:2.8rem;border-top:2px solid var(--ink);padding-top:2.2rem}
+.aboutpage .ab-feat-img{margin:0}
+.aboutpage .ab-feat-img img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;border-radius:10px;display:block}
+.aboutpage .ab-feat-copy p{color:#2C3138;line-height:1.65;margin:1rem 0 0;font-size:1.02rem}
+.aboutpage .ab-prom{margin-top:3rem;border-top:2px solid var(--ink);padding-top:1.6rem}
+.aboutpage .ab-promgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 2.6rem;margin-top:1.4rem}
+.aboutpage .ab-promitem{border-top:1px solid var(--hair);padding:1.3rem 0 1.5rem}
+.aboutpage .ab-num{font-family:"Oswald";font-weight:700;font-size:2.6rem;line-height:1;color:var(--denim)}
+.aboutpage .ab-prom-h{font-family:"Oswald";font-weight:700;text-transform:uppercase;font-size:1.2rem;margin:.6rem 0 0;color:var(--ink)}
+.aboutpage .ab-promitem p{color:#2C3138;line-height:1.6;margin:.5rem 0 0}
+.aboutpage .ab-ex{margin-top:3rem;border-top:2px solid var(--ink);padding-top:1.6rem}
+.aboutpage .ab-exgrid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:2.4rem;align-items:center;margin-top:1.4rem}
+.aboutpage .ab-ex-img{margin:0}
+.aboutpage .ab-ex-img img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;border-radius:10px;display:block}
+.aboutpage .ab-ex-cta{margin:1.1rem 0 0}
+.aboutpage .ab-ca{margin-top:3rem;border-top:2px solid var(--ink);padding-top:1.6rem}
+.aboutpage .ab-ca-cols{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.8rem;margin-top:1.2rem}
+.aboutpage .ab-ca-cols p{color:#2C3138;line-height:1.65;margin:0}
+.aboutpage .ab-ca > p:last-child{margin-top:1.2rem}
+.aboutpage .ab-stmt{margin-top:3rem;background:#EAF1F8;border-radius:10px;padding:2.2rem 2.4rem}
+.aboutpage .ab-stmt-h{font-family:"Oswald";font-weight:700;text-transform:uppercase;font-size:clamp(1.9rem,4vw,2.7rem);line-height:1.08;margin:0;color:var(--ink)}
+.aboutpage .ab-stmt-h span{color:var(--denim)}
+.aboutpage .ab-stmt p{font-size:1.08rem;line-height:1.6;color:#2C3138;margin:.9rem 0 0;max-width:44rem}
+.aboutpage .ab-corr{margin-top:3rem;border-top:2px solid var(--ink);padding-top:1.6rem;max-width:52rem}
+.aboutpage .ab-corr p{color:#2C3138;line-height:1.65;margin:.8rem 0 0}
+.aboutpage .ab-fin{margin-top:3rem;border-top:2px solid var(--ink);padding-top:1.6rem}
+.aboutpage .ab-fin p{color:#2C3138;line-height:1.65;margin:.8rem 0 0}
+.aboutpage .ab-btn{display:inline-block;background:var(--denim);color:#fff;font-family:"Oswald";font-weight:600;font-size:1rem;letter-spacing:.03em;padding:.85rem 1.5rem;border-radius:6px;text-decoration:none;margin-top:.4rem}
+.aboutpage .ab-btn:hover{background:var(--denim-deep)}
+@media (max-width:920px){
+  .aboutpage .ab-hero{grid-template-columns:minmax(0,1fr);gap:1.2rem}
+  .aboutpage .ab-hero-r{padding-top:0}
+  .aboutpage .ab-feat{grid-template-columns:minmax(0,1fr);gap:1.3rem}
+  .aboutpage .ab-promgrid{grid-template-columns:minmax(0,1fr)}
+  .aboutpage .ab-exgrid{grid-template-columns:minmax(0,1fr);gap:1.3rem}
+  .aboutpage .ab-ca-cols{grid-template-columns:minmax(0,1fr);gap:1rem}
+  .aboutpage .ab-stmt{padding:1.6rem 1.4rem}
+}
