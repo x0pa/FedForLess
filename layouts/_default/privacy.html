@@ -1,0 +1,104 @@
+{{ define "main" }}
+{{ $contact := .Site.GetPage "/contact" }}
+<div class="wrap">
+<div class="privpage">
+
+  <header class="pv-hero">
+    <p class="pv-eyebrow">{{ i18n "pv_eyebrow" }}</p>
+    <h1 class="pv-h1">{{ i18n "pv_h1_l1" }}<br><span>{{ i18n "pv_h1_l2" }}</span></h1>
+    <p class="pv-intro">{{ i18n "pv_intro" }}</p>
+    <p class="pv-updated">{{ i18n "pv_updated" }}</p>
+  </header>
+
+  <section class="pv-glance">
+    <h2 class="pv-glance-h">{{ i18n "pv_glance_h" }}</h2>
+    <div class="pv-glancegrid">
+      <div class="pv-gitem">
+        <svg class="pv-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6-10-6-10-6Z"/><circle cx="12" cy="12" r="3"/></svg>
+        <h3 class="pv-g-h">{{ i18n "pv_g1_h" }}</h3>
+        <p>{{ i18n "pv_g1_p" }}</p>
+      </div>
+      <div class="pv-gitem">
+        <svg class="pv-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-8M22 20H2"/></svg>
+        <h3 class="pv-g-h">{{ i18n "pv_g2_h" }}</h3>
+        <p>{{ i18n "pv_g2_p" }}</p>
+      </div>
+      <div class="pv-gitem">
+        <svg class="pv-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+        <h3 class="pv-g-h">{{ i18n "pv_g3_h" }}</h3>
+        <p>{{ i18n "pv_g3_p" }}</p>
+      </div>
+      <div class="pv-gitem">
+        <svg class="pv-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 8h10M18 8h2M4 16h2M10 16h10"/><circle cx="16" cy="8" r="2.2"/><circle cx="8" cy="16" r="2.2"/></svg>
+        <h3 class="pv-g-h">{{ i18n "pv_g4_h" }}</h3>
+        <p>{{ i18n "pv_g4_p" }}</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="pv-doc">
+    <aside class="pv-side">
+      <nav class="pv-nav" aria-label="{{ i18n "pv_onthis" }}">
+        <p class="pv-nav-h">{{ i18n "pv_onthis" }}</p>
+        <a href="#collect">{{ i18n "pv_n1" }}</a>
+        <a href="#notdo">{{ i18n "pv_n2" }}</a>
+        <a href="#choices">{{ i18n "pv_n3" }}</a>
+        <a href="#contact">{{ i18n "pv_n4" }}</a>
+      </nav>
+    </aside>
+
+    <div class="pv-main">
+      <section class="pv-sec" id="collect">
+        <div class="pv-num">01</div>
+        <h2 class="pv-h2">{{ i18n "pv_n1" }}</h2>
+        <p class="pv-p">{{ i18n "pv_s1_intro" }}</p>
+        <div class="pv-block">
+          <h3 class="pv-bh">{{ i18n "pv_c1_h" }}</h3>
+          <p class="pv-p">{{ i18n "pv_c1_p" }}</p>
+        </div>
+        <div class="pv-block">
+          <h3 class="pv-bh">{{ i18n "pv_c2_h" }}</h3>
+          <p class="pv-p">{{ i18n "pv_c2_p" }}</p>
+        </div>
+        <div class="pv-block">
+          <h3 class="pv-bh">{{ i18n "pv_c3_h" }}</h3>
+          <p class="pv-p">{{ i18n "pv_c3_p" }}</p>
+        </div>
+        <div class="pv-block">
+          <h3 class="pv-bh">{{ i18n "pv_c4_h" }}</h3>
+          <p class="pv-p">{{ i18n "pv_c4_p" }}</p>
+        </div>
+      </section>
+
+      <section class="pv-sec" id="notdo">
+        <div class="pv-num">02</div>
+        <h2 class="pv-h2">{{ i18n "pv_n2" }}</h2>
+        <ul class="pv-list">
+          <li>{{ i18n "pv_d1" }}</li>
+          <li>{{ i18n "pv_d2" }}</li>
+          <li>{{ i18n "pv_d3" }}</li>
+        </ul>
+      </section>
+
+      <section class="pv-sec" id="choices">
+        <div class="pv-num">03</div>
+        <h2 class="pv-h2">{{ i18n "pv_n3" }}</h2>
+        <div class="pv-panel">
+          <p class="pv-p">{{ i18n "pv_choices_p" }}</p>
+        </div>
+      </section>
+
+      <section class="pv-sec" id="contact">
+        <div class="pv-num">04</div>
+        <h2 class="pv-h2">{{ i18n "pv_n4" }}</h2>
+        <div class="pv-contact">
+          <h3 class="pv-contact-h">{{ i18n "pv_contact_h" }}</h3>
+          <p class="pv-p">{{ i18n "pv_contact_p" }} <a href="mailto:hello@fedforless.ca">hello@fedforless.ca</a>, {{ i18n "pv_contact_or" }} <a href="{{ $contact.RelPermalink }}">{{ i18n "pv_contact_page" }}</a>.</p>
+        </div>
+      </section>
+    </div>
+  </div>
+
+</div>
+</div>
+{{ end }}
