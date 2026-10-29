@@ -1,18 +1,212 @@
 {{ define "main" }}
+{{ $separate := float .Params.separate_baskets }}
+{{ $save := float .Params.you_save }}
+{{ $pct := printf "%.0f" (mul (div $save $separate) 100.0) }}
+{{ $hwp := .Site.GetPage "/how-we-price" }}
+{{ $calc := .Site.GetPage "/tools/recipe-cost-calculator" }}
+{{ $bwIndex := .Site.GetPage "/basket-weeks" }}
+{{ $foodTotal := 0.0 }}
+{{ range .Params.pots }}{{ with $.Site.GetPage (printf "/recipes/%s" .slug) }}{{ $foodTotal = add $foodTotal (float .Params.batch_cost) }}{{ end }}{{ end }}
 <div class="wrap">
-  <div class="crumbs"><a href="{{ "/" | relLangURL }}">{{ i18n "crumb_home" }}</a> · <a href="{{ "/basket-weeks/" | relLangURL }}">{{ i18n "crumb_basketweeks" }}</a> · {{ .Title }}</div>
-  <h1 class="dish">{{ .Title }}</h1>
-  <p class="standfirst">{{ .Params.standfirst }}</p>
-  <div style="max-width:46rem;">
-    <div class="bbox nums">
-      <div class="brow first"><span class="item">{{ i18n "bw_combined" }}</span><span class="amt">{{ partial "price.html" (dict "amt" .Params.combined_basket "lang" $.Lang) }}</span></div>
-      <div class="brow"><span class="item">{{ i18n "bw_separate" }}</span><span class="amt">{{ partial "price.html" (dict "amt" .Params.separate_baskets "lang" $.Lang) }}</span></div>
-      <div class="brow total"><span class="lbl">{{ i18n "bw_yousave" }}</span><span class="amt">{{ partial "price.html" (dict "amt" .Params.you_save "lang" $.Lang) }}</span></div>
+<div class="bwpage">
+
+  <header class="bw-hero">
+    <div class="bw-hero-l">
+      <nav class="crumbs" aria-label="breadcrumb"><a href="{{ "/" | relLangURL }}">{{ i18n "crumb_home" }}</a> <span aria-hidden="true">›</span> <a href="{{ $bwIndex.RelPermalink }}">{{ i18n "crumb_basketweeks" }}</a> <span aria-hidden="true">›</span> <span>{{ .Params.crumb_short }}</span></nav>
+      <p class="bw-eyebrow">{{ i18n "bw2_eyebrow" }}</p>
+      <h1 class="bw-h1">{{ .Params.headline_top }}<br><span>{{ .Params.headline_blue }}</span></h1>
+      <p class="bw-standfirst">{{ .Params.standfirst }}</p>
+      <p class="bw-meta">{{ len .Params.pots }} {{ i18n "bw2_recipes_n" }} · {{ partial "serves.html" (dict "n" .Params.total_servings "lang" $.Lang) }} · {{ i18n "bw2_checked_line" }}: {{ .Params.prices_checked }}</p>
     </div>
-    <div class="perline" style="text-align:left;">{{ partial "serves.html" (dict "n" .Params.total_servings "lang" $.Lang) }} · {{ partial "price.html" (dict "amt" .Params.till_per_serving "lang" $.Lang) }} {{ i18n "bw_till_suffix" }}</div>
-    <article class="prose" style="margin-top:1.2rem;">
-      {{ .Content }}
-    </article>
-  </div>
+    <div class="bw-hero-r">
+      <img class="bw-heroimg" src="{{ .Params.hero_image }}" alt="{{ .Params.crumb_short }}" width="1280" height="853">
+    </div>
+  </header>
+
+  <p class="bw-intro">{{ .Params.intro }}</p>
+
+  <section class="bw-fin nums">
+    <div class="bw-fin-grid">
+      <div class="bw-fin-cell"><p class="bw-fin-l">{{ i18n "bw_combined" }}</p><p class="bw-fin-v">{{ partial "price.html" (dict "amt" .Params.combined_basket "lang" $.Lang) }}</p></div>
+      <div class="bw-fin-cell"><p class="bw-fin-l">{{ i18n "bw_separate" }}</p><p class="bw-fin-v bw-fin-alt">{{ partial "price.html" (dict "amt" .Params.separate_baskets "lang" $.Lang) }}</p></div>
+      <div class="bw-fin-cell"><p class="bw-fin-l">{{ i18n "bw_yousave" }}</p><p class="bw-fin-v">{{ partial "price.html" (dict "amt" .Params.you_save "lang" $.Lang) }}</p></div>
+      <div class="bw-fin-cell"><p class="bw-fin-l">{{ i18n "bw2_savings" }}</p><p class="bw-fin-v">{{ $pct }}%</p></div>
+    </div>
+    <p class="bw-fin-line">{{ $line := replace (i18n "bw2_line_fmt") "{n}" (printf "%d" .Params.total_servings) }}{{ replace $line "{x}" (partial "price.html" (dict "amt" .Params.till_per_serving "lang" $.Lang)) }}</p>
+  </section>
+
+  <section class="bw-shop" id="shop">
+    <div class="bw-printhead"><strong>{{ .Title }}</strong> · {{ i18n "bw2_basket_total" }}: {{ partial "price.html" (dict "amt" .Params.combined_basket "lang" $.Lang) }} · {{ i18n "bw2_checked_line" }}: {{ .Params.prices_checked }}</div>
+    <h2 class="bw-h2">{{ i18n "bw2_shop_h" }}</h2>
+    <p class="bw-sub">{{ i18n "bw2_shop_sub" }}</p>
+    <p class="bw-sub">{{ .Params.shop_intro }}</p>
+    <div class="bw-actions">
+      <button type="button" class="bw-btn" id="bw-print">{{ i18n "bw2_print" }}</button>
+      <button type="button" class="bw-btn bw-btn-alt" id="bw-copy">{{ i18n "bw2_copy" }}</button>
+      <span class="bw-progress nums" id="bw-progress"></span>
+      <button type="button" class="bw-reset" id="bw-reset">{{ i18n "bw2_reset" }}</button>
+    </div>
+    <div class="bw-shopgrid">
+      <div class="bw-listwrap">
+        {{ $items := .Params.basket_items }}
+        {{ range $cat := slice "produce" "meat" "dry" "canned" "pantry" }}
+        {{ $group := where $items "cat" $cat }}
+        {{ if $group }}
+        <h3 class="bw-cat">{{ i18n (printf "bw2_cat_%s" $cat) }}</h3>
+        <ul class="bw-list">
+          {{ range $group }}
+          <li class="bw-item">
+            <label class="bw-check"><input type="checkbox" class="bw-box"><span class="bw-item-main"><span class="bw-item-n">{{ .n }}</span>{{ with .q }}<span class="bw-item-q">{{ . }}</span>{{ end }}{{ with .note }}<span class="bw-item-note">{{ . }}</span>{{ end }}</span><span class="bw-item-p nums">{{ partial "price.html" (dict "amt" .p "lang" $.Lang) }}</span></label>
+          </li>
+          {{ end }}
+        </ul>
+        {{ end }}
+        {{ end }}
+      </div>
+      <aside class="bw-receiptwrap">
+        <div class="receipt"><article class="rcp">
+          <div class="bhead">{{ .Params.crumb_short }}</div>
+          <p class="govline">{{ i18n "bw2_checked_line" }}: {{ .Params.prices_checked }}</p>
+          {{ range .Params.basket_items }}
+          <div class="brow"><span class="item">{{ .n }}</span><span class="amt nums">{{ partial "price.html" (dict "amt" .p "lang" $.Lang) }}</span></div>
+          {{ end }}
+          <div class="brow total"><span class="lbl">{{ i18n "bw2_basket_total" }}</span><span class="amt nums">{{ partial "price.html" (dict "amt" .Params.combined_basket "lang" $.Lang) }}</span></div>
+          <p class="bw-rcp-foot"><a href="{{ $hwp.RelPermalink }}">{{ $hwp.Title }}</a></p>
+        </article></div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="bw-pots">
+    <h2 class="bw-h2">{{ .Params.meals_heading }}</h2>
+    <div class="bw-potgrid">
+      {{ range .Params.pots }}
+      {{ $role := .role }}
+      {{ with $.Site.GetPage (printf "/recipes/%s" .slug) }}
+      <article class="bw-pot">
+        <a class="bw-pot-img" href="{{ .RelPermalink }}"><img src="{{ .Params.image }}" alt="{{ .Params.image_caption }}" loading="lazy" width="800" height="600"></a>
+        <h3 class="bw-pot-h"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+        <p class="bw-pot-meta nums">{{ partial "serves.html" (dict "n" .Params.servings "lang" $.Lang) }} · {{ i18n "bw2_batch" }} {{ partial "price.html" (dict "amt" .Params.batch_cost "lang" $.Lang) }} · {{ partial "price.html" (dict "amt" .Params.price_per_serving "lang" $.Lang) }} {{ i18n "per_serving" }}</p>
+        <p class="bw-pot-role">{{ $role }}</p>
+        <p><a class="bw-link" href="{{ .RelPermalink }}">{{ i18n "bw2_view" }} <span aria-hidden="true">→</span></a></p>
+      </article>
+      {{ end }}
+      {{ end }}
+    </div>
+  </section>
+
+  <section class="bw-week">
+    <h2 class="bw-h2">{{ i18n "bw2_week_h" }}</h2>
+    <div class="bw-timeline">
+      {{ range $i, $s := .Params.plan }}
+      <div class="bw-stage"><div class="bw-stage-n">{{ printf "%02d" (add $i 1) }}</div><h3 class="bw-stage-h">{{ $s.h }}</h3><p>{{ $s.t }}</p></div>
+      {{ end }}
+    </div>
+    <p class="bw-note">{{ .Params.plan_note }}</p>
+  </section>
+
+  <section class="bw-left">
+    <p class="bw-eyebrow">{{ i18n "bw2_left_sub" }}</p>
+    <h2 class="bw-h2">{{ i18n "bw2_left_h" }}</h2>
+    <ul class="bw-leftlist">
+      {{ range .Params.leftovers }}<li>{{ . }}</li>{{ end }}
+    </ul>
+    <p class="bw-note">{{ .Params.leftover_note }}</p>
+  </section>
+
+  <section class="bw-math">
+    <h2 class="bw-h2">{{ i18n "bw2_math_h" }}</h2>
+    <div class="bw-mathrows nums">
+      <div class="bw-mrow"><span>{{ i18n "bw2_sep_label" }}</span><span>{{ partial "price.html" (dict "amt" .Params.separate_baskets "lang" $.Lang) }}</span></div>
+      <div class="bw-mrow"><span>{{ i18n "bw2_one_label" }}</span><span>{{ partial "price.html" (dict "amt" .Params.combined_basket "lang" $.Lang) }}</span></div>
+      <div class="bw-mrow bw-mrow-total"><span>{{ i18n "bw2_diff_label" }}</span><span>{{ partial "price.html" (dict "amt" .Params.you_save "lang" $.Lang) }}</span></div>
+    </div>
+    <div class="bw-panels">
+      <div class="bw-panel">
+        <h3 class="bw-panel-h">{{ i18n "bw2_till_h" }}</h3>
+        <p class="bw-panel-v nums">{{ partial "price.html" (dict "amt" .Params.till_per_serving "lang" $.Lang) }}</p>
+        <p>{{ replace (i18n "bw2_till_fmt") "{x}" (partial "price.html" (dict "amt" .Params.till_per_serving "lang" $.Lang)) }}</p>
+      </div>
+      <div class="bw-panel">
+        <h3 class="bw-panel-h">{{ i18n "bw2_plate_h" }}</h3>
+        <p class="bw-panel-v nums">{{ partial "price.html" (dict "amt" .Params.food_per_serving "lang" $.Lang) }}</p>
+        <p>{{ $plate := replace (i18n "bw2_plate_fmt") "{t}" (partial "price.html" (dict "amt" (printf "%.2f" $foodTotal) "lang" $.Lang)) }}{{ replace $plate "{x}" (partial "price.html" (dict "amt" .Params.food_per_serving "lang" $.Lang)) }}</p>
+      </div>
+    </div>
+    <p class="bw-note">{{ .Params.math_note }} {{ i18n "bw2_calc_line" }} <a class="bw-link" href="{{ $calc.RelPermalink }}">{{ $calc.Title }}</a>.</p>
+  </section>
+
+  <section class="bw-faq">
+    <div class="faq">
+      <h2 class="bw-h2">{{ i18n "bw2_faq_h" }}</h2>
+      {{ range .Params.faqs }}
+      <details class="faq-item"><summary>{{ .q }}</summary><p>{{ .a }}</p></details>
+      {{ end }}
+    </div>
+  </section>
+
+  {{ $related := where (where .Site.RegularPages "Section" "basket-weeks") "RelPermalink" "ne" .RelPermalink }}
+  {{ if $related }}
+  <section class="bw-related">
+    <h2 class="bw-h2">{{ i18n "bw2_related_h" }}</h2>
+    <div class="bw-potgrid">
+      {{ range $related }}
+      <article class="bw-pot">
+        <a class="bw-pot-img" href="{{ .RelPermalink }}"><img src="{{ .Params.hero_image }}" alt="{{ .Params.crumb_short }}" loading="lazy" width="800" height="600"></a>
+        <h3 class="bw-pot-h"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+        <p class="bw-pot-meta nums">{{ len .Params.pots }} {{ i18n "bw2_recipes_n" }} · {{ partial "serves.html" (dict "n" .Params.total_servings "lang" $.Lang) }} · {{ partial "price.html" (dict "amt" .Params.combined_basket "lang" $.Lang) }}</p>
+      </article>
+      {{ end }}
+    </div>
+  </section>
+  {{ end }}
+
 </div>
+</div>
+<script>
+(function(){
+  var boxes = Array.prototype.slice.call(document.querySelectorAll(".bw-box"));
+  if (!boxes.length) return;
+  var key = "bw-checklist-{{ .File.ContentBaseName }}-v1";
+  var progress = document.getElementById("bw-progress");
+  var fmt = "{{ i18n "bw2_progress_fmt" }}";
+  function render(){
+    var n = boxes.filter(function(b){ return b.checked; }).length;
+    boxes.forEach(function(b){ b.closest(".bw-item").classList.toggle("bw-done", b.checked); });
+    if (progress) progress.textContent = fmt.replace("{a}", n).replace("{b}", boxes.length);
+  }
+  try {
+    var saved = JSON.parse(localStorage.getItem(key) || "[]");
+    boxes.forEach(function(b, i){ b.checked = !!saved[i]; });
+  } catch(e) {}
+  boxes.forEach(function(b){
+    b.addEventListener("change", function(){
+      try { localStorage.setItem(key, JSON.stringify(boxes.map(function(x){ return x.checked; }))); } catch(e) {}
+      render();
+    });
+  });
+  var reset = document.getElementById("bw-reset");
+  if (reset) reset.addEventListener("click", function(){
+    boxes.forEach(function(b){ b.checked = false; });
+    try { localStorage.removeItem(key); } catch(e) {}
+    render();
+  });
+  var printBtn = document.getElementById("bw-print");
+  if (printBtn) printBtn.addEventListener("click", function(){ window.print(); });
+  var copyBtn = document.getElementById("bw-copy");
+  if (copyBtn) copyBtn.addEventListener("click", function(){
+    var lines = ["{{ .Title }}", ""];
+    document.querySelectorAll(".bw-item").forEach(function(li){
+      var n = li.querySelector(".bw-item-n").textContent.trim();
+      var q = li.querySelector(".bw-item-q");
+      var p = li.querySelector(".bw-item-p").textContent.trim();
+      lines.push("- " + n + (q ? " \u2014 " + q.textContent.trim() : "") + " \u2014 " + p);
+    });
+    lines.push("", "{{ i18n "bw2_basket_total" }}: {{ partial "price.html" (dict "amt" .Params.combined_basket "lang" $.Lang) }}");
+    var done = function(){ var old = copyBtn.textContent; copyBtn.textContent = "{{ i18n "bw2_copied" }}"; setTimeout(function(){ copyBtn.textContent = old; }, 2000); };
+    if (navigator.clipboard && navigator.clipboard.writeText) { navigator.clipboard.writeText(lines.join("\n")).then(done, done); }
+  });
+  render();
+})();
+</script>
 {{ end }}
