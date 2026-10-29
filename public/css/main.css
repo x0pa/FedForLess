@@ -128,7 +128,7 @@ footer.site{background:var(--navy);border-top:3px solid var(--denim);margin-top:
   .feature,.layout{grid-template-columns:1fr}
   .pricecard{position:static}
   ol.index li{grid-template-columns:48px 104px 1fr;grid-template-rows:auto auto}
-  ol.index .rprice{grid-column:3;text-align:left}
+  ol.index:not(.homeindex) .rprice{grid-column:3;text-align:left}
   ol.index img{width:104px;height:76px}
   .collections{grid-template-columns:1fr}
   .hero-photo img,.feature figure img{height:300px}
@@ -211,8 +211,8 @@ footer.site{background:var(--navy);border-top:3px solid var(--denim);margin-top:
 .fp-amt{font-weight:800;white-space:nowrap}
 .fp-total{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;padding:.85rem 0 .2rem;font-family:"Oswald";font-weight:700;text-transform:uppercase;letter-spacing:.05em;font-size:1rem}
 .fp-total-amt{font-size:1.9rem;color:var(--denim);line-height:1}
-.fp-per{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;font-family:"Oswald";font-weight:600;text-transform:uppercase;letter-spacing:.05em;font-size:.93rem;color:var(--denim)}
-.fp-per-amt{font-size:1.35rem;font-weight:700}
+.fp-per{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;font-family:"Oswald";font-weight:600;text-transform:uppercase;letter-spacing:.05em;font-size:.93rem;color:var(--denim);background:rgba(29,78,158,.08);border-radius:6px;padding:.42rem .55rem;margin-left:-.55rem;margin-right:-.55rem}
+.fp-per-amt{font-size:1.75rem;font-weight:700}
 @media (max-width:1100px){
   .fhero-content{max-width:56%;padding:2.3rem 2.2rem}
   .fhero-paper{width:292px;right:1.3rem}
@@ -226,7 +226,7 @@ footer.site{background:var(--navy);border-top:3px solid var(--denim);margin-top:
   .fp-total{font-size:.86rem}
   .fp-total-amt{font-size:1.55rem}
   .fp-per{font-size:.78rem}
-  .fp-per-amt{font-size:1.12rem}
+  .fp-per-amt{font-size:1.45rem}
 }
 @media (max-width:767px){
   .fhero{min-height:0;margin-top:1.3rem;background:#FBF6EC;box-shadow:0 10px 30px rgba(17,18,20,.10)}
@@ -315,12 +315,12 @@ ol.homeindex .rowlink:hover .rarr{transform:translateX(3px)}
 }
 @media (max-width:920px){
   .shopgrid{grid-template-columns:minmax(0,1fr)}
-  ol.homeindex .rowlink{grid-template-columns:42px 92px minmax(0,1fr) auto;gap:.85rem;padding:.75rem .3rem}
+  ol.homeindex .rowlink{grid-template-columns:42px 92px minmax(0,1fr);grid-template-rows:auto auto;gap:.85rem;padding:.75rem .3rem}
   ol.homeindex .rowlink::before{font-size:1.5rem}
   ol.homeindex .rthumb{width:92px;height:92px}
   ol.homeindex .rname{font-size:1.05rem}
   ol.homeindex .rsub{font-size:.82rem}
-  ol.homeindex .rprice{text-align:right}
+  ol.homeindex .rprice{grid-column:3;justify-self:end;text-align:right}
   ol.homeindex .rprice .per{font-size:1.4rem}
   ol.homeindex .rarr{display:none}
 }
@@ -342,7 +342,7 @@ ol.homeindex .rowlink:hover .rarr{transform:translateX(3px)}
   .sbtn{padding:.85rem .95rem}
 }
 @media (max-width:374px){
-  ol.homeindex .rowlink{grid-template-columns:34px 72px minmax(0,1fr) auto;gap:.65rem}
+  ol.homeindex .rowlink{grid-template-columns:34px 72px minmax(0,1fr);gap:.65rem}
   ol.homeindex .rowlink::before{font-size:1.25rem}
   ol.homeindex .rthumb{width:72px;height:72px}
   ol.homeindex .rprice .per{font-size:1.2rem}
