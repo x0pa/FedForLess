@@ -1,6 +1,37 @@
 {{ define "main" }}
+{{ $recipes := .Site.GetPage "/recipes" }}
+{{ $latest := first 3 (where .Site.RegularPages "Section" "recipes").ByDate.Reverse }}
 <div class="wrap">
-  <div class="page-head"><h1>{{ i18n "e404_h1" }}</h1></div>
-  <p style="max-width:44rem;margin-top:1rem;color:#2C3138;">{{ i18n "e404_a" }} <a href="{{ "/recipes/" | relLangURL }}">{{ i18n "e404_index" }}</a> {{ i18n "e404_b" }} <a href="{{ "/" | relLangURL }}">{{ i18n "e404_home" }}</a>.</p>
+<div class="p404">
+
+  <section class="p404-hero">
+    <p class="p404-eyebrow">{{ i18n "nf_eyebrow" }}</p>
+    <p class="p404-num" aria-hidden="true">404</p>
+    <h1 class="p404-h1">{{ i18n "nf_h1_l1" }}<br><span>{{ i18n "nf_h1_l2" }}</span></h1>
+    <p class="p404-copy">{{ i18n "nf_copy" }}</p>
+    <figure class="p404-photo"><img src="/images/404-empty-plate.webp" alt="{{ i18n "nf_alt" }}" width="1100" height="733"></figure>
+    <p class="p404-ctas">
+      <a class="p404-btn" href="{{ $recipes.RelPermalink }}">{{ i18n "nf_cta_recipes" }} <span aria-hidden="true">→</span></a>
+      <a class="p404-btn p404-btn-alt" href="{{ "/" | relLangURL }}">{{ i18n "nf_cta_home" }} <span aria-hidden="true">→</span></a>
+    </p>
+    <p class="p404-note">{{ i18n "nf_note_a" }} <span>{{ i18n "nf_note_b" }}</span> {{ i18n "nf_note_c" }}</p>
+  </section>
+
+  {{ if $latest }}
+  <section class="p404-more">
+    <h2 class="p404-more-h">{{ i18n "nf_more_h" }}</h2>
+    <div class="p404-grid">
+      {{ range $latest }}
+      <article class="p404-card">
+        <a class="p404-card-img" href="{{ .RelPermalink }}"><img src="{{ .Params.image }}" alt="{{ .Params.image_caption }}" loading="lazy" width="800" height="600"></a>
+        <h3 class="p404-card-h"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+        <p class="p404-card-p nums">{{ partial "price.html" (dict "amt" .Params.price_per_serving "lang" $.Lang) }} {{ i18n "per_serving" }}</p>
+      </article>
+      {{ end }}
+    </div>
+  </section>
+  {{ end }}
+
+</div>
 </div>
 {{ end }}
