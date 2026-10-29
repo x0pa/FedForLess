@@ -149,6 +149,71 @@ footer.site a{color:var(--muted);text-decoration:none}
 .nubar{height:5px;background:#E7ECF3;margin:.28rem 0 .3rem}
 .nubar i{display:block;height:100%;background:var(--denim)}
 .nunote{color:var(--muted);font-size:.82rem;line-height:1.5;margin:.55rem 0 .1rem}
+/* Featured recipe hero — Editorial Hero Concept 2 (2026-10-29) */
+.fhero{position:relative;margin-top:2.2rem;border-radius:16px;overflow:hidden;background:#0B0D10;min-height:560px}
+.fhero-media{position:absolute;inset:0}
+.fhero-media img{width:100%;height:100%;object-fit:cover;display:block}
+.fhero-shade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(7,9,13,.87) 0%,rgba(7,9,13,.64) 42%,rgba(7,9,13,.20) 68%,rgba(7,9,13,0) 84%)}
+.fhero-content{position:relative;z-index:2;display:flex;flex-direction:column;justify-content:center;gap:1.05rem;padding:2.8rem 3rem;max-width:600px;min-height:560px;color:#fff}
+.fhero-badge{align-self:flex-start;background:var(--denim);color:#fff;font-family:"Oswald";font-weight:600;text-transform:uppercase;letter-spacing:.12em;font-size:.78rem;padding:.42rem .8rem;border-radius:6px}
+.fhero-badge-m{display:none}
+.fhero-title{font-family:"Oswald";font-weight:700;text-transform:uppercase;font-size:clamp(2.4rem,4.6vw,4.25rem);line-height:.99;margin:0}
+.fhero-title a{color:#fff;text-decoration:none}
+.fhero-desc{color:rgba(255,255,255,.93);font-size:1.06rem;line-height:1.55;max-width:37ch;margin:0}
+.fhero-meta{display:flex;flex-wrap:wrap;align-items:center;margin-top:.15rem}
+.fm-item{display:flex;align-items:center;gap:.5rem;font-family:"Oswald";font-weight:600;text-transform:uppercase;letter-spacing:.07em;font-size:.95rem;padding:.15rem 1.05rem;border-left:1px solid rgba(255,255,255,.35)}
+.fm-item:first-child{padding-left:0;border-left:none}
+.fm-item svg{width:21px;height:21px;flex:none}
+.fm-item strong{font-weight:700}
+.fhero-cta{display:inline-flex;align-items:center;gap:.5rem;background:var(--denim);color:#fff;font-weight:700;font-size:1.02rem;padding:.85rem 1.7rem;border-radius:8px;text-decoration:none;align-self:flex-start;margin-top:.45rem}
+.fhero-cta:hover,.fhero-cta:focus{background:var(--denim-deep);color:#fff}
+.fhero-cta-m{display:none}
+.fhero-paper{position:absolute;z-index:3;right:2.4rem;top:50%;width:332px;transform:translateY(-50%) rotate(-1.6deg);filter:drop-shadow(0 22px 30px rgba(0,0,0,.42))}
+.fp-inner{background:#FBF6EC;color:var(--ink);padding:1.45rem 1.55rem 1.25rem;clip-path:polygon(1% 2%,6% .2%,14% 1.4%,25% .2%,38% 1.5%,52% 0,66% 1.3%,79% .2%,90% 1.4%,98% .4%,100% 4%,99.2% 18%,100% 34%,99.3% 52%,100% 70%,99.2% 86%,100% 96%,96% 100%,84% 99%,70% 100%,55% 99%,40% 100%,26% 99.2%,12% 100%,3% 99.2%,0 96%,.7% 82%,0 64%,.8% 46%,0 28%,.7% 12%)}
+.fp-head{font-family:"Oswald";font-weight:700;text-transform:uppercase;letter-spacing:.06em;font-size:1.28rem}
+.fp-head::after{content:"";display:block;width:92px;height:3px;background:var(--denim);margin-top:.42rem}
+.fp-row{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;padding:.55rem 0;border-bottom:1px solid #DDD5C3}
+.fp-item{font-weight:600;font-size:.97rem}
+.fp-item small{display:block;color:#6B6252;font-weight:500;font-size:.8rem;line-height:1.35;margin-top:.1rem}
+.fp-amt{font-weight:800;white-space:nowrap}
+.fp-total{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;padding:.85rem 0 .2rem;font-family:"Oswald";font-weight:700;text-transform:uppercase;letter-spacing:.05em;font-size:1rem}
+.fp-total-amt{font-size:1.9rem;color:var(--denim);line-height:1}
+.fp-per{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;font-family:"Oswald";font-weight:600;text-transform:uppercase;letter-spacing:.05em;font-size:.93rem;color:var(--denim)}
+.fp-per-amt{font-size:1.35rem;font-weight:700}
+@media (max-width:1100px){
+  .fhero-content{max-width:56%;padding:2.3rem 2.2rem}
+  .fhero-paper{width:292px;right:1.3rem}
+  .fp-item small{display:none}
+}
+@media (max-width:900px){
+  .fhero-content{max-width:58%;padding:2rem 1.7rem}
+  .fhero-paper{width:262px;right:.9rem}
+  .fp-inner{padding:1.2rem 1.25rem 1.05rem}
+  .fhero-desc{font-size:.99rem}
+  .fp-total{font-size:.86rem}
+  .fp-total-amt{font-size:1.55rem}
+  .fp-per{font-size:.78rem}
+  .fp-per-amt{font-size:1.12rem}
+}
+@media (max-width:767px){
+  .fhero{min-height:0;background:#FBF6EC;box-shadow:0 10px 30px rgba(17,18,20,.10)}
+  .fhero-media{position:relative;aspect-ratio:4/3}
+  .fhero-badge-m{display:inline-block;position:absolute;left:1rem;top:1rem;z-index:2}
+  .fhero-badge-d{display:none}
+  .fhero-shade{display:none}
+  .fhero-content{max-width:none;min-height:0;color:var(--ink);padding:2rem 1.3rem .35rem;margin-top:-20px;background:#FBF6EC;clip-path:polygon(0 14px,5% 6px,11% 12px,18% 5px,26% 11px,34% 6px,43% 12px,52% 5px,61% 11px,69% 6px,77% 12px,85% 5px,92% 11px,100% 6px,100% 100%,0 100%)}
+  .fhero-title{font-size:clamp(1.85rem,8.6vw,2.5rem);line-height:1.02}
+  .fhero-title a{color:var(--ink)}
+  .fhero-desc{color:#2C3138;max-width:none}
+  .fm-item{border-left-color:var(--hair);font-size:.87rem;padding:.15rem .8rem}
+  .fm-item svg{color:var(--denim)}
+  .fhero-cta-d{display:none}
+  .fhero-paper{position:static;transform:none;width:auto;margin:.95rem 1.3rem 0;filter:none}
+  .fp-inner{background:#EEF3FA;border:1px solid var(--hair);border-radius:10px;clip-path:none;padding:1.15rem 1.2rem 1rem}
+  .fp-head{font-size:1.12rem}
+  .fp-row{border-bottom-color:#D8E0EC}
+  .fhero-cta-m{display:flex;justify-content:center;margin:1.15rem 1.3rem 1.35rem;padding:1rem;font-size:1.05rem}
+}
 .tierfilter button{font-family:"Oswald";font-weight:600;text-transform:uppercase;letter-spacing:.07em;font-size:.85rem;background:#fff;border:1.5px solid var(--hair);padding:.5rem .9rem;cursor:pointer;color:var(--ink)}
 .tierfilter button.on{background:var(--denim);border-color:var(--denim);color:#fff}
 .tierfilter .sortbtn{margin-left:auto}

@@ -27,27 +27,34 @@
     <p class="powered">{{ i18n "powered_text" }} <a href="https://follow.it" rel="noopener">follow.it</a></p>
   </section>
 
-  <section class="feature">
-    <figure>
-      <a href="{{ $feat.RelPermalink }}"><img src="{{ $feat.Params.image }}" alt="{{ $feat.Title }}"></a>
-      <figcaption>{{ i18n "feature_caption" }}</figcaption>
-    </figure>
-    <div>
-      <div class="f-label">{{ i18n "featured_recipe" }} · {{ $feat.Params.tier_label }}</div>
-      <div class="f-title"><a href="{{ $feat.RelPermalink }}">{{ $feat.Title }}</a></div>
-      <p>{{ $feat.Params.standfirst }}</p>
-      <div class="breakdown nums">
-        <div class="bhead">{{ i18n "cost_breakdown" }}</div>
-        <div class="bbox">
-          {{ range first 3 $feat.Params.breakdown }}
-          <div class="brow"><span class="item">{{ .item }}{{ with .note }}<small>{{ . }}</small>{{ end }}</span><span class="amt">{{ partial "price.html" (dict "amt" .amount "lang" $.Lang) }}</span></div>
-          {{ end }}
-          <div class="brow total"><span class="lbl">{{ i18n "batch_total" }}</span><span class="amt">{{ partial "price.html" (dict "amt" $feat.Params.batch_cost "lang" $.Lang) }}</span></div>
-        </div>
-        <div class="perline">{{ i18n "cost_per_serving" }} · {{ partial "price.html" (dict "amt" $feat.Params.price_per_serving "lang" $.Lang) }}</div>
-      </div>
-      <a class="readon" href="{{ $feat.RelPermalink }}">{{ i18n "get_recipe" }}</a>
+  <section class="fhero">
+    <div class="fhero-media">
+      <img src="{{ $feat.Params.image }}" alt="{{ $feat.Title }}" fetchpriority="high">
+      <span class="fhero-badge fhero-badge-m">{{ i18n "featured_recipe" }} · {{ $feat.Params.tier_label }}</span>
     </div>
+    <div class="fhero-shade" aria-hidden="true"></div>
+    <div class="fhero-content">
+      <span class="fhero-badge fhero-badge-d">{{ i18n "featured_recipe" }} · {{ $feat.Params.tier_label }}</span>
+      <h2 class="fhero-title"><a href="{{ $feat.RelPermalink }}">{{ $feat.Title }}</a></h2>
+      <p class="fhero-desc">{{ $feat.Params.standfirst }}</p>
+      <div class="fhero-meta">
+        <span class="fm-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg><span><strong>{{ $feat.Params.servings }}</strong> {{ i18n "meta_servings" }}</span></span>
+        <span class="fm-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg><span><strong>{{ $feat.Params.total_time }}</strong></span></span>
+        <span class="fm-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.59 13.41 11 3H4v7l9.59 9.59a2 2 0 0 0 2.82 0l4.18-4.18a2 2 0 0 0 0-2.82z"/><circle cx="7.5" cy="7.5" r=".5"/></svg><span><strong>{{ partial "price.html" (dict "amt" $feat.Params.price_per_serving "lang" $.Lang) }}</strong> {{ i18n "per_serving" }}</span></span>
+      </div>
+      <a class="fhero-cta fhero-cta-d" href="{{ $feat.RelPermalink }}">{{ i18n "get_recipe" }} <span aria-hidden="true">→</span></a>
+    </div>
+    <aside class="fhero-paper nums" aria-label="{{ i18n "cost_breakdown" }}">
+      <div class="fp-inner">
+        <div class="fp-head">{{ i18n "cost_breakdown" }}</div>
+        {{ range first 3 $feat.Params.breakdown }}
+        <div class="fp-row"><span class="fp-item">{{ .item }}{{ with .note }}<small>{{ . }}</small>{{ end }}</span><span class="fp-amt">{{ partial "price.html" (dict "amt" .amount "lang" $.Lang) }}</span></div>
+        {{ end }}
+        <div class="fp-total"><span>{{ i18n "batch_total" }}</span><span class="fp-total-amt">{{ partial "price.html" (dict "amt" $feat.Params.batch_cost "lang" $.Lang) }}</span></div>
+        <div class="fp-per"><span>{{ i18n "cost_per_serving" }}</span><span class="fp-per-amt">{{ partial "price.html" (dict "amt" $feat.Params.price_per_serving "lang" $.Lang) }}</span></div>
+      </div>
+    </aside>
+    <a class="fhero-cta fhero-cta-m" href="{{ $feat.RelPermalink }}">{{ i18n "get_recipe" }} <span aria-hidden="true">→</span></a>
   </section>
 
   <section class="tierband">
