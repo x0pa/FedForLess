@@ -63,11 +63,20 @@
     <aside class="fhero-paper nums" aria-label="{{ i18n "cost_breakdown" }}">
       <div class="fp-inner">
         <div class="fp-head">{{ i18n "cost_breakdown" }}</div>
-        {{ range first 3 $feat.Params.breakdown }}
-        <div class="fp-row"><span class="fp-item">{{ .item }}{{ with .note }}<small>{{ . }}</small>{{ end }}</span><span class="fp-amt">{{ partial "price.html" (dict "amt" .amount "lang" $.Lang) }}</span></div>
+        {{ $rows := slice }}
+        {{ range $feat.Params.breakdown }}{{ $rows = $rows | append (dict "item" .item "note" .note "amt" (float .amount) "amtstr" .amount) }}{{ end }}
+        {{ $sorted := sort $rows "amt" "desc" }}
+        {{ range first 3 $sorted }}
+        <div class="fp-row"><span class="fp-item">{{ .item }}{{ with .note }}<small>{{ . }}</small>{{ end }}</span><span class="fp-amt">{{ partial "price.html" (dict "amt" .amtstr "lang" $.Lang) }}</span></div>
+        {{ end }}
+        {{ if gt (len $sorted) 3 }}
+        {{ $rest := after 3 $sorted }}
+        {{ $restSum := 0.0 }}{{ range $rest }}{{ $restSum = add $restSum .amt }}{{ end }}
+        <div class="fp-row"><span class="fp-item">{{ i18n "other_ingredients" }} ({{ len $rest }})</span><span class="fp-amt">{{ partial "price.html" (dict "amt" (printf "%.2f" $restSum) "lang" $.Lang) }}</span></div>
         {{ end }}
         <div class="fp-total"><span>{{ i18n "batch_total" }}</span><span class="fp-total-amt">{{ partial "price.html" (dict "amt" $feat.Params.batch_cost "lang" $.Lang) }}</span></div>
         <div class="fp-per"><span>{{ i18n "cost_per_serving" }}</span><span class="fp-per-amt">{{ partial "price.html" (dict "amt" $feat.Params.price_per_serving "lang" $.Lang) }}</span></div>
+        <a class="fp-link" href="{{ $feat.RelPermalink }}#cost-breakdown">{{ i18n "view_full_breakdown" }} <span aria-hidden="true">→</span></a>
       </div>
     </aside>
     <a class="fhero-cta fhero-cta-m" href="{{ $feat.RelPermalink }}">{{ i18n "get_recipe" }} <span aria-hidden="true">→</span></a>

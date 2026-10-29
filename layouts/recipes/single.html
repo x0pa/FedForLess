@@ -77,7 +77,7 @@
       {{ end }}
     </div>
 
-    <aside class="pricecard nums">
+    <aside class="pricecard nums" id="cost-breakdown">
       <div class="bhead">{{ i18n "cost_breakdown" }} · {{ i18n "checked_word" }} {{ .Params.prices_checked }}</div>
       <div class="bbox">
         {{ range $i, $b := .Params.breakdown }}
