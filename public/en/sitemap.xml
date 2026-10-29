@@ -2,21 +2,21 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://fedforless.ca/recipes/cheap-potato-egg-and-cheese-breakfast-bake/</loc>
-    <lastmod>2026-10-28T00:00:00+00:00</lastmod>
+    <loc>https://fedforless.ca/recipes/cheap-perogies-with-cabbage-onion/</loc>
+    <lastmod>2026-10-29T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="fr-CA"
-                href="https://fedforless.ca/fr/recipes/cheap-potato-egg-and-cheese-breakfast-bake/"
+                href="https://fedforless.ca/fr/recipes/cheap-perogies-with-cabbage-onion/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en-CA"
-                href="https://fedforless.ca/recipes/cheap-potato-egg-and-cheese-breakfast-bake/"
+                href="https://fedforless.ca/recipes/cheap-perogies-with-cabbage-onion/"
                 />
   </url><url>
     <loc>https://fedforless.ca/collections/</loc>
-    <lastmod>2026-10-28T00:00:00+00:00</lastmod>
+    <lastmod>2026-10-29T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="fr-CA"
@@ -29,7 +29,7 @@
                 />
   </url><url>
     <loc>https://fedforless.ca/</loc>
-    <lastmod>2026-10-28T00:00:00+00:00</lastmod>
+    <lastmod>2026-10-29T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="fr-CA"
@@ -42,7 +42,7 @@
                 />
   </url><url>
     <loc>https://fedforless.ca/collections/feed-six-for-under-12/</loc>
-    <lastmod>2026-10-28T00:00:00+00:00</lastmod>
+    <lastmod>2026-10-29T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="fr-CA"
@@ -55,7 +55,7 @@
                 />
   </url><url>
     <loc>https://fedforless.ca/recipes/</loc>
-    <lastmod>2026-10-28T00:00:00+00:00</lastmod>
+    <lastmod>2026-10-29T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="fr-CA"
@@ -65,6 +65,19 @@
                 rel="alternate"
                 hreflang="en-CA"
                 href="https://fedforless.ca/recipes/"
+                />
+  </url><url>
+    <loc>https://fedforless.ca/recipes/cheap-potato-egg-and-cheese-breakfast-bake/</loc>
+    <lastmod>2026-10-28T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr-CA"
+                href="https://fedforless.ca/fr/recipes/cheap-potato-egg-and-cheese-breakfast-bake/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-CA"
+                href="https://fedforless.ca/recipes/cheap-potato-egg-and-cheese-breakfast-bake/"
                 />
   </url><url>
     <loc>https://fedforless.ca/recipes/cheap-beef-macaroni-skillet/</loc>
