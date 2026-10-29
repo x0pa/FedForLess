@@ -1294,3 +1294,9 @@ ol.homeindex .rowlink:hover .rarr{transform:translateX(3px)}
   .p404 .p404-ctas{flex-direction:column}
   .p404 .p404-btn{text-align:center}
 }
+
+/* footer: Designed by line drops to its own line on mobile (Dade, 2026-10-29) */
+@media (max-width:700px){
+  footer .fdesigned{display:block;margin-top:.3rem}
+  footer .fsep{display:none}
+}
