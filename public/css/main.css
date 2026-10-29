@@ -592,3 +592,96 @@ ol.homeindex .rowlink:hover .rarr{transform:translateX(3px)}
   .rindex ol.index li{grid-template-columns:28px 62px minmax(0,1fr);grid-template-rows:auto auto}
   .rindex ol.index .rprice{grid-column:3;justify-self:end;text-align:right}
 }
+
+/* ============ basket weeks index (Concept 2) — scoped to .bwindex ============ */
+.bwindex .bw-hero{display:grid;grid-template-columns:minmax(0,1.02fr) minmax(0,.98fr);grid-template-areas:"copy photo" "benefits photo";column-gap:2.6rem;row-gap:1.5rem;padding-top:2.1rem}
+.bwindex .bw-copy{grid-area:copy}
+.bwindex .bw-eyebrow{font-family:"Oswald";font-weight:700;text-transform:uppercase;letter-spacing:.15em;font-size:.85rem;color:var(--denim);margin:0 0 .7rem}
+.bwindex .bw-h1{font-family:"Oswald";font-weight:700;text-transform:uppercase;font-size:clamp(3rem,6.8vw,5.1rem);line-height:.99;margin:0;color:var(--ink)}
+.bwindex .bw-intro p{font-size:1.05rem;line-height:1.65;color:#2C3138;max-width:34rem;margin:.95rem 0 0}
+.bwindex .bw-photo{grid-area:photo;margin:0}
+.bwindex .bw-photo img{width:100%;height:100%;object-fit:cover;display:block;border-radius:10px}
+.bwindex .bw-benefits{grid-area:benefits;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.1rem;align-content:start}
+.bwindex .bw-ben{display:flex;gap:.75rem;align-items:flex-start}
+.bwindex .bw-ben-ic{flex:none;width:44px;height:44px;border-radius:50%;background:#EAF1F8;color:var(--denim);display:flex;align-items:center;justify-content:center}
+.bwindex .bw-ben-ic svg{width:21px;height:21px}
+.bwindex .bw-ben-h{font-family:"Oswald";font-weight:700;text-transform:uppercase;font-size:.98rem;margin:0;color:var(--ink)}
+.bwindex .bw-ben p{font-size:.88rem;line-height:1.45;color:var(--muted);margin:.2rem 0 0}
+.bwindex .bw-stats{margin-top:2rem;background:#EAF1F8;border-radius:10px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));padding:1.35rem 1.7rem;gap:1.2rem}
+.bwindex .bw-stat{display:flex;gap:.95rem;align-items:center;min-width:0}
+.bwindex .bw-stat + .bw-stat{border-left:1px solid #C9D6E8;padding-left:1.5rem}
+.bwindex .bw-stat-ic{flex:none;width:47px;height:47px;border-radius:50%;background:#D6E6F8;color:var(--denim);display:flex;align-items:center;justify-content:center}
+.bwindex .bw-stat-ic svg{width:22px;height:22px}
+.bwindex .bw-stat-n{font-family:"Oswald";font-weight:700;font-size:2.05rem;color:var(--denim);line-height:1}
+.bwindex .bw-stat-l{font-family:"Oswald";font-weight:700;text-transform:uppercase;letter-spacing:.09em;font-size:.82rem;color:var(--denim);margin-top:.15rem}
+.bwindex .bw-stat-s{font-size:.86rem;color:#41506A;margin-top:.1rem}
+.bwindex .bw-feat{margin-top:2.4rem}
+.bwindex .bw-h2{font-family:"Oswald";font-weight:700;text-transform:uppercase;font-size:clamp(1.7rem,3.4vw,2.3rem);margin:0;color:var(--ink)}
+.bwindex .bw-card{display:grid;grid-template-columns:minmax(0,.92fr) minmax(0,1.28fr) 300px;border:1px solid var(--hair);border-radius:12px;overflow:hidden;margin-top:1.2rem;background:#fff}
+.bwindex .bw-card-img{display:block}
+.bwindex .bw-card-img img{width:100%;height:100%;object-fit:cover;display:block;min-height:300px}
+.bwindex .bw-card-info{padding:1.45rem 1.55rem}
+.bwindex .bw-card-title{font-family:"Oswald";font-weight:700;text-transform:uppercase;font-size:1.42rem;line-height:1.15;margin:0}
+.bwindex .bw-card-title a{color:var(--ink);text-decoration:none}
+.bwindex .bw-card-title a:hover{color:var(--denim)}
+.bwindex .bw-card-desc{color:#2C3138;font-size:.99rem;line-height:1.55;margin:.6rem 0 0}
+.bwindex .bw-inc{list-style:none;margin:1.05rem 0 0;padding:0}
+.bwindex .bw-inc li{border-top:1px solid var(--hair)}
+.bwindex .bw-inc-a{display:grid;grid-template-columns:64px minmax(0,1fr) auto;align-items:center;gap:.9rem;padding:.55rem 0;text-decoration:none;color:var(--ink)}
+.bwindex .bw-inc-a img{width:64px;height:48px;object-fit:cover;border-radius:6px;flex:none}
+.bwindex .bw-inc-name{font-family:"Oswald";font-weight:600;text-transform:uppercase;font-size:.94rem;line-height:1.22}
+.bwindex .bw-inc-a:hover .bw-inc-name{color:var(--denim)}
+.bwindex .bw-inc-serv{color:var(--muted);font-weight:600;font-size:.9rem;white-space:nowrap}
+.bwindex .bw-panel{background:#EAF1F8;padding:1.55rem 1.45rem;display:flex;flex-direction:column;align-items:center;text-align:center}
+.bwindex .bw-panel-l{font-family:"Oswald";font-weight:700;text-transform:uppercase;letter-spacing:.13em;font-size:.84rem;color:var(--denim);margin:0}
+.bwindex .bw-panel-total{font-family:"Oswald";font-weight:700;font-size:3.05rem;color:var(--denim);line-height:1.05;margin:.35rem 0 0}
+.bwindex .bw-panel-vs{font-family:"Oswald";font-weight:700;font-size:1.18rem;color:var(--ink);margin:.85rem 0 0}
+.bwindex .bw-panel-sepsub{color:var(--muted);font-size:.88rem;margin:.15rem 0 0}
+.bwindex .bw-panel-save{color:var(--denim);font-weight:700;font-size:1.06rem;margin:.95rem 0 0}
+.bwindex .bw-cta{margin-top:1.15rem;background:var(--denim);color:#fff;font-family:"Oswald";font-weight:600;font-size:1rem;letter-spacing:.03em;padding:.85rem 1.2rem;border-radius:6px;text-decoration:none;width:100%}
+.bwindex .bw-cta:hover{background:var(--denim-deep)}
+.bwindex .bw-panel-note{color:var(--muted);font-size:.85rem;margin:.85rem 0 0;line-height:1.45}
+.bwindex .bw-how{margin-top:1.35rem;max-width:54rem}
+.bwindex .bw-how-h{font-family:"Oswald";font-weight:700;text-transform:uppercase;letter-spacing:.06em;font-size:1.02rem;margin:0}
+.bwindex .bw-how p{color:#2C3138;line-height:1.6;margin:.45rem 0 0}
+.bwindex .bw-more{margin-top:2.6rem;border-top:2px solid var(--ink);padding-top:1.15rem}
+.bwindex .bw-mgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.4rem;margin-top:1.1rem}
+.bwindex .bw-mcard{border:1px solid var(--hair);border-radius:10px;overflow:hidden;background:#fff}
+.bwindex .bw-mcard-img{display:block}
+.bwindex .bw-mcard-img img{width:100%;aspect-ratio:16/9;object-fit:cover;display:block}
+.bwindex .bw-mcard-body{padding:1.1rem 1.25rem 1.25rem}
+.bwindex .bw-mcard-title{font-family:"Oswald";font-weight:700;text-transform:uppercase;font-size:1.15rem;margin:0}
+.bwindex .bw-mcard-title a{color:var(--ink);text-decoration:none}
+.bwindex .bw-mcard-body p{color:#2C3138;line-height:1.55;margin:.5rem 0 0}
+.bwindex .bw-mcard-stats{background:#EAF1F8;border-radius:6px;padding:.6rem .8rem;font-size:.92rem}
+.bwindex .bw-mcard-stats strong{font-family:"Oswald";color:var(--denim)}
+@media (max-width:1020px){
+  .bwindex .bw-card{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+  .bwindex .bw-panel{grid-column:1/-1}
+}
+@media (max-width:920px){
+  .bwindex .bw-hero{grid-template-columns:minmax(0,1fr);grid-template-areas:"copy" "photo" "benefits";row-gap:1.3rem;padding-top:1.6rem}
+  .bwindex .bw-photo img{height:auto;aspect-ratio:16/10}
+  .bwindex .bw-stats{grid-template-columns:repeat(2,minmax(0,1fr));gap:1.1rem 1.4rem;padding:1.2rem 1.3rem}
+  .bwindex .bw-stat + .bw-stat{border-left:none;padding-left:0}
+  .bwindex .bw-card{grid-template-columns:minmax(0,1fr)}
+  .bwindex .bw-card-img img{min-height:0;aspect-ratio:16/9}
+  .bwindex .bw-mgrid{grid-template-columns:minmax(0,1fr)}
+}
+@media (max-width:560px){
+  .bwindex .bw-benefits{grid-template-columns:minmax(0,1fr)}
+  .bwindex .bw-stat-n{font-size:1.8rem}
+  .bwindex .bw-panel-total{font-size:2.6rem}
+  .bwindex .bw-card-info{padding:1.15rem 1.2rem}
+}
+@media (max-width:560px){
+  .bwindex .bw-stat{gap:.6rem}
+  .bwindex .bw-stat-ic{width:38px;height:38px}
+  .bwindex .bw-stat-ic svg{width:18px;height:18px}
+  .bwindex .bw-stat-n{font-size:1.6rem}
+  .bwindex .bw-stat-l{font-size:.74rem}
+}
+@media (max-width:430px){
+  .bwindex .bw-inc-a{grid-template-columns:64px minmax(0,1fr)}
+  .bwindex .bw-inc-serv{grid-column:2;justify-self:end}
+}

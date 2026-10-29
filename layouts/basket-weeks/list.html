@@ -1,20 +1,105 @@
 {{ define "main" }}
+{{ $pages := .Pages.ByDate.Reverse }}
+{{ $feat := index $pages 0 }}
+{{ $rest := after 1 $pages }}
+{{ $allRecipes := where .Site.RegularPages "Section" "recipes" }}
+{{ $inc := where $allRecipes "Params.basket_week" $feat.File.ContentBaseName }}
+{{ $pct := printf "%.0f" (div (mul (float $feat.Params.you_save) 100.0) (float $feat.Params.separate_baskets)) }}
 <div class="wrap">
-  <div class="page-head"><h1>{{ .Title }}</h1></div>
-  {{ with .Content }}<div style="max-width:46rem;margin-top:.8rem;"><article class="prose">{{ . }}</article></div>{{ end }}
-  <section class="index-sec" style="margin-top:1.6rem;">
-    <ol class="index">
-      {{ range .Pages.ByDate }}
-      <li>
-        <a href="{{ .RelPermalink }}"><img src="{{ .Params.image }}" alt="{{ .Title }}"></a>
-        <div>
-          <div class="rname"><a href="{{ .RelPermalink }}">{{ .Title }}</a></div>
-          <div class="rsub">{{ .Description }}</div>
-        </div>
-        <div class="rprice nums"><div class="per">{{ partial "price.html" (dict "amt" .Params.combined_basket "lang" $.Lang) }}</div><div class="of">{{ i18n "one_basket" }}</div></div>
-      </li>
-      {{ end }}
-    </ol>
+<div class="bwindex">
+  <header class="bw-hero">
+    <div class="bw-copy">
+      <p class="bw-eyebrow">{{ i18n "bw_eyebrow" }}</p>
+      <h1 class="bw-h1">{{ .Title }}</h1>
+      <div class="bw-intro">{{ .Content }}</div>
+    </div>
+    <figure class="bw-photo"><img src="/images/basket-weeks-hero.webp" alt="{{ i18n "bw_hero_alt" }}"></figure>
+    <div class="bw-benefits">
+      <div class="bw-ben">
+        <span class="bw-ben-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="21" r="1.4"/><circle cx="19" cy="21" r="1.4"/><path d="M2.5 3h2l2.6 12.4a2 2 0 0 0 2 1.6h8.7a2 2 0 0 0 2-1.6L21.5 7H6"/></svg></span>
+        <div><p class="bw-ben-h">{{ i18n "bw_b1_h" }}</p><p>{{ i18n "bw_b1_p" }}</p></div>
+      </div>
+      <div class="bw-ben">
+        <span class="bw-ben-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg></span>
+        <div><p class="bw-ben-h">{{ i18n "bw_b2_h" }}</p><p>{{ i18n "bw_b2_p" }}</p></div>
+      </div>
+      <div class="bw-ben">
+        <span class="bw-ben-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 6.5v11M15 8.6c-.6-1-1.7-1.6-3-1.6-1.9 0-3.2 1-3.2 2.4 0 3.3 6.4 1.7 6.4 3 0 1.4-1.4 2.6-3.2 2.6-1.3 0-2.4-.6-3-1.6"/></svg></span>
+        <div><p class="bw-ben-h">{{ i18n "bw_b3_h" }}</p><p>{{ i18n "bw_b3_p" }}</p></div>
+      </div>
+    </div>
+  </header>
+
+  <section class="bw-stats" aria-label="{{ i18n "bw_featured_h" }}">
+    <div class="bw-stat">
+      <span class="bw-stat-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="21" r="1.4"/><circle cx="19" cy="21" r="1.4"/><path d="M2.5 3h2l2.6 12.4a2 2 0 0 0 2 1.6h8.7a2 2 0 0 0 2-1.6L21.5 7H6"/></svg></span>
+      <div><div class="bw-stat-n">1</div><div class="bw-stat-l">{{ i18n "bw_stat_basket" }}</div><div class="bw-stat-s">{{ i18n "bw_stat_basket_sub" }}</div></div>
+    </div>
+    <div class="bw-stat">
+      <span class="bw-stat-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg></span>
+      <div><div class="bw-stat-n">{{ len $inc }}</div><div class="bw-stat-l">{{ i18n "bw_stat_recipes" }}</div><div class="bw-stat-s">{{ i18n "bw_stat_recipes_sub" }}</div></div>
+    </div>
+    <div class="bw-stat">
+      <span class="bw-stat-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.9"/><path d="M16 3.1a4 4 0 0 1 0 7.8"/></svg></span>
+      <div><div class="bw-stat-n">{{ $feat.Params.total_servings }}</div><div class="bw-stat-l">{{ i18n "bw_stat_servings" }}</div><div class="bw-stat-s">{{ i18n "bw_stat_servings_sub" }}</div></div>
+    </div>
+    <div class="bw-stat">
+      <span class="bw-stat-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 6.5v11M15 8.6c-.6-1-1.7-1.6-3-1.6-1.9 0-3.2 1-3.2 2.4 0 3.3 6.4 1.7 6.4 3 0 1.4-1.4 2.6-3.2 2.6-1.3 0-2.4-.6-3-1.6"/></svg></span>
+      <div><div class="bw-stat-n">{{ partial "price.html" (dict "amt" $feat.Params.combined_basket "lang" .Lang) }}</div><div class="bw-stat-l">{{ i18n "bw_stat_total" }}</div><div class="bw-stat-s">{{ delimit (split (i18n "bw_stat_total_sub") "{x}") (partial "price.html" (dict "amt" $feat.Params.separate_baskets "lang" .Lang)) }}</div></div>
+    </div>
   </section>
+
+  <section class="bw-feat">
+    <h2 class="bw-h2">{{ i18n "bw_featured_h" }}</h2>
+    <article class="bw-card">
+      <a class="bw-card-img" href="{{ $feat.RelPermalink }}"><img src="{{ $feat.Params.image }}" alt="{{ $feat.Title }}"></a>
+      <div class="bw-card-info">
+        <h3 class="bw-card-title"><a href="{{ $feat.RelPermalink }}">{{ $feat.Title }}</a></h3>
+        <p class="bw-card-desc">{{ $feat.Description }}</p>
+        <ul class="bw-inc">
+          {{ range $inc.ByDate.Reverse }}
+          <li><a class="bw-inc-a" href="{{ .RelPermalink }}">
+            <img src="{{ .Params.image }}" alt="{{ .Title }}">
+            <span class="bw-inc-name">{{ .Title }}</span>
+            <span class="bw-inc-serv">{{ partial "serves.html" (dict "n" .Params.servings "lang" $.Lang) }}</span>
+          </a></li>
+          {{ end }}
+        </ul>
+      </div>
+      <aside class="bw-panel">
+        <p class="bw-panel-l">{{ i18n "bw_one_total" }}</p>
+        <p class="bw-panel-total">{{ partial "price.html" (dict "amt" $feat.Params.combined_basket "lang" .Lang) }}</p>
+        <p class="bw-panel-vs">{{ delimit (split (i18n "bw_vs") "{x}") (partial "price.html" (dict "amt" $feat.Params.separate_baskets "lang" .Lang)) }}</p>
+        <p class="bw-panel-sepsub">{{ i18n "bw_bought_sep" }}</p>
+        <p class="bw-panel-save">{{ delimit (split (i18n "bw_you_save") "{x}") (partial "price.html" (dict "amt" $feat.Params.you_save "lang" .Lang)) }} ({{ $pct }}%)</p>
+        <a class="bw-cta" href="{{ $feat.RelPermalink }}">{{ i18n "bw_cta" }} <span aria-hidden="true">→</span></a>
+        <p class="bw-panel-note">{{ i18n "bw_cta_sub" }}</p>
+      </aside>
+    </article>
+    <div class="bw-how">
+      <h3 class="bw-how-h">{{ i18n "bw_how_h" }}</h3>
+      <p>{{ i18n "bw_how_p" }} <a href="{{ "/how-we-price/" | relLangURL }}">{{ i18n "bw_how_link" }}</a>.</p>
+    </div>
+  </section>
+
+  {{ if gt (len $rest) 0 }}
+  <section class="bw-more">
+    <h2 class="bw-h2">{{ i18n "bw_more_h" }}</h2>
+    <div class="bw-mgrid">
+      {{ range $rest }}
+      {{ $cinc := where $allRecipes "Params.basket_week" .File.ContentBaseName }}
+      <article class="bw-mcard">
+        <a class="bw-mcard-img" href="{{ .RelPermalink }}"><img src="{{ .Params.image }}" alt="{{ .Title }}"></a>
+        <div class="bw-mcard-body">
+          <h3 class="bw-mcard-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+          <p>{{ .Description }}</p>
+          <p class="bw-mcard-stats"><strong>1</strong> {{ i18n "bw_stat_basket" }} · <strong>{{ len $cinc }}</strong> {{ i18n "bw_stat_recipes" }} · <strong>{{ .Params.total_servings }}</strong> {{ i18n "bw_stat_servings" }} · <strong>{{ partial "price.html" (dict "amt" .Params.combined_basket "lang" $.Lang) }}</strong> {{ i18n "bw_stat_total" }}</p>
+        </div>
+      </article>
+      {{ end }}
+    </div>
+  </section>
+  {{ end }}
+</div>
 </div>
 {{ end }}
