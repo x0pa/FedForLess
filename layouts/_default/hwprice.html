@@ -59,8 +59,13 @@
   {{ with $r }}
   <section class="hw-sec">
     <h2 class="hw-h2">{{ i18n "hw_math_h" }}</h2>
-    <p class="hw-mathsub">{{ i18n "hw_math_a" }} <a href="{{ .RelPermalink }}">{{ .Title }}</a> · {{ partial "serves.html" (dict "n" .Params.servings "lang" $.Lang) }} · {{ i18n "gov_data" }}: {{ .Params.prices_checked }}.</p>
+    <p class="hw-mathsub">{{ i18n "hw_math_p" }}</p>
     <div class="hw-math">
+      <a class="hw-m-photo" href="{{ .RelPermalink }}"><img src="{{ .Params.image }}" alt="{{ .Title }}"></a>
+      <div class="hw-m-meta">
+        <h3 class="hw-m-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+        <p class="hw-m-sub">{{ .Params.tier_label }} · {{ partial "serves.html" (dict "n" .Params.servings "lang" $.Lang) }} · {{ .Params.total_time }}</p>
+      </div>
       <div class="hw-receipt">
         <div class="rcp">
           <div class="bhead">{{ i18n "cost_breakdown" }}</div>
@@ -80,10 +85,8 @@
           <div class="brow basket"><span class="item">{{ i18n "basket_label" }}</span><span class="amt">{{ partial "price.html" (dict "amt" .Params.basket_cost "lang" $.Lang) }}</span></div>
         </div>
       </div>
-      <div class="hw-math-r">
-        <p>{{ i18n "hw_math_p" }}</p>
-        <p><a class="hw-link" href="{{ .RelPermalink }}#cost-breakdown">{{ i18n "hw_full_bd" }} <span aria-hidden="true">→</span></a></p>
-      </div>
+      <p class="hw-strip nums"><span><strong>{{ partial "price.html" (dict "amt" .Params.batch_cost "lang" $.Lang) }}</strong> {{ i18n "batch_total" }}</span><span class="hw-strip-op" aria-hidden="true">÷</span><span><strong>{{ .Params.servings }}</strong> {{ i18n "meta_servings" }}</span><span class="hw-strip-op" aria-hidden="true">=</span><span><strong class="hw-strip-ps">{{ partial "price.html" (dict "amt" .Params.price_per_serving "lang" $.Lang) }}</strong> {{ i18n "cost_per_serving" }}</span></p>
+      <p class="hw-m-link"><a class="hw-link" href="{{ .RelPermalink }}">{{ i18n "hw_view_recipe" }} <span aria-hidden="true">→</span></a> · <a class="hw-link" href="{{ .RelPermalink }}#cost-breakdown">{{ i18n "hw_full_bd" }} <span aria-hidden="true">→</span></a></p>
     </div>
   </section>
   {{ end }}

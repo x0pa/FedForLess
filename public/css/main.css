@@ -704,26 +704,43 @@ ol.homeindex .rowlink:hover .rarr{transform:translateX(3px)}
 .hwprice .hw-sec{margin-top:2.8rem;border-top:2px solid var(--ink);padding-top:1.2rem}
 .hwprice .hw-h2{font-family:"Oswald";font-weight:700;text-transform:uppercase;font-size:clamp(1.7rem,3.4vw,2.3rem);margin:0;color:var(--ink)}
 .hwprice .hw-four{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 2.6rem;margin-top:.6rem}
-.hwprice .hw-num{padding:1.25rem 0 1.35rem;border-bottom:1px solid var(--hair)}
-.hwprice .hw-n{font-family:"Oswald";font-weight:700;font-size:2.2rem;color:var(--denim);line-height:1}
-.hwprice .hw-num-h{font-family:"Oswald";font-weight:700;text-transform:uppercase;font-size:1.18rem;margin:.55rem 0 0;color:var(--ink)}
+.hwprice .hw-num{padding:1.35rem 0 1.45rem;border-bottom:1px solid var(--hair);display:flex;flex-direction:column}
+.hwprice .hw-num .hw-ex,.hwprice .hw-num .hw-calc{margin-top:auto}
+.hwprice .hw-num p + .hw-ex,.hwprice .hw-num p + .hw-calc{margin-top:1rem}
+.hwprice .hw-n{font-family:"Oswald";font-weight:700;font-size:2.65rem;color:var(--denim);line-height:1}
+.hwprice .hw-num-h{font-family:"Oswald";font-weight:700;text-transform:uppercase;font-size:1.24rem;margin:.6rem 0 0;color:var(--ink)}
 .hwprice .hw-num p{color:#2C3138;line-height:1.6;margin:.45rem 0 0}
 .hwprice .hw-ex{background:#EAF1F8;border-radius:8px;padding:.7rem .9rem;font-weight:600}
 .hwprice .hw-calc{font-family:"Oswald";font-weight:600;font-size:1.45rem;color:var(--ink);background:#EAF1F8;border-radius:8px;padding:.7rem .9rem}
 .hwprice .hw-calc strong{color:var(--denim);font-size:1.6rem}
 .hwprice .hw-mathsub{color:#2C3138;font-size:1rem;margin:.8rem 0 0}
-.hwprice .hw-math{display:grid;grid-template-columns:minmax(0,460px) minmax(0,1fr);gap:2.4rem;margin-top:1.2rem;align-items:start}
+.hwprice .hw-math{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1fr);grid-template-areas:"photo receipt" "meta receipt" "link receipt" "strip strip";column-gap:2.4rem;row-gap:1rem;margin-top:1.2rem;align-items:start}
+.hwprice .hw-m-photo{grid-area:photo;display:block}
+.hwprice .hw-m-photo img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;border-radius:10px}
+.hwprice .hw-m-meta{grid-area:meta}
+.hwprice .hw-m-title{font-family:"Oswald";font-weight:700;text-transform:uppercase;font-size:1.3rem;line-height:1.2;margin:0}
+.hwprice .hw-m-title a{color:var(--ink);text-decoration:none}
+.hwprice .hw-m-title a:hover{color:var(--denim)}
+.hwprice .hw-m-sub{color:var(--muted);font-weight:600;font-size:.95rem;margin:.45rem 0 0}
+.hwprice .hw-receipt{grid-area:receipt}
 .hwprice .hw-receipt .rcp{transform:rotate(-.35deg);box-shadow:0 6px 18px rgba(9,25,37,.10)}
-.hwprice .hw-math-r p{color:#2C3138;line-height:1.65;margin:0 0 1rem;font-size:1.02rem}
+.hwprice .hw-strip{grid-area:strip;background:#EAF1F8;border-radius:8px;padding:.95rem 1.2rem;display:flex;flex-wrap:wrap;align-items:baseline;gap:.55rem 1.1rem;font-family:"Oswald";font-weight:600;text-transform:uppercase;letter-spacing:.05em;font-size:.95rem;color:var(--ink);margin:.4rem 0 0}
+.hwprice .hw-strip strong{font-size:1.7rem;color:var(--ink)}
+.hwprice .hw-strip strong.hw-strip-ps{color:var(--denim);font-size:1.9rem}
+.hwprice .hw-strip-op{font-size:1.4rem;color:var(--denim)}
+.hwprice .hw-m-link{grid-area:link;margin:0}
+.hwprice .hw-mathsub{max-width:52rem}
 .hwprice .hw-link{font-family:"Oswald";font-weight:600;color:var(--denim);text-decoration:none;font-size:1.02rem}
 .hwprice .hw-link:hover{text-decoration:underline}
-.hwprice .hw-srcgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:2.6rem;margin-top:1.1rem}
+.hwprice .hw-srcgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.6rem;margin-top:1.1rem}
+.hwprice .hw-source{border:1px solid var(--hair);border-left:4px solid var(--denim);border-radius:8px;padding:1.3rem 1.5rem;background:#fff}
 .hwprice .hw-src-l{font-family:"Oswald";font-weight:700;text-transform:uppercase;letter-spacing:.13em;font-size:.8rem;color:var(--denim);margin:0}
 .hwprice .hw-src-h{font-family:"Oswald";font-weight:700;text-transform:uppercase;font-size:1.3rem;margin:.4rem 0 0;color:var(--ink)}
 .hwprice .hw-source p{color:#2C3138;line-height:1.62;margin:.6rem 0 0}
 .hwprice .hw-dates{margin-top:1.8rem;background:#EAF1F8;border-radius:10px;padding:1.2rem 1.5rem 1.35rem}
 .hwprice .hw-dates-h{font-family:"Oswald";font-weight:700;text-transform:uppercase;letter-spacing:.07em;font-size:1rem;margin:0;color:var(--ink)}
 .hwprice .hw-dates-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.6rem;margin-top:.7rem}
+.hwprice .hw-dates-grid > div + div{border-left:1px solid #C9D6E8;padding-left:1.6rem}
 .hwprice .hw-date-h{font-family:"Oswald";font-weight:700;font-size:.95rem;margin:0;color:var(--denim)}
 .hwprice .hw-dates-grid p{font-size:.92rem;line-height:1.5;color:#2C3138;margin:.3rem 0 0}
 .hwprice .hw-rules{margin-top:.5rem}
@@ -751,4 +768,17 @@ ol.homeindex .rowlink:hover .rarr{transform:translateX(3px)}
   .hwprice .hw-rule{grid-template-columns:52px minmax(0,1fr);gap:1rem}
   .hwprice .hw-rule-n{font-size:1.6rem}
   .hwprice .hw-not{padding:1.2rem 1.25rem}
+}
+
+.hwprice .hw-rule p{max-width:56rem}
+.hwprice .tiercard{padding:1.05rem}
+.hwprice .tiercard .tc-big{font-size:2rem}
+.hwprice .tiercard .tc-text{font-size:.96rem}
+.hwprice .hw-sec{margin-top:2.6rem}
+.hwprice .hw-not{margin-top:2.6rem}
+.hwprice .hw-cta{margin-top:2.6rem}
+@media (max-width:920px){
+  .hwprice .hw-math{grid-template-columns:minmax(0,1fr);grid-template-areas:"photo" "meta" "receipt" "strip" "link";row-gap:1.1rem}
+  .hwprice .hw-receipt{max-width:460px}
+  .hwprice .hw-dates-grid > div + div{border-left:none;padding-left:0}
 }
