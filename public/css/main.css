@@ -365,17 +365,17 @@ ol.homeindex .rowlink:hover .rarr{transform:translateX(3px)}
 
 /* ============ recipe article redesign (Concept 3) ============ */
 .rgrid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);grid-template-rows:auto auto 1fr;column-gap:2.6rem;align-items:start}
-.crumbs{grid-column:1;padding:1.3rem 0 .4rem}
+.rgrid > .crumbs{grid-column:1;padding:1.3rem 0 .4rem}
 .crumbs a{color:var(--denim)}
 .crumbs a:hover{text-decoration:underline}
 .csep{margin:0 .45rem;color:var(--muted)}
 .ccur{color:var(--muted)}
-.rhead{grid-column:1}
-.rfig{grid-column:2;grid-row:1/3;margin:1.3rem 0 0;display:flex;flex-direction:column}
+.rgrid > .rhead{grid-column:1}
+.rgrid > .rfig{grid-column:2;grid-row:1/3;margin:1.3rem 0 0;display:flex;flex-direction:column}
 .rfig img{width:100%;flex:1;min-height:320px;object-fit:cover;display:block;border-radius:6px}
 .rfig figcaption{font-size:.82rem;color:var(--muted);margin-top:.55rem}
-.rmain{grid-column:1;min-width:0}
-.rside{grid-column:2;min-width:0}
+.rgrid > .rmain{grid-column:1;min-width:0}
+.rgrid > .rside{grid-column:2;min-width:0}
 .rmeta{display:flex;align-items:center;gap:.8rem;flex-wrap:wrap;margin:.4rem 0 .9rem}
 .rbadge{background:var(--denim);color:#fff;font-family:"Oswald";font-weight:600;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;padding:.42rem .8rem;border-radius:6px}
 .rmeta-t{font-family:"Oswald";font-weight:600;text-transform:uppercase;letter-spacing:.12em;font-size:.92rem;color:var(--ink)}
@@ -423,16 +423,16 @@ ol.homeindex .rowlink:hover .rarr{transform:translateX(3px)}
 .relprice small{font-family:"Public Sans";font-weight:600;font-size:.72rem;color:var(--muted)}
 @media (max-width:1020px){
   .rgrid{display:flex;flex-direction:column}
-  .crumbs{order:1;padding-top:1.1rem}
-  .rfig{order:2;margin:.4rem 0 0;width:100%}
+  .rgrid > .crumbs{order:1;padding-top:1.1rem}
+  .rgrid > .rfig{order:2;margin:.4rem 0 0;width:100%}
   .rfig img{flex:none;height:auto;aspect-ratio:4/3;min-height:0}
-  .rhead{order:3;margin-top:1.1rem}
-  .rside{display:contents}
-  .costunit{order:4;margin-top:1.6rem}
-  .rmain{order:5;width:100%}
-  .nutriblock{order:6}
-  .tagsbox{order:7}
-  .basketbox{order:8}
+  .rgrid > .rhead{order:3;margin-top:1.1rem}
+  .rgrid > .rside{display:contents}
+  .rgrid > .rside .costunit{order:4;margin-top:1.6rem}
+  .rgrid > .rmain{order:5;width:100%}
+  .rgrid > .rside .nutriblock{order:6}
+  .rgrid > .rside .tagsbox{order:7}
+  .rgrid > .rside .basketbox{order:8}
   .receipt{transform:none;filter:none}
   .rcp{background:#EEF3FA;clip-path:none;border-radius:12px;padding:1.15rem 1.2rem 1.05rem}
   .rcp .brow{border-bottom-color:#D8E2EF}
