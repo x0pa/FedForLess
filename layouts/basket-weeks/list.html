@@ -4,7 +4,7 @@
 {{ $rest := after 1 $pages }}
 {{ $allRecipes := where .Site.RegularPages "Section" "recipes" }}
 {{ $inc := where $allRecipes "Params.basket_week" $feat.File.ContentBaseName }}
-{{ $pct := printf "%.0f" (div (mul (float $feat.Params.you_save) 100.0) (float $feat.Params.separate_baskets)) }}
+{{ $sepF := float $feat.Params.separate_baskets }}{{ $combF := float $feat.Params.combined_basket }}{{ $saveF := sub $sepF $combF }}{{ $pct := "0" }}{{ if gt $sepF 0.0 }}{{ $pct = printf "%.0f" (div (mul $saveF 100.0) $sepF) }}{{ end }}
 <div class="wrap">
 <div class="bwindex">
   <header class="bw-hero">
@@ -71,7 +71,7 @@
         <p class="bw-panel-total">{{ partial "price.html" (dict "amt" $feat.Params.combined_basket "lang" .Lang) }}</p>
         <p class="bw-panel-vs">{{ delimit (split (i18n "bw_vs") "{x}") (partial "price.html" (dict "amt" $feat.Params.separate_baskets "lang" .Lang)) }}</p>
         <p class="bw-panel-sepsub">{{ i18n "bw_bought_sep" }}</p>
-        <p class="bw-panel-save">{{ delimit (split (i18n "bw_you_save") "{x}") (partial "price.html" (dict "amt" $feat.Params.you_save "lang" .Lang)) }} ({{ $pct }}%)</p>
+        {{ if and (gt $sepF 0.0) (gt $saveF 0.0) }}<p class="bw-panel-save"><span class="bw-panel-save-l">{{ i18n "bw_save_l" }}</span><span class="bw-panel-save-a">{{ partial "price.html" (dict "amt" (printf "%.2f" $saveF) "lang" .Lang) }} ({{ $pct }}%)</span></p>{{ end }}
         <a class="bw-cta" href="{{ $feat.RelPermalink }}">{{ i18n "bw_cta" }} <span aria-hidden="true">→</span></a>
         <p class="bw-panel-note">{{ i18n "bw_cta_sub" }}</p>
       </aside>

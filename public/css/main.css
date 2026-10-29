@@ -637,7 +637,9 @@ ol.homeindex .rowlink:hover .rarr{transform:translateX(3px)}
 .bwindex .bw-panel-total{font-family:"Oswald";font-weight:700;font-size:3.05rem;color:var(--denim);line-height:1.05;margin:.35rem 0 0}
 .bwindex .bw-panel-vs{font-family:"Oswald";font-weight:700;font-size:1.18rem;color:var(--ink);margin:.85rem 0 0}
 .bwindex .bw-panel-sepsub{color:var(--muted);font-size:.88rem;margin:.15rem 0 0}
-.bwindex .bw-panel-save{color:var(--denim);font-weight:700;font-size:1.06rem;margin:.95rem 0 0}
+.bwindex .bw-panel-save{margin:1rem 0 0;background:#D6E6F8;border-radius:8px;padding:.8rem .9rem;width:100%;display:flex;flex-direction:column;gap:.15rem}
+.bwindex .bw-panel-save-l{font-family:"Oswald";font-weight:700;text-transform:uppercase;letter-spacing:.14em;font-size:.78rem;color:var(--denim)}
+.bwindex .bw-panel-save-a{font-family:"Oswald";font-weight:700;font-size:1.5rem;color:var(--denim);line-height:1.1}
 .bwindex .bw-cta{margin-top:1.15rem;background:var(--denim);color:#fff;font-family:"Oswald";font-weight:600;font-size:1rem;letter-spacing:.03em;padding:.85rem 1.2rem;border-radius:6px;text-decoration:none;width:100%}
 .bwindex .bw-cta:hover{background:var(--denim-deep)}
 .bwindex .bw-panel-note{color:var(--muted);font-size:.85rem;margin:.85rem 0 0;line-height:1.45}
