@@ -26,10 +26,6 @@ defaultContentLanguageInSubdir = false
       name = "Tools"
       url = "/tools/"
       weight = 4
-    [[languages.en.menus.main]]
-      name = "About"
-      url = "/about/"
-      weight = 5
   [languages.fr]
     languageName = "Français"
     languageCode = "fr-CA"
@@ -53,10 +49,6 @@ defaultContentLanguageInSubdir = false
       name = "Outils"
       url = "/fr/tools/"
       weight = 4
-    [[languages.fr.menus.main]]
-      name = "À propos"
-      url = "/fr/about/"
-      weight = 5
 
 [params]
   description = "Cheap, filling recipes with the price worked out first. Every recipe is costed on Canadian national average prices, with the full breakdown shown."
