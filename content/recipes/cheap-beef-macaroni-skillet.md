@@ -6,6 +6,14 @@ draft: false
 tier: "tomato"
 tier_label: "Tier 3"
 meals: ["dinner"]
+nutrition:
+  calories: 570
+  protein: 29
+  carbs: 48
+  fat: 28
+  fibre: 4
+  sugar: 7
+  sodium: 570
 price_per_serving: "2.70"
 batch_cost: "16.17"
 basket_cost: "36.48"

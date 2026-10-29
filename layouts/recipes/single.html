@@ -94,6 +94,26 @@
         <span class="t{{ if eq .Params.tier "butter" }} on{{ end }}">{{ i18n "tier_butter" }}<small>{{ i18n "tier_to" }} {{ partial "price.html" (dict "amt" "2.50" "lang" .Lang) }}</small></span>
         <span class="t{{ if eq .Params.tier "tomato" }} on{{ end }}">{{ i18n "tier_tomato" }}<small>{{ i18n "tier_to" }} {{ partial "price.html" (dict "amt" "3.25" "lang" .Lang) }}</small></span>
       </div>
+      {{ with .Params.nutrition }}{{ $n := . }}
+      <div class="bhead" style="margin-top:1.4rem;">{{ i18n "nutrition_h" }} · {{ i18n "nutrition_per" }}</div>
+      <div class="bbox">
+        <div class="nucal"><span class="nucalnum">{{ $n.calories }}</span><span class="nucallbl">{{ i18n "nutrition_cal" }}</span></div>
+        <div class="nudvhead">{{ i18n "nutrition_dv" }}</div>
+        {{ $rows := slice
+          (dict "label" (i18n "nutrition_protein") "amt" (printf "%d g" $n.protein) "pct" (div (mul (float $n.protein) 100) 50.0))
+          (dict "label" (i18n "nutrition_carbs") "amt" (printf "%d g" $n.carbs) "pct" (div (mul (float $n.carbs) 100) 275.0))
+          (dict "label" (i18n "nutrition_fat") "amt" (printf "%d g" $n.fat) "pct" (div (mul (float $n.fat) 100) 75.0))
+          (dict "label" (i18n "nutrition_fibre") "amt" (printf "%d g" $n.fibre) "pct" (div (mul (float $n.fibre) 100) 28.0))
+          (dict "label" (i18n "nutrition_sugar") "amt" (printf "%d g" $n.sugar) "pct" (div (mul (float $n.sugar) 100) 100.0))
+          (dict "label" (i18n "nutrition_sodium") "amt" (printf "%d mg" $n.sodium) "pct" (div (mul (float $n.sodium) 100) 2300.0))
+        }}
+        {{ range $rows }}{{ $w := .pct }}{{ if gt $w 100.0 }}{{ $w = 100.0 }}{{ end }}
+        <div class="nurow"><span class="nulbl">{{ .label }}</span><span class="nuamt">{{ .amt }}</span><span class="nudv">{{ printf "%.0f" .pct }}%</span></div>
+        <div class="nubar"><i style="width:{{ printf "%.0f" $w }}%"></i></div>
+        {{ end }}
+        <p class="nunote">{{ i18n "nutrition_note" }}</p>
+      </div>
+      {{ end }}
       {{ with .Params.basket_pairs }}
       <div class="pairbox">
         <div class="bhead" style="margin-top:1.4rem;">{{ i18n "pair_heading" }}</div>

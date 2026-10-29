@@ -6,6 +6,14 @@ draft: false
 tier: "butter"
 tier_label: "Palier 2"
 meals: ["lunch", "dinner"]
+nutrition:
+  calories: 535
+  protein: 33
+  carbs: 44
+  fat: 26
+  fibre: 10
+  sugar: 7
+  sodium: 680
 price_per_serving: "2.45"
 batch_cost: "14.67"
 basket_cost: "31.30"

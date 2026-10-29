@@ -138,6 +138,17 @@ footer.site a{color:var(--muted);text-decoration:none}
 @media (max-width:720px){.tiergrid{grid-template-columns:1fr}}
 .tierfilter{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1rem;max-width:46rem}
 .tierfilter + .tierfilter{margin-top:.5rem}
+.nucal{display:flex;align-items:baseline;gap:.55rem;padding:.1rem 0 .55rem;border-bottom:1px solid var(--hair);margin-bottom:.35rem}
+.nucalnum{font-family:"Oswald";font-weight:700;font-size:2.4rem;color:var(--denim);line-height:1}
+.nucallbl{font-family:"Oswald";font-weight:600;text-transform:uppercase;letter-spacing:.1em;font-size:.9rem}
+.nudvhead{text-align:right;font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.09em;color:var(--muted)}
+.nurow{display:flex;align-items:baseline;gap:.6rem;padding:.32rem 0 0}
+.nulbl{font-weight:600}
+.nuamt{margin-left:auto;font-weight:800;white-space:nowrap}
+.nudv{color:var(--muted);font-weight:600;white-space:nowrap;min-width:2.6rem;text-align:right}
+.nubar{height:5px;background:#E7ECF3;margin:.28rem 0 .3rem}
+.nubar i{display:block;height:100%;background:var(--denim)}
+.nunote{color:var(--muted);font-size:.82rem;line-height:1.5;margin:.55rem 0 .1rem}
 .tierfilter button{font-family:"Oswald";font-weight:600;text-transform:uppercase;letter-spacing:.07em;font-size:.85rem;background:#fff;border:1.5px solid var(--hair);padding:.5rem .9rem;cursor:pointer;color:var(--ink)}
 .tierfilter button.on{background:var(--denim);border-color:var(--denim);color:#fff}
 .tierfilter .sortbtn{margin-left:auto}

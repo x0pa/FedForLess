@@ -6,6 +6,14 @@ draft: false
 tier: "green"
 tier_label: "Tier 1"
 meals: ["lunch", "dinner"]
+nutrition:
+  calories: 530
+  protein: 25
+  carbs: 93
+  fat: 6
+  fibre: 16
+  sugar: 12
+  sodium: 720
 price_per_serving: "1.34"
 batch_cost: "8.02"
 basket_cost: "30.07"

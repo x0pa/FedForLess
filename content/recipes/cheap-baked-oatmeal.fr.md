@@ -6,6 +6,14 @@ draft: false
 tier: "green"
 tier_label: "Palier 1"
 meals: ["breakfast"]
+nutrition:
+  calories: 465
+  protein: 18
+  carbs: 50
+  fat: 24
+  fibre: 7
+  sugar: 23
+  sodium: 200
 price_per_serving: "0.94"
 batch_cost: "7.55"
 basket_cost: "35.32"

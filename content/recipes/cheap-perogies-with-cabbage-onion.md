@@ -6,6 +6,14 @@ draft: false
 tier: "butter"
 tier_label: "Tier 2"
 meals: ["lunch", "dinner"]
+nutrition:
+  calories: 795
+  protein: 21
+  carbs: 123
+  fat: 24
+  fibre: 9
+  sugar: 14
+  sodium: 1560
 price_per_serving: "1.92"
 batch_cost: "11.52"
 basket_cost: "21.83"
