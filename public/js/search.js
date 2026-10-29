@@ -89,6 +89,19 @@
     setStatus(render(hits, cap), raw);
   }
   fetch(box.dataset.index).then(function (r) { return r.json(); })
-    .then(function (data) { idx = data; input.addEventListener("input", search); if (input.value) search(); })
+    .then(function (data) {
+      idx = data;
+      input.addEventListener("input", search);
+      var btn = document.getElementById("site-search-btn");
+      if (btn) btn.addEventListener("click", function () { search(); input.focus(); });
+      document.querySelectorAll(".chip[data-q]").forEach(function (chip) {
+        chip.addEventListener("click", function () {
+          input.value = chip.getAttribute("data-q");
+          search();
+          input.focus();
+        });
+      });
+      if (input.value) search();
+    })
     .catch(function () { /* search stays silent if the index cannot load */ });
 })();

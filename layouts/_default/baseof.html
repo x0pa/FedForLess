@@ -41,6 +41,7 @@
 <div class="wrap"><div class="rule-top"></div></div>
 <header class="site">
   <a class="logo" href="{{ "/" | relLangURL }}">Fed For <span class="thin">Less</span></a>
+  <a class="hsearch" href="{{ "/recipes/" | relLangURL }}" aria-label="{{ i18n "search_aria" }}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.5-4.5"/></svg></a>
   <details class="mmenu">
     <summary class="hamb" aria-label="Menu">&#9776;</summary>
     <nav class="main panel">
@@ -53,11 +54,38 @@
 </header>
 {{ block "main" . }}{{ end }}
 <footer class="site">
-  {{ i18n "footer_line_a" }} <span class="nobr">{{ i18n "footer_line_b" }}</span><br>
-  {{ i18n "footer_prices" }}<br>
-  <a href="{{ "/about/" | relLangURL }}">{{ i18n "footer_about" }}</a> · <a href="{{ "/privacy/" | relLangURL }}">{{ i18n "footer_privacy" }}</a> · <a href="{{ "/contact/" | relLangURL }}">{{ i18n "footer_contact" }}</a>{{ if $langTarget }} · <a href="{{ $langTarget }}">{{ $langLabel }}</a>{{ end }}<br>
-  {{ i18n "footer_made" }}<br>
-  {{ i18n "footer_designed" }} <a href="https://www.darkhaus.studio/">Dark Haus Studio</a>
+  <div class="foot-in">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a class="flogo" href="{{ "/" | relLangURL }}">Fed For <span>Less</span></a>
+        <p class="ftag">{{ i18n "footer_tagline" }}</p>
+        <p class="fline">{{ i18n "footer_line_a" }} <span class="nobr">{{ i18n "footer_line_b" }}</span></p>
+      </div>
+      <nav class="foot-col" aria-label="{{ i18n "footer_explore" }}">
+        <h3>{{ i18n "footer_explore" }}</h3>
+        {{ range .Site.Menus.main }}<a href="{{ .URL }}">{{ .Name }}</a>{{ end }}
+      </nav>
+      <nav class="foot-col" aria-label="{{ i18n "footer_site_h" }}">
+        <h3>{{ i18n "footer_site_h" }}</h3>
+        <a href="{{ "/about/" | relLangURL }}">{{ i18n "footer_about" }}</a>
+        <a href="{{ "/privacy/" | relLangURL }}">{{ i18n "footer_privacy" }}</a>
+        <a href="{{ "/contact/" | relLangURL }}">{{ i18n "footer_contact" }}</a>
+        {{ if $langTarget }}<a href="{{ $langTarget }}">{{ $langLabel }}</a>{{ end }}
+      </nav>
+      <div class="foot-nl">
+        <h3>{{ i18n "nl_head" }}</h3>
+        <form class="signup" action="https://api.follow.it/subscription-form/a3BGdWRaMWVIc0hNSENkeGZJMEhWYlBXeG50U2JHUmdCclFVSTM5clRLdENGM3VZNW9ZUVJyUThRazFBZ3dqNFhqRE4rdEt5OWs3dStWV3NBZVpFdUdoZ0pLOVhFbHQrem5ydTlJSDBxOXl4WFlOZyttejdQNDk3bVV3QTY3akN8NDFjejkxSVVna1c1MmNIMVJVcHptRnkwVUZ4L3c2VzFpKzNKeG12TTQwZz0=/8" method="post">
+          <input type="email" name="email" required placeholder="{{ i18n "signup_placeholder" }}" aria-label="{{ i18n "email_aria" }}">
+          <button type="submit">{{ i18n "signup_button" }}</button>
+        </form>
+        <p class="powered">{{ i18n "powered_text" }} <a href="https://follow.it" rel="noopener">follow.it</a></p>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>{{ i18n "footer_prices" }}</span>
+      <span>{{ i18n "footer_made" }} · {{ i18n "footer_designed" }} <a href="https://www.darkhaus.studio/">Dark Haus Studio</a></span>
+    </div>
+  </div>
 </footer>
 </body>
 </html>

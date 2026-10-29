@@ -17,14 +17,30 @@
 {{ $feat := index $recipes 0 }}
 <div class="wrap">
   <section class="hero">
-    <h1>Fed For Less<span class="price-line">{{ i18n "hero_h1_span" }}</span></h1>
-    <p class="lede">{{ i18n "hero_lede" }}</p>
-    {{ partial "searchbox.html" . }}
-    <form class="signup" action="https://api.follow.it/subscription-form/a3BGdWRaMWVIc0hNSENkeGZJMEhWYlBXeG50U2JHUmdCclFVSTM5clRLdENGM3VZNW9ZUVJyUThRazFBZ3dqNFhqRE4rdEt5OWs3dStWV3NBZVpFdUdoZ0pLOVhFbHQrem5ydTlJSDBxOXl4WFlOZyttejdQNDk3bVV3QTY3akN8NDFjejkxSVVna1c1MmNIMVJVcHptRnkwVUZ4L3c2VzFpKzNKeG12TTQwZz0=/8" method="post">
-      <input type="email" name="email" required placeholder="{{ i18n "signup_placeholder" }}" aria-label="{{ i18n "email_aria" }}">
-      <button type="submit">{{ i18n "signup_button" }}</button>
-    </form>
-    <p class="powered">{{ i18n "powered_text" }} <a href="https://follow.it" rel="noopener">follow.it</a></p>
+    <div class="hero-art" aria-hidden="true"><img src="/images/hero-ingredients.webp" alt="" width="820" height="819"></div>
+    <div class="hero-grid">
+      <div class="hero-main">
+        <p class="eyebrow">{{ i18n "hero_eyebrow" }}</p>
+        <h1>Fed For Less<span class="price-line">{{ i18n "hero_h1_span" }}</span></h1>
+        <p class="lede">{{ i18n "hero_lede" }}</p>
+        {{ partial "searchbox.html" . }}
+        <div class="chips">
+          <button type="button" class="chip" data-q="{{ i18n "chip_dinners_q" }}">{{ i18n "chip_dinners" }}</button>
+          <button type="button" class="chip" data-q="{{ i18n "chip_soups_q" }}">{{ i18n "chip_soups" }}</button>
+          <button type="button" class="chip" data-q="{{ i18n "chip_pasta_q" }}">{{ i18n "chip_pasta" }}</button>
+          <button type="button" class="chip" data-q="{{ i18n "chip_chicken_q" }}">{{ i18n "chip_chicken" }}</button>
+          <button type="button" class="chip" data-q="{{ i18n "chip_under_q" }}">{{ i18n "chip_under" }}</button>
+        </div>
+      </div>
+      <aside class="nl-panel">
+        <div class="nl-head"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 6l-10 7L2 6"/></svg><h2>{{ i18n "nl_head" }}</h2></div>
+        <form class="signup" action="https://api.follow.it/subscription-form/a3BGdWRaMWVIc0hNSENkeGZJMEhWYlBXeG50U2JHUmdCclFVSTM5clRLdENGM3VZNW9ZUVJyUThRazFBZ3dqNFhqRE4rdEt5OWs3dStWV3NBZVpFdUdoZ0pLOVhFbHQrem5ydTlJSDBxOXl4WFlOZyttejdQNDk3bVV3QTY3akN8NDFjejkxSVVna1c1MmNIMVJVcHptRnkwVUZ4L3c2VzFpKzNKeG12TTQwZz0=/8" method="post">
+          <input type="email" name="email" required placeholder="{{ i18n "signup_placeholder" }}" aria-label="{{ i18n "email_aria" }}">
+          <button type="submit">{{ i18n "signup_button" }}</button>
+        </form>
+        <p class="powered">{{ i18n "powered_text" }} <a href="https://follow.it" rel="noopener">follow.it</a></p>
+      </aside>
+    </div>
   </section>
 
   <section class="fhero">
@@ -61,37 +77,59 @@
     <div class="sec-head"><h2>{{ i18n "tiers_h" }}</h2></div>
     <p class="tiers-sub">{{ i18n "tiers_sub" }}</p>
     <div class="tiergrid">
-      <a class="tierblock" href="{{ "/recipes/" | relLangURL }}?tier=green"><div class="tb-name">{{ i18n "tier_green" }}</div><div class="tb-range">{{ i18n "t1_range" }}</div><p>{{ i18n "t1_text" }}</p></a>
-      <a class="tierblock" href="{{ "/recipes/" | relLangURL }}?tier=butter"><div class="tb-name">{{ i18n "tier_butter" }}</div><div class="tb-range">{{ i18n "t2_range" }}</div><p>{{ i18n "t2_text" }}</p></a>
-      <a class="tierblock" href="{{ "/recipes/" | relLangURL }}?tier=tomato"><div class="tb-name">{{ i18n "tier_tomato" }}</div><div class="tb-range">{{ i18n "t3_range" }}</div><p>{{ i18n "t3_text" }}</p></a>
+      {{ $t1 := index (where $recipes "Params.tier" "green") 0 }}
+      {{ $t2 := index (where $recipes "Params.tier" "butter") 0 }}
+      {{ $t3 := index (where $recipes "Params.tier" "tomato") 0 }}
+      <a class="tiercard" href="{{ "/recipes/" | relLangURL }}?tier=green">
+        <span class="tc-img"><img src="{{ $t1.Params.image }}" alt="" loading="lazy"></span>
+        <span class="tc-body"><span class="tc-name">{{ i18n "tier_green" }}</span><span class="tc-big">{{ i18n "t1_big" }}</span><span class="tc-per">{{ i18n "per_serving" }}</span><span class="tc-text">{{ i18n "t1_text" }}</span></span>
+        <span class="tc-arrow" aria-hidden="true">→</span>
+      </a>
+      <a class="tiercard" href="{{ "/recipes/" | relLangURL }}?tier=butter">
+        <span class="tc-img"><img src="{{ $t2.Params.image }}" alt="" loading="lazy"></span>
+        <span class="tc-body"><span class="tc-name">{{ i18n "tier_butter" }}</span><span class="tc-big">{{ i18n "t2_big" }}</span><span class="tc-per">{{ i18n "per_serving" }}</span><span class="tc-text">{{ i18n "t2_text" }}</span></span>
+        <span class="tc-arrow" aria-hidden="true">→</span>
+      </a>
+      <a class="tiercard" href="{{ "/recipes/" | relLangURL }}?tier=tomato">
+        <span class="tc-img"><img src="{{ $t3.Params.image }}" alt="" loading="lazy"></span>
+        <span class="tc-body"><span class="tc-name">{{ i18n "tier_tomato" }}</span><span class="tc-big">{{ i18n "t3_big" }}</span><span class="tc-per">{{ i18n "per_serving" }}</span><span class="tc-text">{{ i18n "t3_text" }}</span></span>
+        <span class="tc-arrow" aria-hidden="true">→</span>
+      </a>
     </div>
   </section>
 
   <section class="index-sec">
     <div class="sec-head"><h2>{{ i18n "index_h2" }}</h2><span>{{ i18n "index_checked" }} · {{ len $recipes }} {{ i18n "recipes_word" }}</span></div>
-    <ol class="index">
-      {{ range $recipes }}
+    <ol class="index homeindex">
+      {{ range first 5 $recipes }}
       <li>
-        <a href="{{ .RelPermalink }}"><img src="{{ .Params.image }}" alt="{{ .Title }}"></a>
-        <div>
-          <div class="rname"><a href="{{ .RelPermalink }}">{{ .Title }}</a></div>
-          <div class="rsub">{{ .Params.tier_label }} · {{ partial "serves.html" (dict "n" .Params.servings "lang" $.Lang) }} · {{ .Params.total_time }}</div>
-        </div>
-        <div class="rprice nums"><div class="per">{{ partial "price.html" (dict "amt" .Params.price_per_serving "lang" $.Lang) }}</div><div class="of">{{ i18n "per_serving" }}</div></div>
+        <a class="rowlink" href="{{ .RelPermalink }}">
+          <span class="rthumb"><img src="{{ .Params.image }}" alt="" loading="lazy"></span>
+          <span class="rmain"><span class="rname">{{ .Title }}</span><span class="rsub">{{ .Params.tier_label }} · {{ partial "serves.html" (dict "n" .Params.servings "lang" $.Lang) }} · {{ .Params.total_time }}</span></span>
+          <span class="rprice nums"><span class="per">{{ partial "price.html" (dict "amt" .Params.price_per_serving "lang" $.Lang) }}</span><span class="of">{{ i18n "per_serving" }}</span></span>
+          <span class="rarr" aria-hidden="true">→</span>
+        </a>
       </li>
       {{ end }}
     </ol>
+    <div class="viewall-wrap"><a class="viewall" href="{{ "/recipes/" | relLangURL }}">{{ i18n "view_all" }} <span aria-hidden="true">→</span></a></div>
   </section>
 
   <section class="index-sec">
     <div class="sec-head"><h2>{{ i18n "shop_h2" }}</h2><span>{{ i18n "collections_word" }}</span></div>
-    <div class="collections">
-      <div class="col-card"><div class="cname"><a href="{{ "/collections/dinners-under-1-50/" | relLangURL }}">{{ i18n "card1_name" }}</a></div><p>{{ i18n "card1_desc" }}</p></div>
-      <div class="col-card"><div class="cname"><a href="{{ "/collections/feed-six-for-under-12/" | relLangURL }}">{{ i18n "card2_name" }}</a></div><p>{{ i18n "card2_desc" }}</p></div>
-      <div class="col-card"><div class="cname"><a href="{{ "/collections/freezer-fillers/" | relLangURL }}">{{ i18n "card3_name" }}</a></div><p>{{ i18n "card3_desc" }}</p></div>
-      <div class="col-card"><div class="cname"><a href="{{ "/collections/soups-that-eat-like-a-meal/" | relLangURL }}">{{ i18n "card4_name" }}</a></div><p>{{ i18n "card4_desc" }}</p></div>
-      <div class="col-card"><div class="cname"><a href="{{ "/collections/breakfasts-under-1/" | relLangURL }}">{{ i18n "card5_name" }}</a></div><p>{{ i18n "card5_desc" }}</p></div>
-      <div class="col-card"><div class="cname"><a href="{{ "/how-we-price/" | relLangURL }}">{{ i18n "card6_name" }}</a></div><p>{{ i18n "card6_desc" }}</p></div>
+    <div class="shopgrid">
+      {{ $s1 := .Site.GetPage "/recipes/cheap-lentil-soup" }}
+      {{ $s2 := .Site.GetPage "/recipes/cheap-beef-barley-soup" }}
+      {{ $s3 := .Site.GetPage "/recipes/cheap-freezer-burritos" }}
+      {{ $s4 := .Site.GetPage "/recipes/cheap-split-pea-soup" }}
+      {{ $s5 := .Site.GetPage "/recipes/cheap-baked-oatmeal" }}
+      {{ $s6 := .Site.GetPage "/recipes/cheap-chickpea-curry" }}
+      <a class="shoprow" href="{{ "/collections/dinners-under-1-50/" | relLangURL }}"><span class="shopnum">01</span><span class="shopthumb"><img src="{{ $s1.Params.image }}" alt="" loading="lazy"></span><span class="shop-txt"><span class="shopname">{{ i18n "card1_name" }}</span><span class="shopdesc">{{ i18n "card1_desc" }}</span></span><span class="shoparr" aria-hidden="true">→</span></a>
+      <a class="shoprow" href="{{ "/collections/feed-six-for-under-12/" | relLangURL }}"><span class="shopnum">02</span><span class="shopthumb"><img src="{{ $s2.Params.image }}" alt="" loading="lazy"></span><span class="shop-txt"><span class="shopname">{{ i18n "card2_name" }}</span><span class="shopdesc">{{ i18n "card2_desc" }}</span></span><span class="shoparr" aria-hidden="true">→</span></a>
+      <a class="shoprow" href="{{ "/collections/freezer-fillers/" | relLangURL }}"><span class="shopnum">03</span><span class="shopthumb"><img src="{{ $s3.Params.image }}" alt="" loading="lazy"></span><span class="shop-txt"><span class="shopname">{{ i18n "card3_name" }}</span><span class="shopdesc">{{ i18n "card3_desc" }}</span></span><span class="shoparr" aria-hidden="true">→</span></a>
+      <a class="shoprow" href="{{ "/collections/soups-that-eat-like-a-meal/" | relLangURL }}"><span class="shopnum">04</span><span class="shopthumb"><img src="{{ $s4.Params.image }}" alt="" loading="lazy"></span><span class="shop-txt"><span class="shopname">{{ i18n "card4_name" }}</span><span class="shopdesc">{{ i18n "card4_desc" }}</span></span><span class="shoparr" aria-hidden="true">→</span></a>
+      <a class="shoprow" href="{{ "/collections/breakfasts-under-1/" | relLangURL }}"><span class="shopnum">05</span><span class="shopthumb"><img src="{{ $s5.Params.image }}" alt="" loading="lazy"></span><span class="shop-txt"><span class="shopname">{{ i18n "card5_name" }}</span><span class="shopdesc">{{ i18n "card5_desc" }}</span></span><span class="shoparr" aria-hidden="true">→</span></a>
+      <a class="shoprow" href="{{ "/how-we-price/" | relLangURL }}"><span class="shopnum">06</span><span class="shopthumb"><img src="{{ $s6.Params.image }}" alt="" loading="lazy"></span><span class="shop-txt"><span class="shopname">{{ i18n "card6_name" }}</span><span class="shopdesc">{{ i18n "card6_desc" }}</span></span><span class="shoparr" aria-hidden="true">→</span></a>
     </div>
   </section>
 </div>
