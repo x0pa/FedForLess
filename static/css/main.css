@@ -927,29 +927,35 @@ ol.homeindex .rowlink:hover .rarr{transform:translateX(3px)}
 .rcpage .rc-h1 span{color:var(--denim)}
 .rcpage .rc-intro{font-size:1.08rem;line-height:1.6;color:#2C3138;margin:1rem 0 0;max-width:42rem}
 .rcpage .rc-support{font-family:"Oswald";font-weight:600;font-size:1rem;color:var(--ink);margin:.55rem 0 0}
-.rcpage .rc-calc{margin-top:1.8rem;border:1px solid var(--hair);border-radius:10px;background:#fff;display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);grid-template-areas:"inputs results" "actions actions";overflow:hidden}
+.rcpage .rc-calc{margin-top:1.8rem;border:1px solid var(--hair);border-radius:10px;background:#fff;display:grid;grid-template-columns:minmax(0,1.9fr) minmax(0,1fr);grid-template-areas:"inputs results" "actions actions";overflow:hidden}
 .rcpage .rc-inputs{grid-area:inputs;padding:1.6rem 1.7rem}
-.rcpage .rc-results{grid-area:results;background:#EAF1F8;padding:1.6rem 1.7rem;border-left:1px solid #C9D6E8}
+.rcpage .rc-results{grid-area:results;align-self:start;background:#EAF1F8;padding:1.6rem 1.7rem;border-left:1px solid #C9D6E8}
 .rcpage .rc-panel-h{font-family:"Oswald";font-weight:700;text-transform:uppercase;font-size:1.05rem;letter-spacing:.05em;margin:0;color:var(--ink)}
 .rcpage .rc-panel-sub{color:var(--muted);margin:.35rem 0 0;font-size:.95rem}
-.rcpage .rc-headrow{display:grid;grid-template-columns:minmax(0,1.36fr) minmax(0,.72fr) minmax(0,1.34fr) minmax(0,1.34fr) minmax(0,.68fr) 2rem;gap:.6rem;margin-top:1.2rem;font-family:"Oswald";font-weight:600;font-size:.74rem;text-transform:uppercase;letter-spacing:.05em;color:var(--muted)}
-.rcpage .rc-row{display:grid;grid-template-columns:minmax(0,1.36fr) minmax(0,.72fr) minmax(0,1.34fr) minmax(0,1.34fr) minmax(0,.68fr) 2rem;gap:.6rem;align-items:end;padding:.8rem 0;border-bottom:1px solid var(--hair)}
-.rcpage .rcf-l{display:none;font-weight:700;font-size:.8rem;color:#2C3138;margin-bottom:.3rem}
+.rcpage .rc-row{border:1px solid var(--hair);border-radius:10px;background:#fff;padding:1.05rem 1.2rem 1.15rem;margin-top:1rem}
+.rcpage .rc-rowhead{display:flex;justify-content:space-between;align-items:center;gap:1rem}
+.rcpage .rc-ingtitle{font-family:"Oswald";font-weight:700;text-transform:uppercase;font-size:.95rem;letter-spacing:.05em;color:var(--ink)}
+.rcpage .rc-del{background:#fff;border:1.5px solid var(--hair);border-radius:6px;color:#8A2A1B;font:inherit;font-size:.85rem;font-weight:600;padding:.35rem .7rem;cursor:pointer;white-space:nowrap}
+.rcpage .rc-del:hover{border-color:#8A2A1B}
+.rcpage .rcf-l{display:block;font-weight:700;font-size:.82rem;color:#2C3138;margin-bottom:.35rem}
+.rcpage .rc-name-f{margin-top:.75rem}
+.rcpage .rc-name-f input{font-size:1.05rem}
+.rcpage .rc-fields{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.9rem;margin-top:.9rem}
 .rcpage .rcf input[type="number"],.rcpage .rcf input[type="text"]{width:100%;font:inherit;font-size:1rem;font-weight:600;color:var(--ink);padding:.6rem .65rem;border:1.5px solid var(--hair);border-radius:6px;background:#fff;box-sizing:border-box}
-.rcpage .rcf select{font:inherit;font-size:.95rem;font-weight:600;color:var(--ink);padding:.6rem .3rem;border:1.5px solid var(--hair);border-radius:6px;background:#fff}
+.rcpage .rcf select{font:inherit;font-size:.95rem;font-weight:600;color:var(--ink);padding:.6rem .1rem;border:1.5px solid var(--hair);border-radius:6px;background:#fff;flex:none;width:3.5rem}
 .rcpage .rcf input:focus,.rcpage .rcf select:focus{outline:2px solid var(--denim);outline-offset:1px;border-color:var(--denim)}
 .rcpage .rcq{display:flex;gap:.35rem}
-.rcpage .rcq input{flex:1 1 auto;min-width:0}
-.rcpage .rcq select{flex:none;width:3.5rem;padding:.6rem .1rem}
-.rcpage .rc-cost{font-family:"Oswald";font-weight:700;font-size:1.15rem;color:var(--denim);white-space:nowrap}
-.rcpage .rc-cost-f{align-self:center}
-.rcpage .rc-del{background:none;border:1.5px solid var(--hair);border-radius:6px;color:#8A2A1B;font-size:1.05rem;line-height:1;width:2rem;height:2.4rem;cursor:pointer;align-self:center}
-.rcpage .rc-del:hover{border-color:#8A2A1B}
-.rcpage .rc-pantry{grid-column:1 / -1;font-size:.86rem;color:var(--muted);display:flex;gap:.45rem;align-items:center;cursor:pointer}
-.rcpage .rc-err{grid-column:1 / -1;color:#8A2A1B;font-weight:600;font-size:.88rem;margin:0}
+.rcpage .rcq input{flex:1 1 auto;min-width:0;padding:.6rem .45rem}
+.rcpage .rc-rowfoot{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap;margin-top:.95rem}
+.rcpage .rc-costwrap{display:inline-flex;align-items:baseline;gap:.6rem;background:#EAF1F8;border-radius:8px;padding:.5rem .85rem}
+.rcpage .rc-costlab{font-weight:700;font-size:.82rem;color:#2C3138}
+.rcpage .rc-cost{font-family:"Oswald";font-weight:700;font-size:1.2rem;color:var(--denim);white-space:nowrap}
+.rcpage .rc-pantry{font-size:.9rem;color:var(--muted);display:flex;gap:.45rem;align-items:center;cursor:pointer}
+.rcpage .rc-pantry input{width:1.05rem;height:1.05rem}
+.rcpage .rc-err{color:#8A2A1B;font-weight:600;font-size:.88rem;margin:.6rem 0 0}
 .rcpage .rc-err:empty{display:none}
 .rcpage .rc-addrow{margin:1.1rem 0 0}
-.rcpage .rc-addbtn{background:#fff;color:var(--denim);border:1.5px solid var(--denim);font-family:"Oswald";font-weight:600;font-size:.98rem;padding:.7rem 1.2rem;border-radius:6px;cursor:pointer}
+.rcpage .rc-addbtn{background:#fff;color:var(--denim);border:1.5px solid var(--denim);font-family:"Oswald";font-weight:600;font-size:1rem;padding:.8rem 1.3rem;border-radius:6px;cursor:pointer}
 .rcpage .rc-addbtn:hover{background:#EAF1F8}
 .rcpage .rc-settings{display:grid;grid-template-columns:minmax(0,.6fr) minmax(0,1fr);gap:1.2rem;margin-top:1.4rem;border-top:1px solid var(--hair);padding-top:1.3rem}
 .rcpage .rc-settings label{font-family:"Oswald";font-weight:600;font-size:.98rem;color:var(--ink);display:block;margin-bottom:.45rem}
@@ -958,15 +964,15 @@ ol.homeindex .rowlink:hover .rarr{transform:translateX(3px)}
 .rcpage .rc-exnote{margin:1.2rem 0 0;font-size:.88rem;color:var(--muted);background:#F1F5F9;border-radius:8px;padding:.65rem .8rem}
 .rcpage .rc-pslabel{font-family:"Oswald";font-weight:600;text-transform:uppercase;letter-spacing:.1em;font-size:.85rem;color:var(--ink);margin-top:.7rem}
 .rcpage .rc-big{font-family:"Oswald";font-weight:700;font-size:3.6rem;line-height:1.05;color:var(--denim)}
-.rcpage .rc-break{margin-top:1rem;border-top:1px solid #C9D6E8;padding-top:.8rem;display:grid;gap:.4rem}
-.rcpage .rc-brow{display:flex;justify-content:space-between;font-weight:600;color:var(--ink)}
+.rcpage .rc-pshelp{font-size:.85rem;color:var(--muted);margin:.3rem 0 0}
+.rcpage .rc-break{margin-top:1rem;border-top:1px solid #C9D6E8;padding-top:.8rem;display:grid;gap:.55rem}
+.rcpage .rc-brow{display:flex;justify-content:space-between;align-items:start;gap:1rem;font-weight:600;color:var(--ink)}
+.rcpage .rc-blab small{display:block;font-weight:400;font-size:.8rem;color:var(--muted);margin-top:.15rem;line-height:1.4}
 .rcpage .rc-tiers{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.45rem;margin-top:1.1rem}
-.rcpage .rc-tier-seg{text-align:center}
-.rcpage .rc-tier-seg.above{grid-column:1 / -1}
-.rcpage .rc-tier-seg{border:1.5px solid #B9CFEC;border-radius:999px;padding:.42rem .75rem;font-size:.84rem;font-weight:600;color:var(--muted);background:#fff}
+.rcpage .rc-tier-seg{border:1.5px solid #B9CFEC;border-radius:999px;padding:.42rem .5rem;font-size:.84rem;font-weight:600;color:var(--muted);background:#fff;text-align:center}
 .rcpage .rc-tier-seg strong{font-family:"Oswald";text-transform:uppercase}
 .rcpage .rc-tier-seg.on{background:var(--denim);border-color:var(--denim);color:#fff}
-.rcpage .rc-tier-seg.above{background:#8A2A1B;border-color:#8A2A1B;color:#fff}
+.rcpage .rc-tier-seg.above{background:#8A2A1B;border-color:#8A2A1B;color:#fff;grid-column:1 / -1}
 .rcpage .rc-tier-seg.above[hidden]{display:none}
 .rcpage .rc-msg{color:#8A2A1B;font-weight:600;margin:.7rem 0 0}
 .rcpage .rc-msg:empty{display:none}
@@ -991,19 +997,8 @@ ol.homeindex .rowlink:hover .rarr{transform:translateX(3px)}
 .rcpage .rc-call-h{font-family:"Oswald";font-weight:700;text-transform:uppercase;font-size:1.35rem;margin:0;color:var(--ink)}
 .rcpage .rc-call p{color:#2C3138;line-height:1.65;margin:.6rem 0 0;max-width:52rem}
 @media (max-width:1080px){
-  .rcpage .rc-headrow{display:none}
   .rcpage .rc-calc{grid-template-columns:minmax(0,1fr);grid-template-areas:"inputs" "results" "actions"}
   .rcpage .rc-results{border-left:none;border-top:1px solid #C9D6E8}
-  .rcpage .rc-row{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-areas:"name name" "price cost" "size used" "pantry pantry" "err err";align-items:start;border:1px solid var(--hair);border-radius:10px;padding:1rem 1.1rem;margin-top:.9rem}
-  .rcpage .rc-name-f{grid-area:name}
-  .rcpage .rc-row .rcf-l{display:block}
-  .rcpage .rc-cost-f{grid-area:cost;justify-self:end;text-align:right}
-  .rcpage .rc-pantry{grid-area:pantry}
-  .rcpage .rc-err{grid-area:err}
-  .rcpage .rc-del{position:absolute}
-  .rcpage .rc-row{position:relative}
-  .rcpage .rc-del{top:.7rem;right:.7rem;height:2rem}
-  .rcpage .rc-name-f{padding-right:2.6rem}
   .rcpage .rc-inputs,.rcpage .rc-results{padding:1.3rem 1.25rem}
   .rcpage .rc-actions{padding:1rem 1.25rem}
   .rcpage .rc-actions .rc-btn{flex:1;text-align:center}
@@ -1011,17 +1006,12 @@ ol.homeindex .rowlink:hover .rarr{transform:translateX(3px)}
   .rcpage .rc-edugrid{grid-template-columns:minmax(0,1fr)}
   .rcpage .rc-settings{grid-template-columns:minmax(0,1fr)}
 }
+@media (max-width:700px){
+  .rcpage .rc-fields{grid-template-columns:minmax(0,1fr)}
+  .rcpage .rc-rowfoot{align-items:flex-start;flex-direction:column;gap:.6rem}
+}
 @media print{
   .rcpage .rc-actions,.rcpage .rc-addrow,.rcpage .rc-del,.rcpage .rc-call,.rcpage .rc-crumb,.rcpage .rc-support{display:none!important}
   .rcpage .rc-calc{border:1px solid #999}
   .rcpage .rc-results{background:#fff;border-left:1px solid #999}
 }
-
-.rcpage .rcq input{padding:.6rem .45rem}
-@media (max-width:360px){
-  .rcpage .rc-row{grid-template-areas:"name name" "price cost" "size size" "used used" "pantry pantry" "err err"}
-}
-
-.rcpage .rc-price-f{grid-area:price}
-.rcpage .rc-size-f{grid-area:size}
-.rcpage .rc-used-f{grid-area:used}

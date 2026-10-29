@@ -23,7 +23,7 @@
 <meta name="twitter:image" content="https://fedforless.ca/images/cheap-lentil-soup.webp">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Public+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/css/main.css?v=28">
+<link rel="stylesheet" href="/css/main.css?v=29">
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -94,94 +94,119 @@
     data-t-eunits="Units do not match: grams and millilitres cannot be converted." data-t-enan="Use numbers only in the price, size, and amount fields." data-t-eserv="Servings must be greater than zero."
     data-t-shared="Rows with the same ingredient, package price, and package size are combined into one package purchase: " data-t-copied="Copied to clipboard."
     data-t-head="Recipe cost breakdown" data-t-line="{n}: {u} {uu} from a {s} {su} package at {p} = {c}"
-    data-t-basket="Full basket cost: {b}" data-t-tobuy="Still to buy (pantry excluded): {b}"
+    data-t-basket="Full basket cost: {b}" data-t-tobuy="Additional checkout cost (pantry excluded): {b}"
     data-t-ing="Ingredient" data-t-remove="Remove ingredient"
     data-t-batch="Batch Total" data-t-serv="Servings" data-t-perserv="Cost Per Serving"
     data-ex='[{&#34;name&#34;:&#34;Frozen perogies&#34;,&#34;pantry&#34;:false,&#34;price&#34;:&#34;2.99&#34;,&#34;size&#34;:&#34;907&#34;,&#34;su&#34;:&#34;g&#34;,&#34;used&#34;:&#34;1814&#34;,&#34;uu&#34;:&#34;g&#34;},{&#34;name&#34;:&#34;Green cabbage&#34;,&#34;pantry&#34;:false,&#34;price&#34;:&#34;2.63&#34;,&#34;size&#34;:&#34;1000&#34;,&#34;su&#34;:&#34;g&#34;,&#34;used&#34;:&#34;800&#34;,&#34;uu&#34;:&#34;g&#34;},{&#34;name&#34;:&#34;Onions&#34;,&#34;pantry&#34;:false,&#34;price&#34;:&#34;4.58&#34;,&#34;size&#34;:&#34;1360&#34;,&#34;su&#34;:&#34;g&#34;,&#34;used&#34;:&#34;300&#34;,&#34;uu&#34;:&#34;g&#34;},{&#34;name&#34;:&#34;Sour cream&#34;,&#34;pantry&#34;:false,&#34;price&#34;:&#34;3.49&#34;,&#34;size&#34;:&#34;500&#34;,&#34;su&#34;:&#34;ml&#34;,&#34;used&#34;:&#34;250&#34;,&#34;uu&#34;:&#34;ml&#34;},{&#34;name&#34;:&#34;Butter&#34;,&#34;pantry&#34;:false,&#34;price&#34;:&#34;5.68&#34;,&#34;size&#34;:&#34;454&#34;,&#34;su&#34;:&#34;g&#34;,&#34;used&#34;:&#34;30&#34;,&#34;uu&#34;:&#34;g&#34;},{&#34;name&#34;:&#34;Salt and pepper&#34;,&#34;pantry&#34;:true,&#34;price&#34;:&#34;0.30&#34;,&#34;size&#34;:&#34;1&#34;,&#34;su&#34;:&#34;each&#34;,&#34;used&#34;:&#34;1&#34;,&#34;uu&#34;:&#34;each&#34;}]' data-ex-servings="6">
     <div class="rc-inputs">
       <h2 class="rc-panel-h">Build Your Recipe</h2>
       <p class="rc-panel-sub">Add each ingredient and enter the package information.</p>
-      <div class="rc-headrow" aria-hidden="true">
-        <span>Ingredient</span><span>Package Price</span><span>Package Size</span><span>Amount Used</span><span>Cost</span><span></span>
-      </div>
       <div id="rc-rows">
         
         <div class="rc-row" data-row>
-          <div class="rcf rc-name-f"><span class="rcf-l">Ingredient 01</span><input class="rc-name" type="text" value="Frozen perogies" aria-label="Ingredient" autocomplete="off"></div>
-          <div class="rcf rc-price-f"><span class="rcf-l">Package Price</span><input class="rc-price" type="number" min="0" step="0.01" inputmode="decimal" value="2.99" aria-label="Package Price" autocomplete="off"></div>
-          <div class="rcf rc-size-f"><span class="rcf-l">Package Size</span><span class="rcq"><input class="rc-size" type="number" min="0" step="any" inputmode="decimal" value="907" aria-label="Package Size" autocomplete="off"><select class="rc-su" aria-label="Package Size unit"><option value="g" selected>g</option><option value="kg">kg</option><option value="ml">ml</option><option value="L">L</option><option value="each">each</option></select></span></div>
-          <div class="rcf rc-used-f"><span class="rcf-l">Amount Used</span><span class="rcq"><input class="rc-used" type="number" min="0" step="any" inputmode="decimal" value="1814" aria-label="Amount Used" autocomplete="off"><select class="rc-uu" aria-label="Amount Used unit"><option value="g" selected>g</option><option value="kg">kg</option><option value="ml">ml</option><option value="L">L</option><option value="each">each</option></select></span></div>
-          <div class="rcf rc-cost-f"><span class="rcf-l">Cost</span><span class="rc-cost nums">—</span></div>
-          <button type="button" class="rc-del" aria-label="Remove ingredient">×</button>
-          <label class="rc-pantry"><input type="checkbox" class="rc-own"> Already have it (pantry)</label>
+          <div class="rc-rowhead"><span class="rc-ingtitle">Ingredient 01</span><button type="button" class="rc-del" aria-label="Remove ingredient">× Remove</button></div>
+          <div class="rcf rc-name-f"><span class="rcf-l">Ingredient Name</span><input class="rc-name" type="text" value="Frozen perogies" aria-label="Ingredient Name" autocomplete="off"></div>
+          <div class="rc-fields">
+            <div class="rcf rc-price-f"><span class="rcf-l">Package Price ($)</span><input class="rc-price" type="number" min="0" step="0.01" inputmode="decimal" value="2.99" aria-label="Package Price ($)" autocomplete="off"></div>
+            <div class="rcf rc-size-f"><span class="rcf-l">Package Quantity</span><span class="rcq"><input class="rc-size" type="number" min="0" step="any" inputmode="decimal" value="907" aria-label="Package Quantity" autocomplete="off"><select class="rc-su" aria-label="Package Quantity unit"><option value="g" selected>g</option><option value="kg">kg</option><option value="ml">ml</option><option value="L">L</option><option value="each">each</option></select></span></div>
+            <div class="rcf rc-used-f"><span class="rcf-l">Amount Used</span><span class="rcq"><input class="rc-used" type="number" min="0" step="any" inputmode="decimal" value="1814" aria-label="Amount Used" autocomplete="off"><select class="rc-uu" aria-label="Amount Used unit"><option value="g" selected>g</option><option value="kg">kg</option><option value="ml">ml</option><option value="L">L</option><option value="each">each</option></select></span></div>
+          </div>
+          <div class="rc-rowfoot">
+            <span class="rc-costwrap"><span class="rc-costlab">Ingredient Cost</span><span class="rc-cost nums">—</span></span>
+            <label class="rc-pantry"><input type="checkbox" class="rc-own"> Already have it (pantry)</label>
+          </div>
           <p class="rc-err" role="alert"></p>
         </div>
         
         <div class="rc-row" data-row>
-          <div class="rcf rc-name-f"><span class="rcf-l">Ingredient 02</span><input class="rc-name" type="text" value="Green cabbage" aria-label="Ingredient" autocomplete="off"></div>
-          <div class="rcf rc-price-f"><span class="rcf-l">Package Price</span><input class="rc-price" type="number" min="0" step="0.01" inputmode="decimal" value="2.63" aria-label="Package Price" autocomplete="off"></div>
-          <div class="rcf rc-size-f"><span class="rcf-l">Package Size</span><span class="rcq"><input class="rc-size" type="number" min="0" step="any" inputmode="decimal" value="1000" aria-label="Package Size" autocomplete="off"><select class="rc-su" aria-label="Package Size unit"><option value="g" selected>g</option><option value="kg">kg</option><option value="ml">ml</option><option value="L">L</option><option value="each">each</option></select></span></div>
-          <div class="rcf rc-used-f"><span class="rcf-l">Amount Used</span><span class="rcq"><input class="rc-used" type="number" min="0" step="any" inputmode="decimal" value="800" aria-label="Amount Used" autocomplete="off"><select class="rc-uu" aria-label="Amount Used unit"><option value="g" selected>g</option><option value="kg">kg</option><option value="ml">ml</option><option value="L">L</option><option value="each">each</option></select></span></div>
-          <div class="rcf rc-cost-f"><span class="rcf-l">Cost</span><span class="rc-cost nums">—</span></div>
-          <button type="button" class="rc-del" aria-label="Remove ingredient">×</button>
-          <label class="rc-pantry"><input type="checkbox" class="rc-own"> Already have it (pantry)</label>
+          <div class="rc-rowhead"><span class="rc-ingtitle">Ingredient 02</span><button type="button" class="rc-del" aria-label="Remove ingredient">× Remove</button></div>
+          <div class="rcf rc-name-f"><span class="rcf-l">Ingredient Name</span><input class="rc-name" type="text" value="Green cabbage" aria-label="Ingredient Name" autocomplete="off"></div>
+          <div class="rc-fields">
+            <div class="rcf rc-price-f"><span class="rcf-l">Package Price ($)</span><input class="rc-price" type="number" min="0" step="0.01" inputmode="decimal" value="2.63" aria-label="Package Price ($)" autocomplete="off"></div>
+            <div class="rcf rc-size-f"><span class="rcf-l">Package Quantity</span><span class="rcq"><input class="rc-size" type="number" min="0" step="any" inputmode="decimal" value="1000" aria-label="Package Quantity" autocomplete="off"><select class="rc-su" aria-label="Package Quantity unit"><option value="g" selected>g</option><option value="kg">kg</option><option value="ml">ml</option><option value="L">L</option><option value="each">each</option></select></span></div>
+            <div class="rcf rc-used-f"><span class="rcf-l">Amount Used</span><span class="rcq"><input class="rc-used" type="number" min="0" step="any" inputmode="decimal" value="800" aria-label="Amount Used" autocomplete="off"><select class="rc-uu" aria-label="Amount Used unit"><option value="g" selected>g</option><option value="kg">kg</option><option value="ml">ml</option><option value="L">L</option><option value="each">each</option></select></span></div>
+          </div>
+          <div class="rc-rowfoot">
+            <span class="rc-costwrap"><span class="rc-costlab">Ingredient Cost</span><span class="rc-cost nums">—</span></span>
+            <label class="rc-pantry"><input type="checkbox" class="rc-own"> Already have it (pantry)</label>
+          </div>
           <p class="rc-err" role="alert"></p>
         </div>
         
         <div class="rc-row" data-row>
-          <div class="rcf rc-name-f"><span class="rcf-l">Ingredient 03</span><input class="rc-name" type="text" value="Onions" aria-label="Ingredient" autocomplete="off"></div>
-          <div class="rcf rc-price-f"><span class="rcf-l">Package Price</span><input class="rc-price" type="number" min="0" step="0.01" inputmode="decimal" value="4.58" aria-label="Package Price" autocomplete="off"></div>
-          <div class="rcf rc-size-f"><span class="rcf-l">Package Size</span><span class="rcq"><input class="rc-size" type="number" min="0" step="any" inputmode="decimal" value="1360" aria-label="Package Size" autocomplete="off"><select class="rc-su" aria-label="Package Size unit"><option value="g" selected>g</option><option value="kg">kg</option><option value="ml">ml</option><option value="L">L</option><option value="each">each</option></select></span></div>
-          <div class="rcf rc-used-f"><span class="rcf-l">Amount Used</span><span class="rcq"><input class="rc-used" type="number" min="0" step="any" inputmode="decimal" value="300" aria-label="Amount Used" autocomplete="off"><select class="rc-uu" aria-label="Amount Used unit"><option value="g" selected>g</option><option value="kg">kg</option><option value="ml">ml</option><option value="L">L</option><option value="each">each</option></select></span></div>
-          <div class="rcf rc-cost-f"><span class="rcf-l">Cost</span><span class="rc-cost nums">—</span></div>
-          <button type="button" class="rc-del" aria-label="Remove ingredient">×</button>
-          <label class="rc-pantry"><input type="checkbox" class="rc-own"> Already have it (pantry)</label>
+          <div class="rc-rowhead"><span class="rc-ingtitle">Ingredient 03</span><button type="button" class="rc-del" aria-label="Remove ingredient">× Remove</button></div>
+          <div class="rcf rc-name-f"><span class="rcf-l">Ingredient Name</span><input class="rc-name" type="text" value="Onions" aria-label="Ingredient Name" autocomplete="off"></div>
+          <div class="rc-fields">
+            <div class="rcf rc-price-f"><span class="rcf-l">Package Price ($)</span><input class="rc-price" type="number" min="0" step="0.01" inputmode="decimal" value="4.58" aria-label="Package Price ($)" autocomplete="off"></div>
+            <div class="rcf rc-size-f"><span class="rcf-l">Package Quantity</span><span class="rcq"><input class="rc-size" type="number" min="0" step="any" inputmode="decimal" value="1360" aria-label="Package Quantity" autocomplete="off"><select class="rc-su" aria-label="Package Quantity unit"><option value="g" selected>g</option><option value="kg">kg</option><option value="ml">ml</option><option value="L">L</option><option value="each">each</option></select></span></div>
+            <div class="rcf rc-used-f"><span class="rcf-l">Amount Used</span><span class="rcq"><input class="rc-used" type="number" min="0" step="any" inputmode="decimal" value="300" aria-label="Amount Used" autocomplete="off"><select class="rc-uu" aria-label="Amount Used unit"><option value="g" selected>g</option><option value="kg">kg</option><option value="ml">ml</option><option value="L">L</option><option value="each">each</option></select></span></div>
+          </div>
+          <div class="rc-rowfoot">
+            <span class="rc-costwrap"><span class="rc-costlab">Ingredient Cost</span><span class="rc-cost nums">—</span></span>
+            <label class="rc-pantry"><input type="checkbox" class="rc-own"> Already have it (pantry)</label>
+          </div>
           <p class="rc-err" role="alert"></p>
         </div>
         
         <div class="rc-row" data-row>
-          <div class="rcf rc-name-f"><span class="rcf-l">Ingredient 04</span><input class="rc-name" type="text" value="Sour cream" aria-label="Ingredient" autocomplete="off"></div>
-          <div class="rcf rc-price-f"><span class="rcf-l">Package Price</span><input class="rc-price" type="number" min="0" step="0.01" inputmode="decimal" value="3.49" aria-label="Package Price" autocomplete="off"></div>
-          <div class="rcf rc-size-f"><span class="rcf-l">Package Size</span><span class="rcq"><input class="rc-size" type="number" min="0" step="any" inputmode="decimal" value="500" aria-label="Package Size" autocomplete="off"><select class="rc-su" aria-label="Package Size unit"><option value="g">g</option><option value="kg">kg</option><option value="ml" selected>ml</option><option value="L">L</option><option value="each">each</option></select></span></div>
-          <div class="rcf rc-used-f"><span class="rcf-l">Amount Used</span><span class="rcq"><input class="rc-used" type="number" min="0" step="any" inputmode="decimal" value="250" aria-label="Amount Used" autocomplete="off"><select class="rc-uu" aria-label="Amount Used unit"><option value="g">g</option><option value="kg">kg</option><option value="ml" selected>ml</option><option value="L">L</option><option value="each">each</option></select></span></div>
-          <div class="rcf rc-cost-f"><span class="rcf-l">Cost</span><span class="rc-cost nums">—</span></div>
-          <button type="button" class="rc-del" aria-label="Remove ingredient">×</button>
-          <label class="rc-pantry"><input type="checkbox" class="rc-own"> Already have it (pantry)</label>
+          <div class="rc-rowhead"><span class="rc-ingtitle">Ingredient 04</span><button type="button" class="rc-del" aria-label="Remove ingredient">× Remove</button></div>
+          <div class="rcf rc-name-f"><span class="rcf-l">Ingredient Name</span><input class="rc-name" type="text" value="Sour cream" aria-label="Ingredient Name" autocomplete="off"></div>
+          <div class="rc-fields">
+            <div class="rcf rc-price-f"><span class="rcf-l">Package Price ($)</span><input class="rc-price" type="number" min="0" step="0.01" inputmode="decimal" value="3.49" aria-label="Package Price ($)" autocomplete="off"></div>
+            <div class="rcf rc-size-f"><span class="rcf-l">Package Quantity</span><span class="rcq"><input class="rc-size" type="number" min="0" step="any" inputmode="decimal" value="500" aria-label="Package Quantity" autocomplete="off"><select class="rc-su" aria-label="Package Quantity unit"><option value="g">g</option><option value="kg">kg</option><option value="ml" selected>ml</option><option value="L">L</option><option value="each">each</option></select></span></div>
+            <div class="rcf rc-used-f"><span class="rcf-l">Amount Used</span><span class="rcq"><input class="rc-used" type="number" min="0" step="any" inputmode="decimal" value="250" aria-label="Amount Used" autocomplete="off"><select class="rc-uu" aria-label="Amount Used unit"><option value="g">g</option><option value="kg">kg</option><option value="ml" selected>ml</option><option value="L">L</option><option value="each">each</option></select></span></div>
+          </div>
+          <div class="rc-rowfoot">
+            <span class="rc-costwrap"><span class="rc-costlab">Ingredient Cost</span><span class="rc-cost nums">—</span></span>
+            <label class="rc-pantry"><input type="checkbox" class="rc-own"> Already have it (pantry)</label>
+          </div>
           <p class="rc-err" role="alert"></p>
         </div>
         
         <div class="rc-row" data-row>
-          <div class="rcf rc-name-f"><span class="rcf-l">Ingredient 05</span><input class="rc-name" type="text" value="Butter" aria-label="Ingredient" autocomplete="off"></div>
-          <div class="rcf rc-price-f"><span class="rcf-l">Package Price</span><input class="rc-price" type="number" min="0" step="0.01" inputmode="decimal" value="5.68" aria-label="Package Price" autocomplete="off"></div>
-          <div class="rcf rc-size-f"><span class="rcf-l">Package Size</span><span class="rcq"><input class="rc-size" type="number" min="0" step="any" inputmode="decimal" value="454" aria-label="Package Size" autocomplete="off"><select class="rc-su" aria-label="Package Size unit"><option value="g" selected>g</option><option value="kg">kg</option><option value="ml">ml</option><option value="L">L</option><option value="each">each</option></select></span></div>
-          <div class="rcf rc-used-f"><span class="rcf-l">Amount Used</span><span class="rcq"><input class="rc-used" type="number" min="0" step="any" inputmode="decimal" value="30" aria-label="Amount Used" autocomplete="off"><select class="rc-uu" aria-label="Amount Used unit"><option value="g" selected>g</option><option value="kg">kg</option><option value="ml">ml</option><option value="L">L</option><option value="each">each</option></select></span></div>
-          <div class="rcf rc-cost-f"><span class="rcf-l">Cost</span><span class="rc-cost nums">—</span></div>
-          <button type="button" class="rc-del" aria-label="Remove ingredient">×</button>
-          <label class="rc-pantry"><input type="checkbox" class="rc-own"> Already have it (pantry)</label>
+          <div class="rc-rowhead"><span class="rc-ingtitle">Ingredient 05</span><button type="button" class="rc-del" aria-label="Remove ingredient">× Remove</button></div>
+          <div class="rcf rc-name-f"><span class="rcf-l">Ingredient Name</span><input class="rc-name" type="text" value="Butter" aria-label="Ingredient Name" autocomplete="off"></div>
+          <div class="rc-fields">
+            <div class="rcf rc-price-f"><span class="rcf-l">Package Price ($)</span><input class="rc-price" type="number" min="0" step="0.01" inputmode="decimal" value="5.68" aria-label="Package Price ($)" autocomplete="off"></div>
+            <div class="rcf rc-size-f"><span class="rcf-l">Package Quantity</span><span class="rcq"><input class="rc-size" type="number" min="0" step="any" inputmode="decimal" value="454" aria-label="Package Quantity" autocomplete="off"><select class="rc-su" aria-label="Package Quantity unit"><option value="g" selected>g</option><option value="kg">kg</option><option value="ml">ml</option><option value="L">L</option><option value="each">each</option></select></span></div>
+            <div class="rcf rc-used-f"><span class="rcf-l">Amount Used</span><span class="rcq"><input class="rc-used" type="number" min="0" step="any" inputmode="decimal" value="30" aria-label="Amount Used" autocomplete="off"><select class="rc-uu" aria-label="Amount Used unit"><option value="g" selected>g</option><option value="kg">kg</option><option value="ml">ml</option><option value="L">L</option><option value="each">each</option></select></span></div>
+          </div>
+          <div class="rc-rowfoot">
+            <span class="rc-costwrap"><span class="rc-costlab">Ingredient Cost</span><span class="rc-cost nums">—</span></span>
+            <label class="rc-pantry"><input type="checkbox" class="rc-own"> Already have it (pantry)</label>
+          </div>
           <p class="rc-err" role="alert"></p>
         </div>
         
         <div class="rc-row" data-row>
-          <div class="rcf rc-name-f"><span class="rcf-l">Ingredient 06</span><input class="rc-name" type="text" value="Salt and pepper" aria-label="Ingredient" autocomplete="off"></div>
-          <div class="rcf rc-price-f"><span class="rcf-l">Package Price</span><input class="rc-price" type="number" min="0" step="0.01" inputmode="decimal" value="0.30" aria-label="Package Price" autocomplete="off"></div>
-          <div class="rcf rc-size-f"><span class="rcf-l">Package Size</span><span class="rcq"><input class="rc-size" type="number" min="0" step="any" inputmode="decimal" value="1" aria-label="Package Size" autocomplete="off"><select class="rc-su" aria-label="Package Size unit"><option value="g">g</option><option value="kg">kg</option><option value="ml">ml</option><option value="L">L</option><option value="each" selected>each</option></select></span></div>
-          <div class="rcf rc-used-f"><span class="rcf-l">Amount Used</span><span class="rcq"><input class="rc-used" type="number" min="0" step="any" inputmode="decimal" value="1" aria-label="Amount Used" autocomplete="off"><select class="rc-uu" aria-label="Amount Used unit"><option value="g">g</option><option value="kg">kg</option><option value="ml">ml</option><option value="L">L</option><option value="each" selected>each</option></select></span></div>
-          <div class="rcf rc-cost-f"><span class="rcf-l">Cost</span><span class="rc-cost nums">—</span></div>
-          <button type="button" class="rc-del" aria-label="Remove ingredient">×</button>
-          <label class="rc-pantry"><input type="checkbox" class="rc-own" checked> Already have it (pantry)</label>
+          <div class="rc-rowhead"><span class="rc-ingtitle">Ingredient 06</span><button type="button" class="rc-del" aria-label="Remove ingredient">× Remove</button></div>
+          <div class="rcf rc-name-f"><span class="rcf-l">Ingredient Name</span><input class="rc-name" type="text" value="Salt and pepper" aria-label="Ingredient Name" autocomplete="off"></div>
+          <div class="rc-fields">
+            <div class="rcf rc-price-f"><span class="rcf-l">Package Price ($)</span><input class="rc-price" type="number" min="0" step="0.01" inputmode="decimal" value="0.30" aria-label="Package Price ($)" autocomplete="off"></div>
+            <div class="rcf rc-size-f"><span class="rcf-l">Package Quantity</span><span class="rcq"><input class="rc-size" type="number" min="0" step="any" inputmode="decimal" value="1" aria-label="Package Quantity" autocomplete="off"><select class="rc-su" aria-label="Package Quantity unit"><option value="g">g</option><option value="kg">kg</option><option value="ml">ml</option><option value="L">L</option><option value="each" selected>each</option></select></span></div>
+            <div class="rcf rc-used-f"><span class="rcf-l">Amount Used</span><span class="rcq"><input class="rc-used" type="number" min="0" step="any" inputmode="decimal" value="1" aria-label="Amount Used" autocomplete="off"><select class="rc-uu" aria-label="Amount Used unit"><option value="g">g</option><option value="kg">kg</option><option value="ml">ml</option><option value="L">L</option><option value="each" selected>each</option></select></span></div>
+          </div>
+          <div class="rc-rowfoot">
+            <span class="rc-costwrap"><span class="rc-costlab">Ingredient Cost</span><span class="rc-cost nums">—</span></span>
+            <label class="rc-pantry"><input type="checkbox" class="rc-own" checked> Already have it (pantry)</label>
+          </div>
           <p class="rc-err" role="alert"></p>
         </div>
         
       </div>
       <template id="rc-rowtpl">
         <div class="rc-row" data-row>
-          <div class="rcf rc-name-f"><span class="rcf-l">Ingredient 01</span><input class="rc-name" type="text" value="" aria-label="Ingredient" autocomplete="off"></div>
-          <div class="rcf rc-price-f"><span class="rcf-l">Package Price</span><input class="rc-price" type="number" min="0" step="0.01" inputmode="decimal" value="" aria-label="Package Price" autocomplete="off"></div>
-          <div class="rcf rc-size-f"><span class="rcf-l">Package Size</span><span class="rcq"><input class="rc-size" type="number" min="0" step="any" inputmode="decimal" value="" aria-label="Package Size" autocomplete="off"><select class="rc-su" aria-label="Package Size unit"><option value="g">g</option><option value="kg">kg</option><option value="ml">ml</option><option value="L">L</option><option value="each">each</option></select></span></div>
-          <div class="rcf rc-used-f"><span class="rcf-l">Amount Used</span><span class="rcq"><input class="rc-used" type="number" min="0" step="any" inputmode="decimal" value="" aria-label="Amount Used" autocomplete="off"><select class="rc-uu" aria-label="Amount Used unit"><option value="g">g</option><option value="kg">kg</option><option value="ml">ml</option><option value="L">L</option><option value="each">each</option></select></span></div>
-          <div class="rcf rc-cost-f"><span class="rcf-l">Cost</span><span class="rc-cost nums">—</span></div>
-          <button type="button" class="rc-del" aria-label="Remove ingredient">×</button>
-          <label class="rc-pantry"><input type="checkbox" class="rc-own"> Already have it (pantry)</label>
+          <div class="rc-rowhead"><span class="rc-ingtitle">Ingredient 01</span><button type="button" class="rc-del" aria-label="Remove ingredient">× Remove</button></div>
+          <div class="rcf rc-name-f"><span class="rcf-l">Ingredient Name</span><input class="rc-name" type="text" value="" aria-label="Ingredient Name" autocomplete="off"></div>
+          <div class="rc-fields">
+            <div class="rcf rc-price-f"><span class="rcf-l">Package Price ($)</span><input class="rc-price" type="number" min="0" step="0.01" inputmode="decimal" value="" aria-label="Package Price ($)" autocomplete="off"></div>
+            <div class="rcf rc-size-f"><span class="rcf-l">Package Quantity</span><span class="rcq"><input class="rc-size" type="number" min="0" step="any" inputmode="decimal" value="" aria-label="Package Quantity" autocomplete="off"><select class="rc-su" aria-label="Package Quantity unit"><option value="g">g</option><option value="kg">kg</option><option value="ml">ml</option><option value="L">L</option><option value="each">each</option></select></span></div>
+            <div class="rcf rc-used-f"><span class="rcf-l">Amount Used</span><span class="rcq"><input class="rc-used" type="number" min="0" step="any" inputmode="decimal" value="" aria-label="Amount Used" autocomplete="off"><select class="rc-uu" aria-label="Amount Used unit"><option value="g">g</option><option value="kg">kg</option><option value="ml">ml</option><option value="L">L</option><option value="each">each</option></select></span></div>
+          </div>
+          <div class="rc-rowfoot">
+            <span class="rc-costwrap"><span class="rc-costlab">Ingredient Cost</span><span class="rc-cost nums">—</span></span>
+            <label class="rc-pantry"><input type="checkbox" class="rc-own"> Already have it (pantry)</label>
+          </div>
           <p class="rc-err" role="alert"></p>
         </div>
       </template>
@@ -196,7 +221,7 @@
           <input id="rc-rname" type="text" placeholder="My recipe" autocomplete="off">
         </div>
       </div>
-      <p class="rc-exnote">Example loaded from Cheap Perogies with Cabbage, Onion and Sour Cream: package details come from its published cost breakdown, so the batch total and cost per serving match the recipe page.</p>
+      <p class="rc-exnote">Example loaded from Cheap Perogies with Cabbage, Onion and Sour Cream: package details come from its published cost breakdown, so the batch total and cost per serving match the recipe page. The basket total is calculated live from the packages entered here.</p>
     </div>
 
     <div class="rc-results">
@@ -204,11 +229,12 @@
       <div aria-live="polite" aria-atomic="true">
         <div class="rc-pslabel">Cost Per Serving</div>
         <div class="rc-big nums" id="rc-big">—</div>
+        <p class="rc-pshelp">Batch total divided by servings.</p>
         <div class="rc-break">
-          <div class="rc-brow"><span>Batch Total</span><span class="nums" id="rc-bt">—</span></div>
-          <div class="rc-brow"><span>Servings</span><span class="nums" id="rc-sv">—</span></div>
-          <div class="rc-brow"><span>Full Basket Cost</span><span class="nums" id="rc-bk">—</span></div>
-          <div class="rc-brow" id="rc-tobuy-row" hidden><span>Still to Buy (pantry excluded)</span><span class="nums" id="rc-tb">—</span></div>
+          <div class="rc-brow"><span class="rc-blab">Batch Total<small>The cost of the quantities actually used.</small></span><span class="nums" id="rc-bt">—</span></div>
+          <div class="rc-brow"><span class="rc-blab">Servings</span><span class="nums" id="rc-sv">—</span></div>
+          <div class="rc-brow"><span class="rc-blab">Full Basket Cost<small>The cost of purchasing all required grocery packages.</small></span><span class="nums" id="rc-bk">—</span></div>
+          <div class="rc-brow" id="rc-tobuy-row" hidden><span class="rc-blab">Additional Checkout Cost<small>Required packages, excluding ingredients marked as already owned.</small></span><span class="nums" id="rc-tb">—</span></div>
         </div>
       </div>
       <div class="rc-tiers" id="rc-tiers">
@@ -386,7 +412,7 @@
   }
   function renumber() {
     rowsBox.querySelectorAll('[data-row]').forEach(function (row, i) {
-      var l = row.querySelector('.rcf-l');
+      var l = row.querySelector('.rc-ingtitle');
       if (l) l.textContent = T('ing') + ' ' + ('0' + (i + 1)).slice(-2);
     });
   }

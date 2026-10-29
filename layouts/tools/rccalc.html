@@ -38,32 +38,37 @@
     <div class="rc-inputs">
       <h2 class="rc-panel-h">{{ i18n "rc_build_h" }}</h2>
       <p class="rc-panel-sub">{{ i18n "rc_build_sub" }}</p>
-      <div class="rc-headrow" aria-hidden="true">
-        <span>{{ i18n "rc_col_name" }}</span><span>{{ i18n "rc_col_price" }}</span><span>{{ i18n "rc_col_size" }}</span><span>{{ i18n "rc_col_used" }}</span><span>{{ i18n "rc_col_cost" }}</span><span></span>
-      </div>
       <div id="rc-rows">
         {{ range $i, $e := $exData }}
         <div class="rc-row" data-row>
-          <div class="rcf rc-name-f"><span class="rcf-l">{{ i18n "rc_ing_n" }} {{ printf "%02d" (add $i 1) }}</span><input class="rc-name" type="text" value="{{ $e.name }}" aria-label="{{ i18n "rc_col_name" }}" autocomplete="off"></div>
-          <div class="rcf rc-price-f"><span class="rcf-l">{{ i18n "rc_col_price" }}</span><input class="rc-price" type="number" min="0" step="0.01" inputmode="decimal" value="{{ $e.price }}" aria-label="{{ i18n "rc_col_price" }}" autocomplete="off"></div>
-          <div class="rcf rc-size-f"><span class="rcf-l">{{ i18n "rc_col_size" }}</span><span class="rcq"><input class="rc-size" type="number" min="0" step="any" inputmode="decimal" value="{{ $e.size }}" aria-label="{{ i18n "rc_col_size" }}" autocomplete="off"><select class="rc-su" aria-label="{{ i18n "rc_col_size" }} unit">{{ range $units }}<option value="{{ . }}"{{ if eq . $e.su }} selected{{ end }}>{{ if eq . "each" }}{{ i18n "rc_unit_each" }}{{ else }}{{ . }}{{ end }}</option>{{ end }}</select></span></div>
-          <div class="rcf rc-used-f"><span class="rcf-l">{{ i18n "rc_col_used" }}</span><span class="rcq"><input class="rc-used" type="number" min="0" step="any" inputmode="decimal" value="{{ $e.used }}" aria-label="{{ i18n "rc_col_used" }}" autocomplete="off"><select class="rc-uu" aria-label="{{ i18n "rc_col_used" }} unit">{{ range $units }}<option value="{{ . }}"{{ if eq . $e.uu }} selected{{ end }}>{{ if eq . "each" }}{{ i18n "rc_unit_each" }}{{ else }}{{ . }}{{ end }}</option>{{ end }}</select></span></div>
-          <div class="rcf rc-cost-f"><span class="rcf-l">{{ i18n "rc_col_cost" }}</span><span class="rc-cost nums">—</span></div>
-          <button type="button" class="rc-del" aria-label="{{ i18n "rc_remove" }}">×</button>
-          <label class="rc-pantry"><input type="checkbox" class="rc-own"{{ if $e.pantry }} checked{{ end }}> {{ i18n "rc_pantry" }}</label>
+          <div class="rc-rowhead"><span class="rc-ingtitle">{{ i18n "rc_ing_n" }} {{ printf "%02d" (add $i 1) }}</span><button type="button" class="rc-del" aria-label="{{ i18n "rc_remove" }}">× {{ i18n "rc_remove_t" }}</button></div>
+          <div class="rcf rc-name-f"><span class="rcf-l">{{ i18n "rc_name_f" }}</span><input class="rc-name" type="text" value="{{ $e.name }}" aria-label="{{ i18n "rc_name_f" }}" autocomplete="off"></div>
+          <div class="rc-fields">
+            <div class="rcf rc-price-f"><span class="rcf-l">{{ i18n "rc_price_f" }}</span><input class="rc-price" type="number" min="0" step="0.01" inputmode="decimal" value="{{ $e.price }}" aria-label="{{ i18n "rc_price_f" }}" autocomplete="off"></div>
+            <div class="rcf rc-size-f"><span class="rcf-l">{{ i18n "rc_qty_f" }}</span><span class="rcq"><input class="rc-size" type="number" min="0" step="any" inputmode="decimal" value="{{ $e.size }}" aria-label="{{ i18n "rc_qty_f" }}" autocomplete="off"><select class="rc-su" aria-label="{{ i18n "rc_qty_f" }} unit">{{ range $units }}<option value="{{ . }}"{{ if eq . $e.su }} selected{{ end }}>{{ if eq . "each" }}{{ i18n "rc_unit_each" }}{{ else }}{{ . }}{{ end }}</option>{{ end }}</select></span></div>
+            <div class="rcf rc-used-f"><span class="rcf-l">{{ i18n "rc_col_used" }}</span><span class="rcq"><input class="rc-used" type="number" min="0" step="any" inputmode="decimal" value="{{ $e.used }}" aria-label="{{ i18n "rc_col_used" }}" autocomplete="off"><select class="rc-uu" aria-label="{{ i18n "rc_col_used" }} unit">{{ range $units }}<option value="{{ . }}"{{ if eq . $e.uu }} selected{{ end }}>{{ if eq . "each" }}{{ i18n "rc_unit_each" }}{{ else }}{{ . }}{{ end }}</option>{{ end }}</select></span></div>
+          </div>
+          <div class="rc-rowfoot">
+            <span class="rc-costwrap"><span class="rc-costlab">{{ i18n "rc_cost_f" }}</span><span class="rc-cost nums">—</span></span>
+            <label class="rc-pantry"><input type="checkbox" class="rc-own"{{ if $e.pantry }} checked{{ end }}> {{ i18n "rc_pantry" }}</label>
+          </div>
           <p class="rc-err" role="alert"></p>
         </div>
         {{ end }}
       </div>
       <template id="rc-rowtpl">
         <div class="rc-row" data-row>
-          <div class="rcf rc-name-f"><span class="rcf-l">{{ i18n "rc_ing_n" }} 01</span><input class="rc-name" type="text" value="" aria-label="{{ i18n "rc_col_name" }}" autocomplete="off"></div>
-          <div class="rcf rc-price-f"><span class="rcf-l">{{ i18n "rc_col_price" }}</span><input class="rc-price" type="number" min="0" step="0.01" inputmode="decimal" value="" aria-label="{{ i18n "rc_col_price" }}" autocomplete="off"></div>
-          <div class="rcf rc-size-f"><span class="rcf-l">{{ i18n "rc_col_size" }}</span><span class="rcq"><input class="rc-size" type="number" min="0" step="any" inputmode="decimal" value="" aria-label="{{ i18n "rc_col_size" }}" autocomplete="off"><select class="rc-su" aria-label="{{ i18n "rc_col_size" }} unit">{{ range $units }}<option value="{{ . }}">{{ if eq . "each" }}{{ i18n "rc_unit_each" }}{{ else }}{{ . }}{{ end }}</option>{{ end }}</select></span></div>
-          <div class="rcf rc-used-f"><span class="rcf-l">{{ i18n "rc_col_used" }}</span><span class="rcq"><input class="rc-used" type="number" min="0" step="any" inputmode="decimal" value="" aria-label="{{ i18n "rc_col_used" }}" autocomplete="off"><select class="rc-uu" aria-label="{{ i18n "rc_col_used" }} unit">{{ range $units }}<option value="{{ . }}">{{ if eq . "each" }}{{ i18n "rc_unit_each" }}{{ else }}{{ . }}{{ end }}</option>{{ end }}</select></span></div>
-          <div class="rcf rc-cost-f"><span class="rcf-l">{{ i18n "rc_col_cost" }}</span><span class="rc-cost nums">—</span></div>
-          <button type="button" class="rc-del" aria-label="{{ i18n "rc_remove" }}">×</button>
-          <label class="rc-pantry"><input type="checkbox" class="rc-own"> {{ i18n "rc_pantry" }}</label>
+          <div class="rc-rowhead"><span class="rc-ingtitle">{{ i18n "rc_ing_n" }} 01</span><button type="button" class="rc-del" aria-label="{{ i18n "rc_remove" }}">× {{ i18n "rc_remove_t" }}</button></div>
+          <div class="rcf rc-name-f"><span class="rcf-l">{{ i18n "rc_name_f" }}</span><input class="rc-name" type="text" value="" aria-label="{{ i18n "rc_name_f" }}" autocomplete="off"></div>
+          <div class="rc-fields">
+            <div class="rcf rc-price-f"><span class="rcf-l">{{ i18n "rc_price_f" }}</span><input class="rc-price" type="number" min="0" step="0.01" inputmode="decimal" value="" aria-label="{{ i18n "rc_price_f" }}" autocomplete="off"></div>
+            <div class="rcf rc-size-f"><span class="rcf-l">{{ i18n "rc_qty_f" }}</span><span class="rcq"><input class="rc-size" type="number" min="0" step="any" inputmode="decimal" value="" aria-label="{{ i18n "rc_qty_f" }}" autocomplete="off"><select class="rc-su" aria-label="{{ i18n "rc_qty_f" }} unit">{{ range $units }}<option value="{{ . }}">{{ if eq . "each" }}{{ i18n "rc_unit_each" }}{{ else }}{{ . }}{{ end }}</option>{{ end }}</select></span></div>
+            <div class="rcf rc-used-f"><span class="rcf-l">{{ i18n "rc_col_used" }}</span><span class="rcq"><input class="rc-used" type="number" min="0" step="any" inputmode="decimal" value="" aria-label="{{ i18n "rc_col_used" }}" autocomplete="off"><select class="rc-uu" aria-label="{{ i18n "rc_col_used" }} unit">{{ range $units }}<option value="{{ . }}">{{ if eq . "each" }}{{ i18n "rc_unit_each" }}{{ else }}{{ . }}{{ end }}</option>{{ end }}</select></span></div>
+          </div>
+          <div class="rc-rowfoot">
+            <span class="rc-costwrap"><span class="rc-costlab">{{ i18n "rc_cost_f" }}</span><span class="rc-cost nums">—</span></span>
+            <label class="rc-pantry"><input type="checkbox" class="rc-own"> {{ i18n "rc_pantry" }}</label>
+          </div>
           <p class="rc-err" role="alert"></p>
         </div>
       </template>
@@ -86,11 +91,12 @@
       <div aria-live="polite" aria-atomic="true">
         <div class="rc-pslabel">{{ i18n "cost_per_serving" }}</div>
         <div class="rc-big nums" id="rc-big">—</div>
+        <p class="rc-pshelp">{{ i18n "rc_help_perserv" }}</p>
         <div class="rc-break">
-          <div class="rc-brow"><span>{{ i18n "batch_total" }}</span><span class="nums" id="rc-bt">—</span></div>
-          <div class="rc-brow"><span>{{ i18n "meta_servings" }}</span><span class="nums" id="rc-sv">—</span></div>
-          <div class="rc-brow"><span>{{ i18n "rc_basket" }}</span><span class="nums" id="rc-bk">—</span></div>
-          <div class="rc-brow" id="rc-tobuy-row" hidden><span>{{ i18n "rc_tobuy" }}</span><span class="nums" id="rc-tb">—</span></div>
+          <div class="rc-brow"><span class="rc-blab">{{ i18n "batch_total" }}<small>{{ i18n "rc_help_batch" }}</small></span><span class="nums" id="rc-bt">—</span></div>
+          <div class="rc-brow"><span class="rc-blab">{{ i18n "meta_servings" }}</span><span class="nums" id="rc-sv">—</span></div>
+          <div class="rc-brow"><span class="rc-blab">{{ i18n "rc_basket" }}<small>{{ i18n "rc_help_basket" }}</small></span><span class="nums" id="rc-bk">—</span></div>
+          <div class="rc-brow" id="rc-tobuy-row" hidden><span class="rc-blab">{{ i18n "rc_tobuy" }}<small>{{ i18n "rc_help_tobuy" }}</small></span><span class="nums" id="rc-tb">—</span></div>
         </div>
       </div>
       <div class="rc-tiers" id="rc-tiers">
@@ -268,7 +274,7 @@
   }
   function renumber() {
     rowsBox.querySelectorAll('[data-row]').forEach(function (row, i) {
-      var l = row.querySelector('.rcf-l');
+      var l = row.querySelector('.rc-ingtitle');
       if (l) l.textContent = T('ing') + ' ' + ('0' + (i + 1)).slice(-2);
     });
   }
