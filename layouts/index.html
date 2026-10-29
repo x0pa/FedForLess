@@ -23,23 +23,7 @@
         <p class="eyebrow">{{ i18n "hero_eyebrow" }}</p>
         <h1>Fed For Less<span class="price-line">{{ i18n "hero_h1_span" }}</span></h1>
         <p class="lede">{{ i18n "hero_lede" }}</p>
-        {{ partial "searchbox.html" . }}
-        <div class="chips">
-          <button type="button" class="chip" data-q="{{ i18n "chip_dinners_q" }}">{{ i18n "chip_dinners" }}</button>
-          <button type="button" class="chip" data-q="{{ i18n "chip_soups_q" }}">{{ i18n "chip_soups" }}</button>
-          <button type="button" class="chip" data-q="{{ i18n "chip_pasta_q" }}">{{ i18n "chip_pasta" }}</button>
-          <button type="button" class="chip" data-q="{{ i18n "chip_chicken_q" }}">{{ i18n "chip_chicken" }}</button>
-          <button type="button" class="chip" data-q="{{ i18n "chip_under_q" }}">{{ i18n "chip_under" }}</button>
-        </div>
       </div>
-      <aside class="nl-panel">
-        <div class="nl-head"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 6l-10 7L2 6"/></svg><h2>{{ i18n "nl_head" }}</h2></div>
-        <form class="signup" action="https://api.follow.it/subscription-form/a3BGdWRaMWVIc0hNSENkeGZJMEhWYlBXeG50U2JHUmdCclFVSTM5clRLdENGM3VZNW9ZUVJyUThRazFBZ3dqNFhqRE4rdEt5OWs3dStWV3NBZVpFdUdoZ0pLOVhFbHQrem5ydTlJSDBxOXl4WFlOZyttejdQNDk3bVV3QTY3akN8NDFjejkxSVVna1c1MmNIMVJVcHptRnkwVUZ4L3c2VzFpKzNKeG12TTQwZz0=/8" method="post">
-          <input type="email" name="email" required placeholder="{{ i18n "signup_placeholder" }}" aria-label="{{ i18n "email_aria" }}">
-          <button type="submit">{{ i18n "signup_button" }}</button>
-        </form>
-        <p class="powered">{{ i18n "powered_text" }} <a href="https://follow.it" rel="noopener">follow.it</a></p>
-      </aside>
     </div>
   </section>
 
