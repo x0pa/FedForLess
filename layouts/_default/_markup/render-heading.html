@@ -1,0 +1,1 @@
+<h{{ .Level }} id="{{ .Anchor }}">{{ .Text | safeHTML }}{{ if and (eq .Page.Type "recipes") (eq .Level 2) (or (eq .Anchor "ingredients") (eq .Anchor "ingrédients")) }} <span class="h-serves">{{ partial "serves.html" (dict "n" .Page.Params.servings "lang" .Page.Lang) }}</span>{{ end }}</h{{ .Level }}>

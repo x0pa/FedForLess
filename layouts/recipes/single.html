@@ -52,70 +52,99 @@
 
 {{ define "main" }}
 <div class="wrap">
-  <div class="crumbs"><a href="{{ "/" | relLangURL }}">{{ i18n "crumb_home" }}</a> · <a href="{{ "/recipes/" | relLangURL }}">{{ i18n "crumb_recipes" }}</a> · {{ .Title }}</div>
-  <h1 class="dish">{{ .Title }}</h1>
-  <div class="meta-line">{{ .Params.meta_line }}</div>
-  <p class="standfirst">{{ .Params.standfirst }}</p>
+  <div class="rgrid">
+    <nav class="crumbs" aria-label="breadcrumb"><a href="{{ "/" | relLangURL }}">{{ i18n "crumb_home" }}</a><span class="csep" aria-hidden="true">›</span><a href="{{ "/recipes/" | relLangURL }}">{{ i18n "crumb_recipes" }}</a><span class="csep" aria-hidden="true">›</span><span class="ccur">{{ .Title }}</span></nav>
 
-  <div class="layout">
-    <div>
-      <figure class="hero-photo">
-        <img src="{{ .Params.image }}" alt="{{ .Title }}">
-        <figcaption>{{ .Params.image_caption }}</figcaption>
-      </figure>
+    <div class="rhead">
+      <div class="rmeta"><span class="rbadge">{{ .Params.tier_label }}</span><span class="rmeta-t">{{ .Params.category }} · {{ .Params.total_time }} · {{ partial "serves.html" (dict "n" .Params.servings "lang" .Lang) }}</span></div>
+      <h1 class="dish">{{ .Title }}</h1>
+      <p class="standfirst">{{ .Params.standfirst }}</p>
+      <div class="rstats">
+        <div class="rstat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg><div><strong>{{ .Params.servings }}</strong><span>{{ i18n "meta_servings" }}</span></div></div>
+        <div class="rstat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><div><strong>{{ .Params.total_time }}</strong><span>{{ i18n "stat_total_time" }}</span></div></div>
+        <div class="rstat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12.5 2H2v10.5L12.5 23a2 2 0 0 0 2.8 0l7.2-7.2a2 2 0 0 0 0-2.8z"/><circle cx="7.5" cy="7.5" r="1.4"/></svg><div><strong>{{ partial "price.html" (dict "amt" .Params.price_per_serving "lang" .Lang) }}</strong><span>{{ i18n "cost_per_serving" }}</span></div></div>
+      </div>
+      <a class="jumpbtn" href="#{{ i18n "jump_anchor" }}">{{ i18n "jump_recipe" }} <span aria-hidden="true">↓</span></a>
+    </div>
+
+    <figure class="rfig">
+      <img src="{{ .Params.image }}" alt="{{ .Title }}">
+      <figcaption>{{ .Params.image_caption }}</figcaption>
+    </figure>
+
+    <div class="rmain">
       <div class="article-body">
         {{ .Content }}
       </div>
       {{ with .Params.faqs }}
       <div class="faq">
-        <h2 style="font-family:Oswald;font-weight:700;text-transform:uppercase;font-size:1.5rem;border-top:2px solid var(--ink);padding-top:1.1rem;margin-top:1.9rem;">{{ i18n "questions_h" }}</h2>
-        {{ range . }}
-        <h3>{{ .q }}</h3>
-        <p style="color:#2C3138;">{{ .a }}</p>
+        <h2>{{ i18n "questions_h" }}</h2>
+        {{ range $i, $f := . }}
+        <details class="faq-item"{{ if eq $i 0 }} open{{ end }}>
+          <summary>{{ $f.q }}</summary>
+          <p>{{ $f.a }}</p>
+        </details>
         {{ end }}
       </div>
       {{ end }}
     </div>
 
-    <aside class="pricecard nums" id="cost-breakdown">
-      <div class="bhead">{{ i18n "cost_breakdown" }} · {{ i18n "checked_word" }} {{ .Params.prices_checked }}</div>
-      <div class="bbox">
-        {{ range $i, $b := .Params.breakdown }}
-        <div class="brow{{ if eq $i 0 }} first{{ end }}"><span class="item">{{ $b.item }}{{ with $b.note }}<small>{{ . }}</small>{{ end }}</span><span class="amt">{{ partial "price.html" (dict "amt" $b.amount "lang" $.Lang) }}</span></div>
-        {{ end }}
-        <div class="brow total"><span class="lbl">{{ i18n "batch_total" }}</span><span class="amt">{{ partial "price.html" (dict "amt" .Params.batch_cost "lang" $.Lang) }}</span></div>
-        <div class="brow basket"><span class="item">{{ i18n "basket_label" }}</span><span class="amt">{{ partial "price.html" (dict "amt" .Params.basket_cost "lang" $.Lang) }}</span></div>
+    <aside class="rside">
+      <div class="costunit nums" id="cost-breakdown">
+        <div class="receipt">
+          <div class="rcp">
+            <div class="bhead">{{ i18n "cost_breakdown" }} · {{ i18n "checked_word" }} {{ .Params.prices_checked }}</div>
+            {{ range $i, $b := .Params.breakdown }}
+            <div class="brow{{ if eq $i 0 }} first{{ end }}"><span class="item">{{ $b.item }}{{ with $b.note }}<small>{{ . }}</small>{{ end }}</span><span class="amt">{{ partial "price.html" (dict "amt" $b.amount "lang" $.Lang) }}</span></div>
+            {{ end }}
+            <div class="brow total"><span class="lbl">{{ i18n "batch_total" }}</span><span class="amt">{{ partial "price.html" (dict "amt" .Params.batch_cost "lang" $.Lang) }}</span></div>
+            <div class="brow total ps"><span class="lbl">{{ i18n "cost_per_serving" }}</span><span class="amt">{{ partial "price.html" (dict "amt" .Params.price_per_serving "lang" $.Lang) }}</span></div>
+            <div class="brow basket"><span class="item">{{ i18n "basket_label" }}</span><span class="amt">{{ partial "price.html" (dict "amt" .Params.basket_cost "lang" $.Lang) }}</span></div>
+          </div>
+        </div>
+        <p class="rangenote"><strong>{{ i18n "range_label" }}</strong> {{ if eq .Lang "fr" }}{{ .Params.price_range }} $ {{ else }}${{ .Params.price_range }} {{ end }}{{ i18n "range_suffix" }}</p>
+        <p class="srcnote">{{ i18n "srcnote_a" }} {{ .Params.prices_checked }}){{ with .Params.chain_note }} {{ i18n "srcnote_plus" }} {{ . }}{{ end }}{{ i18n "srcnote_b" }} <a href="{{ "/how-we-price/" | relLangURL }}">{{ i18n "howweprice_link" }}</a>.</p>
+        <div class="tierline">
+          <span class="t{{ if eq .Params.tier "green" }} on{{ end }}">{{ i18n "tier_green" }}<small>{{ i18n "tier_to" }} {{ partial "price.html" (dict "amt" "1.50" "lang" .Lang) }}</small></span>
+          <span class="t{{ if eq .Params.tier "butter" }} on{{ end }}">{{ i18n "tier_butter" }}<small>{{ i18n "tier_to" }} {{ partial "price.html" (dict "amt" "2.50" "lang" .Lang) }}</small></span>
+          <span class="t{{ if eq .Params.tier "tomato" }} on{{ end }}">{{ i18n "tier_tomato" }}<small>{{ i18n "tier_to" }} {{ partial "price.html" (dict "amt" "3.25" "lang" .Lang) }}</small></span>
+        </div>
       </div>
-      <div class="perline">{{ i18n "cost_per_serving" }} · {{ partial "price.html" (dict "amt" .Params.price_per_serving "lang" $.Lang) }} · {{ partial "serves.html" (dict "n" .Params.servings "lang" $.Lang) }}</div>
-      <p class="rangenote"><strong>{{ i18n "range_label" }}</strong> {{ if eq .Lang "fr" }}{{ .Params.price_range }} $ {{ else }}${{ .Params.price_range }} {{ end }}{{ i18n "range_suffix" }}</p>
-      <p class="srcnote">{{ i18n "srcnote_a" }} {{ .Params.prices_checked }}){{ with .Params.chain_note }} {{ i18n "srcnote_plus" }} {{ . }}{{ end }}{{ i18n "srcnote_b" }} <a href="{{ "/how-we-price/" | relLangURL }}">{{ i18n "howweprice_link" }}</a>.</p>
-      <div class="tierline">
-        <span class="t{{ if eq .Params.tier "green" }} on{{ end }}">{{ i18n "tier_green" }}<small>{{ i18n "tier_to" }} {{ partial "price.html" (dict "amt" "1.50" "lang" .Lang) }}</small></span>
-        <span class="t{{ if eq .Params.tier "butter" }} on{{ end }}">{{ i18n "tier_butter" }}<small>{{ i18n "tier_to" }} {{ partial "price.html" (dict "amt" "2.50" "lang" .Lang) }}</small></span>
-        <span class="t{{ if eq .Params.tier "tomato" }} on{{ end }}">{{ i18n "tier_tomato" }}<small>{{ i18n "tier_to" }} {{ partial "price.html" (dict "amt" "3.25" "lang" .Lang) }}</small></span>
-      </div>
+
       {{ with .Params.nutrition }}{{ $n := . }}
-      <div class="bhead" style="margin-top:1.4rem;">{{ i18n "nutrition_h" }} · {{ i18n "nutrition_per" }}</div>
-      <div class="bbox">
-        <div class="nucal"><span class="nucalnum">{{ $n.calories }}</span><span class="nucallbl">{{ i18n "nutrition_cal" }}</span></div>
-        <div class="nudvhead">{{ i18n "nutrition_dv" }}</div>
-        {{ $rows := slice
-          (dict "label" (i18n "nutrition_protein") "amt" (printf "%d g" $n.protein) "pct" (div (mul (float $n.protein) 100) 50.0))
-          (dict "label" (i18n "nutrition_carbs") "amt" (printf "%d g" $n.carbs) "pct" (div (mul (float $n.carbs) 100) 275.0))
-          (dict "label" (i18n "nutrition_fat") "amt" (printf "%d g" $n.fat) "pct" (div (mul (float $n.fat) 100) 75.0))
-          (dict "label" (i18n "nutrition_fibre") "amt" (printf "%d g" $n.fibre) "pct" (div (mul (float $n.fibre) 100) 28.0))
-          (dict "label" (i18n "nutrition_sugar") "amt" (printf "%d g" $n.sugar) "pct" (div (mul (float $n.sugar) 100) 100.0))
-          (dict "label" (i18n "nutrition_sodium") "amt" (printf "%d mg" $n.sodium) "pct" (div (mul (float $n.sodium) 100) 2300.0))
-        }}
-        {{ range $rows }}{{ $w := .pct }}{{ if gt $w 100.0 }}{{ $w = 100.0 }}{{ end }}
-        <div class="nurow"><span class="nulbl">{{ .label }}</span><span class="nuamt">{{ .amt }}</span><span class="nudv">{{ printf "%.0f" .pct }}%</span></div>
-        <div class="nubar"><i style="width:{{ printf "%.0f" $w }}%"></i></div>
-        {{ end }}
-        <p class="nunote">{{ i18n "nutrition_note" }}</p>
+      <div class="nutriblock nums">
+        <div class="bhead" style="margin-top:1.4rem;">{{ i18n "nutrition_h" }} · {{ i18n "nutrition_per" }}</div>
+        <div class="bbox">
+          <div class="nucal"><span class="nucalnum">{{ $n.calories }}</span><span class="nucallbl">{{ i18n "nutrition_cal" }}</span></div>
+          <div class="nudvhead">{{ i18n "nutrition_dv" }}</div>
+          {{ $rows := slice
+            (dict "label" (i18n "nutrition_protein") "amt" (printf "%d g" $n.protein) "pct" (div (mul (float $n.protein) 100) 50.0))
+            (dict "label" (i18n "nutrition_carbs") "amt" (printf "%d g" $n.carbs) "pct" (div (mul (float $n.carbs) 100) 275.0))
+            (dict "label" (i18n "nutrition_fat") "amt" (printf "%d g" $n.fat) "pct" (div (mul (float $n.fat) 100) 75.0))
+            (dict "label" (i18n "nutrition_fibre") "amt" (printf "%d g" $n.fibre) "pct" (div (mul (float $n.fibre) 100) 28.0))
+            (dict "label" (i18n "nutrition_sugar") "amt" (printf "%d g" $n.sugar) "pct" (div (mul (float $n.sugar) 100) 100.0))
+            (dict "label" (i18n "nutrition_sodium") "amt" (printf "%d mg" $n.sodium) "pct" (div (mul (float $n.sodium) 100) 2300.0))
+          }}
+          {{ range $rows }}{{ $w := .pct }}{{ if gt $w 100.0 }}{{ $w = 100.0 }}{{ end }}
+          <div class="nurow"><span class="nulbl">{{ .label }}</span><span class="nuamt">{{ .amt }}</span><span class="nudv">{{ printf "%.0f" .pct }}%</span></div>
+          <div class="nubar"><i style="width:{{ printf "%.0f" $w }}%"></i></div>
+          {{ end }}
+          <p class="nunote">{{ i18n "nutrition_note" }}</p>
+        </div>
       </div>
       {{ end }}
+
+      <div class="tagsbox">
+        <div class="bhead" style="margin-top:1.4rem;">{{ i18n "tags_h" }}</div>
+        <div class="tagchips">
+          {{ with .Params.category }}<span>{{ . }}</span>{{ end }}
+          {{ range .Params.meals }}{{ if ne (lower .) (lower ($.Params.category | default "")) }}<span>{{ i18n (printf "meal_%s" .) }}</span>{{ end }}{{ end }}
+          {{ range .Params.collections }}<span>{{ . }}</span>{{ end }}
+        </div>
+      </div>
+
       {{ with .Params.basket_pairs }}
-      <div class="pairbox">
+      <div class="basketbox pairbox">
         <div class="bhead" style="margin-top:1.4rem;">{{ i18n "pair_heading" }}</div>
         <div class="bbox">
           {{ range . }}{{ $p := $.Site.GetPage (printf "/recipes/%s" .slug) }}
@@ -125,8 +154,44 @@
           {{ end }}
         </div>
       </div>
+      {{ else }}
+      <div class="basketbox generic">
+        <div class="bhead" style="margin-top:1.4rem;">{{ i18n "basket_h" }}</div>
+        <div class="bbox">
+          <p class="pairline">{{ i18n "basket_generic" }}</p>
+          <p class="pairline"><a href="{{ "/basket-weeks/" | relLangURL }}">{{ i18n "basket_cta" }} →</a></p>
+        </div>
+      </div>
       {{ end }}
     </aside>
   </div>
+
+  {{ $cur := . }}
+  {{ $scored := slice }}
+  {{ range where .Site.RegularPages "Section" "recipes" }}
+    {{ if ne .RelPermalink $cur.RelPermalink }}
+      {{ $shared := len (intersect (.Params.meals | default (slice)) ($cur.Params.meals | default (slice))) }}
+      {{ $scored = $scored | append (dict "p" . "s" $shared) }}
+    {{ end }}
+  {{ end }}
+  {{ $sorted := sort $scored "s" "desc" }}
+  {{ if $sorted }}
+  <section class="related">
+    <div class="rel-head"><h2>{{ i18n "related_h" }}</h2><a class="rel-all" href="{{ "/recipes/" | relLangURL }}">{{ i18n "view_all" }} <span aria-hidden="true">→</span></a></div>
+    <div class="relgrid">
+      {{ range first 4 $sorted }}{{ $p := .p }}
+      <a class="relcard" href="{{ $p.RelPermalink }}">
+        <span class="relimg"><img src="{{ $p.Params.image }}" alt="{{ $p.Title }}" loading="lazy"></span>
+        <span class="relname">{{ $p.Title }}</span>
+        <span class="relmeta">{{ $p.Params.tier_label }} · {{ $p.Params.total_time }}</span>
+        <span class="relprice">{{ partial "price.html" (dict "amt" $p.Params.price_per_serving "lang" $p.Lang) }} <small>{{ i18n "per_serving" }}</small></span>
+      </a>
+      {{ end }}
+    </div>
+  </section>
+  {{ end }}
 </div>
+<script>
+(function(){if(window.innerWidth>1020)return;var n=document.querySelector('.nutriblock');if(!n)return;var h=document.querySelector('.article-body .hungry');if(h&&h.parentNode){h.parentNode.insertBefore(n,h);n.style.marginBottom='1.4rem';}else{var f=document.querySelector('.faq');if(f){f.parentNode.insertBefore(n,f);}}})();
+</script>
 {{ end }}
