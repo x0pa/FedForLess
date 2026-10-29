@@ -687,3 +687,68 @@ ol.homeindex .rowlink:hover .rarr{transform:translateX(3px)}
   .bwindex .bw-inc-a{grid-template-columns:64px minmax(0,1fr)}
   .bwindex .bw-inc-serv{grid-column:2;justify-self:end}
 }
+
+/* ============ how we price (Price Transparency Report) — scoped to .hwprice ============ */
+.hwprice{padding-top:2.1rem}
+.hwprice .hw-hero{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:2.6rem;align-items:start}
+.hwprice .hw-eyebrow{font-family:"Oswald";font-weight:700;text-transform:uppercase;letter-spacing:.15em;font-size:.85rem;color:var(--denim);margin:0 0 .7rem}
+.hwprice .hw-h1{font-family:"Oswald";font-weight:700;text-transform:uppercase;font-size:clamp(2.9rem,6vw,4.6rem);line-height:1.02;margin:0;color:var(--ink)}
+.hwprice .hw-h1 span{color:var(--denim)}
+.hwprice .hw-intro{font-size:1.08rem;line-height:1.65;color:#2C3138;margin:0;max-width:32rem}
+.hwprice .hw-trust{margin-top:1.5rem;display:grid;gap:1rem}
+.hwprice .hw-tr{display:flex;gap:.8rem;align-items:flex-start}
+.hwprice .hw-tr-ic{flex:none;width:42px;height:42px;border-radius:50%;background:#EAF1F8;color:var(--denim);display:flex;align-items:center;justify-content:center}
+.hwprice .hw-tr-ic svg{width:20px;height:20px}
+.hwprice .hw-tr-h{font-family:"Oswald";font-weight:700;text-transform:uppercase;font-size:.96rem;margin:0;color:var(--ink)}
+.hwprice .hw-tr p{font-size:.9rem;line-height:1.45;color:var(--muted);margin:.15rem 0 0}
+.hwprice .hw-sec{margin-top:2.8rem;border-top:2px solid var(--ink);padding-top:1.2rem}
+.hwprice .hw-h2{font-family:"Oswald";font-weight:700;text-transform:uppercase;font-size:clamp(1.7rem,3.4vw,2.3rem);margin:0;color:var(--ink)}
+.hwprice .hw-four{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 2.6rem;margin-top:.6rem}
+.hwprice .hw-num{padding:1.25rem 0 1.35rem;border-bottom:1px solid var(--hair)}
+.hwprice .hw-n{font-family:"Oswald";font-weight:700;font-size:2.2rem;color:var(--denim);line-height:1}
+.hwprice .hw-num-h{font-family:"Oswald";font-weight:700;text-transform:uppercase;font-size:1.18rem;margin:.55rem 0 0;color:var(--ink)}
+.hwprice .hw-num p{color:#2C3138;line-height:1.6;margin:.45rem 0 0}
+.hwprice .hw-ex{background:#EAF1F8;border-radius:8px;padding:.7rem .9rem;font-weight:600}
+.hwprice .hw-calc{font-family:"Oswald";font-weight:600;font-size:1.45rem;color:var(--ink);background:#EAF1F8;border-radius:8px;padding:.7rem .9rem}
+.hwprice .hw-calc strong{color:var(--denim);font-size:1.6rem}
+.hwprice .hw-mathsub{color:#2C3138;font-size:1rem;margin:.8rem 0 0}
+.hwprice .hw-math{display:grid;grid-template-columns:minmax(0,460px) minmax(0,1fr);gap:2.4rem;margin-top:1.2rem;align-items:start}
+.hwprice .hw-receipt .rcp{transform:rotate(-.35deg);box-shadow:0 6px 18px rgba(9,25,37,.10)}
+.hwprice .hw-math-r p{color:#2C3138;line-height:1.65;margin:0 0 1rem;font-size:1.02rem}
+.hwprice .hw-link{font-family:"Oswald";font-weight:600;color:var(--denim);text-decoration:none;font-size:1.02rem}
+.hwprice .hw-link:hover{text-decoration:underline}
+.hwprice .hw-srcgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:2.6rem;margin-top:1.1rem}
+.hwprice .hw-src-l{font-family:"Oswald";font-weight:700;text-transform:uppercase;letter-spacing:.13em;font-size:.8rem;color:var(--denim);margin:0}
+.hwprice .hw-src-h{font-family:"Oswald";font-weight:700;text-transform:uppercase;font-size:1.3rem;margin:.4rem 0 0;color:var(--ink)}
+.hwprice .hw-source p{color:#2C3138;line-height:1.62;margin:.6rem 0 0}
+.hwprice .hw-dates{margin-top:1.8rem;background:#EAF1F8;border-radius:10px;padding:1.2rem 1.5rem 1.35rem}
+.hwprice .hw-dates-h{font-family:"Oswald";font-weight:700;text-transform:uppercase;letter-spacing:.07em;font-size:1rem;margin:0;color:var(--ink)}
+.hwprice .hw-dates-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.6rem;margin-top:.7rem}
+.hwprice .hw-date-h{font-family:"Oswald";font-weight:700;font-size:.95rem;margin:0;color:var(--denim)}
+.hwprice .hw-dates-grid p{font-size:.92rem;line-height:1.5;color:#2C3138;margin:.3rem 0 0}
+.hwprice .hw-rules{margin-top:.5rem}
+.hwprice .hw-rule{display:grid;grid-template-columns:74px minmax(0,1fr);gap:1.4rem;padding:1.3rem 0;border-bottom:1px solid var(--hair)}
+.hwprice .hw-rule-n{font-family:"Oswald";font-weight:700;font-size:2rem;color:var(--denim);line-height:1.05}
+.hwprice .hw-rule-h{font-family:"Oswald";font-weight:700;text-transform:uppercase;font-size:1.12rem;margin:0;color:var(--ink)}
+.hwprice .hw-rule p{color:#2C3138;line-height:1.62;margin:.4rem 0 0;max-width:46rem}
+.hwprice .hw-tiers{display:grid;gap:1rem;margin-top:1.2rem}
+.hwprice .hw-not{margin-top:2.8rem;background:#EAF1F8;border:1px solid #C9D6E8;border-radius:10px;padding:1.5rem 1.7rem}
+.hwprice .hw-not-h{font-family:"Oswald";font-weight:700;text-transform:uppercase;font-size:1.35rem;margin:0;color:var(--ink)}
+.hwprice .hw-not p{color:#2C3138;line-height:1.65;margin:.6rem 0 0;max-width:52rem}
+.hwprice .hw-cta{margin-top:2.8rem;border-top:2px solid var(--ink);padding-top:1.2rem}
+.hwprice .hw-cta p{color:#2C3138;font-size:1.05rem;margin:.6rem 0 0}
+.hwprice .hw-btn{display:inline-block;margin-top:.6rem;background:var(--denim);color:#fff;font-family:"Oswald";font-weight:600;font-size:1rem;letter-spacing:.03em;padding:.85rem 1.5rem;border-radius:6px;text-decoration:none}
+.hwprice .hw-btn:hover{background:var(--denim-deep)}
+@media (max-width:920px){
+  .hwprice .hw-hero{grid-template-columns:minmax(0,1fr);gap:1.4rem}
+  .hwprice .hw-math{grid-template-columns:minmax(0,1fr);gap:1.4rem}
+  .hwprice .hw-receipt{max-width:460px}
+  .hwprice .hw-srcgrid{grid-template-columns:minmax(0,1fr);gap:1.8rem}
+  .hwprice .hw-dates-grid{grid-template-columns:minmax(0,1fr);gap:1rem}
+}
+@media (max-width:680px){
+  .hwprice .hw-four{grid-template-columns:minmax(0,1fr)}
+  .hwprice .hw-rule{grid-template-columns:52px minmax(0,1fr);gap:1rem}
+  .hwprice .hw-rule-n{font-size:1.6rem}
+  .hwprice .hw-not{padding:1.2rem 1.25rem}
+}

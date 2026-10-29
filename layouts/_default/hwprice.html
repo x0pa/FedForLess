@@ -1,0 +1,165 @@
+{{ define "main" }}
+{{ $r := .Site.GetPage "/recipes/cheap-perogies-with-cabbage-onion" }}
+{{ $recipes := where .Site.RegularPages "Section" "recipes" }}
+{{ $statcan := "https://doi.org/10.25318/1810024501-eng" }}{{ if eq .Lang "fr" }}{{ $statcan = "https://doi.org/10.25318/1810024501-fra" }}{{ end }}
+<div class="wrap">
+<div class="hwprice">
+  <header class="hw-hero">
+    <div class="hw-hero-l">
+      <p class="hw-eyebrow">{{ i18n "hw_eyebrow" }}</p>
+      <h1 class="hw-h1">{{ i18n "hw_h1_l1" }}<br><span>{{ i18n "hw_h1_l2" }}</span></h1>
+    </div>
+    <div class="hw-hero-r">
+      <p class="hw-intro">{{ i18n "hw_intro" }}</p>
+      <div class="hw-trust">
+        <div class="hw-tr">
+          <span class="hw-tr-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18"/><path d="M8 17v-5"/><path d="M13 17V8"/><path d="M18 17v-8"/></svg></span>
+          <div><h2 class="hw-tr-h">{{ i18n "hw_t1_h" }}</h2><p>{{ i18n "hw_t1_p" }}</p></div>
+        </div>
+        <div class="hw-tr">
+          <span class="hw-tr-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12.6 2.9 21 11.3a2 2 0 0 1 0 2.8l-6.9 6.9a2 2 0 0 1-2.8 0L2.9 12.6A2 2 0 0 1 2.3 11.2V4.5a2 2 0 0 1 2-2h6.7a2 2 0 0 1 1.6.4Z"/><circle cx="7.5" cy="7.5" r="1.2"/></svg></span>
+          <div><h2 class="hw-tr-h">{{ i18n "hw_t2_h" }}</h2><p>{{ i18n "hw_t2_p" }}</p></div>
+        </div>
+        <div class="hw-tr">
+          <span class="hw-tr-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 6h13"/><path d="M8 12h13"/><path d="M8 18h13"/><path d="M3.5 6h.01"/><path d="M3.5 12h.01"/><path d="M3.5 18h.01"/></svg></span>
+          <div><h2 class="hw-tr-h">{{ i18n "hw_t3_h" }}</h2><p>{{ i18n "hw_t3_p" }}</p></div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="hw-sec">
+    <h2 class="hw-h2">{{ i18n "hw_four_h" }}</h2>
+    <div class="hw-four">
+      <div class="hw-num">
+        <div class="hw-n">01</div>
+        <h3 class="hw-num-h">{{ i18n "hw_n1_h" }}</h3>
+        <p>{{ i18n "hw_n1_p" }}</p>
+        <p class="hw-ex">{{ i18n "hw_n1_ex" }}</p>
+      </div>
+      <div class="hw-num">
+        <div class="hw-n">02</div>
+        <h3 class="hw-num-h">{{ i18n "hw_n2_h" }}</h3>
+        <p>{{ i18n "hw_n2_p" }}</p>
+      </div>
+      <div class="hw-num">
+        <div class="hw-n">03</div>
+        <h3 class="hw-num-h">{{ i18n "hw_n3_h" }}</h3>
+        <p>{{ i18n "hw_n3_p" }}</p>
+        {{ with $r }}<p class="hw-calc nums">{{ partial "price.html" (dict "amt" .Params.batch_cost "lang" $.Lang) }} <span aria-hidden="true">÷</span> {{ .Params.servings }} <span aria-hidden="true">=</span> <strong>{{ partial "price.html" (dict "amt" .Params.price_per_serving "lang" $.Lang) }}</strong></p>{{ end }}
+      </div>
+      <div class="hw-num">
+        <div class="hw-n">04</div>
+        <h3 class="hw-num-h">{{ i18n "hw_n4_h" }}</h3>
+        <p>{{ i18n "hw_n4_p" }}</p>
+      </div>
+    </div>
+  </section>
+
+  {{ with $r }}
+  <section class="hw-sec">
+    <h2 class="hw-h2">{{ i18n "hw_math_h" }}</h2>
+    <p class="hw-mathsub">{{ i18n "hw_math_a" }} <a href="{{ .RelPermalink }}">{{ .Title }}</a> · {{ partial "serves.html" (dict "n" .Params.servings "lang" $.Lang) }} · {{ i18n "gov_data" }}: {{ .Params.prices_checked }}.</p>
+    <div class="hw-math">
+      <div class="hw-receipt">
+        <div class="rcp">
+          <div class="bhead">{{ i18n "cost_breakdown" }}</div>
+          <p class="govline">{{ i18n "gov_data" }}: {{ .Params.prices_checked }}</p>
+          {{ $rows := slice }}
+          {{ range .Params.breakdown }}{{ $rows = $rows | append (dict "item" .item "note" .note "amt" (float .amount) "amtstr" .amount) }}{{ end }}
+          {{ $sorted := sort $rows "amt" "desc" }}
+          {{ range $i, $b := first 3 $sorted }}
+          <div class="brow{{ if eq $i 0 }} first{{ end }}"><span class="item">{{ $b.item }}{{ with $b.note }}<small>{{ . }}</small>{{ end }}</span><span class="amt">{{ partial "price.html" (dict "amt" $b.amtstr "lang" $.Lang) }}</span></div>
+          {{ end }}
+          {{ if gt (len $sorted) 3 }}
+          {{ $rest := after 3 $sorted }}{{ $restSum := 0.0 }}{{ range $rest }}{{ $restSum = add $restSum .amt }}{{ end }}
+          <div class="brow"><span class="item">{{ i18n "other_ingredients" }} ({{ len $rest }})</span><span class="amt">{{ partial "price.html" (dict "amt" (printf "%.2f" $restSum) "lang" $.Lang) }}</span></div>
+          {{ end }}
+          <div class="brow total"><span class="lbl">{{ i18n "batch_total" }}</span><span class="amt">{{ partial "price.html" (dict "amt" .Params.batch_cost "lang" $.Lang) }}</span></div>
+          <div class="brow total ps"><span class="lbl">{{ i18n "cost_per_serving" }}</span><span class="amt">{{ partial "price.html" (dict "amt" .Params.price_per_serving "lang" $.Lang) }}</span></div>
+          <div class="brow basket"><span class="item">{{ i18n "basket_label" }}</span><span class="amt">{{ partial "price.html" (dict "amt" .Params.basket_cost "lang" $.Lang) }}</span></div>
+        </div>
+      </div>
+      <div class="hw-math-r">
+        <p>{{ i18n "hw_math_p" }}</p>
+        <p><a class="hw-link" href="{{ .RelPermalink }}#cost-breakdown">{{ i18n "hw_full_bd" }} <span aria-hidden="true">→</span></a></p>
+      </div>
+    </div>
+  </section>
+  {{ end }}
+
+  <section class="hw-sec">
+    <h2 class="hw-h2">{{ i18n "hw_src_h" }}</h2>
+    <div class="hw-srcgrid">
+      <div class="hw-source">
+        <p class="hw-src-l">{{ i18n "hw_sa_l" }}</p>
+        <h3 class="hw-src-h">{{ i18n "hw_sa_h" }}</h3>
+        <p>{{ i18n "hw_sa_p1" }}</p>
+        <p>{{ i18n "hw_sa_p2" }}</p>
+        <p><a class="hw-link" href="{{ $statcan }}" target="_blank" rel="noopener">{{ i18n "hw_sa_link" }} <span aria-hidden="true">↗</span></a></p>
+      </div>
+      <div class="hw-source">
+        <p class="hw-src-l">{{ i18n "hw_sb_l" }}</p>
+        <h3 class="hw-src-h">{{ i18n "hw_sb_h" }}</h3>
+        <p>{{ i18n "hw_sb_p1" }}</p>
+        <p>{{ i18n "hw_sb_p2" }}</p>
+      </div>
+    </div>
+    <div class="hw-dates">
+      <h3 class="hw-dates-h">{{ i18n "hw_dates_h" }}</h3>
+      <div class="hw-dates-grid">
+        <div><h4 class="hw-date-h">{{ i18n "hw_d1_h" }}</h4><p>{{ i18n "hw_d1_p" }}</p></div>
+        <div><h4 class="hw-date-h">{{ i18n "hw_d2_h" }}</h4><p>{{ i18n "hw_d2_p" }}</p></div>
+        <div><h4 class="hw-date-h">{{ i18n "hw_d3_h" }}</h4><p>{{ i18n "hw_d3_p" }}</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="hw-sec">
+    <h2 class="hw-h2">{{ i18n "hw_rules_h" }}</h2>
+    <div class="hw-rules">
+      <div class="hw-rule"><div class="hw-rule-n">01</div><div><h3 class="hw-rule-h">{{ i18n "hw_r1_h" }}</h3><p>{{ i18n "hw_r1_p" }}</p></div></div>
+      <div class="hw-rule"><div class="hw-rule-n">02</div><div><h3 class="hw-rule-h">{{ i18n "hw_r2_h" }}</h3><p>{{ i18n "hw_r2_p" }}</p></div></div>
+      <div class="hw-rule"><div class="hw-rule-n">03</div><div><h3 class="hw-rule-h">{{ i18n "hw_r3_h" }}</h3><p>{{ i18n "hw_r3_p" }}</p></div></div>
+      <div class="hw-rule"><div class="hw-rule-n">04</div><div><h3 class="hw-rule-h">{{ i18n "hw_r4_h" }}</h3><p>{{ i18n "hw_r4_p" }}</p></div></div>
+      <div class="hw-rule"><div class="hw-rule-n">05</div><div><h3 class="hw-rule-h">{{ i18n "hw_r5_h" }}</h3><p>{{ i18n "hw_r5_p" }}</p></div></div>
+    </div>
+  </section>
+
+  <section class="hw-sec">
+    <h2 class="hw-h2">{{ i18n "hw_tiers_h" }}</h2>
+    <div class="hw-tiers">
+      {{ $g := where $recipes "Params.tier" "green" }}{{ $t1 := index ($g.ByDate.Reverse) 0 }}
+      {{ $b := where $recipes "Params.tier" "butter" }}{{ $t2 := index ($b.ByDate.Reverse) 0 }}
+      {{ $tm := where $recipes "Params.tier" "tomato" }}{{ $t3 := index ($tm.ByDate.Reverse) 0 }}
+      <a class="tiercard" href="{{ "/recipes/" | relLangURL }}?tier=green">
+        <span class="tc-img"><img src="{{ $t1.Params.image }}" alt="" loading="lazy"></span>
+        <span class="tc-body"><span class="tc-name">{{ i18n "tier_green" }}</span><span class="tc-big">{{ i18n "t1_big" }}</span><span class="tc-per">{{ i18n "per_serving" }}</span><span class="tc-text">{{ i18n "hw_td1" }}</span></span>
+        <span class="tc-arrow" aria-hidden="true">→</span>
+      </a>
+      <a class="tiercard" href="{{ "/recipes/" | relLangURL }}?tier=butter">
+        <span class="tc-img"><img src="{{ $t2.Params.image }}" alt="" loading="lazy"></span>
+        <span class="tc-body"><span class="tc-name">{{ i18n "tier_butter" }}</span><span class="tc-big">{{ i18n "t2_big" }}</span><span class="tc-per">{{ i18n "per_serving" }}</span><span class="tc-text">{{ i18n "hw_td2" }}</span></span>
+        <span class="tc-arrow" aria-hidden="true">→</span>
+      </a>
+      <a class="tiercard" href="{{ "/recipes/" | relLangURL }}?tier=tomato">
+        <span class="tc-img"><img src="{{ $t3.Params.image }}" alt="" loading="lazy"></span>
+        <span class="tc-body"><span class="tc-name">{{ i18n "tier_tomato" }}</span><span class="tc-big">{{ i18n "t3_big" }}</span><span class="tc-per">{{ i18n "per_serving" }}</span><span class="tc-text">{{ i18n "hw_td3" }}</span></span>
+        <span class="tc-arrow" aria-hidden="true">→</span>
+      </a>
+    </div>
+  </section>
+
+  <section class="hw-not">
+    <h2 class="hw-not-h">{{ i18n "hw_not_h" }}</h2>
+    <p>{{ i18n "hw_not_p" }}</p>
+  </section>
+
+  <section class="hw-cta">
+    <h2 class="hw-h2">{{ i18n "hw_cta_h" }}</h2>
+    <p>{{ i18n "hw_cta_p" }}</p>
+    <p><a class="hw-btn" href="{{ "/recipes/" | relLangURL }}">{{ i18n "hw_cta_b" }} <span aria-hidden="true">→</span></a></p>
+  </section>
+</div>
+</div>
+{{ end }}
