@@ -23,7 +23,7 @@
 <meta name="twitter:image" content="https://fedforless.ca/images/cheap-lentil-soup.webp">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Public+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/css/main.css?v=26">
+<link rel="stylesheet" href="/css/main.css?v=28">
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -68,54 +68,376 @@
 })();
 </script>
 
+
+
+
+
+
+
+
 <div class="wrap">
-  <div class="page-head"><h1>Recipe Cost Calculator</h1></div>
-  <div style="max-width:46rem;">
-    <article class="prose">
-      <p>This is the exact arithmetic behind every Fed For Less breakdown. For each ingredient, enter the package price, the package size, and the amount your recipe uses, in the same unit (grams with grams, millilitres with millilitres). Add lines as needed.</p>
-<div class="toolbox nums">
-  <div id="rc-lines"></div>
-  <button id="rc-add" style="background:var(--denim);color:#fff;border:none;font-weight:800;padding:.7rem 1.2rem;border-radius:6px;cursor:pointer;font:inherit;margin-top:.8rem;">Add an ingredient line</button>
-  <label for="rc-servings">Servings the recipe makes</label>
-  <input id="rc-servings" type="number" min="1" step="1" value="4">
-  <div class="out" id="rc-out">Batch total: $0.00 · Per serving: —</div>
+<div class="rcpage">
+  <nav class="rc-crumb" aria-label="breadcrumb">
+    <a href="/">Home</a> <span aria-hidden="true">›</span> <a href="/tools/">Tools</a> <span aria-hidden="true">›</span> <span aria-current="page">Recipe Cost Calculator</span>
+  </nav>
+
+  <header class="rc-hero">
+    <p class="rc-eyebrow">Tool 02 · The Kitchen Toolkit</p>
+    <h1 class="rc-h1">Recipe Cost<br><span>Calculator.</span></h1>
+    <p class="rc-intro">Enter your grocery package prices, package sizes, and the amounts your recipe uses. We&#39;ll calculate what each ingredient costs, your batch total, and the real cost per serving.</p>
+    <p class="rc-support">Know what you use. Know what you spend.</p>
+  </header>
+
+  <section class="rc-calc" id="rccalc" data-lang="en"
+    data-t-prompt="Add at least one complete ingredient row to see your recipe cost." data-t-warn="One or more rows need attention and are not included yet."
+    data-t-eprice="Package price cannot be negative." data-t-esize="Package size must be greater than zero." data-t-eused="Amount used cannot be negative."
+    data-t-eunits="Units do not match: grams and millilitres cannot be converted." data-t-enan="Use numbers only in the price, size, and amount fields." data-t-eserv="Servings must be greater than zero."
+    data-t-shared="Rows with the same ingredient, package price, and package size are combined into one package purchase: " data-t-copied="Copied to clipboard."
+    data-t-head="Recipe cost breakdown" data-t-line="{n}: {u} {uu} from a {s} {su} package at {p} = {c}"
+    data-t-basket="Full basket cost: {b}" data-t-tobuy="Still to buy (pantry excluded): {b}"
+    data-t-ing="Ingredient" data-t-remove="Remove ingredient"
+    data-t-batch="Batch Total" data-t-serv="Servings" data-t-perserv="Cost Per Serving"
+    data-ex='[{&#34;name&#34;:&#34;Frozen perogies&#34;,&#34;pantry&#34;:false,&#34;price&#34;:&#34;2.99&#34;,&#34;size&#34;:&#34;907&#34;,&#34;su&#34;:&#34;g&#34;,&#34;used&#34;:&#34;1814&#34;,&#34;uu&#34;:&#34;g&#34;},{&#34;name&#34;:&#34;Green cabbage&#34;,&#34;pantry&#34;:false,&#34;price&#34;:&#34;2.63&#34;,&#34;size&#34;:&#34;1000&#34;,&#34;su&#34;:&#34;g&#34;,&#34;used&#34;:&#34;800&#34;,&#34;uu&#34;:&#34;g&#34;},{&#34;name&#34;:&#34;Onions&#34;,&#34;pantry&#34;:false,&#34;price&#34;:&#34;4.58&#34;,&#34;size&#34;:&#34;1360&#34;,&#34;su&#34;:&#34;g&#34;,&#34;used&#34;:&#34;300&#34;,&#34;uu&#34;:&#34;g&#34;},{&#34;name&#34;:&#34;Sour cream&#34;,&#34;pantry&#34;:false,&#34;price&#34;:&#34;3.49&#34;,&#34;size&#34;:&#34;500&#34;,&#34;su&#34;:&#34;ml&#34;,&#34;used&#34;:&#34;250&#34;,&#34;uu&#34;:&#34;ml&#34;},{&#34;name&#34;:&#34;Butter&#34;,&#34;pantry&#34;:false,&#34;price&#34;:&#34;5.68&#34;,&#34;size&#34;:&#34;454&#34;,&#34;su&#34;:&#34;g&#34;,&#34;used&#34;:&#34;30&#34;,&#34;uu&#34;:&#34;g&#34;},{&#34;name&#34;:&#34;Salt and pepper&#34;,&#34;pantry&#34;:true,&#34;price&#34;:&#34;0.30&#34;,&#34;size&#34;:&#34;1&#34;,&#34;su&#34;:&#34;each&#34;,&#34;used&#34;:&#34;1&#34;,&#34;uu&#34;:&#34;each&#34;}]' data-ex-servings="6">
+    <div class="rc-inputs">
+      <h2 class="rc-panel-h">Build Your Recipe</h2>
+      <p class="rc-panel-sub">Add each ingredient and enter the package information.</p>
+      <div class="rc-headrow" aria-hidden="true">
+        <span>Ingredient</span><span>Package Price</span><span>Package Size</span><span>Amount Used</span><span>Cost</span><span></span>
+      </div>
+      <div id="rc-rows">
+        
+        <div class="rc-row" data-row>
+          <div class="rcf rc-name-f"><span class="rcf-l">Ingredient 01</span><input class="rc-name" type="text" value="Frozen perogies" aria-label="Ingredient" autocomplete="off"></div>
+          <div class="rcf rc-price-f"><span class="rcf-l">Package Price</span><input class="rc-price" type="number" min="0" step="0.01" inputmode="decimal" value="2.99" aria-label="Package Price" autocomplete="off"></div>
+          <div class="rcf rc-size-f"><span class="rcf-l">Package Size</span><span class="rcq"><input class="rc-size" type="number" min="0" step="any" inputmode="decimal" value="907" aria-label="Package Size" autocomplete="off"><select class="rc-su" aria-label="Package Size unit"><option value="g" selected>g</option><option value="kg">kg</option><option value="ml">ml</option><option value="L">L</option><option value="each">each</option></select></span></div>
+          <div class="rcf rc-used-f"><span class="rcf-l">Amount Used</span><span class="rcq"><input class="rc-used" type="number" min="0" step="any" inputmode="decimal" value="1814" aria-label="Amount Used" autocomplete="off"><select class="rc-uu" aria-label="Amount Used unit"><option value="g" selected>g</option><option value="kg">kg</option><option value="ml">ml</option><option value="L">L</option><option value="each">each</option></select></span></div>
+          <div class="rcf rc-cost-f"><span class="rcf-l">Cost</span><span class="rc-cost nums">—</span></div>
+          <button type="button" class="rc-del" aria-label="Remove ingredient">×</button>
+          <label class="rc-pantry"><input type="checkbox" class="rc-own"> Already have it (pantry)</label>
+          <p class="rc-err" role="alert"></p>
+        </div>
+        
+        <div class="rc-row" data-row>
+          <div class="rcf rc-name-f"><span class="rcf-l">Ingredient 02</span><input class="rc-name" type="text" value="Green cabbage" aria-label="Ingredient" autocomplete="off"></div>
+          <div class="rcf rc-price-f"><span class="rcf-l">Package Price</span><input class="rc-price" type="number" min="0" step="0.01" inputmode="decimal" value="2.63" aria-label="Package Price" autocomplete="off"></div>
+          <div class="rcf rc-size-f"><span class="rcf-l">Package Size</span><span class="rcq"><input class="rc-size" type="number" min="0" step="any" inputmode="decimal" value="1000" aria-label="Package Size" autocomplete="off"><select class="rc-su" aria-label="Package Size unit"><option value="g" selected>g</option><option value="kg">kg</option><option value="ml">ml</option><option value="L">L</option><option value="each">each</option></select></span></div>
+          <div class="rcf rc-used-f"><span class="rcf-l">Amount Used</span><span class="rcq"><input class="rc-used" type="number" min="0" step="any" inputmode="decimal" value="800" aria-label="Amount Used" autocomplete="off"><select class="rc-uu" aria-label="Amount Used unit"><option value="g" selected>g</option><option value="kg">kg</option><option value="ml">ml</option><option value="L">L</option><option value="each">each</option></select></span></div>
+          <div class="rcf rc-cost-f"><span class="rcf-l">Cost</span><span class="rc-cost nums">—</span></div>
+          <button type="button" class="rc-del" aria-label="Remove ingredient">×</button>
+          <label class="rc-pantry"><input type="checkbox" class="rc-own"> Already have it (pantry)</label>
+          <p class="rc-err" role="alert"></p>
+        </div>
+        
+        <div class="rc-row" data-row>
+          <div class="rcf rc-name-f"><span class="rcf-l">Ingredient 03</span><input class="rc-name" type="text" value="Onions" aria-label="Ingredient" autocomplete="off"></div>
+          <div class="rcf rc-price-f"><span class="rcf-l">Package Price</span><input class="rc-price" type="number" min="0" step="0.01" inputmode="decimal" value="4.58" aria-label="Package Price" autocomplete="off"></div>
+          <div class="rcf rc-size-f"><span class="rcf-l">Package Size</span><span class="rcq"><input class="rc-size" type="number" min="0" step="any" inputmode="decimal" value="1360" aria-label="Package Size" autocomplete="off"><select class="rc-su" aria-label="Package Size unit"><option value="g" selected>g</option><option value="kg">kg</option><option value="ml">ml</option><option value="L">L</option><option value="each">each</option></select></span></div>
+          <div class="rcf rc-used-f"><span class="rcf-l">Amount Used</span><span class="rcq"><input class="rc-used" type="number" min="0" step="any" inputmode="decimal" value="300" aria-label="Amount Used" autocomplete="off"><select class="rc-uu" aria-label="Amount Used unit"><option value="g" selected>g</option><option value="kg">kg</option><option value="ml">ml</option><option value="L">L</option><option value="each">each</option></select></span></div>
+          <div class="rcf rc-cost-f"><span class="rcf-l">Cost</span><span class="rc-cost nums">—</span></div>
+          <button type="button" class="rc-del" aria-label="Remove ingredient">×</button>
+          <label class="rc-pantry"><input type="checkbox" class="rc-own"> Already have it (pantry)</label>
+          <p class="rc-err" role="alert"></p>
+        </div>
+        
+        <div class="rc-row" data-row>
+          <div class="rcf rc-name-f"><span class="rcf-l">Ingredient 04</span><input class="rc-name" type="text" value="Sour cream" aria-label="Ingredient" autocomplete="off"></div>
+          <div class="rcf rc-price-f"><span class="rcf-l">Package Price</span><input class="rc-price" type="number" min="0" step="0.01" inputmode="decimal" value="3.49" aria-label="Package Price" autocomplete="off"></div>
+          <div class="rcf rc-size-f"><span class="rcf-l">Package Size</span><span class="rcq"><input class="rc-size" type="number" min="0" step="any" inputmode="decimal" value="500" aria-label="Package Size" autocomplete="off"><select class="rc-su" aria-label="Package Size unit"><option value="g">g</option><option value="kg">kg</option><option value="ml" selected>ml</option><option value="L">L</option><option value="each">each</option></select></span></div>
+          <div class="rcf rc-used-f"><span class="rcf-l">Amount Used</span><span class="rcq"><input class="rc-used" type="number" min="0" step="any" inputmode="decimal" value="250" aria-label="Amount Used" autocomplete="off"><select class="rc-uu" aria-label="Amount Used unit"><option value="g">g</option><option value="kg">kg</option><option value="ml" selected>ml</option><option value="L">L</option><option value="each">each</option></select></span></div>
+          <div class="rcf rc-cost-f"><span class="rcf-l">Cost</span><span class="rc-cost nums">—</span></div>
+          <button type="button" class="rc-del" aria-label="Remove ingredient">×</button>
+          <label class="rc-pantry"><input type="checkbox" class="rc-own"> Already have it (pantry)</label>
+          <p class="rc-err" role="alert"></p>
+        </div>
+        
+        <div class="rc-row" data-row>
+          <div class="rcf rc-name-f"><span class="rcf-l">Ingredient 05</span><input class="rc-name" type="text" value="Butter" aria-label="Ingredient" autocomplete="off"></div>
+          <div class="rcf rc-price-f"><span class="rcf-l">Package Price</span><input class="rc-price" type="number" min="0" step="0.01" inputmode="decimal" value="5.68" aria-label="Package Price" autocomplete="off"></div>
+          <div class="rcf rc-size-f"><span class="rcf-l">Package Size</span><span class="rcq"><input class="rc-size" type="number" min="0" step="any" inputmode="decimal" value="454" aria-label="Package Size" autocomplete="off"><select class="rc-su" aria-label="Package Size unit"><option value="g" selected>g</option><option value="kg">kg</option><option value="ml">ml</option><option value="L">L</option><option value="each">each</option></select></span></div>
+          <div class="rcf rc-used-f"><span class="rcf-l">Amount Used</span><span class="rcq"><input class="rc-used" type="number" min="0" step="any" inputmode="decimal" value="30" aria-label="Amount Used" autocomplete="off"><select class="rc-uu" aria-label="Amount Used unit"><option value="g" selected>g</option><option value="kg">kg</option><option value="ml">ml</option><option value="L">L</option><option value="each">each</option></select></span></div>
+          <div class="rcf rc-cost-f"><span class="rcf-l">Cost</span><span class="rc-cost nums">—</span></div>
+          <button type="button" class="rc-del" aria-label="Remove ingredient">×</button>
+          <label class="rc-pantry"><input type="checkbox" class="rc-own"> Already have it (pantry)</label>
+          <p class="rc-err" role="alert"></p>
+        </div>
+        
+        <div class="rc-row" data-row>
+          <div class="rcf rc-name-f"><span class="rcf-l">Ingredient 06</span><input class="rc-name" type="text" value="Salt and pepper" aria-label="Ingredient" autocomplete="off"></div>
+          <div class="rcf rc-price-f"><span class="rcf-l">Package Price</span><input class="rc-price" type="number" min="0" step="0.01" inputmode="decimal" value="0.30" aria-label="Package Price" autocomplete="off"></div>
+          <div class="rcf rc-size-f"><span class="rcf-l">Package Size</span><span class="rcq"><input class="rc-size" type="number" min="0" step="any" inputmode="decimal" value="1" aria-label="Package Size" autocomplete="off"><select class="rc-su" aria-label="Package Size unit"><option value="g">g</option><option value="kg">kg</option><option value="ml">ml</option><option value="L">L</option><option value="each" selected>each</option></select></span></div>
+          <div class="rcf rc-used-f"><span class="rcf-l">Amount Used</span><span class="rcq"><input class="rc-used" type="number" min="0" step="any" inputmode="decimal" value="1" aria-label="Amount Used" autocomplete="off"><select class="rc-uu" aria-label="Amount Used unit"><option value="g">g</option><option value="kg">kg</option><option value="ml">ml</option><option value="L">L</option><option value="each" selected>each</option></select></span></div>
+          <div class="rcf rc-cost-f"><span class="rcf-l">Cost</span><span class="rc-cost nums">—</span></div>
+          <button type="button" class="rc-del" aria-label="Remove ingredient">×</button>
+          <label class="rc-pantry"><input type="checkbox" class="rc-own" checked> Already have it (pantry)</label>
+          <p class="rc-err" role="alert"></p>
+        </div>
+        
+      </div>
+      <template id="rc-rowtpl">
+        <div class="rc-row" data-row>
+          <div class="rcf rc-name-f"><span class="rcf-l">Ingredient 01</span><input class="rc-name" type="text" value="" aria-label="Ingredient" autocomplete="off"></div>
+          <div class="rcf rc-price-f"><span class="rcf-l">Package Price</span><input class="rc-price" type="number" min="0" step="0.01" inputmode="decimal" value="" aria-label="Package Price" autocomplete="off"></div>
+          <div class="rcf rc-size-f"><span class="rcf-l">Package Size</span><span class="rcq"><input class="rc-size" type="number" min="0" step="any" inputmode="decimal" value="" aria-label="Package Size" autocomplete="off"><select class="rc-su" aria-label="Package Size unit"><option value="g">g</option><option value="kg">kg</option><option value="ml">ml</option><option value="L">L</option><option value="each">each</option></select></span></div>
+          <div class="rcf rc-used-f"><span class="rcf-l">Amount Used</span><span class="rcq"><input class="rc-used" type="number" min="0" step="any" inputmode="decimal" value="" aria-label="Amount Used" autocomplete="off"><select class="rc-uu" aria-label="Amount Used unit"><option value="g">g</option><option value="kg">kg</option><option value="ml">ml</option><option value="L">L</option><option value="each">each</option></select></span></div>
+          <div class="rcf rc-cost-f"><span class="rcf-l">Cost</span><span class="rc-cost nums">—</span></div>
+          <button type="button" class="rc-del" aria-label="Remove ingredient">×</button>
+          <label class="rc-pantry"><input type="checkbox" class="rc-own"> Already have it (pantry)</label>
+          <p class="rc-err" role="alert"></p>
+        </div>
+      </template>
+      <p class="rc-addrow"><button type="button" class="rc-addbtn" id="rc-add">&#43; Add Another Ingredient</button></p>
+      <div class="rc-settings">
+        <div class="rcf">
+          <label for="rc-servings">Number of servings</label>
+          <input id="rc-servings" type="number" min="1" step="1" inputmode="numeric" value="6" autocomplete="off">
+        </div>
+        <div class="rcf">
+          <label for="rc-rname">Recipe name (optional)</label>
+          <input id="rc-rname" type="text" placeholder="My recipe" autocomplete="off">
+        </div>
+      </div>
+      <p class="rc-exnote">Example loaded from Cheap Perogies with Cabbage, Onion and Sour Cream: package details come from its published cost breakdown, so the batch total and cost per serving match the recipe page.</p>
+    </div>
+
+    <div class="rc-results">
+      <h2 class="rc-panel-h">Your Recipe Cost</h2>
+      <div aria-live="polite" aria-atomic="true">
+        <div class="rc-pslabel">Cost Per Serving</div>
+        <div class="rc-big nums" id="rc-big">—</div>
+        <div class="rc-break">
+          <div class="rc-brow"><span>Batch Total</span><span class="nums" id="rc-bt">—</span></div>
+          <div class="rc-brow"><span>Servings</span><span class="nums" id="rc-sv">—</span></div>
+          <div class="rc-brow"><span>Full Basket Cost</span><span class="nums" id="rc-bk">—</span></div>
+          <div class="rc-brow" id="rc-tobuy-row" hidden><span>Still to Buy (pantry excluded)</span><span class="nums" id="rc-tb">—</span></div>
+        </div>
+      </div>
+      <div class="rc-tiers" id="rc-tiers">
+        <span class="rc-tier-seg" data-seg="1"><strong>Tier 1</strong> Under $1.50</span>
+        <span class="rc-tier-seg" data-seg="2"><strong>Tier 2</strong> $1.51 to $2.50</span>
+        <span class="rc-tier-seg" data-seg="3"><strong>Tier 3</strong> $2.51 to $3.25</span>
+        <span class="rc-tier-seg above" id="rc-above" hidden><strong>Above Tier 3</strong></span>
+      </div>
+      <p class="rc-msg" id="rc-msg" role="status"></p>
+      <p class="rc-shared" id="rc-shared"></p>
+    </div>
+
+    <div class="rc-actions">
+      <button type="button" class="rc-btn ghost" id="rc-load">Load Example Recipe</button>
+      <button type="button" class="rc-btn ghost" id="rc-reset">Reset Calculator</button>
+      <button type="button" class="rc-btn" id="rc-copy">Copy Breakdown</button>
+      <button type="button" class="rc-btn ghost" id="rc-print">Print Breakdown</button>
+      <span class="rc-copied" id="rc-copied" aria-live="polite"></span>
+    </div>
+  </section>
+
+  <section class="rc-edu">
+    <h2 class="rc-h2">Two Costs. Two Different Numbers.</h2>
+    <div class="rc-edugrid">
+      <div class="rc-educol">
+        <h3 class="rc-edu-h">Ingredient Cost</h3>
+        <p>The proportional cost of what the recipe actually uses. Half a package counts as half its price.</p>
+      </div>
+      <div class="rc-educol">
+        <h3 class="rc-edu-h">Basket Cost</h3>
+        <p>The amount required to buy full packages at the store, even when the recipe uses only part of each one.</p>
+      </div>
+    </div>
+    <p class="rc-eduex">A 900 g package costing $4.00: use 450 g and the ingredient cost is $2.00, but the purchase cost is the full $4.00.</p>
+  </section>
+
+  
+  <section class="rc-call">
+    <h2 class="rc-call-h">Already Know Your Batch Total?</h2>
+    <p>Use our simpler calculator to divide your recipe cost by the number of servings.</p>
+    <p><a class="rc-btn" href="/tools/cost-per-serving-calculator/">Open Cost Per Serving Calculator <span aria-hidden="true">→</span></a></p>
+  </section>
+  
+</div>
 </div>
 <script>
-(function(){
-  var wrap=document.getElementById('rc-lines'), out=document.getElementById('rc-out'),
-      serv=document.getElementById('rc-servings');
-  function line(){
-    var d=document.createElement('div');
-    d.style.display='grid'; d.style.gridTemplateColumns='1fr 1fr 1fr 1fr'; d.style.gap='.6rem'; d.style.marginTop='.6rem';
-    d.innerHTML='<input type="number" min="0" step="0.01" placeholder="Pkg price $" class="rc-p">'+
-      '<input type="number" min="0" step="any" placeholder="Pkg size" class="rc-s">'+
-      '<input type="number" min="0" step="any" placeholder="Amount used" class="rc-u">'+
-      '<input type="text" readonly class="rc-r" placeholder="$0.00" style="background:#F2F5F9;">';
-    wrap.appendChild(d);
-    d.querySelectorAll('input').forEach(function(i){ i.addEventListener('input',go); });
+(function () {
+  
+  var FACT = { g: { f: 1, d: 'm' }, kg: { f: 1000, d: 'm' }, ml: { f: 1, d: 'v' }, L: { f: 1000, d: 'v' }, each: { f: 1, d: 'c' } };
+  function parseNum(v) { if (v === null || v === undefined) return null; var s = String(v).trim().replace(',', '.'); if (s === '') return null; var n = Number(s); return isNaN(n) ? NaN : n; }
+  function rowCalc(v) {
+    var blank = !v.name.trim() && v.price === null && v.size === null && v.used === null;
+    if (blank) return { state: 'empty' };
+    if (v.price === null || v.size === null || v.used === null) {
+      if (isNaN(v.price) || isNaN(v.size) || isNaN(v.used)) return { state: 'invalid', err: 'enan' };
+      return { state: 'partial' };
+    }
+    if (isNaN(v.price) || isNaN(v.size) || isNaN(v.used)) return { state: 'invalid', err: 'enan' };
+    if (v.price < 0) return { state: 'invalid', err: 'eprice' };
+    if (v.size <= 0) return { state: 'invalid', err: 'esize' };
+    if (v.used < 0) return { state: 'invalid', err: 'eused' };
+    var su = FACT[v.su], uu = FACT[v.uu];
+    if (!su || !uu || su.d !== uu.d) return { state: 'invalid', err: 'eunits' };
+    var sizeBase = v.size * su.f, usedBase = v.used * uu.f;
+    var costCents = Math.round(v.price * 100 * usedBase / sizeBase);
+    return { state: 'valid', costCents: costCents, sizeBase: sizeBase, usedBase: usedBase, priceCents: Math.round(v.price * 100), dim: su.d };
   }
-  function go(){
-    var total=0;
-    wrap.querySelectorAll('div').forEach(function(d){
-      var p=parseFloat(d.querySelector('.rc-p').value), s=parseFloat(d.querySelector('.rc-s').value),
-          u=parseFloat(d.querySelector('.rc-u').value), r=d.querySelector('.rc-r');
-      if(p>=0 && s>0 && u>=0){ var v=p*u/s; r.value='$'+v.toFixed(2); total+=v; }
-      else r.value='';
+  function basketCalc(valid) {
+    var groups = {}, order = [];
+    valid.forEach(function (r) {
+      var key = r.name.trim().toLowerCase() + '|' + r.priceCents + '|' + r.sizeBase + '|' + r.dim;
+      if (!groups[key]) { groups[key] = { name: r.name.trim(), priceCents: r.priceCents, sizeBase: r.sizeBase, usedBase: 0, count: 0, pantry: true }; order.push(key); }
+      groups[key].usedBase += r.usedBase; groups[key].count += 1;
+      if (!r.pantry) groups[key].pantry = false;
     });
-    var sv=parseFloat(serv.value);
-    out.textContent='Batch total: $'+total.toFixed(2)+' · Per serving: '+(sv>0 ? '$'+(total/sv).toFixed(2) : '—');
+    var basket = 0, toBuy = 0, shared = [];
+    order.forEach(function (k) {
+      var g = groups[k];
+      var pkgs = g.usedBase > 0 ? Math.ceil(g.usedBase / g.sizeBase) : 0;
+      var c = pkgs * g.priceCents;
+      basket += c;
+      if (!g.pantry) toBuy += c;
+      if (g.count > 1 && g.name) shared.push(g.name);
+    });
+    return { basketCents: basket, toBuyCents: toBuy, shared: shared };
   }
-  document.getElementById('rc-add').addEventListener('click',function(){ line(); });
-  serv.addEventListener('input',go);
-  line(); line(); line();
+  
+  var root = document.getElementById('rccalc');
+  if (!root) return;
+  var fr = root.getAttribute('data-lang') === 'fr';
+  var rowsBox = document.getElementById('rc-rows');
+  var servEl = document.getElementById('rc-servings'), nameEl = document.getElementById('rc-rname');
+  var big = document.getElementById('rc-big'), bt = document.getElementById('rc-bt'), sv = document.getElementById('rc-sv'),
+      bk = document.getElementById('rc-bk'), tb = document.getElementById('rc-tb'), tbRow = document.getElementById('rc-tobuy-row'),
+      msg = document.getElementById('rc-msg'), sharedEl = document.getElementById('rc-shared'),
+      above = document.getElementById('rc-above'), copied = document.getElementById('rc-copied'),
+      copyBtn = document.getElementById('rc-copy'), printBtn = document.getElementById('rc-print');
+  var segs = root.querySelectorAll('.rc-tier-seg:not(.above)');
+  var EX = JSON.parse(root.getAttribute('data-ex') || '[]');
+  var EX_SERV = root.getAttribute('data-ex-servings');
+  function T(k) { return root.getAttribute('data-t-' + k) || ''; }
+  function fmt(cents) { var v = cents / 100; return fr ? v.toFixed(2).replace('.', ',') + ' $' : '$' + v.toFixed(2); }
+  function fmtQty(n) { return (n % 1 === 0) ? String(Math.round(n)) : String(parseFloat(n.toFixed(3))); }
+  function unitLabel(u) { return u === 'each' ? (fr ? 'unité' : 'each') : u; }
+  function readRow(row) {
+    return {
+      name: row.querySelector('.rc-name').value,
+      price: parseNum(row.querySelector('.rc-price').value),
+      size: parseNum(row.querySelector('.rc-size').value),
+      su: row.querySelector('.rc-su').value,
+      used: parseNum(row.querySelector('.rc-used').value),
+      uu: row.querySelector('.rc-uu').value,
+      pantry: row.querySelector('.rc-own').checked,
+      costEl: row.querySelector('.rc-cost'),
+      errEl: row.querySelector('.rc-err')
+    };
+  }
+  var copyText = '';
+  function compute() {
+    var rows = Array.prototype.map.call(rowsBox.querySelectorAll('[data-row]'), function (row) {
+      var v = readRow(row); var c = rowCalc(v);
+      v.calc = c;
+      if (c.state === 'valid') { v.costEl.textContent = fmt(c.costCents); v.errEl.textContent = ''; }
+      else if (c.state === 'invalid') { v.costEl.textContent = '—'; v.errEl.textContent = T(c.err); }
+      else { v.costEl.textContent = '—'; v.errEl.textContent = ''; }
+      return v;
+    });
+    var valid = rows.filter(function (v) { return v.calc.state === 'valid'; });
+    var bad = rows.filter(function (v) { return v.calc.state === 'partial' || v.calc.state === 'invalid'; });
+    var serv = parseNum(servEl.value);
+    var servOk = serv !== null && !isNaN(serv) && serv > 0;
+    segs.forEach(function (g) { g.classList.remove('on'); });
+    above.hidden = true;
+    if (valid.length === 0) {
+      big.textContent = '—'; bt.textContent = '—'; sv.textContent = '—'; bk.textContent = '—'; tbRow.hidden = true;
+      msg.textContent = bad.length ? T('warn') : T('prompt');
+      sharedEl.textContent = ''; copyText = '';
+      copyBtn.disabled = true; printBtn.disabled = true;
+      return;
+    }
+    var batchCents = valid.reduce(function (a, v) { return a + v.calc.costCents; }, 0);
+    var bsk = basketCalc(valid.map(function (v) { return { name: v.name, priceCents: v.calc.priceCents, sizeBase: v.calc.sizeBase, usedBase: v.calc.usedBase, dim: v.calc.dim, pantry: v.pantry }; }));
+    bt.textContent = fmt(batchCents);
+    bk.textContent = fmt(bsk.basketCents);
+    if (bsk.toBuyCents !== bsk.basketCents) { tbRow.hidden = false; tb.textContent = fmt(bsk.toBuyCents); } else { tbRow.hidden = true; }
+    if (servOk) {
+      sv.textContent = fmtQty(serv);
+      var perCents = Math.round(batchCents / serv);
+      big.textContent = fmt(perCents);
+      var per = batchCents / 100 / serv;
+      var tier = per <= 1.50 ? 1 : per <= 2.50 ? 2 : per <= 3.25 ? 3 : 0;
+      if (tier > 0) segs[tier - 1].classList.add('on'); else above.hidden = false;
+    } else {
+      sv.textContent = '—'; big.textContent = '—';
+    }
+    msg.textContent = bad.length ? T('warn') : (!servOk ? T('eserv') : '');
+    sharedEl.textContent = bsk.shared.length ? T('shared') + bsk.shared.join(', ') + '.' : '';
+    var ok = bad.length === 0 && servOk;
+    copyBtn.disabled = !ok; printBtn.disabled = !ok;
+    if (ok) {
+      var lines = [];
+      var rn = nameEl.value.trim();
+      lines.push(rn ? rn : T('head'));
+      valid.forEach(function (v) {
+        var nm = v.name.trim() || (T('ing') + ' ' + (rows.indexOf(v) + 1));
+        lines.push(T('line').split('{n}').join(nm).split('{u}').join(fmtQty(v.used)).split('{uu}').join(unitLabel(v.uu)).split('{s}').join(fmtQty(v.size)).split('{su}').join(unitLabel(v.su)).split('{p}').join(fmt(Math.round(v.price * 100))).split('{c}').join(fmt(v.calc.costCents)));
+      });
+      lines.push(T('batch') + ': ' + fmt(batchCents));
+      lines.push(T('serv') + ': ' + fmtQty(serv));
+      lines.push(T('perserv') + ': ' + fmt(Math.round(batchCents / serv)));
+      lines.push(T('basket').split('{b}').join(fmt(bsk.basketCents)));
+      if (bsk.toBuyCents !== bsk.basketCents) lines.push(T('tobuy').split('{b}').join(fmt(bsk.toBuyCents)));
+      copyText = lines.join('\n');
+    } else { copyText = ''; }
+  }
+  function renumber() {
+    rowsBox.querySelectorAll('[data-row]').forEach(function (row, i) {
+      var l = row.querySelector('.rcf-l');
+      if (l) l.textContent = T('ing') + ' ' + ('0' + (i + 1)).slice(-2);
+    });
+  }
+  function makeRow(data) {
+    var tpl = document.getElementById('rc-rowtpl');
+    var node = tpl.content.firstElementChild.cloneNode(true);
+    if (data) {
+      node.querySelector('.rc-name').value = data.name || '';
+      node.querySelector('.rc-price').value = data.price || '';
+      node.querySelector('.rc-size').value = data.size || '';
+      node.querySelector('.rc-su').value = data.su || 'g';
+      node.querySelector('.rc-used').value = data.used || '';
+      node.querySelector('.rc-uu').value = data.uu || 'g';
+      node.querySelector('.rc-own').checked = !!data.pantry;
+    }
+    return node;
+  }
+  function loadExample() {
+    rowsBox.innerHTML = '';
+    EX.forEach(function (e) { rowsBox.appendChild(makeRow(e)); });
+    servEl.value = EX_SERV; nameEl.value = '';
+    renumber(); compute();
+  }
+  rowsBox.addEventListener('input', compute);
+  rowsBox.addEventListener('change', compute);
+  rowsBox.addEventListener('click', function (e) {
+    var del = e.target.closest('.rc-del');
+    if (del) {
+      var row = del.closest('[data-row]');
+      if (row) { row.remove(); if (!rowsBox.querySelector('[data-row]')) rowsBox.appendChild(makeRow(null)); renumber(); compute(); }
+    }
+  });
+  servEl.addEventListener('input', compute);
+  nameEl.addEventListener('input', compute);
+  document.getElementById('rc-add').addEventListener('click', function () {
+    var node = makeRow(null);
+    rowsBox.appendChild(node); renumber(); compute();
+    var inp = node.querySelector('.rc-name'); if (inp) inp.focus();
+  });
+  document.getElementById('rc-load').addEventListener('click', loadExample);
+  document.getElementById('rc-reset').addEventListener('click', loadExample);
+  copyBtn.addEventListener('click', function () {
+    if (!copyText || copyBtn.disabled) return;
+    function done() { copied.textContent = T('copied'); setTimeout(function () { copied.textContent = ''; }, 2500); }
+    if (navigator.clipboard && navigator.clipboard.writeText) { navigator.clipboard.writeText(copyText).then(done, done); }
+    else { var ta = document.createElement('textarea'); ta.value = copyText; document.body.appendChild(ta); ta.select(); try { document.execCommand('copy'); } catch (e) {} document.body.removeChild(ta); done(); }
+  });
+  printBtn.addEventListener('click', function () { if (!printBtn.disabled) window.print(); });
+  renumber(); compute();
 })();
 </script>
-<h2 id="the-basket-cost-too">The basket cost, too</h2>
-<p>The calculator gives you the cost of what you used. The basket cost is simpler and ruder: add up the full price of every package on the shopping list. A recipe can be gentle per serving and still need a forty dollar basket the first time. Both numbers matter, which is why every recipe here shows both.</p>
-
-    </article>
-  </div>
-</div>
 
 <footer class="site">
   <div class="foot-in">

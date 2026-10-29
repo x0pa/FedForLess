@@ -1,0 +1,323 @@
+{{ define "main" }}
+{{ $r := .Site.GetPage "/recipes/cheap-perogies-with-cabbage-onion" }}
+{{ $cps := .Site.GetPage "/tools/cost-per-serving-calculator" }}
+{{ $tools := .Site.GetPage "/tools" }}
+{{ $pkgs := slice
+  (dict "price" "2.99" "size" "907" "su" "g" "used" "1814" "uu" "g" "pantry" false)
+  (dict "price" "2.63" "size" "1000" "su" "g" "used" "800" "uu" "g" "pantry" false)
+  (dict "price" "4.58" "size" "1360" "su" "g" "used" "300" "uu" "g" "pantry" false)
+  (dict "price" "3.49" "size" "500" "su" "ml" "used" "250" "uu" "ml" "pantry" false)
+  (dict "price" "5.68" "size" "454" "su" "g" "used" "30" "uu" "g" "pantry" false)
+  (dict "price" "0.30" "size" "1" "su" "each" "used" "1" "uu" "each" "pantry" true) }}
+{{ $units := slice "g" "kg" "ml" "L" "each" }}
+{{ $exData := slice }}
+{{ with $r }}{{ range $i, $b := .Params.breakdown }}{{ if lt $i (len $pkgs) }}{{ $p := index $pkgs $i }}{{ $exData = $exData | append (dict "name" $b.item "price" $p.price "size" $p.size "su" $p.su "used" $p.used "uu" $p.uu "pantry" $p.pantry) }}{{ end }}{{ end }}{{ end }}
+<div class="wrap">
+<div class="rcpage">
+  <nav class="rc-crumb" aria-label="breadcrumb">
+    <a href="{{ "/" | relLangURL }}">{{ i18n "cps_home" }}</a> <span aria-hidden="true">{{ i18n "cps_crumb_sep" }}</span> <a href="{{ $tools.RelPermalink }}">{{ $tools.Title }}</a> <span aria-hidden="true">{{ i18n "cps_crumb_sep" }}</span> <span aria-current="page">{{ .Title }}</span>
+  </nav>
+
+  <header class="rc-hero">
+    <p class="rc-eyebrow">{{ i18n "rc_eyebrow" }}</p>
+    <h1 class="rc-h1">{{ i18n "rc_h1_l1" }}<br><span>{{ i18n "rc_h1_l2" }}</span></h1>
+    <p class="rc-intro">{{ i18n "rc_intro" }}</p>
+    <p class="rc-support">{{ i18n "rc_support" }}</p>
+  </header>
+
+  <section class="rc-calc" id="rccalc" data-lang="{{ .Lang }}"
+    data-t-prompt="{{ i18n "rc_prompt" }}" data-t-warn="{{ i18n "rc_warn_partial" }}"
+    data-t-eprice="{{ i18n "rc_err_price" }}" data-t-esize="{{ i18n "rc_err_size" }}" data-t-eused="{{ i18n "rc_err_used" }}"
+    data-t-eunits="{{ i18n "rc_err_units" }}" data-t-enan="{{ i18n "rc_err_nan" }}" data-t-eserv="{{ i18n "rc_err_serv" }}"
+    data-t-shared="{{ i18n "rc_shared" }}" data-t-copied="{{ i18n "rc_copied" }}"
+    data-t-head="{{ i18n "rc_copy_head" }}" data-t-line="{{ i18n "rc_copy_line" }}"
+    data-t-basket="{{ i18n "rc_copy_basket" }}" data-t-tobuy="{{ i18n "rc_copy_tobuy" }}"
+    data-t-ing="{{ i18n "rc_ing_n" }}" data-t-remove="{{ i18n "rc_remove" }}"
+    data-t-batch="{{ i18n "batch_total" }}" data-t-serv="{{ i18n "meta_servings" }}" data-t-perserv="{{ i18n "cost_per_serving" }}"
+    data-ex='{{ $exData | jsonify | safeJS }}' data-ex-servings="{{ with $r }}{{ .Params.servings }}{{ end }}">
+    <div class="rc-inputs">
+      <h2 class="rc-panel-h">{{ i18n "rc_build_h" }}</h2>
+      <p class="rc-panel-sub">{{ i18n "rc_build_sub" }}</p>
+      <div class="rc-headrow" aria-hidden="true">
+        <span>{{ i18n "rc_col_name" }}</span><span>{{ i18n "rc_col_price" }}</span><span>{{ i18n "rc_col_size" }}</span><span>{{ i18n "rc_col_used" }}</span><span>{{ i18n "rc_col_cost" }}</span><span></span>
+      </div>
+      <div id="rc-rows">
+        {{ range $i, $e := $exData }}
+        <div class="rc-row" data-row>
+          <div class="rcf rc-name-f"><span class="rcf-l">{{ i18n "rc_ing_n" }} {{ printf "%02d" (add $i 1) }}</span><input class="rc-name" type="text" value="{{ $e.name }}" aria-label="{{ i18n "rc_col_name" }}" autocomplete="off"></div>
+          <div class="rcf rc-price-f"><span class="rcf-l">{{ i18n "rc_col_price" }}</span><input class="rc-price" type="number" min="0" step="0.01" inputmode="decimal" value="{{ $e.price }}" aria-label="{{ i18n "rc_col_price" }}" autocomplete="off"></div>
+          <div class="rcf rc-size-f"><span class="rcf-l">{{ i18n "rc_col_size" }}</span><span class="rcq"><input class="rc-size" type="number" min="0" step="any" inputmode="decimal" value="{{ $e.size }}" aria-label="{{ i18n "rc_col_size" }}" autocomplete="off"><select class="rc-su" aria-label="{{ i18n "rc_col_size" }} unit">{{ range $units }}<option value="{{ . }}"{{ if eq . $e.su }} selected{{ end }}>{{ if eq . "each" }}{{ i18n "rc_unit_each" }}{{ else }}{{ . }}{{ end }}</option>{{ end }}</select></span></div>
+          <div class="rcf rc-used-f"><span class="rcf-l">{{ i18n "rc_col_used" }}</span><span class="rcq"><input class="rc-used" type="number" min="0" step="any" inputmode="decimal" value="{{ $e.used }}" aria-label="{{ i18n "rc_col_used" }}" autocomplete="off"><select class="rc-uu" aria-label="{{ i18n "rc_col_used" }} unit">{{ range $units }}<option value="{{ . }}"{{ if eq . $e.uu }} selected{{ end }}>{{ if eq . "each" }}{{ i18n "rc_unit_each" }}{{ else }}{{ . }}{{ end }}</option>{{ end }}</select></span></div>
+          <div class="rcf rc-cost-f"><span class="rcf-l">{{ i18n "rc_col_cost" }}</span><span class="rc-cost nums">—</span></div>
+          <button type="button" class="rc-del" aria-label="{{ i18n "rc_remove" }}">×</button>
+          <label class="rc-pantry"><input type="checkbox" class="rc-own"{{ if $e.pantry }} checked{{ end }}> {{ i18n "rc_pantry" }}</label>
+          <p class="rc-err" role="alert"></p>
+        </div>
+        {{ end }}
+      </div>
+      <template id="rc-rowtpl">
+        <div class="rc-row" data-row>
+          <div class="rcf rc-name-f"><span class="rcf-l">{{ i18n "rc_ing_n" }} 01</span><input class="rc-name" type="text" value="" aria-label="{{ i18n "rc_col_name" }}" autocomplete="off"></div>
+          <div class="rcf rc-price-f"><span class="rcf-l">{{ i18n "rc_col_price" }}</span><input class="rc-price" type="number" min="0" step="0.01" inputmode="decimal" value="" aria-label="{{ i18n "rc_col_price" }}" autocomplete="off"></div>
+          <div class="rcf rc-size-f"><span class="rcf-l">{{ i18n "rc_col_size" }}</span><span class="rcq"><input class="rc-size" type="number" min="0" step="any" inputmode="decimal" value="" aria-label="{{ i18n "rc_col_size" }}" autocomplete="off"><select class="rc-su" aria-label="{{ i18n "rc_col_size" }} unit">{{ range $units }}<option value="{{ . }}">{{ if eq . "each" }}{{ i18n "rc_unit_each" }}{{ else }}{{ . }}{{ end }}</option>{{ end }}</select></span></div>
+          <div class="rcf rc-used-f"><span class="rcf-l">{{ i18n "rc_col_used" }}</span><span class="rcq"><input class="rc-used" type="number" min="0" step="any" inputmode="decimal" value="" aria-label="{{ i18n "rc_col_used" }}" autocomplete="off"><select class="rc-uu" aria-label="{{ i18n "rc_col_used" }} unit">{{ range $units }}<option value="{{ . }}">{{ if eq . "each" }}{{ i18n "rc_unit_each" }}{{ else }}{{ . }}{{ end }}</option>{{ end }}</select></span></div>
+          <div class="rcf rc-cost-f"><span class="rcf-l">{{ i18n "rc_col_cost" }}</span><span class="rc-cost nums">—</span></div>
+          <button type="button" class="rc-del" aria-label="{{ i18n "rc_remove" }}">×</button>
+          <label class="rc-pantry"><input type="checkbox" class="rc-own"> {{ i18n "rc_pantry" }}</label>
+          <p class="rc-err" role="alert"></p>
+        </div>
+      </template>
+      <p class="rc-addrow"><button type="button" class="rc-addbtn" id="rc-add">{{ i18n "rc_add" }}</button></p>
+      <div class="rc-settings">
+        <div class="rcf">
+          <label for="rc-servings">{{ i18n "rc_serv_label" }}</label>
+          <input id="rc-servings" type="number" min="1" step="1" inputmode="numeric" value="{{ with $r }}{{ .Params.servings }}{{ end }}" autocomplete="off">
+        </div>
+        <div class="rcf">
+          <label for="rc-rname">{{ i18n "rc_name_label" }}</label>
+          <input id="rc-rname" type="text" placeholder="{{ i18n "rc_name_ph" }}" autocomplete="off">
+        </div>
+      </div>
+      {{ with $r }}<p class="rc-exnote">{{ delimit (split (i18n "rc_example_note") "{x}") .Title }}</p>{{ end }}
+    </div>
+
+    <div class="rc-results">
+      <h2 class="rc-panel-h">{{ i18n "rc_result_h" }}</h2>
+      <div aria-live="polite" aria-atomic="true">
+        <div class="rc-pslabel">{{ i18n "cost_per_serving" }}</div>
+        <div class="rc-big nums" id="rc-big">—</div>
+        <div class="rc-break">
+          <div class="rc-brow"><span>{{ i18n "batch_total" }}</span><span class="nums" id="rc-bt">—</span></div>
+          <div class="rc-brow"><span>{{ i18n "meta_servings" }}</span><span class="nums" id="rc-sv">—</span></div>
+          <div class="rc-brow"><span>{{ i18n "rc_basket" }}</span><span class="nums" id="rc-bk">—</span></div>
+          <div class="rc-brow" id="rc-tobuy-row" hidden><span>{{ i18n "rc_tobuy" }}</span><span class="nums" id="rc-tb">—</span></div>
+        </div>
+      </div>
+      <div class="rc-tiers" id="rc-tiers">
+        <span class="rc-tier-seg" data-seg="1"><strong>{{ i18n "tier_green" }}</strong> {{ i18n "t1_big" }}</span>
+        <span class="rc-tier-seg" data-seg="2"><strong>{{ i18n "tier_butter" }}</strong> {{ i18n "t2_big" }}</span>
+        <span class="rc-tier-seg" data-seg="3"><strong>{{ i18n "tier_tomato" }}</strong> {{ i18n "t3_big" }}</span>
+        <span class="rc-tier-seg above" id="rc-above" hidden><strong>{{ i18n "cps_above" }}</strong></span>
+      </div>
+      <p class="rc-msg" id="rc-msg" role="status"></p>
+      <p class="rc-shared" id="rc-shared"></p>
+    </div>
+
+    <div class="rc-actions">
+      <button type="button" class="rc-btn ghost" id="rc-load">{{ i18n "rc_load" }}</button>
+      <button type="button" class="rc-btn ghost" id="rc-reset">{{ i18n "rc_reset" }}</button>
+      <button type="button" class="rc-btn" id="rc-copy">{{ i18n "rc_copy" }}</button>
+      <button type="button" class="rc-btn ghost" id="rc-print">{{ i18n "rc_print" }}</button>
+      <span class="rc-copied" id="rc-copied" aria-live="polite"></span>
+    </div>
+  </section>
+
+  <section class="rc-edu">
+    <h2 class="rc-h2">{{ i18n "rc_edu_h" }}</h2>
+    <div class="rc-edugrid">
+      <div class="rc-educol">
+        <h3 class="rc-edu-h">{{ i18n "rc_edu_a_h" }}</h3>
+        <p>{{ i18n "rc_edu_a_p" }}</p>
+      </div>
+      <div class="rc-educol">
+        <h3 class="rc-edu-h">{{ i18n "rc_edu_b_h" }}</h3>
+        <p>{{ i18n "rc_edu_b_p" }}</p>
+      </div>
+    </div>
+    <p class="rc-eduex">{{ i18n "rc_edu_ex" }}</p>
+  </section>
+
+  {{ with $cps }}
+  <section class="rc-call">
+    <h2 class="rc-call-h">{{ i18n "rc_call_h" }}</h2>
+    <p>{{ i18n "rc_call_p" }}</p>
+    <p><a class="rc-btn" href="{{ .RelPermalink }}">{{ i18n "tl_open" }} {{ .Title }} <span aria-hidden="true">→</span></a></p>
+  </section>
+  {{ end }}
+</div>
+</div>
+<script>
+(function () {
+  // ==PURE==
+  var FACT = { g: { f: 1, d: 'm' }, kg: { f: 1000, d: 'm' }, ml: { f: 1, d: 'v' }, L: { f: 1000, d: 'v' }, each: { f: 1, d: 'c' } };
+  function parseNum(v) { if (v === null || v === undefined) return null; var s = String(v).trim().replace(',', '.'); if (s === '') return null; var n = Number(s); return isNaN(n) ? NaN : n; }
+  function rowCalc(v) {
+    var blank = !v.name.trim() && v.price === null && v.size === null && v.used === null;
+    if (blank) return { state: 'empty' };
+    if (v.price === null || v.size === null || v.used === null) {
+      if (isNaN(v.price) || isNaN(v.size) || isNaN(v.used)) return { state: 'invalid', err: 'enan' };
+      return { state: 'partial' };
+    }
+    if (isNaN(v.price) || isNaN(v.size) || isNaN(v.used)) return { state: 'invalid', err: 'enan' };
+    if (v.price < 0) return { state: 'invalid', err: 'eprice' };
+    if (v.size <= 0) return { state: 'invalid', err: 'esize' };
+    if (v.used < 0) return { state: 'invalid', err: 'eused' };
+    var su = FACT[v.su], uu = FACT[v.uu];
+    if (!su || !uu || su.d !== uu.d) return { state: 'invalid', err: 'eunits' };
+    var sizeBase = v.size * su.f, usedBase = v.used * uu.f;
+    var costCents = Math.round(v.price * 100 * usedBase / sizeBase);
+    return { state: 'valid', costCents: costCents, sizeBase: sizeBase, usedBase: usedBase, priceCents: Math.round(v.price * 100), dim: su.d };
+  }
+  function basketCalc(valid) {
+    var groups = {}, order = [];
+    valid.forEach(function (r) {
+      var key = r.name.trim().toLowerCase() + '|' + r.priceCents + '|' + r.sizeBase + '|' + r.dim;
+      if (!groups[key]) { groups[key] = { name: r.name.trim(), priceCents: r.priceCents, sizeBase: r.sizeBase, usedBase: 0, count: 0, pantry: true }; order.push(key); }
+      groups[key].usedBase += r.usedBase; groups[key].count += 1;
+      if (!r.pantry) groups[key].pantry = false;
+    });
+    var basket = 0, toBuy = 0, shared = [];
+    order.forEach(function (k) {
+      var g = groups[k];
+      var pkgs = g.usedBase > 0 ? Math.ceil(g.usedBase / g.sizeBase) : 0;
+      var c = pkgs * g.priceCents;
+      basket += c;
+      if (!g.pantry) toBuy += c;
+      if (g.count > 1 && g.name) shared.push(g.name);
+    });
+    return { basketCents: basket, toBuyCents: toBuy, shared: shared };
+  }
+  // ==END PURE==
+  var root = document.getElementById('rccalc');
+  if (!root) return;
+  var fr = root.getAttribute('data-lang') === 'fr';
+  var rowsBox = document.getElementById('rc-rows');
+  var servEl = document.getElementById('rc-servings'), nameEl = document.getElementById('rc-rname');
+  var big = document.getElementById('rc-big'), bt = document.getElementById('rc-bt'), sv = document.getElementById('rc-sv'),
+      bk = document.getElementById('rc-bk'), tb = document.getElementById('rc-tb'), tbRow = document.getElementById('rc-tobuy-row'),
+      msg = document.getElementById('rc-msg'), sharedEl = document.getElementById('rc-shared'),
+      above = document.getElementById('rc-above'), copied = document.getElementById('rc-copied'),
+      copyBtn = document.getElementById('rc-copy'), printBtn = document.getElementById('rc-print');
+  var segs = root.querySelectorAll('.rc-tier-seg:not(.above)');
+  var EX = JSON.parse(root.getAttribute('data-ex') || '[]');
+  var EX_SERV = root.getAttribute('data-ex-servings');
+  function T(k) { return root.getAttribute('data-t-' + k) || ''; }
+  function fmt(cents) { var v = cents / 100; return fr ? v.toFixed(2).replace('.', ',') + ' $' : '$' + v.toFixed(2); }
+  function fmtQty(n) { return (n % 1 === 0) ? String(Math.round(n)) : String(parseFloat(n.toFixed(3))); }
+  function unitLabel(u) { return u === 'each' ? (fr ? 'unité' : 'each') : u; }
+  function readRow(row) {
+    return {
+      name: row.querySelector('.rc-name').value,
+      price: parseNum(row.querySelector('.rc-price').value),
+      size: parseNum(row.querySelector('.rc-size').value),
+      su: row.querySelector('.rc-su').value,
+      used: parseNum(row.querySelector('.rc-used').value),
+      uu: row.querySelector('.rc-uu').value,
+      pantry: row.querySelector('.rc-own').checked,
+      costEl: row.querySelector('.rc-cost'),
+      errEl: row.querySelector('.rc-err')
+    };
+  }
+  var copyText = '';
+  function compute() {
+    var rows = Array.prototype.map.call(rowsBox.querySelectorAll('[data-row]'), function (row) {
+      var v = readRow(row); var c = rowCalc(v);
+      v.calc = c;
+      if (c.state === 'valid') { v.costEl.textContent = fmt(c.costCents); v.errEl.textContent = ''; }
+      else if (c.state === 'invalid') { v.costEl.textContent = '—'; v.errEl.textContent = T(c.err); }
+      else { v.costEl.textContent = '—'; v.errEl.textContent = ''; }
+      return v;
+    });
+    var valid = rows.filter(function (v) { return v.calc.state === 'valid'; });
+    var bad = rows.filter(function (v) { return v.calc.state === 'partial' || v.calc.state === 'invalid'; });
+    var serv = parseNum(servEl.value);
+    var servOk = serv !== null && !isNaN(serv) && serv > 0;
+    segs.forEach(function (g) { g.classList.remove('on'); });
+    above.hidden = true;
+    if (valid.length === 0) {
+      big.textContent = '—'; bt.textContent = '—'; sv.textContent = '—'; bk.textContent = '—'; tbRow.hidden = true;
+      msg.textContent = bad.length ? T('warn') : T('prompt');
+      sharedEl.textContent = ''; copyText = '';
+      copyBtn.disabled = true; printBtn.disabled = true;
+      return;
+    }
+    var batchCents = valid.reduce(function (a, v) { return a + v.calc.costCents; }, 0);
+    var bsk = basketCalc(valid.map(function (v) { return { name: v.name, priceCents: v.calc.priceCents, sizeBase: v.calc.sizeBase, usedBase: v.calc.usedBase, dim: v.calc.dim, pantry: v.pantry }; }));
+    bt.textContent = fmt(batchCents);
+    bk.textContent = fmt(bsk.basketCents);
+    if (bsk.toBuyCents !== bsk.basketCents) { tbRow.hidden = false; tb.textContent = fmt(bsk.toBuyCents); } else { tbRow.hidden = true; }
+    if (servOk) {
+      sv.textContent = fmtQty(serv);
+      var perCents = Math.round(batchCents / serv);
+      big.textContent = fmt(perCents);
+      var per = batchCents / 100 / serv;
+      var tier = per <= 1.50 ? 1 : per <= 2.50 ? 2 : per <= 3.25 ? 3 : 0;
+      if (tier > 0) segs[tier - 1].classList.add('on'); else above.hidden = false;
+    } else {
+      sv.textContent = '—'; big.textContent = '—';
+    }
+    msg.textContent = bad.length ? T('warn') : (!servOk ? T('eserv') : '');
+    sharedEl.textContent = bsk.shared.length ? T('shared') + bsk.shared.join(', ') + '.' : '';
+    var ok = bad.length === 0 && servOk;
+    copyBtn.disabled = !ok; printBtn.disabled = !ok;
+    if (ok) {
+      var lines = [];
+      var rn = nameEl.value.trim();
+      lines.push(rn ? rn : T('head'));
+      valid.forEach(function (v) {
+        var nm = v.name.trim() || (T('ing') + ' ' + (rows.indexOf(v) + 1));
+        lines.push(T('line').split('{n}').join(nm).split('{u}').join(fmtQty(v.used)).split('{uu}').join(unitLabel(v.uu)).split('{s}').join(fmtQty(v.size)).split('{su}').join(unitLabel(v.su)).split('{p}').join(fmt(Math.round(v.price * 100))).split('{c}').join(fmt(v.calc.costCents)));
+      });
+      lines.push(T('batch') + ': ' + fmt(batchCents));
+      lines.push(T('serv') + ': ' + fmtQty(serv));
+      lines.push(T('perserv') + ': ' + fmt(Math.round(batchCents / serv)));
+      lines.push(T('basket').split('{b}').join(fmt(bsk.basketCents)));
+      if (bsk.toBuyCents !== bsk.basketCents) lines.push(T('tobuy').split('{b}').join(fmt(bsk.toBuyCents)));
+      copyText = lines.join('\n');
+    } else { copyText = ''; }
+  }
+  function renumber() {
+    rowsBox.querySelectorAll('[data-row]').forEach(function (row, i) {
+      var l = row.querySelector('.rcf-l');
+      if (l) l.textContent = T('ing') + ' ' + ('0' + (i + 1)).slice(-2);
+    });
+  }
+  function makeRow(data) {
+    var tpl = document.getElementById('rc-rowtpl');
+    var node = tpl.content.firstElementChild.cloneNode(true);
+    if (data) {
+      node.querySelector('.rc-name').value = data.name || '';
+      node.querySelector('.rc-price').value = data.price || '';
+      node.querySelector('.rc-size').value = data.size || '';
+      node.querySelector('.rc-su').value = data.su || 'g';
+      node.querySelector('.rc-used').value = data.used || '';
+      node.querySelector('.rc-uu').value = data.uu || 'g';
+      node.querySelector('.rc-own').checked = !!data.pantry;
+    }
+    return node;
+  }
+  function loadExample() {
+    rowsBox.innerHTML = '';
+    EX.forEach(function (e) { rowsBox.appendChild(makeRow(e)); });
+    servEl.value = EX_SERV; nameEl.value = '';
+    renumber(); compute();
+  }
+  rowsBox.addEventListener('input', compute);
+  rowsBox.addEventListener('change', compute);
+  rowsBox.addEventListener('click', function (e) {
+    var del = e.target.closest('.rc-del');
+    if (del) {
+      var row = del.closest('[data-row]');
+      if (row) { row.remove(); if (!rowsBox.querySelector('[data-row]')) rowsBox.appendChild(makeRow(null)); renumber(); compute(); }
+    }
+  });
+  servEl.addEventListener('input', compute);
+  nameEl.addEventListener('input', compute);
+  document.getElementById('rc-add').addEventListener('click', function () {
+    var node = makeRow(null);
+    rowsBox.appendChild(node); renumber(); compute();
+    var inp = node.querySelector('.rc-name'); if (inp) inp.focus();
+  });
+  document.getElementById('rc-load').addEventListener('click', loadExample);
+  document.getElementById('rc-reset').addEventListener('click', loadExample);
+  copyBtn.addEventListener('click', function () {
+    if (!copyText || copyBtn.disabled) return;
+    function done() { copied.textContent = T('copied'); setTimeout(function () { copied.textContent = ''; }, 2500); }
+    if (navigator.clipboard && navigator.clipboard.writeText) { navigator.clipboard.writeText(copyText).then(done, done); }
+    else { var ta = document.createElement('textarea'); ta.value = copyText; document.body.appendChild(ta); ta.select(); try { document.execCommand('copy'); } catch (e) {} document.body.removeChild(ta); done(); }
+  });
+  printBtn.addEventListener('click', function () { if (!printBtn.disabled) window.print(); });
+  renumber(); compute();
+})();
+</script>
+{{ end }}
