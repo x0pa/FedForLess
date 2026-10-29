@@ -1,0 +1,78 @@
+{{ define "main" }}
+{{ $about := .Site.GetPage "/about" }}
+{{ $hwp := .Site.GetPage "/how-we-price" }}
+{{ $recipes := .Site.GetPage "/recipes" }}
+<div class="wrap">
+<div class="contactpage">
+
+  <header class="ct-hero">
+    <div class="ct-hero-l">
+      <p class="ct-eyebrow">{{ i18n "ct_eyebrow" }}</p>
+      <h1 class="ct-h1">{{ i18n "ct_h1_l1" }}<br><span>{{ i18n "ct_h1_l2" }}</span></h1>
+    </div>
+    <div class="ct-hero-r">
+      <p class="ct-intro">{{ i18n "ct_intro" }}</p>
+      <div class="ct-panel">
+        <h2 class="ct-panel-h">{{ i18n "ct_panel_h" }}</h2>
+        <p class="ct-email"><a href="mailto:hello@fedforless.ca">hello@fedforless.ca</a></p>
+        <p><a class="ct-btn" href="mailto:hello@fedforless.ca">{{ i18n "ct_panel_btn" }} <span aria-hidden="true">→</span></a></p>
+        <p class="ct-panel-p">{{ i18n "ct_panel_p" }}</p>
+      </div>
+    </div>
+  </header>
+
+  <section class="ct-reasons">
+    <h2 class="ct-h2">{{ i18n "ct_reasons_h" }}</h2>
+    <div class="ct-grid">
+      <div class="ct-item">
+        <div class="ct-num">01</div>
+        <h3 class="ct-item-h">{{ i18n "ct_r1_h" }}</h3>
+        <p>{{ i18n "ct_r1_p" }}</p>
+        <p><a class="ct-link" href="mailto:hello@fedforless.ca?subject={{ i18n "ct_sub1" | urlquery }}">{{ i18n "ct_r1_a" }} <span aria-hidden="true">→</span></a></p>
+      </div>
+      <div class="ct-item">
+        <div class="ct-num">02</div>
+        <h3 class="ct-item-h">{{ i18n "ct_r2_h" }}</h3>
+        <p>{{ i18n "ct_r2_p" }}</p>
+        <p><a class="ct-link" href="mailto:hello@fedforless.ca?subject={{ i18n "ct_sub2" | urlquery }}">{{ i18n "ct_r2_a" }} <span aria-hidden="true">→</span></a></p>
+      </div>
+      <div class="ct-item">
+        <div class="ct-num">03</div>
+        <h3 class="ct-item-h">{{ i18n "ct_r3_h" }}</h3>
+        <p>{{ i18n "ct_r3_p" }}</p>
+        <p><a class="ct-link" href="mailto:hello@fedforless.ca?subject={{ i18n "ct_sub3" | urlquery }}">{{ i18n "ct_r3_a" }} <span aria-hidden="true">→</span></a></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="ct-check">
+    <h2 class="ct-check-h">{{ i18n "ct_check_h" }}</h2>
+    <ul class="ct-checklist">
+      <li>{{ i18n "ct_check_1" }}</li>
+      <li>{{ i18n "ct_check_2" }}</li>
+      <li>{{ i18n "ct_check_3" }}</li>
+      <li>{{ i18n "ct_check_4" }}</li>
+      <li>{{ i18n "ct_check_5" }}</li>
+    </ul>
+  </section>
+
+  <section class="ct-pub">
+    <p class="ct-eyebrow">{{ i18n "ct_pub_eyebrow" }}</p>
+    <h2 class="ct-h2">{{ i18n "ct_pub_h" }}</h2>
+    <p class="ct-pub-p">{{ i18n "ct_pub_p1" }}</p>
+    <p class="ct-pub-p">{{ i18n "ct_pub_p2" }}</p>
+    <p class="ct-pub-links">
+      <a class="ct-link" href="{{ $about.RelPermalink }}">{{ i18n "ct_pub_l1" }} <span aria-hidden="true">→</span></a>
+      <a class="ct-link" href="{{ $hwp.RelPermalink }}">{{ i18n "ct_pub_l2" }} <span aria-hidden="true">→</span></a>
+    </p>
+  </section>
+
+  <section class="ct-fin">
+    <h2 class="ct-h2">{{ i18n "ct_fin_h" }}</h2>
+    <p>{{ i18n "ct_fin_p" }}</p>
+    <p><a class="ct-btn" href="{{ $recipes.RelPermalink }}">{{ i18n "ct_fin_cta" }} <span aria-hidden="true">→</span></a></p>
+  </section>
+
+</div>
+</div>
+{{ end }}
