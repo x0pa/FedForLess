@@ -1301,3 +1301,15 @@ ol.homeindex .rowlink:hover .rarr{transform:translateX(3px)}
   footer .fdesigned{display:block;margin-top:.3rem}
   footer .fsep{display:none}
 }
+
+/* Social share (v39) */
+.sharerow{display:flex;align-items:center;gap:.55rem}
+.share-lbl{font-family:"Oswald",sans-serif;font-size:.72rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.share-btns{display:flex;gap:.45rem}
+.share-btn{width:38px;height:38px;border:1px solid var(--hair);border-radius:50%;display:inline-flex;align-items:center;justify-content:center;color:var(--denim);background:#fff;transition:background .15s ease,color .15s ease,border-color .15s ease}
+.share-btn svg{width:17px;height:17px;fill:currentColor;display:block}
+.share-btn:hover{background:var(--denim);border-color:var(--denim);color:#fff}
+.ractions .sharerow{margin-left:auto}
+.sharerow.end{border-top:1px solid var(--hair);padding-top:1.1rem;margin:2rem 0 0}
+@media (max-width:560px){.ractions .sharerow{margin-left:0}}
+@media print{.sharerow{display:none!important}}

@@ -145,6 +145,7 @@
     </div>
   </section>
 
+  {{ partial "share.html" (dict "page" . "end" true) }}
   {{ $related := where (where .Site.RegularPages "Section" "basket-weeks") "RelPermalink" "ne" .RelPermalink }}
   {{ if $related }}
   <section class="bw-related">

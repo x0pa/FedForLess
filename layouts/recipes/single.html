@@ -68,6 +68,7 @@
       <div class="ractions">
         <a class="jumpbtn" href="#{{ i18n "jump_anchor" }}">{{ i18n "jump_recipe" }} <span aria-hidden="true">↓</span></a>
         <button type="button" class="jumpbtn printbtn" id="print-recipe">{{ i18n "print_recipe" }}</button>
+        {{ partial "share.html" (dict "page" . "end" false) }}
       </div>
     </div>
 
@@ -185,6 +186,7 @@
   {{ end }}
   {{ $sorted := sort $scored "s" "desc" }}
   {{ if $sorted }}
+  {{ partial "share.html" (dict "page" . "end" true) }}
   <section class="related">
     <div class="rel-head"><h2>{{ i18n "related_h" }}</h2><a class="rel-all" href="{{ "/recipes/" | relLangURL }}">{{ i18n "view_all" }} <span aria-hidden="true">→</span></a></div>
     <div class="relgrid">
