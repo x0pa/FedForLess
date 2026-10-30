@@ -3,6 +3,8 @@
   --navy:#091925; --panel:#F1F5F9;
 }
 *{margin:0;padding:0;box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%;overflow-x:clip}
+body{overflow-x:clip}
 body{background:var(--white);color:var(--ink);font-family:"Public Sans",system-ui,sans-serif;font-size:16px;line-height:1.6}
 .osw{font-family:"Oswald",sans-serif}
 .nums{font-variant-numeric:tabular-nums}
@@ -24,7 +26,7 @@ nav.main a:hover{color:var(--ink)}
 .signup input[type=email]{flex:1;padding:.85rem 1rem;border:1.5px solid var(--hair);border-radius:6px 0 0 6px;font:inherit}
 .signup button{background:var(--denim);color:#fff;border:none;font-weight:800;padding:.85rem 1.4rem;border-radius:0 6px 6px 0;cursor:pointer;font:inherit}
 .signup button:hover{background:var(--denim-deep)}
-.feature{display:grid;grid-template-columns:1fr 1fr;gap:2.2rem;align-items:start;margin-top:2.2rem}
+.feature{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:2.2rem;align-items:start;margin-top:2.2rem}
 .feature figure img{width:100%;height:430px;object-fit:cover;display:block}
 .feature figcaption,.hero-photo figcaption{font-size:.82rem;color:var(--muted);margin-top:.55rem}
 .f-label{font-family:"Oswald";font-weight:600;text-transform:uppercase;letter-spacing:.12em;color:var(--denim);font-size:.95rem}
@@ -53,7 +55,7 @@ section.index-sec{margin-top:3rem}
 .sec-head h2{font-family:"Oswald";font-weight:700;text-transform:uppercase;font-size:clamp(1.6rem,3vw,2.2rem)}
 .sec-head span{font-weight:700;color:var(--muted)}
 ol.index{list-style:none;counter-reset:idx}
-ol.index li{counter-increment:idx;display:grid;grid-template-columns:64px 150px 1fr auto;gap:1.2rem;align-items:center;padding:1rem 0;border-bottom:1px solid var(--hair)}
+ol.index li{counter-increment:idx;display:grid;grid-template-columns:64px 150px minmax(0,1fr) auto;gap:1.2rem;align-items:center;padding:1rem 0;border-bottom:1px solid var(--hair)}
 ol.index li::before{content:counter(idx,decimal-leading-zero);font-family:"Oswald";font-weight:700;font-size:1.9rem;color:var(--denim)}
 ol.index img{width:150px;height:104px;object-fit:cover;display:block}
 ol.index .rname{font-family:"Oswald";font-weight:600;text-transform:uppercase;font-size:1.25rem;line-height:1.15}
@@ -67,7 +69,7 @@ ol.index .rprice .of{font-size:.8rem;font-weight:700;color:var(--muted)}
 .tierline .t{flex:1;text-align:center;font-family:"Oswald";font-weight:600;text-transform:uppercase;font-size:.72rem;letter-spacing:.08em;padding:.5rem .2rem;border:1.5px solid var(--hair);color:var(--muted)}
 .tierline .t.on{background:var(--denim);border-color:var(--denim);color:#fff}
 .tierline .t small{display:block;font-size:.68rem;letter-spacing:.04em}
-.collections{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:1.2rem}
+.collections{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.5rem;margin-top:1.2rem}
 .col-card{border-top:1px solid var(--hair);padding-top:.8rem}
 .col-card .cname{font-family:"Oswald";font-weight:700;text-transform:uppercase;font-size:1.3rem;line-height:1.1}
 .col-card .cname a{color:var(--ink);text-decoration:none}
@@ -78,7 +80,7 @@ ol.index .rprice .of{font-size:.8rem;font-weight:700;color:var(--muted)}
 h1.dish{font-family:"Oswald";font-weight:700;text-transform:uppercase;font-size:clamp(2.6rem,6vw,4.4rem);line-height:1}
 .meta-line{font-family:"Oswald";font-weight:600;text-transform:uppercase;letter-spacing:.12em;font-size:clamp(.95rem,1.8vw,1.15rem);color:var(--denim);margin:.8rem 0 .9rem}
 .standfirst{font-size:1.1rem;color:#2C3138;max-width:46rem}
-.layout{display:grid;grid-template-columns:1fr 380px;gap:2.4rem;margin-top:2rem;align-items:start}
+.layout{display:grid;grid-template-columns:minmax(0,1fr) 380px;gap:2.4rem;margin-top:2rem;align-items:start}
 .hero-photo img{width:100%;height:440px;object-fit:cover;display:block}
 article.prose h2,.article-body h2{font-family:"Oswald";font-weight:700;text-transform:uppercase;font-size:1.5rem;letter-spacing:.02em;margin:1.9rem 0 .7rem;border-top:2px solid var(--ink);padding-top:1.1rem}
 article.prose h2:first-of-type,.article-body h2:first-of-type{border-top:none;padding-top:0;margin-top:1.6rem}
@@ -87,7 +89,6 @@ article.prose ul,.article-body ul{margin:0 0 1rem 1.2rem;color:#2C3138}
 article.prose ol,.article-body ol{margin:0 0 1rem 1.2rem;color:#2C3138}
 ul.ingredients{list-style:none}
 ul.ingredients li{display:flex;justify-content:space-between;gap:1rem;padding:.58rem 0;border-bottom:1px solid var(--hair);font-weight:600}
-ul.ingredients li span:last-child{font-weight:800;white-space:nowrap}
 ol.steps{list-style:none;counter-reset:step}
 ol.steps li{counter-increment:step;position:relative;padding:0 0 1.45rem 3.7rem;color:#2C3138}
 ol.steps li::before{content:counter(step);position:absolute;left:0;top:-.1rem;width:2.3rem;height:2.3rem;border-radius:50%;background:var(--denim);color:#fff;font-family:"Oswald";font-weight:700;font-size:1.1rem;display:flex;align-items:center;justify-content:center}
@@ -125,12 +126,12 @@ footer.site{background:var(--navy);border-top:3px solid var(--denim);margin-top:
 .page-head{padding:2rem 0 0}
 .page-head h1{font-family:"Oswald";font-weight:700;text-transform:uppercase;font-size:clamp(2.2rem,5vw,3.6rem);line-height:1}
 @media (max-width:920px){
-  .feature,.layout{grid-template-columns:1fr}
+  .feature,.layout{grid-template-columns:minmax(0,1fr)}
   .pricecard{position:static}
-  ol.index li{grid-template-columns:48px 104px 1fr;grid-template-rows:auto auto}
+  ol.index li{grid-template-columns:48px 104px minmax(0,1fr);grid-template-rows:auto auto}
   ol.index:not(.homeindex) .rprice{grid-column:3;text-align:left}
   ol.index img{width:104px;height:76px}
-  .collections{grid-template-columns:1fr}
+  .collections{grid-template-columns:minmax(0,1fr)}
   .hero-photo img,.feature figure img{height:300px}
 }
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}

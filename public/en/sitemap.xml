@@ -2,6 +2,71 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://fedforless.ca/recipes/cheap-black-bean-sweet-potato-chili/</loc>
+    <lastmod>2026-10-30T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr-CA"
+                href="https://fedforless.ca/fr/recipes/cheap-black-bean-sweet-potato-chili/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-CA"
+                href="https://fedforless.ca/recipes/cheap-black-bean-sweet-potato-chili/"
+                />
+  </url><url>
+    <loc>https://fedforless.ca/collections/</loc>
+    <lastmod>2026-10-30T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr-CA"
+                href="https://fedforless.ca/fr/collections/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-CA"
+                href="https://fedforless.ca/collections/"
+                />
+  </url><url>
+    <loc>https://fedforless.ca/</loc>
+    <lastmod>2026-10-30T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr-CA"
+                href="https://fedforless.ca/fr/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-CA"
+                href="https://fedforless.ca/"
+                />
+  </url><url>
+    <loc>https://fedforless.ca/collections/freezer-fillers/</loc>
+    <lastmod>2026-10-30T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr-CA"
+                href="https://fedforless.ca/fr/collections/freezer-fillers/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-CA"
+                href="https://fedforless.ca/collections/freezer-fillers/"
+                />
+  </url><url>
+    <loc>https://fedforless.ca/recipes/</loc>
+    <lastmod>2026-10-30T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr-CA"
+                href="https://fedforless.ca/fr/recipes/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-CA"
+                href="https://fedforless.ca/recipes/"
+                />
+  </url><url>
     <loc>https://fedforless.ca/recipes/cheap-apple-cinnamon-oat-pancakes/</loc>
     <lastmod>2026-10-29T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -80,19 +145,6 @@
                 href="https://fedforless.ca/recipes/cheap-tomato-white-bean-pasta/"
                 />
   </url><url>
-    <loc>https://fedforless.ca/collections/</loc>
-    <lastmod>2026-10-29T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="fr-CA"
-                href="https://fedforless.ca/fr/collections/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en-CA"
-                href="https://fedforless.ca/collections/"
-                />
-  </url><url>
     <loc>https://fedforless.ca/collections/dinners-under-1.50/</loc>
     <lastmod>2026-10-29T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -106,19 +158,6 @@
                 href="https://fedforless.ca/collections/dinners-under-1.50/"
                 />
   </url><url>
-    <loc>https://fedforless.ca/</loc>
-    <lastmod>2026-10-29T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="fr-CA"
-                href="https://fedforless.ca/fr/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en-CA"
-                href="https://fedforless.ca/"
-                />
-  </url><url>
     <loc>https://fedforless.ca/collections/feed-six-for-under-12/</loc>
     <lastmod>2026-10-29T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -130,19 +169,6 @@
                 rel="alternate"
                 hreflang="en-CA"
                 href="https://fedforless.ca/collections/feed-six-for-under-12/"
-                />
-  </url><url>
-    <loc>https://fedforless.ca/recipes/</loc>
-    <lastmod>2026-10-29T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="fr-CA"
-                href="https://fedforless.ca/fr/recipes/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en-CA"
-                href="https://fedforless.ca/recipes/"
                 />
   </url><url>
     <loc>https://fedforless.ca/recipes/cheap-potato-egg-and-cheese-breakfast-bake/</loc>
@@ -169,19 +195,6 @@
                 rel="alternate"
                 hreflang="en-CA"
                 href="https://fedforless.ca/recipes/cheap-beef-macaroni-skillet/"
-                />
-  </url><url>
-    <loc>https://fedforless.ca/collections/freezer-fillers/</loc>
-    <lastmod>2026-10-27T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="fr-CA"
-                href="https://fedforless.ca/fr/collections/freezer-fillers/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en-CA"
-                href="https://fedforless.ca/collections/freezer-fillers/"
                 />
   </url><url>
     <loc>https://fedforless.ca/basket-weeks/</loc>
