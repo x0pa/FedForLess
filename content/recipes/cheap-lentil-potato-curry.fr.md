@@ -30,7 +30,7 @@ total_iso: "PT50M"
 image: "/images/cheap-lentil-potato-curry.webp"
 image_caption: "Le curry terminé sur le riz, épais et orange foncé, avec les pommes de terre visibles dans les lentilles."
 prices_checked: "août 2026"
-collections: ["Feed six for under $12"]
+collections: ["Feed six for under $12", "Dinners under $1.50"]
 breakdown:
   - item: "Lentilles rouges séchées"
     note: "400 g d'un sac de 900 g à 3,63 $"

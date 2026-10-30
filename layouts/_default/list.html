@@ -121,15 +121,29 @@
   {{ with .Content }}<div style="max-width:46rem;margin-top:.8rem;">{{ . }}</div>{{ end }}
   <section class="index-sec" style="margin-top:1.6rem;">
     <ol class="index">
-      {{ range .Pages.ByDate }}
-      <li data-tier="{{ .Params.tier }}" data-cost="{{ .Params.price_per_serving }}" data-meals="{{ with .Params.meals }}{{ delimit . " " }}{{ end }}">
-        <a href="{{ .RelPermalink }}"><img src="{{ .Params.image }}" alt="{{ .Title }}"></a>
+      {{ if eq .Kind "term" }}
+      {{ $slug := .Data.Term | urlize }}{{ $list := slice }}{{ range $term, $wp := .Site.Taxonomies.collections }}{{ if eq ($term | urlize) $slug }}{{ range $wp }}{{ $list = $list | append .Page }}{{ end }}{{ end }}{{ end }}
+      {{ range sort $list "Date" "desc" }}{{ $p := . }}
+      <li data-tier="{{ $p.Params.tier }}" data-cost="{{ $p.Params.price_per_serving }}" data-meals="{{ with $p.Params.meals }}{{ delimit . " " }}{{ end }}">
+        <a href="{{ $p.RelPermalink }}"><img src="{{ $p.Params.image }}" alt="{{ $p.Title }}"></a>
         <div>
-          <div class="rname"><a href="{{ .RelPermalink }}">{{ .Title }}</a></div>
-          <div class="rsub">{{ .Params.tier_label }} · {{ partial "serves.html" (dict "n" .Params.servings "lang" $.Lang) }} · {{ .Params.total_time }}</div>
+          <div class="rname"><a href="{{ $p.RelPermalink }}">{{ $p.Title }}</a></div>
+          <div class="rsub">{{ $p.Params.tier_label }} · {{ partial "serves.html" (dict "n" $p.Params.servings "lang" $.Lang) }} · {{ $p.Params.total_time }}</div>
         </div>
-        <div class="rprice nums"><div class="per">{{ partial "price.html" (dict "amt" .Params.price_per_serving "lang" $.Lang) }}</div><div class="of">{{ i18n "per_serving" }}</div></div>
+        <div class="rprice nums"><div class="per">{{ partial "price.html" (dict "amt" $p.Params.price_per_serving "lang" $.Lang) }}</div><div class="of">{{ i18n "per_serving" }}</div></div>
       </li>
+      {{ end }}
+      {{ else }}
+      {{ range .Pages.ByDate }}{{ $p := . }}
+      <li data-tier="{{ $p.Params.tier }}" data-cost="{{ $p.Params.price_per_serving }}" data-meals="{{ with $p.Params.meals }}{{ delimit . " " }}{{ end }}">
+        <a href="{{ $p.RelPermalink }}"><img src="{{ $p.Params.image }}" alt="{{ $p.Title }}"></a>
+        <div>
+          <div class="rname"><a href="{{ $p.RelPermalink }}">{{ $p.Title }}</a></div>
+          <div class="rsub">{{ $p.Params.tier_label }} · {{ partial "serves.html" (dict "n" $p.Params.servings "lang" $.Lang) }} · {{ $p.Params.total_time }}</div>
+        </div>
+        <div class="rprice nums"><div class="per">{{ partial "price.html" (dict "amt" $p.Params.price_per_serving "lang" $.Lang) }}</div><div class="of">{{ i18n "per_serving" }}</div></div>
+      </li>
+      {{ end }}
       {{ end }}
     </ol>
   </section>

@@ -30,7 +30,7 @@ total_iso: "PT50M"
 image: "/images/cheap-lentil-potato-curry.webp"
 image_caption: "The finished curry over rice, thick and deep orange, with the potato showing through the lentils."
 prices_checked: "August 2026"
-collections: ["Feed six for under $12"]
+collections: ["Feed six for under $12", "Dinners under $1.50"]
 breakdown:
   - item: "Dried red lentils"
     note: "400 g of a 900 g bag at $3.63"
