@@ -99,7 +99,10 @@ Les soupers en boîte vendus pour la poêle promettent exactement cette assiette
   <li><span>Tomates en conserve, 796 ml</span></li>
   <li><span>Oignons, 300 g</span></li>
   <li><span>Fromage cheddar, 150 g, râpé</span></li>
-  <li><span>Huile de canola, ail, paprika et origan</span></li>
+  <li><span>Huile de canola, 1 cuillerée à soupe</span></li>
+  <li><span>Ail, 4 gousses, émincées</span></li>
+  <li><span>Paprika, 2 cuillerées à thé</span></li>
+  <li><span>Origan séché, 1 cuillerée à thé</span></li>
 </ul>
 
 ## Préparation

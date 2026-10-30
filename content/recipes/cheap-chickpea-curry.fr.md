@@ -106,7 +106,11 @@ Le cari à la maison bloque souvent au lait de coco, parce qu'une seule boîte p
   <li><span>Oignons, 300 g</span></li>
   <li><span>Tomates en conserve, 796 ml</span></li>
   <li><span>Riz blanc, 300 g</span></li>
-  <li><span>Huile de canola, épices à cari et ail</span></li>
+  <li><span>Huile de canola, 2 cuillerées à soupe</span></li>
+  <li><span>Poudre de cari, 2 cuillerées à soupe</span></li>
+  <li><span>Cumin moulu, 2 cuillerées à thé</span></li>
+  <li><span>Curcuma, 1 cuillerée à thé</span></li>
+  <li><span>Ail, 4 gousses, émincées</span></li>
 </ul>
 
 ## Préparation

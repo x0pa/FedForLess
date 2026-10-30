@@ -102,7 +102,10 @@ Le chili est d'habitude un jeu de viande hachée, et les prix de la viande hach�
   <li><span>Maïs congelé, 300 g</span></li>
   <li><span>Oignon, 200 g</span></li>
   <li><span>Huile de canola, 15 ml</span></li>
-  <li><span>Épices à chili et ail</span></li>
+  <li><span>Poudre de chili, 2 cuillerées à soupe</span></li>
+  <li><span>Cumin moulu, 2 cuillerées à thé</span></li>
+  <li><span>Paprika, 1 cuillerée à thé</span></li>
+  <li><span>Ail, 4 gousses, émincées</span></li>
 </ul>
 
 ## Préparation

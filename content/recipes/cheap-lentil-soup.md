@@ -107,7 +107,11 @@ Red lentils are the cheapest reliable way to turn a pot of water into dinner. Th
   <li><span>Carrots, 500 g</span></li>
   <li><span>Onions, 300 g</span></li>
   <li><span>Canned tomatoes, 796 ml</span></li>
-  <li><span>Canola oil, garlic, spices, bouillon</span></li>
+  <li><span>Canola oil, 2 tablespoons</span></li>
+  <li><span>Garlic, 4 cloves, minced</span></li>
+  <li><span>Ground cumin, 2 teaspoons</span></li>
+  <li><span>Paprika, 2 teaspoons</span></li>
+  <li><span>Bouillon cubes, 2</span></li>
 </ul>
 
 ## Method

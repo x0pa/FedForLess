@@ -104,7 +104,10 @@ A freezer burrito is only a bargain if it is big enough to be the whole meal, so
   <li><span>Block cheese, 200 g, grated</span></li>
   <li><span>Frozen corn, 150 g</span></li>
   <li><span>Onion, 150 g</span></li>
-  <li><span>Spices and oil</span></li>
+  <li><span>Canola oil, 1 tablespoon</span></li>
+  <li><span>Ground cumin, 2 teaspoons</span></li>
+  <li><span>Chili powder, 2 teaspoons</span></li>
+  <li><span>Garlic powder, 1 teaspoon</span></li>
 </ul>
 
 ## Method

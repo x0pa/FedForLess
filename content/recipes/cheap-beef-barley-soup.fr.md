@@ -118,7 +118,11 @@ La soupe au bœuf et à l'orge veut habituellement dire du bœuf à ragoût, et 
   <li><span>Oignons, 300 g</span></li>
   <li><span>Céleri, 2 branches</span></li>
   <li><span>Tomates en conserve, 796 ml</span></li>
-  <li><span>Huile de canola, ail, thym, laurier et bouillon</span></li>
+  <li><span>Huile de canola, 1 cuillerée à soupe</span></li>
+  <li><span>Ail, 4 gousses, émincées</span></li>
+  <li><span>Thym séché, 2 cuillerées à thé</span></li>
+  <li><span>Feuilles de laurier, 2</span></li>
+  <li><span>Cubes de bouillon, 2</span></li>
 </ul>
 
 ## Préparation

@@ -118,7 +118,11 @@ Beef and barley soup usually means stewing beef, and stewing beef is where the b
   <li><span>Onions, 300 g</span></li>
   <li><span>Celery, 2 stalks</span></li>
   <li><span>Canned tomatoes, 796 ml</span></li>
-  <li><span>Canola oil, garlic, thyme, bay and bouillon</span></li>
+  <li><span>Canola oil, 1 tablespoon</span></li>
+  <li><span>Garlic, 4 cloves, minced</span></li>
+  <li><span>Dried thyme, 2 teaspoons</span></li>
+  <li><span>Bay leaves, 2</span></li>
+  <li><span>Bouillon cubes, 2</span></li>
 </ul>
 
 ## Method

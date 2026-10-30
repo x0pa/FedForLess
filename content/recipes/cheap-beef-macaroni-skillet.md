@@ -99,7 +99,10 @@ The boxed skillet dinners promise this exact plate and charge for the box, the s
   <li><span>Canned tomatoes, 796 ml</span></li>
   <li><span>Onions, 300 g</span></li>
   <li><span>Cheddar cheese, 150 g, grated</span></li>
-  <li><span>Canola oil, garlic, paprika and oregano</span></li>
+  <li><span>Canola oil, 1 tablespoon</span></li>
+  <li><span>Garlic, 4 cloves, minced</span></li>
+  <li><span>Paprika, 2 teaspoons</span></li>
+  <li><span>Dried oregano, 1 teaspoon</span></li>
 </ul>
 
 ## Method

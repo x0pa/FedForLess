@@ -102,7 +102,10 @@ Chili is usually a ground meat game, and ground meat prices show it. Pork should
   <li><span>Frozen corn, 300 g</span></li>
   <li><span>Onion, 200 g</span></li>
   <li><span>Canola oil, 15 ml</span></li>
-  <li><span>Chili spices and garlic</span></li>
+  <li><span>Chili powder, 2 tablespoons</span></li>
+  <li><span>Ground cumin, 2 teaspoons</span></li>
+  <li><span>Paprika, 1 teaspoon</span></li>
+  <li><span>Garlic, 4 cloves, minced</span></li>
 </ul>
 
 ## Method

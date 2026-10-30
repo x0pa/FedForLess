@@ -107,7 +107,11 @@ Les lentilles rouges sont la façon la moins chère et la plus fiable de transfo
   <li><span>Carottes, 500 g</span></li>
   <li><span>Oignons, 300 g</span></li>
   <li><span>Tomates en conserve, 796 ml</span></li>
-  <li><span>Huile de canola, ail, épices, bouillon</span></li>
+  <li><span>Huile de canola, 2 cuillerées à soupe</span></li>
+  <li><span>Ail, 4 gousses, émincées</span></li>
+  <li><span>Cumin moulu, 2 cuillerées à thé</span></li>
+  <li><span>Paprika, 2 cuillerées à thé</span></li>
+  <li><span>Cubes de bouillon, 2</span></li>
 </ul>
 
 ## Préparation

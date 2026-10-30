@@ -105,7 +105,9 @@ Le déjeuner est là où les budgets serrés perdent de l'argent en silence, un 
   <li><span>Lait, 375 ml</span></li>
   <li><span>Sucre, 100 g</span></li>
   <li><span>Beurre, 30 g</span></li>
-  <li><span>Cannelle, vanille, poudre à pâte</span></li>
+  <li><span>Cannelle, 2 cuillerées à thé</span></li>
+  <li><span>Vanille, 1 cuillerée à thé</span></li>
+  <li><span>Poudre à pâte, 2 cuillerées à thé</span></li>
 </ul>
 
 ## Préparation

@@ -105,7 +105,9 @@ Breakfast is where tight budgets quietly leak money, one rushed purchase at a ti
   <li><span>Milk, 375 ml</span></li>
   <li><span>Sugar, 100 g</span></li>
   <li><span>Butter, 30 g</span></li>
-  <li><span>Cinnamon, vanilla, baking powder</span></li>
+  <li><span>Cinnamon, 2 teaspoons</span></li>
+  <li><span>Vanilla, 1 teaspoon</span></li>
+  <li><span>Baking powder, 2 teaspoons</span></li>
 </ul>
 
 ## Method

@@ -104,7 +104,10 @@ Un burrito à congeler n'est une aubaine que s'il est assez gros pour être le r
   <li><span>Fromage en bloc, 200 g, râpé</span></li>
   <li><span>Maïs congelé, 150 g</span></li>
   <li><span>Oignon, 150 g</span></li>
-  <li><span>Épices et huile</span></li>
+  <li><span>Huile de canola, 1 cuillerée à soupe</span></li>
+  <li><span>Cumin moulu, 2 cuillerées à thé</span></li>
+  <li><span>Poudre de chili, 2 cuillerées à thé</span></li>
+  <li><span>Poudre d'ail, 1 cuillerée à thé</span></li>
 </ul>
 
 ## Préparation

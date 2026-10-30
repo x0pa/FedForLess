@@ -106,7 +106,11 @@ Curry at home often stalls at the coconut milk, because one can of it can cost a
   <li><span>Onions, 300 g</span></li>
   <li><span>Canned tomatoes, 796 ml</span></li>
   <li><span>White rice, 300 g</span></li>
-  <li><span>Canola oil, curry spices and garlic</span></li>
+  <li><span>Canola oil, 2 tablespoons</span></li>
+  <li><span>Curry powder, 2 tablespoons</span></li>
+  <li><span>Ground cumin, 2 teaspoons</span></li>
+  <li><span>Turmeric, 1 teaspoon</span></li>
+  <li><span>Garlic, 4 cloves, minced</span></li>
 </ul>
 
 ## Method
