@@ -98,7 +98,8 @@ Les crêpes signifient habituellement un sac de farine, une bouteille de sirop e
   <li><span>Lait, 250 ml</span></li>
   <li><span>Beurre, 30 g</span></li>
   <li><span>Sucre, 50 g</span></li>
-  <li><span>Cannelle et poudre à pâte</span></li>
+  <li><span>Cannelle moulue, 1 cuillerée à thé, divisée</span></li>
+  <li><span>Poudre à pâte, 2 cuillerées à thé</span></li>
   <li><span>Sel</span></li>
 </ul>
 

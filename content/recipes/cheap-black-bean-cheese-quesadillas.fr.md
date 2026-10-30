@@ -94,7 +94,8 @@ Les quesadillas méritent leur place sur un site de cuisine économique parce qu
   <li><span>Fromage en bloc, 200 g, râpé</span></li>
   <li><span>Maïs congelé, 150 g</span></li>
   <li><span>Oignon, 150 g, finement haché</span></li>
-  <li><span>Cumin et poudre de chili</span></li>
+  <li><span>Cumin moulu, 1 cuillerée à thé</span></li>
+  <li><span>Poudre de chili, 1 cuillerée à thé</span></li>
   <li><span>Sel et poivre</span></li>
 </ul>
 

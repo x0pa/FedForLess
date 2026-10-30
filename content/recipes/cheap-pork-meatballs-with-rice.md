@@ -102,7 +102,9 @@ Meatballs feel like a splurge until the pork is priced the way this site prices 
   <li><span>Egg, 1</span></li>
   <li><span>Milk, 100 ml</span></li>
   <li><span>Canola oil, 1 tablespoon</span></li>
-  <li><span>Garlic, paprika, salt and pepper</span></li>
+  <li><span>Garlic, 2 cloves, minced</span></li>
+  <li><span>Paprika, 1 teaspoon</span></li>
+  <li><span>Salt and pepper</span></li>
 </ul>
 
 ## Method

@@ -97,7 +97,8 @@ Des pâtes seules sont économiques mais légères; des pâtes avec deux boîtes
   <li><span>Oignons, 300 g, finement hachés</span></li>
   <li><span>Fromage en bloc, 50 g, finement râpé</span></li>
   <li><span>Huile de canola, 2 cuillerées à soupe</span></li>
-  <li><span>Ail et origan séché</span></li>
+  <li><span>Ail, 3 gousses, émincées</span></li>
+  <li><span>Origan séché, 1 cuillerée à thé</span></li>
   <li><span>Sel et poivre</span></li>
 </ul>
 

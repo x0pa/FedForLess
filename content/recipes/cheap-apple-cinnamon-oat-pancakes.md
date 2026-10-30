@@ -98,7 +98,8 @@ Pancakes usually mean a bag of flour, a bottle of syrup and a breakfast that lea
   <li><span>Milk, 250 ml</span></li>
   <li><span>Butter, 30 g</span></li>
   <li><span>Sugar, 50 g</span></li>
-  <li><span>Cinnamon and baking powder</span></li>
+  <li><span>Ground cinnamon, 1 teaspoon, divided</span></li>
+  <li><span>Baking powder, 2 teaspoons</span></li>
   <li><span>Salt</span></li>
 </ul>
 

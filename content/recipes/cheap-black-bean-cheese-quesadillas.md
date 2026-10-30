@@ -94,7 +94,8 @@ Quesadillas earn their place on a budget site because everything in them works t
   <li><span>Block cheese, 200 g, grated</span></li>
   <li><span>Frozen corn, 150 g</span></li>
   <li><span>Onion, 150 g, finely chopped</span></li>
-  <li><span>Cumin and chili powder</span></li>
+  <li><span>Ground cumin, 1 teaspoon</span></li>
+  <li><span>Chili powder, 1 teaspoon</span></li>
   <li><span>Salt and pepper</span></li>
 </ul>
 

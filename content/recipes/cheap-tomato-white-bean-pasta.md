@@ -97,7 +97,8 @@ Pasta on its own is cheap but light; pasta with two cans of white beans stirred 
   <li><span>Onions, 300 g, finely chopped</span></li>
   <li><span>Block cheese, 50 g, finely grated</span></li>
   <li><span>Canola oil, 2 tablespoons</span></li>
-  <li><span>Garlic and dried oregano</span></li>
+  <li><span>Garlic, 3 cloves, minced</span></li>
+  <li><span>Dried oregano, 1 teaspoon</span></li>
   <li><span>Salt and pepper</span></li>
 </ul>
 

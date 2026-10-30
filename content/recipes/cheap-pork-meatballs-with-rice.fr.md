@@ -102,7 +102,9 @@ Les boulettes ont l'air d'une folie jusqu'à ce que le porc soit calculé comme 
   <li><span>Œuf, 1</span></li>
   <li><span>Lait, 100 ml</span></li>
   <li><span>Huile de canola, 1 cuillerée à soupe</span></li>
-  <li><span>Ail, paprika, sel et poivre</span></li>
+  <li><span>Ail, 2 gousses, émincées</span></li>
+  <li><span>Paprika, 1 cuillerée à thé</span></li>
+  <li><span>Sel et poivre</span></li>
 </ul>
 
 ## Préparation
