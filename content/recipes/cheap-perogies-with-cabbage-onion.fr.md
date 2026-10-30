@@ -78,6 +78,7 @@ instructions:
   - "Ajoutez les perogies égouttés dans la poêle en une couche sur le chou et l'oignon. Cuisez environ 4 minutes, en les retournant une fois, jusqu'à ce qu'ils soient enrobés de beurre et dorés par endroits."
   - "Répandez le sel et le poivre sur la poêle et mélangez le tout doucement pour que le chou et l'oignon enrobent les perogies."
   - "Servez directement de la poêle dans des bols profonds, avec une généreuse cuillerée de crème sure sur chaque bol."
+basket_week: "one-cabbage-two-pots"
 ---
 
 ## Pourquoi ce plat fonctionne

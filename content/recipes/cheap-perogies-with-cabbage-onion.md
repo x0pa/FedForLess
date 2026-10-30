@@ -78,6 +78,7 @@ instructions:
   - "Add the drained perogies to the skillet in one layer over the cabbage and onion. Cook for about 4 minutes, turning them once, until they are coated in the butter and golden in places."
   - "Scatter salt and pepper over the pan and toss everything gently so the cabbage and onion coat the perogies."
   - "Serve straight from the skillet in deep bowls, with a generous spoonful of sour cream on each bowl."
+basket_week: "one-cabbage-two-pots"
 ---
 
 ## Why This One Works

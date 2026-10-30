@@ -49,7 +49,7 @@
     <div class="bw-shopgrid">
       <div class="bw-listwrap">
         {{ $items := .Params.basket_items }}
-        {{ range $cat := slice "produce" "meat" "dry" "canned" "pantry" }}
+        {{ range $cat := slice "produce" "meat" "dairy" "freezer" "dry" "canned" "pantry" }}
         {{ $group := where $items "cat" $cat }}
         {{ if $group }}
         <h3 class="bw-cat">{{ i18n (printf "bw2_cat_%s" $cat) }}</h3>

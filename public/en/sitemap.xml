@@ -106,6 +106,32 @@
                 href="https://fedforless.ca/collections/freezer-fillers/"
                 />
   </url><url>
+    <loc>https://fedforless.ca/basket-weeks/</loc>
+    <lastmod>2026-10-26T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr-CA"
+                href="https://fedforless.ca/fr/basket-weeks/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-CA"
+                href="https://fedforless.ca/basket-weeks/"
+                />
+  </url><url>
+    <loc>https://fedforless.ca/basket-weeks/one-cabbage-two-pots/</loc>
+    <lastmod>2026-10-26T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr-CA"
+                href="https://fedforless.ca/fr/basket-weeks/one-cabbage-two-pots/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-CA"
+                href="https://fedforless.ca/basket-weeks/one-cabbage-two-pots/"
+                />
+  </url><url>
     <loc>https://fedforless.ca/recipes/cheap-chickpea-curry/</loc>
     <lastmod>2026-10-23T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -117,19 +143,6 @@
                 rel="alternate"
                 hreflang="en-CA"
                 href="https://fedforless.ca/recipes/cheap-chickpea-curry/"
-                />
-  </url><url>
-    <loc>https://fedforless.ca/basket-weeks/</loc>
-    <lastmod>2026-10-21T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="fr-CA"
-                href="https://fedforless.ca/fr/basket-weeks/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en-CA"
-                href="https://fedforless.ca/basket-weeks/"
                 />
   </url><url>
     <loc>https://fedforless.ca/recipes/cheap-beef-barley-soup/</loc>

@@ -86,6 +86,7 @@ instructions:
   - "Incorporez le riz, les tomates en conserve avec leur jus et environ 750 ml d'eau. Amenez à frémissement."
   - "Couvrez, baissez le feu et laissez mijoter doucement environ 25 minutes en remuant de temps en temps, jusqu'à ce que le riz soit tendre et ait absorbé la plupart du liquide."
   - "Retirez la poêle du feu et laissez reposer, couverte, 10 minutes. Salez et poivrez au goût, puis servez avec une cuillerée de crème sure sur le dessus si vous aimez."
+basket_week: "one-cabbage-two-pots"
 ---
 
 ## Pourquoi celle-ci fonctionne

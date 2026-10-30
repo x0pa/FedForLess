@@ -86,6 +86,7 @@ instructions:
   - "Stir in the rice, the canned tomatoes with their juice and about 750 ml of water. Bring it up to a simmer."
   - "Cover, lower the heat and simmer gently for about 25 minutes, stirring now and then, until the rice is tender and has soaked up most of the liquid."
   - "Take the pan off the heat and rest it, covered, for 10 minutes. Salt and pepper to taste, then serve with a spoon of sour cream on top if you like."
+basket_week: "one-cabbage-two-pots"
 ---
 
 ## Why This One Works
