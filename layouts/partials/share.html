@@ -1,10 +1,10 @@
 {{ $p := .page }}
 {{ $url := $p.Permalink }}
-{{ $text := printf "%s %s" $p.Title $url }}
+{{ $text := replace (printf "%s %s" $p.Title $url | urlquery) "+" "%20" }}
 {{ $fb := printf "https://www.facebook.com/sharer/sharer.php?u=%s" ($url | urlquery) }}
-{{ $pin := printf "https://pinterest.com/pin/create/button/?url=%s&media=%s&description=%s" ($url | urlquery) (($p.Params.image | absURL) | urlquery) ($p.Description | urlquery) }}
-{{ $x := printf "https://twitter.com/intent/tweet?url=%s&text=%s" ($url | urlquery) ($p.Title | urlquery) }}
-{{ $th := printf "https://www.threads.net/intent/post?text=%s" ($text | urlquery) }}
+{{ $pin := printf "https://pinterest.com/pin/create/button/?url=%s&media=%s&description=%s" ($url | urlquery) (($p.Params.image | absURL) | urlquery) (replace ($p.Description | urlquery) "+" "%20") }}
+{{ $x := printf "https://twitter.com/intent/tweet?url=%s&text=%s" ($url | urlquery) (replace ($p.Title | urlquery) "+" "%20") }}
+{{ $th := printf "https://www.threads.net/intent/post?text=%s" $text }}
 <div class="sharerow{{ if .end }} end{{ end }}">
   <span class="share-lbl">{{ i18n "share_h" }}</span>
   <div class="share-btns">
