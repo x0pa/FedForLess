@@ -2,6 +2,19 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://fedforless.ca/fr/recipes/cheap-pork-meatballs-with-rice/</loc>
+    <lastmod>2026-10-29T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-CA"
+                href="https://fedforless.ca/recipes/cheap-pork-meatballs-with-rice/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr-CA"
+                href="https://fedforless.ca/fr/recipes/cheap-pork-meatballs-with-rice/"
+                />
+  </url><url>
     <loc>https://fedforless.ca/fr/collections/</loc>
     <lastmod>2026-10-29T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -13,6 +26,32 @@
                 rel="alternate"
                 hreflang="fr-CA"
                 href="https://fedforless.ca/fr/collections/"
+                />
+  </url><url>
+    <loc>https://fedforless.ca/fr/recipes/cheap-apple-cinnamon-oat-pancakes/</loc>
+    <lastmod>2026-10-29T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-CA"
+                href="https://fedforless.ca/recipes/cheap-apple-cinnamon-oat-pancakes/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr-CA"
+                href="https://fedforless.ca/fr/recipes/cheap-apple-cinnamon-oat-pancakes/"
+                />
+  </url><url>
+    <loc>https://fedforless.ca/fr/recipes/cheap-lentil-potato-curry/</loc>
+    <lastmod>2026-10-29T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-CA"
+                href="https://fedforless.ca/recipes/cheap-lentil-potato-curry/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr-CA"
+                href="https://fedforless.ca/fr/recipes/cheap-lentil-potato-curry/"
                 />
   </url><url>
     <loc>https://fedforless.ca/fr/</loc>
@@ -41,6 +80,19 @@
                 href="https://fedforless.ca/fr/collections/feed-six-for-under-12/"
                 />
   </url><url>
+    <loc>https://fedforless.ca/fr/recipes/cheap-tomato-white-bean-pasta/</loc>
+    <lastmod>2026-10-29T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-CA"
+                href="https://fedforless.ca/recipes/cheap-tomato-white-bean-pasta/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr-CA"
+                href="https://fedforless.ca/fr/recipes/cheap-tomato-white-bean-pasta/"
+                />
+  </url><url>
     <loc>https://fedforless.ca/fr/recipes/cheap-perogies-with-cabbage-onion/</loc>
     <lastmod>2026-10-29T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -52,6 +104,19 @@
                 rel="alternate"
                 hreflang="fr-CA"
                 href="https://fedforless.ca/fr/recipes/cheap-perogies-with-cabbage-onion/"
+                />
+  </url><url>
+    <loc>https://fedforless.ca/fr/recipes/cheap-black-bean-cheese-quesadillas/</loc>
+    <lastmod>2026-10-29T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-CA"
+                href="https://fedforless.ca/recipes/cheap-black-bean-cheese-quesadillas/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr-CA"
+                href="https://fedforless.ca/fr/recipes/cheap-black-bean-cheese-quesadillas/"
                 />
   </url><url>
     <loc>https://fedforless.ca/fr/recipes/</loc>
