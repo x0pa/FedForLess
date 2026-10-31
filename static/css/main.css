@@ -375,7 +375,7 @@ ol.homeindex .rowlink:hover .rarr{transform:translateX(3px)}
 .rgrid > .rfig{grid-column:2;grid-row:1/3;margin:1.3rem 0 0;display:flex;flex-direction:column}
 .rgrid > .rfig{align-self:stretch}
 .rfig img{width:100%;flex:1;min-height:340px;object-fit:cover;display:block;border-radius:6px}
-.rfig figcaption{font-size:.82rem;color:var(--muted);margin-top:.55rem}
+
 .rgrid > .rmain{grid-column:1;min-width:0}
 .rgrid > .rside{grid-column:2;min-width:0}
 .rmeta{display:flex;align-items:center;gap:.8rem;flex-wrap:wrap;margin:.4rem 0 .9rem}
